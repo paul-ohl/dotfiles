@@ -1,0 +1,32 @@
+#!/bin/sh
+# Date: 20/05/2020
+# Description: This script creates a file, chmods it to 755, and adds a script header
+
+if [ "$1" != "" ]; then
+	name="$1"
+else
+	printf "What is your script's name? "
+	read -r name
+fi
+
+# script name
+overwrite="n"
+while [ -f "$name" ]; do
+	printf '%s exists, do you want to overwrite it?(y/n) ' "$name"
+	read -r overwrite
+	if [ "$overwrite" = "y" ]; then
+		break
+	else
+		printf "What is your script's name? "
+		read -r name
+	fi
+done
+
+# Date
+date=$(date +"%Y/%m/%d")
+
+# File creation
+touch "$name"
+chmod 755 "$name"
+printf '#!/bin/sh\n# Date: %s\n# Description: ' "$date" > "$name"
+nvim "$name"

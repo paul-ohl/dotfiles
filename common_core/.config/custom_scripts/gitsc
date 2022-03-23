@@ -1,0 +1,19 @@
+#!/bin/sh
+# Date: 2021/10/05
+# Description: git stupid commit, it's stupid, and it's simple
+
+args="$*"
+
+if [ "$args" = "" ]; then
+	echo "What is your commit message?"
+	read -r commit_message
+	if [ "$commit_message" = "" ]; then
+		commit_message="emergency commit"
+	fi
+else
+	commit_message="$args"
+fi
+
+git add .
+git commit -m "$commit_message"
+git push origin master

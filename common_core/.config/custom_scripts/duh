@@ -1,0 +1,47 @@
+#!/bin/sh
+# author: Popohl
+# Description: This program run disk usage and returns a sorted ouput
+
+print_help () {
+	echo "Usage: duh [-ah] [-d depth] [directory]"
+	echo "    -a        all, print everything"
+	echo "    -h        print this help"
+	echo "    -d depth  analyse directories up to a given depth"
+	exit 1
+}
+
+directory="."
+depth="1"
+tail="True"
+
+while getopts "d:ah" option; do
+	case "$option" in
+		d)
+			depth="$OPTARG"
+			if [ "$depth" -lt "0" ] || [ "$depth" -gt "9" ]; then
+				echo "Depth has to be an int between 0 and 9"
+				exit 1
+			fi;;
+		a)
+			tail="False";;
+		h)
+			print_help;;
+		*)
+			echo "option: >$option"
+			echo "Error, wrong parameter"
+			print_help;;
+	esac
+done
+shift $((OPTIND-1))
+
+if ! [ "$1" = "" ]; then
+	directory="$1"
+fi
+
+result=$(du -hd"$depth" "$directory" 2> /dev/null | sort -h)
+
+if [ "$tail" = "True" ]; then
+	echo "$result" | tail
+else
+	echo "$result"
+fi

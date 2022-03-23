@@ -1,0 +1,6 @@
+#!/bin/sh
+# Date: 2021/09/16
+# Description: updates brew, if not installed, installs it along with the programs I usually use
+
+brew update && brew upgrade && brew upgrade --cask && brew cleanup
+nvim -c 'call Updatr()|qa'

@@ -1,0 +1,56 @@
+#!/bin/sh
+# Date: 2021/05/08
+# Description: A shortcut to burn an iso on an usb stick using dd
+
+RED='\033[0;31m'
+RESET='\033[0m'
+
+# Check argument
+path_to_iso="$1"
+if [ "$path_to_iso" = "" ]; then
+	echo "Usage: burnusb [path_to_iso]"
+	exit 1
+fi
+
+# Check that iso file exists
+if ! [ -f "$path_to_iso" ]; then
+	echo "Your file does not exist!"
+	exit 1
+fi
+
+# list blocks and ask user for usb stick
+diskutil list
+echo "$RED/!\\ Danger zone! /!\\ $RESET"
+echo "Select the disk you want to burn your iso to"
+echo "add a 'r' character before the name of the disk (/dev/disk2 -> /dev/rdisk2)"
+read -r disk_to_burn_to
+
+# Check input
+if [ "$disk_to_burn_to" = "" ]; then
+	echo "Empty input, aborting."
+	exit 1
+elif ! [ -e "$disk_to_burn_to" ]; then
+	echo "This file does not exist"
+	exit 1
+fi
+
+# Ask for confirmation
+echo "You will write to disk: $disk_to_burn_to"
+echo "Are you sure it is the right disk?$RED You will lose everything on it$RESET"
+printf "[y/n]: "
+read -r user_confirmation
+user_confirmation=$(echo "$user_confirmation" | tr '[:upper:]' '[:lower:]')
+if ! [ "$user_confirmation" = 'y' ]; then
+	echo "Aborting"
+	exit 1
+fi
+
+# Unmount disk if mounted
+if mount | grep "on $disk_to_burn_to" > /dev/null; then
+    echo "mounted"
+else
+    echo "not mounted"
+fi
+
+# Start burning process
+sudo dd "if=$path_to_iso" of="$disk_to_burn_to" bs=1m

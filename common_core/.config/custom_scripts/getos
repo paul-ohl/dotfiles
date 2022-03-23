@@ -1,0 +1,22 @@
+#!/bin/bash
+# Date: 2021/12/12
+# Description: Detects which os you're in and prints out its name in easy-to-use
+#			   form:
+#					- MacOS: OSX
+#					- Linux: LINUX
+#					- Other: UNKNOWN
+
+case "$OSTYPE" in
+	"linux-gnu"*)
+		echo "LINUX"
+		;;
+
+	"darwin"*)
+		echo "OSX"
+		;;
+
+	*)
+		echo "UNKNOWN"
+		echo >&2 "Could not properly detect OS"
+		;;
+esac

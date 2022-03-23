@@ -1,0 +1,25 @@
+#!/bin/sh
+# Date: 2021/03/23
+# Description: A small script to flash my keyboard (lily58l) more easily
+
+side_to_flash="$1"
+qmk_directory="/Users/paulohl/OneDrive/documents/elec/qmk_firmware"
+
+if [ "$side_to_flash" = "left" ]; then
+	cd "$qmk_directory" || exit 1
+	# Make command for elite-c
+	make lily58/light:lily58l:dfu
+elif [ "$side_to_flash" = "right" ]; then
+	cd "$qmk_directory" || exit 1
+	# Make command for pro-micro
+	make lily58/light:lily58l:avrdude
+else
+	echo "Usage:"
+	echo "flashkbd [right|left]"
+	echo ""
+	echo "    right    Flash promicro"
+	echo "    left     Flash elite-c"
+	exit 1
+fi
+
+exit 0

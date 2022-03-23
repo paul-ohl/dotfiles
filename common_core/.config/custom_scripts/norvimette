@@ -1,0 +1,57 @@
+#!/bin/sh
+# Date: 2021/03/30
+# Description: Formats the output of the norminette v3 program to be parsed by
+#			   makeprg of vim.
+
+# Select input
+input="$1"
+
+# Take the output of norminette command
+norminette_output=$(norminette "$input")
+
+# Remove useless lines
+norminette_output=$(echo "$norminette_output" | grep -v 'OK!') 
+
+# Function to get the path of the file from its name
+get_file_path() {
+	if [ "$1" = "" ]; then
+		echo "Error in file name"
+		exit 1
+	fi
+	filename_only=$(echo "$1" | sed 's|:.*||')
+	tmp_path=$(find . -name "$filename_only")
+	echo "$tmp_path"
+}
+
+# Function to check if there are multiple files with the same name
+check_linecount() {
+	line_count=$(echo "$1" | wc -l | tr -d ' ')
+	case "$line_count" in
+		1) ;;
+		0)
+			echo "No file found with name '$1'";;
+		*)
+			echo "multiple file with same name, fix them independently"
+			echo "$1" | sed 's|$|:1:1:|';;
+	esac
+}
+
+normalise_errors() {
+	prefix="$1"
+	error="$2"
+	normed_error=$(echo "$error" | sed 's|.*(line: ||' | sed 's|, col: |:|' | sed 's|):|:|')
+	echo "$prefix":"$normed_error"
+}
+
+# Read lines one by one, takes filenames to use them as prefixes for the
+# errors
+echo "$norminette_output" | while read -r line; do
+	if echo "$line" | grep 'KO!' > /dev/null; then
+		normed_filename=$(get_file_path "$line")
+		# echo filename: "$normed_filename"
+		check_linecount "$normed_filename"
+		prefix=$(echo "$normed_filename" | head -1)
+	else
+		normalise_errors "$prefix" "$line"
+	fi
+done
