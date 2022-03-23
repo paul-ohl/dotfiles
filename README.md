@@ -9,6 +9,8 @@ Install with GNU stow:
 Clone this repository anywhere (I clone it in `~/.dotfiles/`), cd into it,
 and `gnu stow *`!
 
+---
+
 ## Todo for my dotfiles
 
 ### General Linux
