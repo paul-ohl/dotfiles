@@ -14,10 +14,11 @@ require 'paq' {
 	{ 'pbondoer/vim-42header', opt = true };	-- Header generator for 42
 	{ 'popohl/vim-pohl-header', opt = true };	-- My personal header generator
 	'gruvbox-community/gruvbox';				-- Gruvbox
-	'kyazdani42/nvim-tree.lua';					-- File tree
+	{'kyazdani42/nvim-tree.lua', opt=true};		-- File tree
 	{ 'tpope/vim-fugitive', opt = true };		-- Git client straight inside Vim
 	'ludovicchabant/vim-gutentags';				-- Tag generation
-	'itchyny/lightline.vim';					-- Status line
+	'kyazdani42/nvim-web-devicons';				-- DevIcons
+	'nvim-lualine/lualine.nvim';				-- replacement for lightline
 	-- 'vimwiki/vimwiki';						-- Personal documentation
 	{ 'metalelf0/nvim-floatedit', opt = true };	-- Edit a file in floating window
 	{'tpope/vim-commentary', opt=true};			-- Commentaries
@@ -69,13 +70,62 @@ mapx.nnoremap('<leader>gc', ':Git commit<CR>')
 mapx.nnoremap('<leader>gd', ':Gdiffsplit<CR>')
 mapx.nnoremap('<leader>gb', ':Git checkout ')
 mapx.nnoremap('<leader>gm', ':Git merge')
-mapx.nnoremap('<leader>gp', ':!git push<CR>')
+mapx.nnoremap('<leader>gp', ':Git push<CR>')
 
 -- Taboo
 mapx.nnoremap('<Leader>tr', ':TabooRename ')
 
 -- Gutentags
 vim.g.gutentags_cache_dir = '~/.config/gutentags_cache_dir/'
+
+-- Lualine
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'everforest',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+    globalstatus = false,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diagnostics'},
+	lualine_c = {
+		{
+			'filename',
+			path = 1,
+			file_status = true,
+			symbols = {
+				modified = ' ',
+				readonly = ' ',
+				unnamed = '[No Name]',
+			}
+		}
+	},
+    lualine_x = {{'filetype', colored = true, icon_only = false}},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {
+	  lualine_a = {{'tabs', mode=2}},
+	  lualine_b = {},
+	  lualine_c = {},
+	  lualine_x = {},
+	  lualine_y = {'filename'},
+	  lualine_z = {'branch'}
+  },
+  extensions = {}
+}
 
 -- Float edits
 mapx.nnoremap('<leader>se', ':Fe ~/dotfiles/README.md<CR>')
