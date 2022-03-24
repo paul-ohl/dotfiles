@@ -10,6 +10,7 @@ if [ "$OS" = "LINUX" ]; then # Linux specific
 	alias ls='ls --color'
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
+	alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
 elif [ "$OS" = "OSX" ]; then # Macos specific
 	# autocompletion
 	if type brew &>/dev/null; then
