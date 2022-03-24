@@ -17,8 +17,12 @@ and `gnu stow *`!
 
 ### Nvim
 
-[Netrw](https://neovim.io/doc/user/pi_netrw.html) or I'd like to browse custom
-directories easily.
+Finish OpenDirectoryInTab, tab renaming
+
+browse custom directories easily, improve on OpenDirectoryInTab -> create custom
+pickers easily in Telescope
+
+look into :h terminal-debug, or find a plugin that could do something similar
 
 Edit a file from the terminal inside vim.
 

@@ -84,3 +84,12 @@ function! EditFileUnderCursor()
 	" echo l:wordUnderCursor
 	execute 'vsplit ' . l:wordUnderCursor
 endfunction
+
+" Open a chosen directory in a new tab and open telescope there
+function! OpenDirectoryInTab(chosen_directory)
+" mapx.nnoremap('<Leader>tv', ':$tabnew<CR>:lcd ' .. vim.fn.stdpath('config') .. '<CR>:TabooRename im config<CR>:Telescope find_files<CR>')
+	execute '$tabnew'
+	execute 'lcd ' .. a:chosen_directory
+	" Rename tab with lualine
+	execute 'Telescope find_files'
+endfunction
