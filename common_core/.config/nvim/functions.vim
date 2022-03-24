@@ -3,7 +3,7 @@ function! MkClassCPP()
 	let l:filename = expand("%:t:r")
 	execute 'read ~/.config/nvim/templates/orthodox_class.hpp'
 	execute '%s/\[ClassName\]/' . l:filename . '/g'
-	execute 'FortyTwoHeader'
+	" execute 'FortyTwoHeader'
 	execute 'let @a=expand("%:t")'
 	execute "normal! gg/\\v\\[CLASS_NAME\\]\<CR>D\"apgUiWf.r_\"ayiWnD\"ap"
 	execute 'vnew | read ~/.config/nvim/templates/orthodox_class.cpp'
@@ -18,8 +18,8 @@ function! MkClassCPP()
 		let l:save_location = l:save_location . l:filename . '.cpp'
 	endif
 	execute 'write ' . l:save_location
-	execute 'FortyTwoHeader'
-	execute 'wall | NERDTreeRefreshRoot'
+	" execute 'FortyTwoHeader'
+	execute 'wall'
 endfunction
 
 " turns off scolloff if entering a terminal window, turns it back on in any
@@ -76,4 +76,11 @@ function! WriteLs(chosen_directory)
 			let l:offset = l:offset + 1
 		endif
 	endfor
+endfunction
+
+" Open a file which name is the current word
+function! EditFileUnderCursor()
+	let l:wordUnderCursor = expand("<cfile>")
+	" echo l:wordUnderCursor
+	execute 'vsplit ' . l:wordUnderCursor
 endfunction

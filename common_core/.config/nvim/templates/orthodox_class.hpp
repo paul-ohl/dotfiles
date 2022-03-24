@@ -12,7 +12,7 @@ public:
 	[ClassName]( const [ClassName] &src );
 	~[ClassName]( void );
 
-	[ClassName]	&operator=( const [ClassName] &rhs );
+	[ClassName]	&operator=( const [ClassName] &src );
 
 	static bool	verbose;
 

@@ -4,11 +4,12 @@ export PATH="$HOME/.brew/bin:/usr/local/sbin:$PATH:$HOME/.config/custom_scripts/
 # OS specific actions
 OS=`getos`
 if [ "$OS" = "LINUX" ]; then # Linux specific
-	setxkbmap -option caps:escape > /dev/null
+	# setxkbmap -option caps:escape > /dev/null
 
 	# cool aliases
-	alias getssh='cat ~/.ssh/id_rsa.pub | xclip -selection clipboard && echo "public ssh key copied"'
 	alias ls='ls --color'
+	alias pbcopy='xclip -selection clipboard'
+	alias pbpaste='xclip -selection clipboard -o'
 elif [ "$OS" = "OSX" ]; then # Macos specific
 	# autocompletion
 	if type brew &>/dev/null; then
@@ -17,8 +18,7 @@ elif [ "$OS" = "OSX" ]; then # Macos specific
 		compinit
 	fi
 
-	# cool alias
-	alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
+	# cool aliases
 	alias parle='say -v Thomas'
 fi
 
@@ -44,6 +44,7 @@ alias vi='/usr/bin/vim'
 alias norm='norminette . | grep -v OK'
 alias la='ls -la'
 alias l='ls -l'
+alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 
 # Makefile aliases
 # alias make='make -j -Otarget'

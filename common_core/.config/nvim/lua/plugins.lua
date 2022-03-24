@@ -1,13 +1,12 @@
--- 
+--
 --     ::::::::   ::::::  :::   ::: :::
 --    :+:   :+: :+:  :+: :+:   :+: :+:  Paul OHL
 --   +#++++#+  +#+  +:+ +#++:+#++ +#+
 --  #+#       #+#  #+# #+#   #+# #+#
 -- ###        ######  ###   ### #######
--- 
--- Created: 2021/12/12 18:36:01
--- Description: Contains all the configuration for plugins and plugin manager
--- 
+--
+-- Created: 2022/03/17 16:38:53
+--
 
 require 'paq' {
 	'savq/paq-nvim';				-- Let Paq manage itself
@@ -21,6 +20,7 @@ require 'paq' {
 	'ludovicchabant/vim-gutentags';	-- Tag generation
 	'itchyny/lightline.vim';		-- Status line
 	-- 'vimwiki/vimwiki';				-- Personal documentation
+	'metalelf0/nvim-floatedit';		-- Edit a file in floating window
 
 	-- Telescope
 	'nvim-lua/popup.nvim';
@@ -36,8 +36,18 @@ require 'paq' {
 	'psliwka/vim-smoothie';			-- Smooth scrolling
 }
 
+if PaqBootstrap then
+	-- Read and install packages
+	require('paq').install()
+	-- vim.api.nvim_command('let @a = 0')
+	-- vim.cmd('autocmd User PaqDoneInstall do something')
+	-- print (">>>>>>>>>>> " .. test)
+	-- while vim.api.nvim_eval('isPaqInstallFinished') == 0 do
+	-- end
+end
+
 -- MapX
-local mapx = require'mapx'
+local mapx = require 'mapx'
 
 -- 42 Header
 mapx.nnoremap('<Leader>42', ':Stdheader<CR>')
@@ -68,6 +78,9 @@ mapx.nnoremap('<Leader>tr', ':TabooRename ')
 
 -- Gutentags
 vim.g.gutentags_cache_dir = '~/.config/gutentags_cache_dir/'
+
+-- Float edits
+mapx.nnoremap('<leader>se', ':Fe ~/dotfiles/README.md<CR>')
 
 -- VimWiki
 -- vim.cmd ('source ' .. vim.fn.stdpath('config') .. '/lua/plugin_config/vimwiki.vim')

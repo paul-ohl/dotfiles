@@ -22,7 +22,7 @@
 	return;
 }
 
-[ClassName] &	[ClassName]::operator=( [ClassName] const & rhs )
+[ClassName] &	[ClassName]::operator=( [ClassName] const & src )
 {
 	if ([ClassName]::verbose)
 		std::cout << "Assignement operator for [ClassName] called" << std::endl;

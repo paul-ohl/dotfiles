@@ -27,13 +27,16 @@ require('telescope').setup{
 			{
 				"Functions",
 				-- { "If you need to end up in insert mode", "Add a 1 after", 1 },
-				{ "Make cpp class", ":call MkClassCPP()" },
 				{ "Toggle ScrollOff", ":call ToggleScrollOff()" },
 				{ "Update", ":call Updatr()" },
 				{ "Write compile_commands (bear)", ":call Bear()" },
 				{ "Write ls to buffer", ":call WriteLs('')" },
 				{ "Write srcs to buffer", ":call WriteLs('srcs')"},
 				{ "change _ptr to _pointer", ":%s/_ptr/_pointer/g"},
+				{ "Switch to corresponding file", ":lua require('functions').editSibling()" }
+			}, {
+				"Templates",
+				{ "Make cpp class", ":call MkClassCPP()" },
 			}, {
 				"Vim",
 				{ "source vimrc", ":source $MYVIMRC" },

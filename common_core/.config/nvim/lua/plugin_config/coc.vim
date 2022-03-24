@@ -1,5 +1,5 @@
 " Extensions to install
-let g:coc_global_extensions = ['coc-snippets', 'coc-json', 'coc-git', 'coc-clangd', 'coc-sh']
+let g:coc_global_extensions = ['coc-snippets', 'coc-json', 'coc-git', 'coc-clangd', 'coc-sh', 'coc-sumneko-lua']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -38,3 +38,4 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 nnoremap <silent> <Leader>ce :CocList extensions<CR>
+nnoremap <silent> <Leader>cr :CocRestart<CR>

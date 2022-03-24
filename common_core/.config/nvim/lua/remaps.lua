@@ -7,6 +7,7 @@ mapx.nnoremap('<Leader>u', ':call Updatr()<CR>')
 
 -- Buffer Editing
 mapx.nnoremap('<Leader>w', ':w<CR>')
+mapx.nnoremap('<Leader><Leader>w', ':wa<CR>')
 mapx.nnoremap('<Leader>q', ':q<CR>')
 mapx.nnoremap('<Leader><Leader>q', ':qa<CR>')
 mapx.nnoremap('<Leader><Tab>', '<C-^>')
@@ -62,8 +63,6 @@ mapx.nnoremap('<Leader><Leader>n', ':write<CR>:cexpr system(\'norvimette .\')<CR
 mapx.nnoremap('<Leader>r', ':set invrelativenumber<CR>')
 mapx.nnoremap('Y', 'y$')
 mapx.nnoremap('H', 'za')
-mapx.nnoremap('j', 'gj')
-mapx.nnoremap('k', 'gk')
 mapx.nnoremap('<BS>', 'cc<Esc>')
 mapx.vnoremap('J', ':m \'>+1<CR>gv=gv')
 mapx.vnoremap('K', ':m \'<-2<CR>gv=gv')
