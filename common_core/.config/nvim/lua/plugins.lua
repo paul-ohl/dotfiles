@@ -9,18 +9,19 @@
 --
 
 require 'paq' {
-	'savq/paq-nvim';				-- Let Paq manage itself
-	'b0o/mapx.nvim';				-- Mapping management made easier
-	'pbondoer/vim-42header';		-- Header generator for 42
-	'popohl/vim-pohl-header';		-- My personal header generator
-	'gruvbox-community/gruvbox';	-- Gruvbox, my favorite colorscheme
-	'kyazdani42/nvim-tree.lua';		-- File tree
-	'tpope/vim-fugitive';			-- Git client straight inside Vim
-	'gcmt/taboo.vim';				-- Tab renaming
-	'ludovicchabant/vim-gutentags';	-- Tag generation
-	'itchyny/lightline.vim';		-- Status line
-	-- 'vimwiki/vimwiki';				-- Personal documentation
-	'metalelf0/nvim-floatedit';		-- Edit a file in floating window
+	'savq/paq-nvim';							-- Let Paq manage itself
+	'b0o/mapx.nvim';							-- Mapping management made easier
+	{ 'pbondoer/vim-42header', opt = true };	-- Header generator for 42
+	{ 'popohl/vim-pohl-header', opt = true };	-- My personal header generator
+	'gruvbox-community/gruvbox';				-- Gruvbox
+	'kyazdani42/nvim-tree.lua';					-- File tree
+	{ 'tpope/vim-fugitive', opt = true };		-- Git client straight inside Vim
+	'ludovicchabant/vim-gutentags';				-- Tag generation
+	'itchyny/lightline.vim';					-- Status line
+	-- 'vimwiki/vimwiki';						-- Personal documentation
+	{ 'metalelf0/nvim-floatedit', opt = true };	-- Edit a file in floating window
+	{'tpope/vim-commentary', opt=true};			-- Commentaries
+	'psliwka/vim-smoothie';						-- Smooth scrolling
 
 	-- Telescope
 	'nvim-lua/popup.nvim';
@@ -30,10 +31,7 @@ require 'paq' {
 
 	-- Conquer of Completion
 	{'neoclide/coc.nvim', branch='release'};
-	'honza/vim-snippets';			-- snippets for Coc
-
-	'tpope/vim-commentary';			-- Commentaries
-	'psliwka/vim-smoothie';			-- Smooth scrolling
+	-- 'honza/vim-snippets';			-- snippets for Coc
 }
 
 if PaqBootstrap then
