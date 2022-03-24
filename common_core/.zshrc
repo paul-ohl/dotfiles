@@ -54,7 +54,7 @@ alias mf='make fclean'
 
 # quick folders
 # eval $(awk '{print "alias " $1 "=\"cd " $2 " && ls\" "}' $HOME/.config/custom_scripts/folders.cfg | tr "\"" "'")
-eval "alias" $(jq -r ".folders | map(.shortcut + \"='cd \" + .path + \" && ls'\")" ./config.tpl.json | tr -d '"[],')
+eval "alias" $(jq -r ".folders | map(.shortcut + \"='cd \" + .path + \" && ls'\")" ~/dotfiles/config.tpl.json | tr -d '"[],')
 
 # git aliases
 alias gs='git status'
