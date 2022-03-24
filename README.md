@@ -29,6 +29,8 @@ know your battery: `/sys/class/power_supply/BAT0/capacity`
 
 Replace tab rename plugin with lualine
 
+Lazy loading in paq
+
 create a 'window movement mode': hjkl to select windows, HJKL to move windows,
 -=<> to increase/decrease width/height
 
