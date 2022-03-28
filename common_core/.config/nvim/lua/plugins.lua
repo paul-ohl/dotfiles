@@ -72,10 +72,6 @@ mapx.nnoremap('<leader>gp', ':Git! push<CR>')
 mapx.nnoremap('<leader>gh', ':diffget //2<CR>')
 mapx.nnoremap('<leader>gl', ':diffget //3<CR>')
 
-
--- Taboo
-mapx.nnoremap('<Leader>tr', ':TabooRename ')
-
 -- Gutentags
 vim.g.gutentags_cache_dir = '~/.config/gutentags_cache_dir/'
 
@@ -127,6 +123,7 @@ require('lualine').setup {
   },
   extensions = {}
 }
+mapx.nnoremap('<Leader>tr', ':LualineRenameTab ')
 
 -- Float edits
 mapx.nnoremap('<leader>se', ':Fe ~/dotfiles/README.md<CR>')

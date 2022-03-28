@@ -36,8 +36,8 @@ mapx.nnoremap('<Leader>te', '<C-w>T')
 mapx.nnoremap('<Leader>t<', ':tabmove -<CR>')
 mapx.nnoremap('<Leader>t>', ':tabmove +<CR>')
 mapx.nnoremap('<Leader>t0', ':tabmove 0<CR>')
-mapx.nnoremap('<Leader>tv', ':$tabnew<CR>:lcd ' .. vim.fn.stdpath('config') .. '<CR>:TabooRename im config<CR>:Telescope find_files<CR>')
-mapx.nnoremap('<Leader>tt', ':tabnew +terminal<CR>:wincmd v<CR>:terminal<CR>:TabooRename  terms<CR><C-\\><C-N>:wincmd h<CR>')
+mapx.nnoremap('<Leader>tv', ':$tabnew<CR>:lcd ' .. vim.fn.stdpath('config') .. '<CR>:LualineRenameTab im config<CR>:Telescope find_files<CR>')
+mapx.nnoremap('<Leader>tt', ':tabnew +terminal<CR>:wincmd v<CR>:terminal<CR>:LualineRenameTab  terms<CR><C-\\><C-N>:wincmd h<CR>')
 
 -- Terminals
 mapx.nnoremap('<Leader>th', ':wincmd v <CR> :wincmd h <CR>:terminal<CR>')
@@ -57,7 +57,7 @@ mapx.nnoremap('[[', '<C-t>zz')
 mapx.nnoremap('<Leader>;', ':cnext<CR>')
 mapx.nnoremap('<Leader>,', ':cprevious<CR>')
 mapx.nnoremap('<Leader>n', ':write<CR>:cexpr system(\'norvimette \' . shellescape(expand(\'%\')))<CR>') -- Requires the norvimette script
-mapx.nnoremap('<Leader><Leader>n', ':write<CR>:cexpr system(\'norvimette .\')<CR>') -- Requires the norvimette script 
+mapx.nnoremap('<Leader><Leader>n', ':write<CR>:cexpr system(\'norvimette .\')<CR>') -- Requires the norvimette script
 
 -- Useful editing stuff
 mapx.nnoremap('<Leader>r', ':set invrelativenumber<CR>')

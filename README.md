@@ -15,6 +15,8 @@ and `gnu stow *`!
 
 ## Even more general
 
+is json better than plain text interpretation with awk?
+
 Something to manage my favorite packages, updates and all, it's annoying
 to have to install everything everytime I have an issue at 42, plus I want to
 reset my mac. It will have to manage:
@@ -27,16 +29,10 @@ know your battery: `/sys/class/power_supply/BAT0/capacity`
 
 ### Nvim
 
-Finish OpenDirectoryInTab, tab renaming
-
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 
 look into :h terminal-debug, or find a plugin that could do something similar
-
-Replace tab rename plugin with lualine
-
-Lazy loading in paq
 
 create a 'window movement mode': hjkl to select windows, HJKL to move windows,
 -=<> to increase/decrease width/height
@@ -46,15 +42,6 @@ Finish bootstrapping, everything must load on startup
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
 
 Edit a file from the terminal inside vim.
-
-*help*:
-
-```vimscript
-:let $IN_NEOVIM = "yes"
-:terminal
-$ env | grep NEOVIM
-IN_NEOVIM=yes
-```
 
 ### Custom Scripts
 
