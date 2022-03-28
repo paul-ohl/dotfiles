@@ -10,6 +10,7 @@ if [ "$OS" = "LINUX" ]; then # Linux specific
 	alias ls='ls --color'
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
+	alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
 elif [ "$OS" = "OSX" ]; then # Macos specific
 	# autocompletion
 	if type brew &>/dev/null; then
@@ -53,7 +54,8 @@ alias mdb='make debug'
 alias mf='make fclean'
 
 # quick folders
-eval $(awk '{print "alias " $1 "=\"cd " $2 " && ls\" "}' $HOME/.config/custom_scripts/folders.cfg | tr "\"" "'")
+# eval $(awk '{print "alias " $1 "=\"cd " $2 " && ls\" "}' $HOME/.config/custom_scripts/folders.cfg | tr "\"" "'")
+eval "alias" $(jq -r ".folders | map(.shortcut + \"='cd \" + .path + \" && ls'\")" ~/dotfiles/config.tpl.json | tr -d '"[],')
 
 # git aliases
 alias gs='git status'
@@ -65,15 +67,9 @@ alias gp='git push'
 # zsh syntax highlighting
 source ~/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# auto install vim plug if necessary
-if ! [ -e "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim" ]; then
-	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-fi
-
 export LC_ALL=C
 export EDITOR=nvim
-export MAIL="pohl@student.42.fr"
+export MAIL="paul.lv.ohl@gmail.com"
 export CFGNVIM="$HOME/.config/nvim/init.vim"
 
 # Load Homebrew config script

@@ -27,6 +27,13 @@ know your battery: `/sys/class/power_supply/BAT0/capacity`
 
 ### Nvim
 
+Finish OpenDirectoryInTab, tab renaming
+
+browse custom directories easily, improve on OpenDirectoryInTab -> create custom
+pickers easily in Telescope
+
+look into :h terminal-debug, or find a plugin that could do something similar
+
 Replace tab rename plugin with lualine
 
 Lazy loading in paq
@@ -37,9 +44,6 @@ create a 'window movement mode': hjkl to select windows, HJKL to move windows,
 Finish bootstrapping, everything must load on startup
 
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
-
-[Netrw](https://neovim.io/doc/user/pi_netrw.html) or I'd like to browse custom
-directories easily.
 
 Edit a file from the terminal inside vim.
 
