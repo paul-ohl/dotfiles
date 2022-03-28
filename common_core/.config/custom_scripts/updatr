@@ -1,6 +1,32 @@
 #!/bin/sh
-# Date: 2021/09/16
-# Description: updates brew, if not installed, installs it along with the programs I usually use
+#     ::::::::   ::::::  :::   ::: :::
+#    :+:   :+: :+:  :+: :+:   :+: :+:  Paul OHL
+#   +#++++#+  +#+  +:+ +#++:+#++ +#+
+#  #+#       #+#  #+# #+#   #+# #+#
+# ###        ######  ###   ### #######
+#
+# Created: 2022/03/28 12:36:04
+# Description: updates or installs the programs I usually use
+#
 
+failure_exit() {
+	echo "Failure, exiting"
+	exit 1
+}
+
+update_zsh_syntax_highlighting() {
+	echo "zsh_syntax_highlighting"
+	zsh_directory="$HOME/.config/zsh-syntax-highlighting/"
+	if ! [ -e "$zsh_directory/zsh-syntax-highlighting.zsh" ]; then
+		git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/zsh-users/zsh-syntax-highlighting.git "$zsh_directory"
+	else
+		cd "$zsh_directory" || return 1
+		git pull
+		cd - > /dev/null || return 1
+	fi
+	return 0
+}
+
+update_zsh_syntax_highlighting || failure_exit
 brew update && brew upgrade && brew upgrade --cask && brew cleanup
 nvim -c 'call Updatr()|qa'

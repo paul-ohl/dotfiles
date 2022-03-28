@@ -69,10 +69,11 @@ mapx.nnoremap('<Leader>f', ':NvimTreeToggle<CR>')
 -- Vim Fugitive
 mapx.nnoremap('<leader>gs', ':Git<CR>')
 mapx.nnoremap('<leader>gc', ':Git commit<CR>')
-mapx.nnoremap('<leader>gd', ':Gdiffsplit<CR>')
-mapx.nnoremap('<leader>gb', ':Git checkout ')
-mapx.nnoremap('<leader>gm', ':Git merge')
-mapx.nnoremap('<leader>gp', ':Git push<CR>')
+mapx.nnoremap('<leader>gp', ':Git! push<CR>')
+-- mapx.nnoremap('<leader>gb', ':Telescope git_branches<CR>')
+mapx.nnoremap('<leader>gh', ':diffget //2<CR>')
+mapx.nnoremap('<leader>gl', ':diffget //3<CR>')
+
 
 -- Taboo
 mapx.nnoremap('<Leader>tr', ':TabooRename ')
