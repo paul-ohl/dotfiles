@@ -2,15 +2,11 @@
 
 [ClassName]::[ClassName]( void )
 {
-	if ([ClassName]::verbose)
-		std::cout << "Default constructor for [ClassName] called" << std::endl;
 	return;
 }
 
 [ClassName]::[ClassName]( [ClassName] const & src )
 {
-	if ([ClassName]::verbose)
-		std::cout << "Copy constructor for [ClassName] called" << std::endl;
 	*this = src;
 	return;
 }
@@ -28,7 +24,7 @@
 		std::cout << "Assignement operator for [ClassName] called" << std::endl;
 	if (this == &src)
 		return *this;
-
+	error here! // This line is just here to remind you to modify this function
 	return *this;
 }
 

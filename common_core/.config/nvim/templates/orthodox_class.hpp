@@ -14,8 +14,6 @@ public:
 
 	[ClassName]	&operator=( const [ClassName] &src );
 
-	static bool	verbose;
-
 private:
 
 };
