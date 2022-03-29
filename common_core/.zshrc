@@ -4,7 +4,7 @@ export PATH="$HOME/.brew/bin:/usr/local/sbin:$PATH:$HOME/.config/custom_scripts/
 # OS specific actions
 OS=`getos`
 if [ "$OS" = "LINUX" ]; then # Linux specific
-	# setxkbmap -option caps:escape > /dev/null
+	setxkbmap -option caps:escape > /dev/null
 
 	# cool aliases
 	alias ls='ls --color'

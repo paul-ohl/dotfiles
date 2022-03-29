@@ -15,27 +15,36 @@ and `gnu stow *`!
 
 ## Even more general
 
-is json better than plain text interpretation with awk?
-
 Something to manage my favorite packages, updates and all, it's annoying
 to have to install everything everytime I have an issue at 42, plus I want to
 reset my mac. It will have to manage:
 	- packages from brew (macos and 42 computers) or pacman (arch)
 	- plugins for vim
+	- nerd fonts!
+
+It needs to have minimal dependencies, as little as possible.
+
+I will have to make a front end for vim, I'm sure it's going to be tons of fun.
+
+notify when not used for over a week
 
 ### General Linux
+
+Go back to awk for folders, but find a more elegant way of doing it, folder.cfg
+is trash.
 
 know your battery: `/sys/class/power_supply/BAT0/capacity`
 
 ### Nvim
 
+create a 'window movement mode': hjkl to select windows, HJKL to move windows,
+-=<> to increase/decrease width/height.
+[window sub-mode](https://ddrscott.github.io/blog/2016/making-a-window-submode/)
+
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 
 look into :h terminal-debug, or find a plugin that could do something similar
-
-create a 'window movement mode': hjkl to select windows, HJKL to move windows,
--=<> to increase/decrease width/height
 
 Finish bootstrapping, everything must load on startup
 
