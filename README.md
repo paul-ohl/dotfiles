@@ -45,10 +45,6 @@ General configuration, check the bindings.
 
 ### Nvim
 
-create a 'window movement mode': hjkl to select windows, HJKL to move windows,
--=<> to increase/decrease width/height.
-[window sub-mode](https://ddrscott.github.io/blog/2016/making-a-window-submode/)
-
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 
@@ -57,8 +53,6 @@ look into :h terminal-debug, or find a plugin that could do something similar
 Finish bootstrapping, everything must load on startup
 
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
-
-Edit a file from the terminal inside vim.
 
 ### Custom Scripts
 
