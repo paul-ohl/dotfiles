@@ -30,7 +30,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 1
+myBorderWidth   = 2
 
 -- mod1Mask ("left alt"), mod3Mask ("right alt"), mod4Mask ("windows key").
 myModMask       = mod1Mask

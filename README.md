@@ -33,7 +33,15 @@ notify when not used for over a week
 Go back to awk for folders, but find a more elegant way of doing it, folder.cfg
 is trash.
 
-know your battery: `/sys/class/power_supply/BAT0/capacity`
+find how to have default apps for stuff like pdf, images, etc.
+
+configure zathura using Luke's config
+
+### Alacritty
+
+[make it swallow](https://www.youtube.com/watch?v=mBNLzHcUtTo)
+
+General configuration, check the bindings.
 
 ### Nvim
 
