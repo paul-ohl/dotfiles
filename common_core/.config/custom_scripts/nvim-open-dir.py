@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Open a folder in the current vim instance"""
 from __future__ import print_function
 import os
