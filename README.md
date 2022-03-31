@@ -52,8 +52,6 @@ pickers easily in Telescope
 
 look into :h terminal-debug, or find a plugin that could do something similar
 
-Finish bootstrapping, everything must load on startup
-
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
 
 ### Custom Scripts
