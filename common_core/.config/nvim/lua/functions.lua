@@ -1,13 +1,13 @@
 -- updates my nvim package managers
-local function updatr()
-	vim.api.nvim_eval("vsplit __Updatr__")
-	vim.api.nvim_eval("normal! ggdG")
-	vim.api.nvim_eval("setlocal filetype=updatr")
-	vim.api.nvim_eval("setlocal buftype=nofile")
-	-- vim.call('PaqSync')
-	vim.fn['CocUpdateSync']()
-	-- vim.call('CocUpdateSync')
-end
+-- local function updatr()
+-- 	vim.api.nvim_eval("vsplit __Updatr__")
+-- 	vim.api.nvim_eval("normal! ggdG")
+-- 	vim.api.nvim_eval("setlocal filetype=updatr")
+-- 	vim.api.nvim_eval("setlocal buftype=nofile")
+-- 	-- vim.call('PaqSync')
+-- 	vim.fn['CocUpdateSync']()
+-- 	-- vim.call('CocUpdateSync')
+-- end
 
 local function editSibling()
 	local siblingFile
@@ -30,4 +30,31 @@ local function editSibling()
 	vim.api.nvim_command('edit ' .. siblingFile)
 end
 
-return { updatr = updatr, editSibling = editSibling }
+local function copyBuffer()
+	BufferClipboard = vim.api.nvim_get_current_buf()
+	print('Copied buffer (' .. BufferClipboard .. ')')
+end
+
+local function cutBuffer()
+	BufferClipboard = vim.api.nvim_get_current_buf()
+	print('Cut buffer (' .. BufferClipboard .. ')')
+	vim.api.nvim_win_close(0, false)
+end
+
+local function pasteBuffer()
+	-- print('Pasting buffer ' .. BufferClipboard)
+	if BufferClipboard == nil then
+		print('No buffer in clipboard')
+	else
+		print('Pasted buffer (' .. BufferClipboard .. ')')
+		vim.api.nvim_exec('sbuffer ' .. BufferClipboard, false)
+	end
+end
+
+return {
+	-- updatr = updatr,
+	editSibling = editSibling,
+	copyBuffer = copyBuffer,
+	cutBuffer = cutBuffer,
+	pasteBuffer = pasteBuffer,
+}
