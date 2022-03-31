@@ -1,5 +1,5 @@
 # Path stuff...
-export PATH="$HOME/.brew/bin:/usr/local/sbin:$PATH:$HOME/.config/custom_scripts/:$HOME/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/"
+export PATH="$HOME/.brew/bin:/usr/local/sbin:$PATH:$HOME/.config/custom_scripts/:$HOME/.local/bin/:$HOME/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/"
 
 # OS specific actions
 OS=`getos`
@@ -65,8 +65,15 @@ alias gc='git commit'
 alias gcl='git clone'
 alias gp='git push'
 
+# Swallowing aliases
+if [ -e "$HOME/.local/bin/devour" ]; then
+	alias sxiv='devour sxiv'
+	alias zathura='devour zathura'
+	alias firefox='devour firefox'
+fi
+
 # zsh syntax highlighting
-source ~/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.local/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export LC_ALL=C
 export EDITOR=nvim
