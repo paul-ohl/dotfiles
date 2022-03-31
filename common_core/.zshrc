@@ -41,6 +41,7 @@ PS1="%1~ > "
 # Cool aliases
 alias so='source $HOME/.zshrc'
 alias vim='nvim-term-edit.py'
+alias vd='nvim-open-dir.py'
 alias vi='/usr/bin/vim'
 alias norm='norminette . | grep -v OK'
 alias la='ls -la'

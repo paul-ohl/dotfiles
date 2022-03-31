@@ -6,7 +6,7 @@ import sys
 
 from neovim import attach
 
-args = sys.argv[1:]
+args = [sys.argv[1]]
 if args:
     args = [os.path.abspath(f) for f in args]
 

@@ -45,8 +45,6 @@ General configuration, check the bindings.
 
 ### Nvim
 
-cd into directory from the terminal the same way you can edit a file
-
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 

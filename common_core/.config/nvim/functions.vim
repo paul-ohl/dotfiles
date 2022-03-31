@@ -90,6 +90,6 @@ function! OpenDirectoryInTab(chosen_directory)
 	execute '$tabnew'
 	execute 'lcd ' .. a:chosen_directory
 	" Rename tab with lualine
-	execute 'LualineRenameTab ' .. a:chosen_directory
+	" execute 'LualineRenameTab ' .. expand("%:t:r")
 	execute 'Telescope find_files'
 endfunction
