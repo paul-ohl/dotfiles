@@ -43,6 +43,8 @@ configure zathura using Luke's config
 
 hide cursor when typing
 
+Software shortcuts: w for qutebrowser, p for keepass
+
 ### Alacritty
 
 [make it swallow](https://www.youtube.com/watch?v=mBNLzHcUtTo)

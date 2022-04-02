@@ -1,0 +1,19 @@
+set sandbox none
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+set selection-clipboard clipboard
+set font 'monospace normal 12'
+# set completion-fg '#6043FF'
+set recolor true
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map J zoom in
+map K zoom out
+map <C-j> navigate next
+map <C-k> navigate previous
+map n recolor
+map p print

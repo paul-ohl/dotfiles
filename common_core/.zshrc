@@ -10,6 +10,7 @@ if [ "$OS" = "LINUX" ]; then # Linux specific
 	alias ls='ls --color'
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
+	alias open='xdg-open'
 	alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
 elif [ "$OS" = "OSX" ]; then # Macos specific
 	# autocompletion
@@ -70,6 +71,7 @@ if [ -e "$HOME/.local/bin/devour" ]; then
 	alias sxiv='devour sxiv'
 	alias zathura='devour zathura'
 	alias firefox='devour firefox'
+	alias xdg-open='devour xdg-open'
 fi
 
 # zsh syntax highlighting
