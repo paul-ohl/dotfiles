@@ -33,9 +33,15 @@ notify when not used for over a week
 Go back to awk for folders, but find a more elegant way of doing it, folder.cfg
 is trash.
 
+move custom scripts to .local/scripts
+
 find how to have default apps for stuff like pdf, images, etc.
 
 configure zathura using Luke's config
+
+### Xmonad
+
+hide cursor when typing
 
 ### Alacritty
 
