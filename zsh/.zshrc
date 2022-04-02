@@ -1,5 +1,5 @@
 # Path stuff...
-export PATH="$HOME/.brew/bin:/usr/local/sbin:$PATH:$HOME/.config/custom_scripts/:$HOME/.local/bin/:$HOME/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/"
+export PATH="$HOME/.brew/bin:/usr/local/sbin:$PATH:$HOME/.local/scripts/:$HOME/.local/bin/:$HOME/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/"
 
 # OS specific actions
 OS=`getos`
@@ -56,8 +56,10 @@ alias mdb='make debug'
 alias mf='make fclean'
 
 # quick folders
-# eval $(awk '{print "alias " $1 "=\"cd " $2 " && ls\" "}' $HOME/.config/custom_scripts/folders.cfg | tr "\"" "'")
-eval "alias" $(jq -r ".folders | map(.shortcut + \"='cd \" + .path + \" && ls'\")" ~/dotfiles/config.tpl.json | tr -d '"[],')
+eval "alias $(grep -v "^#" $HOME/.config/yass/foldersrc \
+		| awk '{print $1 "=\"cd " $2 " && ls\" "}' \
+		| tr "\"\n" "' ")"
+# eval "alias" $(jq -r ".folders | map(.shortcut + \"='cd \" + .path + \" && ls'\")" ~/dotfiles/config.tpl.json | tr -d '"[],')
 
 # git aliases
 alias gs='git status'
@@ -81,6 +83,7 @@ export LC_ALL=C
 export EDITOR=nvim
 export MAIL="paul.lv.ohl@gmail.com"
 export CFGNVIM="$HOME/.config/nvim/init.vim"
+export LESSHISTFILE='-' # Less doesn't save history
 
 # Load Homebrew config script
 if [ -e "$HOME/.brewconfig.zsh" ]; then

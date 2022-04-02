@@ -28,21 +28,6 @@ update_zsh_syntax_highlighting() {
 	return 0
 }
 
-update_devour() {
-	echo "devour"
-	devour_directory="$HOME/.local/git/devour"
-	mkdir -p "$devour_directory"
-	if ! [ -e "$devour_directory/devour-syntax-highlighting.devour" ]; then
-		git clone --depth 1 --recurse-submodules --shallow-submodules "https://github.com/salman-abedin/devour" "$devour_directory"
-	else
-		cd "$devour_directory" || return 1
-		git pull
-		cd - > /dev/null || return 1
-	fi
-	return 0
-}
-
 update_zsh_syntax_highlighting || failure_exit
-update_devour || failure_exit
 brew update && brew upgrade && brew upgrade --cask && brew cleanup
 nvim -c 'call Updatr()|qa'
