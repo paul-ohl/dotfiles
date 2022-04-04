@@ -12,6 +12,7 @@ if [ "$OS" = "LINUX" ]; then # Linux specific
 	alias pbpaste='xclip -selection clipboard -o'
 	alias open='xdg-open'
 	alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
+	alias wr='nmcli r wifi off && sleep 10 && nmcli r wifi on'
 elif [ "$OS" = "OSX" ]; then # Macos specific
 	# autocompletion
 	if type brew &>/dev/null; then

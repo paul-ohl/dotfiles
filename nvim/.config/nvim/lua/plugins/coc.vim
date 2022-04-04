@@ -39,3 +39,4 @@ nmap <silent> gr <Plug>(coc-references)
 
 nnoremap <silent> <Leader>ce :CocList extensions<CR>
 nnoremap <silent> <Leader>cr :CocRestart<CR>
+nnoremap <silent> <Leader>cd :CocDisable<CR>

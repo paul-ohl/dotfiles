@@ -23,6 +23,7 @@ require('paq') {
 	'metalelf0/nvim-floatedit';		-- Edit a file in floating window
 	'tpope/vim-commentary';			-- Commentaries
 	'psliwka/vim-smoothie';			-- Smooth scrolling
+	'chrisbra/csv.vim';				-- Edit csv files
 
 	-- Telescope
 	'nvim-lua/popup.nvim';

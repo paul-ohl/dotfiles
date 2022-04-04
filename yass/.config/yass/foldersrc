@@ -4,8 +4,8 @@ desk		~/Desktop/
 doc			~/Documents/
 dl			~/Downloads/
 dot			~/dotfiles/
-sc			~/dotfiles/common_core/.local/scripts/
-conf		~/dotfiles/common_core/.config/nvim/
+sc			~/dotfiles/custom_scripts/.local/scripts/
+conf		~/dotfiles/nvim/.config/nvim/
 one			~/OneDrive/
 kbd			~/OneDrive/documents/elec/qmk_firmware/keyboards/lily58/keymaps/lily58l
 zik			~/OneDrive/music/
