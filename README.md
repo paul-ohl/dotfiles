@@ -46,8 +46,6 @@ General configuration, check the bindings.
 
 ### Nvim
 
-undo close buffer
-
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 

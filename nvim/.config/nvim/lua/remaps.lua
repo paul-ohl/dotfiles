@@ -14,6 +14,7 @@ mapx.nnoremap('<Leader><Tab>', '<C-^>')
 mapx.nnoremap('<Leader>bc', ':lua require(\'functions\').copyBuffer()<CR>')
 mapx.nnoremap('<Leader>bx', ':lua require(\'functions\').cutBuffer()<CR>')
 mapx.nnoremap('<Leader>bp', ':lua require(\'functions\').pasteBuffer()<CR>')
+mapx.nnoremap('<Leader>bu', ':lua require(\'functions\').undoCloseBuffer()<CR>')
 
 -- Splits
 mapx.nnoremap('<Leader>h', '<C-w>h')

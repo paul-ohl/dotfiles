@@ -51,10 +51,15 @@ local function pasteBuffer()
 	end
 end
 
+local function undoCloseBuffer()
+  vim.api.nvim_exec('vsplit ' .. vim.api.nvim_get_var('lastWinName'), false)
+end
+
 return {
 	-- updatr = updatr,
 	editSibling = editSibling,
 	copyBuffer = copyBuffer,
 	cutBuffer = cutBuffer,
 	pasteBuffer = pasteBuffer,
+	undoCloseBuffer = undoCloseBuffer,
 }
