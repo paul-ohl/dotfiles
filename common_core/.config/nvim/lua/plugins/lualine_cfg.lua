@@ -49,9 +49,9 @@ require('lualine').setup {
 	  lualine_a = {{'tabs', mode=2}},
 	  lualine_b = {},
 	  lualine_c = {},
-	  lualine_x = {},
-	  lualine_y = {'filename'},
-	  lualine_z = {'branch'}
+	  lualine_x = {'filename'},
+	  lualine_y = {'branch'},
+	  lualine_z = {'os.date("%R | %a %d %b")'},
   },
   extensions = {}
 }
