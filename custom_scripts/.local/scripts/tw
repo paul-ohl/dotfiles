@@ -1,0 +1,9 @@
+#!/bin/sh
+# Date: 2022/04/02
+# Description: Tests if connected to the network
+
+# echo "Wifi: $(nmcli radio wifi)"
+nmcli device wifi rescan
+nmcli --colors yes --pretty device
+echo "Checking with a ping to archlinux.org:"
+ping -c 3 archlinux.org

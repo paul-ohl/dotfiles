@@ -47,7 +47,7 @@ endfunction
 function! Bear()
 	let l:is_makefile_present = system("if [ -f 'Makefile' ]; then echo 1; else echo 0; fi")
 	if l:is_makefile_present
-		execute 'silent !bear -- make'
+		execute 'silent !bear -- make re'
 	else
 		echo "No Makefile in cwd"
 	endif

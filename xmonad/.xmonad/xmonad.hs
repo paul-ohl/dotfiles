@@ -11,9 +11,13 @@
 import XMonad
 import Data.Monoid
 import System.Exit
+import XMonad.ManageHook
+import XMonad.Util.NamedScratchpad
+import XMonad.Util.SpawnOnce
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -51,6 +55,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch dmenu
     , ((modm              , xK_d     ), spawn "dmenu_run")
+
+    -- launch keepassxc
+    -- , ((modm .|. shiftMask, xK_p     ), namedScratchpadAction scratchpads "keepassxc")
+
+    -- launch htop
+    -- , ((modm .|. shiftMask, xK_t     ), namedScratchpadAction scratchpads "htop")
 
     -- close focused window
     , ((modm              , xK_q     ), kill)
@@ -180,6 +190,40 @@ myLayout = tiled ||| Full
      delta   = 3/100
 
 ------------------------------------------------------------------------
+-- Scratch Pads:
+
+-- myScratchPads :: [NamedScratchpad]
+-- myScratchPads =
+--     [ NS "terminal" spawnTerm findTerm manageTerm
+--     , NS "mocp" spawnMocp findMocp manageMocp
+--     , NS "calculator" spawnCalc findCalc manageCalc ]
+--   where
+--     spawnTerm  = myTerminal ++ " -t scratchpad"
+--     findTerm   = title =? "scratchpad"
+--     manageTerm = customFloating $ W.RationalRect l t w h
+--     where
+--     h = 0.9
+--     w = 0.9
+--     t = 0.95 -h
+--     l = 0.95 -w
+-- spawnMocp  = myTerminal ++ " -t mocp -e mocp"
+-- findMocp   = title =? "mocp"
+-- manageMocp = customFloating $ W.RationalRect l t w h
+-- where
+--     h = 0.9
+--     w = 0.9
+--     t = 0.95 -h
+--     l = 0.95 -w
+-- spawnCalc  = "qalculate-gtk"
+-- findCalc   = className =? "Qalculate-gtk"
+-- manageCalc = customFloating $ W.RationalRect l t w h
+-- where
+--     h = 0.5
+--     w = 0.4
+--     t = 0.75 -h
+--     l = 0.70 -w
+
+------------------------------------------------------------------------
 -- Window rules:
 
 -- Execute arbitrary actions and WindowSet manipulations when managing
@@ -227,7 +271,10 @@ myLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = do
+	spawnOnce "xbanish"
+	spawnOnce "picom"
+	spawnOnce "feh --randomize --bg-fill ~/imgs/*"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

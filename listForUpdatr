@@ -1,11 +1,26 @@
-sudo pacman -Syu
-sudo pacman -S nodejs neovim awesome acpi firefox alacritty shellcheck ctags fzf zsh git base-devel wget unzip man keepassxc dmenu pcmanfm xclip openssh picom network-manager-applet nitrogen llvm valgrind backlightctl pulseaudio pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack pamixer pavucontrol clang
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Mononoki.zip -q -O ~/Downloads/Mononoki.zip
-sudo mkdir -p /usr/local/share/fonts/Mononoki
-sudo unzip ~/Downloads/Mononoki.zip -d /usr/local/share/fonts/Mononoki
-rm -rf ~/Downloads/Mononoki.zip
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# sudo pacman -Syu
+# sudo pacman -S nodejs neovim awesome acpi firefox alacritty shellcheck ctags fzf zsh git base-devel wget unzip man keepassxc dmenu pcmanfm xclip openssh picom network-manager-applet nitrogen llvm valgrind backlightctl pulseaudio pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack pamixer pavucontrol clang
+# wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Mononoki.zip -q -O ~/Downloads/Mononoki.zip
+# sudo mkdir -p /usr/local/share/fonts/Mononoki
+# sudo unzip ~/Downloads/Mononoki.zip -d /usr/local/share/fonts/Mononoki
+# rm -rf ~/Downloads/Mononoki.zip
+# sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# Git setup
-git config --global user.email "pohl@student.42.fr"
-git config --global user.name "Paul OHL"
+# Set defaults
+# xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
+# xdg-mime default /usr/share/applications/org.pwmt.zathura.desktop application/pdf
+
+# Update Arch mirrors
+uaUpdateAll()
+{
+	TMPFILE="$(mktemp)"
+	sudo true
+	rate-mirrors --save=$TMPFILE arch --max-delay=21600
+	sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup
+	sudo mv $TMPFILE /etc/pacman.d/mirrorlist
+	sudo paccache -rk3
+	paru -Sc --aur --noconfirm
+	paru -Syyu --noconfirm
+}
+
+uaUpdateAll
