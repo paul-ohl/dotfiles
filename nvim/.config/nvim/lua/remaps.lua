@@ -72,6 +72,15 @@ mapx.vnoremap('J', ':m \'>+1<CR>gv=gv')
 mapx.vnoremap('K', ':m \'<-2<CR>gv=gv')
 mapx.vnoremap('$', 'g_')
 
+-- gdb remaps
+mapx.nnoremap('<Leader>dd', ':make | packadd termdebug | Termdebug<CR><C-w>L<C-w>h<C-w>H<C-w>l<C-w>lifile <Tab><Tab>')
+mapx.nnoremap('<Leader>dn', ':Over<CR>')
+mapx.nnoremap('<Leader>ds', ':Step<CR>')
+mapx.nnoremap('<Leader>dc', ':Continue<CR>')
+mapx.nnoremap('<Leader>db', ':Break<CR>')
+mapx.nnoremap('<Leader>du', ':Clear<CR>')
+mapx.nnoremap('<Leader>dr', ':Run<CR>')
+
 -- Mappings for lua files
 mapx.group('silent', { ft = 'lua' }, function()
 	mapx.nnoremap('<Leader><CR>', ':w | so %<CR>')

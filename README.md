@@ -49,7 +49,7 @@ General configuration, check the bindings.
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 
-look into :h terminal-debug, or find a plugin that could do something similar
+more convenient remaps for termdebug
 
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
 
