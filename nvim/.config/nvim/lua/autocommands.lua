@@ -9,6 +9,10 @@ au.group('Main', {
 		'BufWritePost',
 		'*.vim',
 		'source % | echo "Sourced!"',
+	}, { -- Save last closed window
+		'WinLeave',
+		'*',
+		'let g:lastWinName = @%',
 	}, { -- Auto-source lua config files
 		'BufWritePost',
 		'*.lua',
