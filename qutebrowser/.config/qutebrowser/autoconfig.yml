@@ -23,7 +23,7 @@ settings:
         x: tab-close
         yf: hint links yank
   colors.webpage.bg:
-    global: '#999966'
+    global: white
   completion.height:
     global: 30%
   confirm_quit:
@@ -67,4 +67,4 @@ settings:
       arch: https://wiki.archlinux.org/?search={}
       y: https://yandex.com/search/?text={}
   url.start_pages:
-    global: https://www.nasa.gov/multimedia/imagegallery/iotd.html
+    global: https://www.nasa.gov/mission_pages/hubble/multimedia/index.html

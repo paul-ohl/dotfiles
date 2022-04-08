@@ -40,6 +40,8 @@ Keepassxc as a scratchpad
 
 Software shortcuts: w for qutebrowser, p for keepass
 
+window gaps ffs
+
 ### Alacritty
 
 General configuration, check the bindings.
