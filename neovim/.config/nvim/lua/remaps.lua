@@ -4,6 +4,8 @@ local mapx = require'mapx'
 
 -- Various
 mapx.nnoremap('<Leader>u', ':call Updatr()<CR>')
+mapx.nnoremap('<CR>', '<CR>zz')
+mapx.nnoremap('-', '-zz')
 
 -- Buffer Editing
 mapx.nnoremap('<Leader>w', ':w<CR>')
@@ -67,7 +69,6 @@ mapx.nnoremap('<Leader><Leader>n', ':write<CR>:cexpr system(\'norvimette .\')<CR
 mapx.nnoremap('<Leader>r', ':set invrelativenumber<CR>')
 mapx.nnoremap('Y', 'y$')
 mapx.nnoremap('H', 'za')
-mapx.nnoremap('<BS>', 'cc<Esc>')
 mapx.vnoremap('J', ':m \'>+1<CR>gv=gv')
 mapx.vnoremap('K', ':m \'<-2<CR>gv=gv')
 mapx.vnoremap('$', 'g_')
