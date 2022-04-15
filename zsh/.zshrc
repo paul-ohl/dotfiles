@@ -57,10 +57,9 @@ alias mdb='make debug'
 alias mf='make fclean'
 
 # quick folders
-eval "alias $(grep -v "^#" $HOME/.config/yass/foldersrc \
+eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
 		| awk '{print $1 "=\"cd " $2 " && ls\" "}' \
 		| tr "\"\n" "' ")"
-# eval "alias" $(jq -r ".folders | map(.shortcut + \"='cd \" + .path + \" && ls'\")" ~/dotfiles/config.tpl.json | tr -d '"[],')
 
 # git aliases
 alias gs='git status'

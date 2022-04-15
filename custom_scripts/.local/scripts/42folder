@@ -2,7 +2,7 @@
 # Date: 2021/10/06
 # Description: Changes the folders.cfg's line for 42 faster
 
-folders_cfg_path="$HOME/.config/custom_scripts/folders.cfg"
+folders_cfg_path="$HOME/.config/zsh/foldersrc"
 
 arg="$1"
 relative_pwd=$(echo "$PWD" | sed "s|$HOME|~|")
