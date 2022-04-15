@@ -24,3 +24,9 @@ uaUpdateAll()
 }
 
 uaUpdateAll
+
+nvim python extension:
+python3 -m pip install --user --upgrade pynvim
+
+# For macos
+brew install homebrew/cask-fonts/font-mononoki-nerd-font

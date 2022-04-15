@@ -1,0 +1,50 @@
+{
+	"name": "Vimium C",
+	"@time": "15/04/2022, 11:01:44",
+	"time": 1650034904384,
+	"environment": {
+		"extension": "1.98.0",
+		"platform": "mac",
+		"chrome": "100"
+	},
+	"allBrowserUrls": true,
+	"autoDarkMode": 1,
+	"exclusionRules": [],
+	"grabBackFocus": true,
+	"ignoreCapsLock": 2,
+	"ignoreKeyboardLayout": 1,
+	"keyMappings": [
+		"#!no-check",
+		"map <c-p> togglePinTab",
+		"map ; passNextKey",
+		""
+	],
+	"linkHintCharacters": "asdfjklnowcei",
+	"searchEngines": [
+		"br|brave: https://search.brave.com/search?q=%s Brave",
+		"ya|yd: https://yandex.com/search/?text=%s Yandex",
+		"",
+		"m|gmaps|gm: https://www.google.com/maps?q=%s \\",
+		"  blank=https://www.google.com/maps Google Maps",
+		"w|wiki: https://www.wikipedia.org/w/index.php?search=%s Wikipedia",
+		"y|v:https://vid.puffyan.us/search?q=%s Invidious",
+		"",
+		"am|am.fr|amazon: https://www.amazon.fr/s?k=%s \\",
+		"  blank=https://www.amazon.fr/ Amazon",
+		"am.ca: https://www.amazon.ca/s?k=%s \\",
+		"  blank=https://www.amazon.ca/ Amazon",
+		"am.us|am.com: https://www.amazon.com/s?k=%s \\",
+		"  blank=https://www.amazon.com/ Amazon",
+		"am.uk|am.co.uk: https://www.amazon.co.uk/s?k=%s \\",
+		"  blank=https://www.amazon.co.uk/ Amazon",
+		"",
+		"\\:i: vimium://sed/s/^//,lower\\ $S re= Lower case",
+		"v.m|math: vimium://math\\ $S re= Calculate",
+		"v.p: vimium://parse\\ $S re= Redo Search",
+		"gh|github: https://github.com/search?q=$s \\",
+		"  blank=https://github.com/ GitHub Repo",
+		""
+	],
+	"searchUrl": "https://duckduckgo.com/?q=$s DuckDuckGo",
+	"vimSync": true
+}

@@ -86,6 +86,16 @@ export MAIL="paul.lv.ohl@gmail.com"
 export CFGNVIM="$HOME/.config/nvim/init.vim"
 export LESSHISTFILE='-' # Less doesn't save history
 
+# Setting locales, I know I shouldn't do it there
+LANG="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_MONETARY="fr_FR.UTF-8"
+LC_NUMERIC="fr_FR.UTF-8"
+LC_TIME="fr_FR.UTF-8"
+LC_ALL="en_US.UTF-8"
+
 # Load Homebrew config script
 if [ -e "$HOME/.brewconfig.zsh" ]; then
 	source $HOME/.brewconfig.zsh
