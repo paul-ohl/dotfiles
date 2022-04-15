@@ -69,36 +69,28 @@ install_installer () {
 select_software () {
 	program_list=''
 	index=0
-	for program in all */; do
+	for program in */; do
 		program=${program/\//}
-		status="off"
-		if [ "$program" = "neovim" ]; then status="on"; fi
-		if [ "$program" = "custom_scripts" ]; then status="on"; fi
-		if [ "$program" = "git" ]; then status="on"; fi
-		if [ "$program" = "zsh" ]; then status="on"; fi
+		status="on"
 		index=$((index + 1))
 		program_list="$program_list $program $index $status"
 	done
 	selected_software=$(dialog --checklist 'checklist' 20 70 50 \
 		$program_list \
 		3>&1 1>&2 2>&3 3>&1) || error "cancelled by user"
-	if echo "$selected_software" | grep "all" > /dev/null; then
-		selected_software="all"
-	fi
 	clear
 }
 
 stowicism() {
-	if ! [[ $(command -v stow) ]]; then
-		echo "stow is not installed, installing..."
-		install_package stow
-	fi
+	install_package stow
 	stow -D */
-	if [ "$selected_software" = "all" ]; then
-		stow */
-	else
-		stow $selected_software
-	fi
+	for program in "$selected_software"; do
+		case "$program" in
+			# TODO: Write your custom executions here!
+			"custom_scripts") mkdir "$HOME/.local/" ;;
+		esac
+		stow "$program"
+	done
 }
 
 install() {
