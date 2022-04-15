@@ -45,6 +45,6 @@ update_zsh_syntax_highlighting() {
 }
 
 update_hosts_file || failure_exit
-update_zsh_syntax_highlighting || failure_exit
-brew update && brew upgrade && brew upgrade --cask && brew cleanup
-nvim -c 'call Updatr()|qa'
+# update_zsh_syntax_highlighting || failure_exit
+# brew update && brew upgrade && brew upgrade --cask && brew cleanup
+# nvim -c 'call Updatr()|qa'
