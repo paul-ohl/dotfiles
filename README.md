@@ -4,7 +4,11 @@ Managed with GNU stow
 
 ## How to use
 
-Each software is in it's own directory. Use stow to create the simlinks.
+Each software is in it's own directory.
+Use [stow](https://www.gnu.org/software/stow/) to create the simlinks.
+
+The `setup.sh` script is tailored to my config, use at your own risk.
+(But it should work pretty well)
 
 ---
 
