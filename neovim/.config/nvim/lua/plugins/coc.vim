@@ -1,5 +1,5 @@
 " Extensions to install
-let g:coc_global_extensions = ['coc-snippets', 'coc-json', 'coc-git', 'coc-clangd', 'coc-sh', 'coc-sumneko-lua', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-snippets', 'coc-json', 'coc-git', 'coc-clangd', 'coc-sh', 'coc-sumneko-lua', 'coc-tsserver', 'coc-html', 'coc-css']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :

@@ -34,7 +34,8 @@ mapx.nnoremap('<Leader>tr', ':LualineRenameTab ')
 
 -- Float edits
 mapx.nnoremap('<leader>se', ':Fe ~/dotfiles/README.md<CR>')
-mapx.nnoremap('<leader>st', ':Fe ./todo.md<CR>')
+mapx.nnoremap('<leader>sr', ':Fe ./README.md<CR>')
+mapx.nnoremap('<leader>st', ':Fe ./TODO.md<CR>')
 
 -- VimWiki
 -- vim.cmd ('source ' .. vim.fn.stdpath('config') .. '/lua/plugins/vimwiki.vim')

@@ -17,7 +17,9 @@ failure_exit() {
 update_hosts_file() {
 	echo "hosts file"
 	hosts_version_file="$HOME/.local/local_config/hosts_version" 
-	latest_version=$(curl -s "https://github.com/StevenBlack/hosts/releases/latest" | sed 's/.*tag\///' | sed 's/\".*//')
+	latest_version=$(curl -s "https://github.com/StevenBlack/hosts/releases/latest") # | sed 's/.*tag\///' | sed 's/\".*//')
+	latest_version=${latest_version##*tag/}
+	latest_version=${latest_version%%[\"]*}
 	local_version=$(cat "$hosts_version_file" 2> /dev/null)
 	if [ "$local_version" = "$latest_version" ]; then
 		echo "Up to date!"
@@ -45,6 +47,6 @@ update_zsh_syntax_highlighting() {
 }
 
 update_hosts_file || failure_exit
-# update_zsh_syntax_highlighting || failure_exit
-# brew update && brew upgrade && brew upgrade --cask && brew cleanup
-# nvim -c 'call Updatr()|qa'
+update_zsh_syntax_highlighting || failure_exit
+brew update && brew upgrade && brew upgrade --cask && brew cleanup
+nvim -c 'call Updatr()|qa'

@@ -1,5 +1,5 @@
 # Path stuff...
-export PATH="$HOME/.brew/bin:/usr/local/sbin:$PATH:$HOME/.local/scripts/:$HOME/.local/bin/:$HOME/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/"
+export PATH="$HOME/.emacs.d/bin/:$HOME/.brew/bin:/usr/local/sbin:$PATH:$HOME/.local/scripts/:$HOME/.local/bin/:$HOME/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/"
 
 # OS specific actions
 OS=`getos`
@@ -23,6 +23,7 @@ elif [ "$OS" = "OSX" ]; then # Macos specific
 
 	# cool aliases
 	alias parle='say -v Thomas'
+	alias syncsite='rsync -avz --delete ~/OneDrive/documents/servers/tendresse/paulohl tendresse:~/'
 fi
 
 #colors enabling
