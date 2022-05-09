@@ -69,7 +69,6 @@ mapx.nnoremap('<Leader><Leader>n', ':write<CR>:cexpr system(\'norvimette .\')<CR
 mapx.nnoremap('<Leader>r', ':set invrelativenumber<CR>')
 mapx.nnoremap('Y', 'y$')
 mapx.nnoremap('H', 'za')
-mapx.nnoremap('<BS>', 'cc<Esc>')
 mapx.vnoremap('J', ':m \'>+1<CR>gv=gv')
 mapx.vnoremap('K', ':m \'<-2<CR>gv=gv')
 mapx.vnoremap('$', 'g_')

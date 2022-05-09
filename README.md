@@ -4,15 +4,17 @@ Managed with GNU stow
 
 ## How to use
 
-Each software is in it's own directory. Use stow to create the simlinks.
+Each software is in it's own directory.
+Use [stow](https://www.gnu.org/software/stow/) to create the simlinks.
+
+The `setup.sh` script is tailored to my config, use at your own risk.
+(But it should work pretty well)
 
 ---
 
 ## Todo for my dotfiles
 
-### YASS - Yass is Another Software Superviser
-
-It's Larbs, but for me, and it manages updates.
+### stow Setup
 
 Something to manage my favorite packages, updates and all, it's annoying
 to have to install everything everytime I have an issue at 42, plus I want to
@@ -23,10 +25,6 @@ reset my mac. It will have to manage:
 	- nerd fonts!
 
 Manage favorite folders as well, should be able to customize it per machine
-
-Manage stowing my dotfiles according to the software selected.
-
-It needs to have minimal dependencies, as little as possible.
 
 I will have to make a front end for vim, I'm sure it's going to be tons of fun.
 
@@ -39,6 +37,8 @@ Just grab dt's config...
 Keepassxc as a scratchpad
 
 Software shortcuts: w for qutebrowser, p for keepass
+
+window gaps ffs
 
 ### Alacritty
 

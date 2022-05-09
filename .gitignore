@@ -1,6 +1,6 @@
 .DS_Store
 tags
-nvim/.config/nvim/.undodir
+neovim/.config/nvim/.undodir
 folders.cfg.bckp
 gutentags_cache_dir
 xmonad-x86_64-linux

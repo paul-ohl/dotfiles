@@ -57,10 +57,9 @@ alias mdb='make debug'
 alias mf='make fclean'
 
 # quick folders
-eval "alias $(grep -v "^#" $HOME/.config/yass/foldersrc \
+eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
 		| awk '{print $1 "=\"cd " $2 " && ls\" "}' \
 		| tr "\"\n" "' ")"
-# eval "alias" $(jq -r ".folders | map(.shortcut + \"='cd \" + .path + \" && ls'\")" ~/dotfiles/config.tpl.json | tr -d '"[],')
 
 # git aliases
 alias gs='git status'
@@ -85,6 +84,16 @@ export EDITOR=nvim
 export MAIL="paul.lv.ohl@gmail.com"
 export CFGNVIM="$HOME/.config/nvim/init.vim"
 export LESSHISTFILE='-' # Less doesn't save history
+
+# Setting locales, I know I shouldn't do it there
+LANG="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_MONETARY="fr_FR.UTF-8"
+LC_NUMERIC="fr_FR.UTF-8"
+LC_TIME="fr_FR.UTF-8"
+LC_ALL="en_US.UTF-8"
 
 # Load Homebrew config script
 if [ -e "$HOME/.brewconfig.zsh" ]; then

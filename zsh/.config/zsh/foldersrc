@@ -1,11 +1,11 @@
 # Comments are supported, but only as a full line comment
-42			~/Documents/42/webserv/
+42			~/Documents/42/transcendence/
 desk		~/Desktop/
 doc			~/Documents/
 dl			~/Downloads/
 dot			~/dotfiles/
 sc			~/dotfiles/custom_scripts/.local/scripts/
-conf		~/dotfiles/nvim/.config/nvim/
+conf		~/dotfiles/neovim/.config/nvim/
 one			~/OneDrive/
 kbd			~/OneDrive/documents/elec/qmk_firmware/keyboards/lily58/keymaps/lily58l
 zik			~/OneDrive/music/
