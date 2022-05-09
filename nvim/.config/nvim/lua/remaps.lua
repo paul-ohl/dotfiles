@@ -4,6 +4,8 @@ local mapx = require'mapx'
 
 -- Various
 mapx.nnoremap('<Leader>u', ':call Updatr()<CR>')
+mapx.nnoremap('<CR>', '<CR>zz')
+mapx.nnoremap('-', '-zz')
 
 -- Buffer Editing
 mapx.nnoremap('<Leader>w', ':w<CR>')
