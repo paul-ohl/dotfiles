@@ -15,6 +15,7 @@ The `setup.sh` script is tailored to my config, use at your own risk.
 ## Todo for my dotfiles
 
 ### stow Setup
+
 Ansible setup
 - packages from brew (macOS and 42 computers) or pacman (arch)
 - binaries from git repositories, npm and pip
@@ -41,14 +42,17 @@ General configuration, check the bindings.
 
 ### Nvim
 
-Look into [überzug](https://github.com/seebye/ueberzug) and this
-[Telescope picker](https://github.com/nvim-telescope/telescope-media-files.nvim)
-for linux.
+[nvim-orgmode](https://github.com/nvim-orgmode/orgmode/blob/master/DOCS.md)
+config.
 
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 
 more convenient remaps for termdebug
+
+Look into [überzug](https://github.com/seebye/ueberzug) and this
+[Telescope picker](https://github.com/nvim-telescope/telescope-media-files.nvim)
+for linux.
 
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
 
