@@ -1,16 +1,10 @@
--- Bootstrapping
-local path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
-if vim.fn.empty(vim.fn.glob(path)) > 0 then
-	print('cloning paq-nvim...')
-	vim.fn.system { 'git', 'clone', '--depth=1', 'https://github.com/savq/paq-nvim.git', path }
-	print('Done! Now Bootstrapping')
-	vim.fn.system { 'nvim', '--headless', '-u', 'NONE', '-c', 'lua require("utilities.bootstrap").bootstrap_paq()' }
-end
+-- No plugins required here
+require("pohl.options")
+require("pohl.colorscheme")
+require("pohl.autocommands")
+vim.g.mapleader = " " -- set leader key
 
-require "general"
-require "remaps"
-require "packages"
-require "plugins"
-require "autocommands"
-
-vim.cmd ('source ' .. vim.fn.stdpath('config') .. '/functions.vim')
+-- Plugins required from this point
+pcall(require, "impatient") -- This is a plugin to improve startup time
+require("pohl.plugins")
+require("pohl.keymaps")

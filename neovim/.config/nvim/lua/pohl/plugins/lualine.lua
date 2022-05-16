@@ -1,14 +1,15 @@
---
---     ::::::::   ::::::  :::   ::: :::
---    :+:   :+: :+:  :+: :+:   :+: :+:  Paul OHL
---   +#++++#+  +#+  +:+ +#++:+#++ +#+
---  #+#       #+#  #+# #+#   #+# #+#
--- ###        ######  ###   ### #######
---
--- Created: 2022/03/31 12:50:02
---
+local status_ok, lualine = pcall(require, "lualine")
+if not status_ok then
+	print("Cannot load lualine module")
+	return
+end
 
-require('lualine').setup {
+-- Mappings!
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+keymap("n", '<Leader>tr', "<Cmd>LualineRenameTab<CR>", opts)
+
+lualine.setup {
   options = {
     icons_enabled = true,
     theme = 'everforest',

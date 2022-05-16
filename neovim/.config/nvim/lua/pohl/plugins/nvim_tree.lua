@@ -1,6 +1,17 @@
+local status_ok, nvim_tree = pcall(require, "nvim-tree")
+if not status_ok then
+	print("Could not load nvim_tree plugin")
+  return
+end
+
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
-require'nvim-tree'.setup {
+-- Mappings!
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+keymap("n", '<Leader>f', "<Cmd>NvimTreeToggle<CR>", opts)
+
+nvim_tree.setup {
 	hijack_cursor	= true,
 	update_cwd		= false,
 	diagnostics = {
@@ -41,8 +52,8 @@ require'nvim-tree'.setup {
 			list = {
 				{ key = {'<CR>', 'l', '<2-LeftMouse>'},	cb = tree_cb('edit') },
 				{ key = {'<2-RightMouse>', ']'},		cb = tree_cb('cd') },
-				{ key = 's',							cb = tree_cb('vsplit') },
-				{ key = 'i',							cb = tree_cb('split') },
+				{ key = 'v',							cb = tree_cb('vsplit') },
+				{ key = 's',							cb = tree_cb('split') },
 				{ key = 't',							cb = tree_cb('tabnew') },
 				{ key = 'h',							cb = tree_cb('parent_node') },
 				{ key = 'K',							cb = tree_cb('first_sibling') },

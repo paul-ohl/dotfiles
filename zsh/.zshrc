@@ -1,5 +1,5 @@
 # Path stuff...
-export PATH="$HOME/.emacs.d/bin/:$HOME/.brew/bin:/usr/local/sbin:$PATH:$HOME/.local/scripts/:$HOME/.local/bin/:$HOME/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/"
+export PATH="$HOME/.brew/bin:$PATH:$HOME/.local/scripts/"
 
 # OS specific actions
 OS=`getos`
@@ -12,7 +12,14 @@ if [ "$OS" = "LINUX" ]; then # Linux specific
 	alias pbpaste='xclip -selection clipboard -o'
 	alias open='xdg-open'
 	alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
-	alias wr='nmcli r wifi off && sleep 10 && nmcli r wifi on'
+	# Swallowing aliases
+	if [ -e "$HOME/.local/bin/devour" ]; then
+		alias sxiv='devour sxiv'
+		alias zathura='devour zathura'
+		alias firefox='devour firefox'
+		alias xdg-open='devour xdg-open'
+	fi
+
 elif [ "$OS" = "OSX" ]; then # Macos specific
 	# autocompletion
 	if type brew &>/dev/null; then
@@ -23,7 +30,6 @@ elif [ "$OS" = "OSX" ]; then # Macos specific
 
 	# cool aliases
 	alias parle='say -v Thomas'
-	alias syncsite='rsync -avz --delete ~/OneDrive/documents/servers/tendresse/paulohl tendresse:~/'
 fi
 
 #colors enabling
@@ -43,12 +49,12 @@ PS1="%1~ > "
 
 # Cool aliases
 alias so='source $HOME/.zshrc'
-alias vim='nvim-term-edit.py'
-alias vd='nvim-open-dir.py'
 alias vi='/usr/bin/vim'
+alias vim='nvim'
 alias norm='norminette . | grep -v OK'
 alias la='ls -la'
 alias l='ls -l'
+alias ll='ls -l'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 
 # Makefile aliases
@@ -69,18 +75,10 @@ alias gc='git commit'
 alias gcl='git clone'
 alias gp='git push'
 
-# Swallowing aliases
-if [ -e "$HOME/.local/bin/devour" ]; then
-	alias sxiv='devour sxiv'
-	alias zathura='devour zathura'
-	alias firefox='devour firefox'
-	alias xdg-open='devour xdg-open'
-fi
-
 # zsh syntax highlighting
 source ~/.local/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export LC_ALL=C
+# General env
 export EDITOR=nvim
 export MAIL="paul.lv.ohl@gmail.com"
 export CFGNVIM="$HOME/.config/nvim/init.vim"
