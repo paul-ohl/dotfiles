@@ -88,6 +88,13 @@ stowicism() {
 		case "$program" in
 			# TODO: Write your custom executions here!
 			"custom_scripts") mkdir "$HOME/.local/" ;;
+			"neovim")
+				install_package neovim python3 python3-pip ripgrep
+				python3 -m pip install --user --upgrade pynvim
+				nvim --headless
+				;;
+			"qutebrowser")
+				install_package qutebrowser;;
 		esac
 		stow "$program"
 	done
