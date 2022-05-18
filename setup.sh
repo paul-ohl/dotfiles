@@ -21,8 +21,12 @@ install_package () {
 	if ! [ "$to_install" = "" ]; then
 		if [ "$installer" = "paru" ]; then
 			paru -S $to_install
+		elif [ "$installer" = "yay" ]; then
+			yay -S $to_install
 		elif [ "$installer" = "brew" ]; then
 			brew install $to_install
+		elif [ "$installer" = "apt" ]; then
+			sudo apt install $to_install
 		else
 			error "Unrecognised installer: $installer"
 		fi
@@ -30,19 +34,19 @@ install_package () {
 }
 
 install_installer () {
-	if [ "$os" = "OSX" ]; then
-		installer="brew"
-	else
-		echo "select installer: "
-		echo "1. brew (42 linux)"
-		echo "2. paru (arch linux)"
-		read -r -d '' -sn1 installer
-		case "$installer" in
-			"1") installer="brew";;
-			"2") installer="paru";;
-			*) error "This option does not exist";;
-		esac
-	fi
+	echo "select installer: "
+	echo "1. brew (macos)"
+	echo "2. paru (regular arch linux)"
+	echo "3. yay  (42)"
+	echo "4. apt  (debian)"
+	read -r -d '' -sn1 installer
+	case "$installer" in
+		"1") installer="brew";;
+		"2") installer="paru";;
+		"3") installer="yay";;
+		"4") installer="apt";;
+		*) error "This option does not exist";;
+	esac
 	if [ "$installer" = "paru" ]; then
 		if [[ $(command -v paru) ]]; then
 			echo "paru is already installed, skipping..."
@@ -53,14 +57,19 @@ install_installer () {
 			git clone https://aur.archlinux.org/paru.git ~/.local/git/paru
 			(cd ~/.local/git/paru || error "cd problem"; makepkg -si)
 		fi
+		paru
 	elif [ "$installer" = "brew" ]; then
 		if [[ $(command -v brew) ]]; then
 			echo "brew is already installed, skipping..."
 		else
 			echo "Installing homebrew, the missing home package manager"
-			# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-			error "You're probably at 42, go fetch the command to install brew"
+			/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 		fi
+		brew update && brew upgrade
+	elif [ "$installer" = "yay" ]; then
+		yay -Syu
+	elif [ "$installer" = "apt" ]; then
+		sudo apt update && sudo apt upgrade
 	else
 		error "Unrecognised installer: $installer"
 	fi
@@ -86,17 +95,27 @@ stowicism() {
 	stow -D */
 	for program in "$selected_software"; do
 		case "$program" in
-			# TODO: Write your custom executions here!
-			"custom_scripts") mkdir "$HOME/.local/" ;;
+			"alacritty") install_package alacritty;;
+			"custom_scripts") mkdir -p "$HOME/.local/" ;;
 			"neovim")
 				install_package neovim python3 python3-pip ripgrep
 				python3 -m pip install --user --upgrade pynvim
 				nvim --headless
 				;;
-			"qutebrowser")
-				install_package qutebrowser;;
+			"picom") install_package picom;;
+			"qutebrowser") install_package qutebrowser;;
+			"xmonad") install_package xmonad xmonad-contrib;;
+			"zathura") install_package zathura;;
+			"zsh")
+				install_package zsh
+				echo "Change default shell to zsh? (yn)"
+				read -r -d '' -sn1 change_shell
+				if [ "$change_shell" = "y" ]; then
+					chsh -s /usr/bin/zsh
+				fi
+				;;
 		esac
-		stow "$program"
+		stow $program
 	done
 }
 
@@ -105,7 +124,6 @@ install() {
 	install_package dialog
 	select_software
 	stowicism
-	error "Now you need to install packages for the software selected"
 }
 
 install
