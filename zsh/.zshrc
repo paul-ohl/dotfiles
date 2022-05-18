@@ -1,4 +1,5 @@
 # Path stuff...
+export PATH="~/.local/share/junest/bin:$PATH:~/.junest/usr/bin_wrappers"
 export PATH="$HOME/.brew/bin:$PATH:$HOME/.local/scripts/"
 
 # OS specific actions
@@ -98,3 +99,6 @@ LC_ALL="en_US.UTF-8"
 if [ -e "$HOME/.brewconfig.zsh" ]; then
 	source $HOME/.brewconfig.zsh
 fi
+
+# Junest alias
+alias j="$HOME/.local/share/junest/bin/junest zsh"

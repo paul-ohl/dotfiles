@@ -95,7 +95,7 @@ keymap("n", '<Tab>', 'gt', opts)
 keymap("n", '<S-Tab>', 'gT', opts)
 
 -- Terminals
-keymap("t", ',.', '<C-\\><C-n>', opts)
+-- keymap("t", ',.', '<C-\\><C-n>', opts)
 
 -- Useful editing stuff
 keymap("n", 'Y', 'y$', opts)

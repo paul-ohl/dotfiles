@@ -45,6 +45,8 @@ General configuration, check the bindings.
 [nvim-orgmode](https://github.com/nvim-orgmode/orgmode/blob/master/DOCS.md)
 config.
 
+auto-close vim after bootstrap
+
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 
