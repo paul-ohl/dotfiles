@@ -1,9 +1,9 @@
 .DS_Store
 tags
-neovim/.config/nvim/.undodir
 folders.cfg.bckp
 gutentags_cache_dir
 xmonad-x86_64-linux
 xmonad.errors
 xmonad.hi
 xmonad.o
+neovim/.config/nvim/plugin/packer_compiled.lua
