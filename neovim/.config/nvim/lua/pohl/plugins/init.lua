@@ -73,6 +73,7 @@ packer.startup(function(use)
 
 	-- Org-mode in neovim
 	use 'nvim-orgmode/orgmode'
+	use 'dhruvasagar/vim-table-mode'
 
 	-- Treesitter
 	use {
