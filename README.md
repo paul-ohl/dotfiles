@@ -40,6 +40,15 @@ window gaps ffs
 
 General configuration, check the bindings.
 
+### Emacs
+
+Read about [Hydra colors](https://github.com/abo-abo/hydra/wiki/Hydra-Colors)
+and make 2 hydras:
+1) Moving and resizing windows
+2) Moving tabs
+
+Maybe [remap caps lock to esc AND ctrl](https://www.dannyguo.com/blog/remap-caps-lock-to-escape-and-control/)?
+
 ### Nvim
 
 [nvim-orgmode](https://github.com/nvim-orgmode/orgmode/blob/master/DOCS.md)
