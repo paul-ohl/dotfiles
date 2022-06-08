@@ -47,7 +47,7 @@ wk.register({
 			[">"] = { ':tabmove +<CR>', 'Move tab to the right' },
 			["0"] = { ':tabmove 0<CR>', 'Move tab to the beginning' },
 			v = { ':$tabnew<CR>:lcd ' .. vim.fn.stdpath('config') .. '<CR>:LualineRenameTab im config<CR>:Telescope find_files<CR>', 'Open a tab with im config' },
-			t = { ':tabnew +terminal<CR>:wincmd v<CR>:terminal<CR>:LualineRenameTab  terms<CR><C-\\><C-N>:wincmd h<CR>', 'Open a tab with terminals' },
+			t = { ':tabnew +terminal<CR>:wincmd v<CR>:terminal<CR>:LualineRenameTab  terms<CR>:wincmd h<CR>', 'Open a tab with terminals' },
 			h = { ':wincmd v <CR> :wincmd h <CR>:terminal<CR>', 'Open a terminal on the left' },
 			j = { ':wincmd s <CR>:terminal<CR>', 'Open a terminal on the bottom' },
 			k = { ':wincmd s <CR> :wincmd k <CR>:terminal<CR>', 'Open a terminal on the top' },

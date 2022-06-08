@@ -24,7 +24,7 @@ nvim_tree.setup {
 		}
 	},
 	update_focused_file = {
-		enable		= false,
+		enable		= true,
 		update_cwd	= false,
 		ignore_list	= {}
 	},
@@ -77,6 +77,7 @@ nvim_tree.setup {
 				{ key = 'o',							cb = tree_cb('system_open') },
 				{ key = 'q',							cb = tree_cb('close') },
 				{ key = 'g?',							cb = tree_cb('toggle_help') },
+				{ key = '<Tab>',						action = '' },
 			}
 		},
 		number = false,

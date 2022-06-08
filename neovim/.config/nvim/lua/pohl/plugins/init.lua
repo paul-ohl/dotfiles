@@ -72,8 +72,8 @@ packer.startup(function(use)
 	use 'kyazdani42/nvim-web-devicons'	-- DevIcons
 
 	-- Org-mode in neovim
-	use 'nvim-orgmode/orgmode'
-	use 'dhruvasagar/vim-table-mode'
+	-- use 'nvim-orgmode/orgmode'
+	-- use 'dhruvasagar/vim-table-mode'
 
 	-- Treesitter
 	use {
