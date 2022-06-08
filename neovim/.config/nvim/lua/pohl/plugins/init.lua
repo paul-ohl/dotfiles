@@ -71,10 +71,6 @@ packer.startup(function(use)
 	use 'kyazdani42/nvim-tree.lua'		-- File tree
 	use 'kyazdani42/nvim-web-devicons'	-- DevIcons
 
-	-- Org-mode in neovim
-	-- use 'nvim-orgmode/orgmode'
-	-- use 'dhruvasagar/vim-table-mode'
-
 	-- Treesitter
 	use {
 		"nvim-treesitter/nvim-treesitter",
@@ -107,4 +103,3 @@ require("pohl.plugins.lualine")
 require("pohl.plugins.nvim_tree")
 require("pohl.plugins.telescope")
 require("pohl.plugins.which-key")
-require("pohl.plugins.orgmode")
