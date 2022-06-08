@@ -38,7 +38,6 @@ packer.startup(function(use)
 	use "numToStr/Comment.nvim"		-- Easily comment stuff
 	use 'nvim-lualine/lualine.nvim'	-- replacement for lightline
 	use 'tpope/vim-fugitive'		-- Git client straight inside Vim
-	use 'metalelf0/nvim-floatedit'	-- Edit a file in floating window
 	use 'tpope/vim-commentary'		-- Commentaries
 	use 'psliwka/vim-smoothie'		-- Smooth scrolling
 	use 'lewis6991/impatient.nvim'	-- faster startup time
@@ -97,7 +96,6 @@ keymap("n", '<Leader>pi', "<Cmd>PackerStatus<CR>", opts)
 require("pohl.plugins.lsp")
 require("pohl.plugins.cmp")
 require("pohl.plugins.comment")
-require("pohl.plugins.floatedits")
 require("pohl.plugins.fugitive")
 require("pohl.plugins.lualine")
 require("pohl.plugins.nvim_tree")
