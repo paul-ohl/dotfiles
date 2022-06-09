@@ -32,33 +32,33 @@ packer.init {
 }
 
 packer.startup(function(use)
-	use "wbthomason/packer.nvim"	-- Have packer manage itself
-	use "nvim-lua/popup.nvim"		-- An implementation of the Popup API from vim in Neovim
-	use "nvim-lua/plenary.nvim"		-- Useful lua functions used ny lots of plugins
-	use "numToStr/Comment.nvim"		-- Easily comment stuff
-	use 'nvim-lualine/lualine.nvim'	-- replacement for lightline
-	use 'tpope/vim-fugitive'		-- Git client straight inside Vim
-	use 'tpope/vim-commentary'		-- Commentaries
-	use 'psliwka/vim-smoothie'		-- Smooth scrolling
-	use 'lewis6991/impatient.nvim'	-- faster startup time
-	use 'folke/which-key.nvim'		-- keybindings are *fancier*
+	use "wbthomason/packer.nvim" -- Have packer manage itself
+	use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+	use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+	use "numToStr/Comment.nvim" -- Easily comment stuff
+	use 'nvim-lualine/lualine.nvim' -- replacement for lightline
+	use 'tpope/vim-fugitive' -- Git client straight inside Vim
+	use 'tpope/vim-commentary' -- Commentaries
+	use 'psliwka/vim-smoothie' -- Smooth scrolling
+	use 'lewis6991/impatient.nvim' -- faster startup time
+	use 'folke/which-key.nvim' -- keybindings are *fancier*
 
 	-- Colorschemes
-	use "gruvbox-community/gruvbox"	-- Gruvbox
-	use "rebelot/kanagawa.nvim"		-- Kanagawa
+	use "gruvbox-community/gruvbox" -- Gruvbox
+	use "rebelot/kanagawa.nvim" -- Kanagawa
 
 	-- Completion
-	use "hrsh7th/nvim-cmp"			-- The completion plugin
-	use "hrsh7th/cmp-buffer"		-- buffer completions
-	use "hrsh7th/cmp-path"			-- path completions
-	use "hrsh7th/cmp-cmdline"		-- cmdline completions
-	use "saadparwaiz1/cmp_luasnip"	-- snippet completions
-	use "hrsh7th/cmp-nvim-lsp" 		-- lsp completions
-	use "hrsh7th/cmp-nvim-lua" 		-- lua vim completions
+	use "hrsh7th/nvim-cmp" -- The completion plugin
+	use "hrsh7th/cmp-buffer" -- buffer completions
+	use "hrsh7th/cmp-path" -- path completions
+	use "hrsh7th/cmp-cmdline" -- cmdline completions
+	use "saadparwaiz1/cmp_luasnip" -- snippet completions
+	use "hrsh7th/cmp-nvim-lsp" -- lsp completions
+	use "hrsh7th/cmp-nvim-lua" -- lua vim completions
 
 	-- snippets
-	use "L3MON4D3/LuaSnip"				--snippet engine
-	use "rafamadriz/friendly-snippets"	-- a bunch of snippets to use
+	use "L3MON4D3/LuaSnip" --snippet engine
+	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
 	-- LSP
 	use {
@@ -69,14 +69,10 @@ packer.startup(function(use)
 		}
 	}
 	use 'p00f/clangd_extensions.nvim' -- Additional LSP for C* languages
-	-- use "neovim/nvim-lspconfig"				-- enable LSP
-	-- use "williamboman/nvim-lsp-installer"	-- simple to use language server installer
-	-- use "tamago324/nlsp-settings.nvim"		-- language server settings defined in json for
-	-- use "jose-elias-alvarez/null-ls.nvim"	-- for formatters and linters
 
 	-- side file tree
-	use 'kyazdani42/nvim-tree.lua'		-- File tree
-	use 'kyazdani42/nvim-web-devicons'	-- DevIcons
+	use 'kyazdani42/nvim-tree.lua' -- File tree
+	use 'kyazdani42/nvim-web-devicons' -- DevIcons
 
 	-- Treesitter
 	use {
