@@ -44,8 +44,8 @@ packer.startup(function(use)
 	use 'folke/which-key.nvim'		-- keybindings are *fancier*
 
 	-- Colorschemes
-	use "lunarvim/colorschemes"			-- A bunch of colorschemes you can try out
-	use "gruvbox-community/gruvbox";	-- Gruvbox
+	use "gruvbox-community/gruvbox"	-- Gruvbox
+	use "rebelot/kanagawa.nvim"		-- Kanagawa
 
 	-- Completion
 	use "hrsh7th/nvim-cmp"			-- The completion plugin
@@ -61,10 +61,18 @@ packer.startup(function(use)
 	use "rafamadriz/friendly-snippets"	-- a bunch of snippets to use
 
 	-- LSP
-	use "neovim/nvim-lspconfig"				-- enable LSP
-	use "williamboman/nvim-lsp-installer"	-- simple to use language server installer
-	use "tamago324/nlsp-settings.nvim"		-- language server settings defined in json for
-	use "jose-elias-alvarez/null-ls.nvim"	-- for formatters and linters
+	use {
+		'junnplus/nvim-lsp-setup',
+		requires = {
+			'neovim/nvim-lspconfig',
+			'williamboman/nvim-lsp-installer',
+		}
+	}
+	use 'p00f/clangd_extensions.nvim' -- Additional LSP for C* languages
+	-- use "neovim/nvim-lspconfig"				-- enable LSP
+	-- use "williamboman/nvim-lsp-installer"	-- simple to use language server installer
+	-- use "tamago324/nlsp-settings.nvim"		-- language server settings defined in json for
+	-- use "jose-elias-alvarez/null-ls.nvim"	-- for formatters and linters
 
 	-- side file tree
 	use 'kyazdani42/nvim-tree.lua'		-- File tree
@@ -90,10 +98,11 @@ end)
 -- Mappings!
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
+keymap("n", '<Leader>ps', "<Cmd>PackerSync<CR>", opts)
 keymap("n", '<Leader>pu', "<Cmd>PackerSync<CR>", opts)
 keymap("n", '<Leader>pi', "<Cmd>PackerStatus<CR>", opts)
 
-require("pohl.plugins.lsp")
+require("pohl.plugins.lsp-setup")
 require("pohl.plugins.cmp")
 require("pohl.plugins.comment")
 require("pohl.plugins.fugitive")
