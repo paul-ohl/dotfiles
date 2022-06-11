@@ -36,9 +36,9 @@ Software shortcuts: w for qutebrowser, p for keepass
 
 window gaps ffs
 
-### Alacritty
+### Kitty
 
-General configuration, check the bindings.
+write cool [Bindings](https://sw.kovidgoyal.net/kitty/actions/).
 
 ### Nvim
 
@@ -46,10 +46,6 @@ browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 
 more convenient remaps for termdebug
-
-Look into [überzug](https://github.com/seebye/ueberzug) and this
-[Telescope picker](https://github.com/nvim-telescope/telescope-media-files.nvim)
-for linux.
 
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
 

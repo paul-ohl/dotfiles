@@ -5,13 +5,13 @@ au.group('Main', {
 		'BufWritePost',
 		'*.vim',
 		'source % | echo "Sourced!"',
-	}, { -- Auto-source lua config files TODO: only source if in the right folder
-		'BufWritePost',
-		'*.lua',
-		'source % | echo "Sourced!"',
+	}, { -- Open images with timg
+		'BufEnter',
+		'*.jpeg,*.jpg,*.png',
+		'terminal timg %',
 	}, { -- Save last closed window
 		'WinLeave',
 		'*',
 		'let g:lastWinName = @%',
-    },
+	},
 })

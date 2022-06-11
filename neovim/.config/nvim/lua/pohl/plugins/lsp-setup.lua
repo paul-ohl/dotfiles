@@ -35,6 +35,8 @@ lsp_setup.setup({
 	-- Configurations: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	servers = {
 		pylsp = {},
+		ansiblels = {},
+		bashls = {},
 		sumneko_lua = {
 			settings = {
 				Lua = {
@@ -48,5 +50,9 @@ lsp_setup.setup({
 			}
 		},
 		clangd = require('nvim-lsp-setup.clangd_extensions').setup({}),
+		volar = {
+			filetypes = { 'typescript', 'javascript', 'javascriptreact',
+				'typescriptreact', 'vue', 'json' }
+		},
 	},
 })
