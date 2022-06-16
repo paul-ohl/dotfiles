@@ -1,12 +1,12 @@
-nmap <buffer> <Leader>odr <Plug>VimwikiDiaryGenerateLinks<CR>
-nmap <buffer> <C-s> <Plug>VimwikiVSplitLink<CR>
-" nmap <buffer> <C-S> <Plug>VimwikiSplitLink<CR>
-nmap <buffer> <Leader>of <Plug>VimwikiGoto<CR>
-nmap <buffer> <Leader>ox <Plug>VimwikiDeleteFile<CR>
-nmap <buffer> <Leader>or <Plug>VimwikiRenameFile<CR>
-nmap <buffer> [ <Plug>VimwikiGoToPrevHeader<CR>
-nmap <buffer> ] <Plug>VimwikiGoToNextHeader<CR>
-nmap <buffer> _ <Plug>VimwikiGoToParentHeader<CR>
+nmap <buffer> <Leader>odr <Plug>VimwikiDiaryGenerateLinks
+nmap <buffer> <Leader>ox <Plug>VimwikiDeleteFile
+nmap <buffer> <Leader>or <Plug>VimwikiRenameFile
+nmap <buffer> [[ <Plug>VimwikiGoToPrevHeader
+nmap <buffer> ]] <Plug>VimwikiGoToNextHeader
+nmap <buffer> _ <Plug>VimwikiGoToParentHeader
 nnoremap <buffer> <Leader>/ :VimwikiSearch 
 nnoremap <buffer> <Leader>; :lnext<CR>
 nnoremap <buffer> <Leader>, :lprevious<CR>
+
+imap <buffer> <C-l> <Plug>VimwikiIncreaseLvlSingleItem
+imap <buffer> <C-h> <Plug>VimwikiDecreaseLvlSingleItem

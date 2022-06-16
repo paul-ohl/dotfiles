@@ -27,7 +27,7 @@ wk.register({
 			u = { ':lua require(\'modules.buffer-editing\').undoCloseBuffer()<CR>', 'Restore buffer' },
 			r = { ':lua require(\'modules.buffer-editing\').undoCloseBuffer()<CR>', 'Restore buffer' },
 			e = {
-				name = 'Editing' ,
+				name = 'Editing',
 				h = { '<cmd>wincmd h<CR><cmd>WhichKey <LT>leader>be<CR>', 'Focus left' },
 				j = { '<cmd>wincmd j<CR><cmd>WhichKey <LT>leader>be<CR>', 'Focus down' },
 				k = { '<cmd>wincmd k<CR><cmd>WhichKey <LT>leader>be<CR>', 'Focus up' },
@@ -111,6 +111,12 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
 
+-- Insert mode mappings
+keymap("i", "<C-h>", "<Esc><<a", opts)
+keymap("i", "<C-l>", "<Esc>>>a", opts)
+
 -- Various
 keymap("n", '<C-j>', 'j^zz', opts)
 keymap("n", '<C-k>', 'k^zz', opts)
+keymap("n", '<Cr>', 'inope', opts)
+keymap("n", '-', 'inope', opts)
