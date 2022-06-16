@@ -15,30 +15,44 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=/Users/pohl/.task
+# data.location=/Users/pohl/.task
 
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below
 
-#data.location=~/.local/share/task
-#hooks.location=~/.config/task/hooks
+data.location=~/.local/share/task
+hooks.location=~/.config/task/hooks
 
 # Color theme (uncomment one to use)
 #include light-16.theme
-#include light-256.theme
+# include light-256.theme
 #include dark-16.theme
-#include dark-256.theme
+include dark-256.theme
 #include dark-red-256.theme
 #include dark-green-256.theme
-#include dark-blue-256.theme
+# include dark-blue-256.theme
 #include dark-violets-256.theme
 #include dark-yellow-green.theme
 #include dark-gray-256.theme
 #include dark-gray-blue-256.theme
-#include solarized-dark-256.theme
+# include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
 
 news.version=2.6.0
-context.42.read=project:42
-context.42.write=project:42
+
+context.42.read=project:42 or +@online
+context.home.read=+@home or +@computer or +@phone or +@online
+context.outside.read=+@outside or +@phone -@online
+
+# Reports configuration
+report.in.columns			= id,description
+report.in.description		= Inbox
+report.in.filter			= status:pending limit:page (+in)
+report.in.labels			= ID,Description
+
+report.next.columns			= id,start.age,project,description,urgency,due
+report.next.description		= NextActions
+report.next.filter			= status:pending limit:page (+next or +in)
+report.next.labels			= ID,Active,Project,Description,Urgency,Due date
+report.next.sort			= priority-,urgency-

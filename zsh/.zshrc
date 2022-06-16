@@ -1,5 +1,4 @@
 # Path stuff...
-export PATH="~/.local/share/junest/bin:$PATH:~/.junest/usr/bin_wrappers"
 export PATH="$HOME/.brew/bin:$PATH:$HOME/.local/scripts/"
 
 # OS specific actions
@@ -12,7 +11,7 @@ if [ "$OS" = "LINUX" ]; then # Linux specific
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
 	alias open='xdg-open'
-	alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
+	# alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
 	# Swallowing aliases
 	if [ -e "$HOME/.local/bin/devour" ]; then
 		alias sxiv='devour sxiv'
@@ -57,6 +56,7 @@ alias la='ls -la'
 alias l='ls -l'
 alias ll='ls -l'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
+alias wiki='nvim -c ":VimwikiIndex"'
 
 # Makefile aliases
 # alias make='make -j -Otarget'
@@ -95,14 +95,9 @@ LC_NUMERIC="fr_FR.UTF-8"
 LC_TIME="fr_FR.UTF-8"
 LC_ALL="en_US.UTF-8"
 
-# Load Homebrew config script
-if [ -e "$HOME/.brewconfig.zsh" ]; then
-	source $HOME/.brewconfig.zsh
-fi
+# Task Warrior configuration for zsh
+# source ~/.config/task/zsh-task
 
-# Junest alias
-alias j="$HOME/.local/share/junest/bin/junest zsh"
-
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
-alias emacsclient="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
-alias ec=emacsclient
+# Junest
+# export PATH="~/.local/share/junest/bin:$PATH:~/.junest/usr/bin_wrappers"
+# alias j="$HOME/.local/share/junest/bin/junest zsh"
