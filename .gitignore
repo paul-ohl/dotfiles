@@ -7,3 +7,4 @@ xmonad.errors
 xmonad.hi
 xmonad.o
 neovim/.config/nvim/plugin/packer_compiled.lua
+karabiner/.config/karabiner/automatic_backups/
