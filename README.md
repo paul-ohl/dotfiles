@@ -45,8 +45,6 @@ write cool [Bindings](https://sw.kovidgoyal.net/kitty/actions/).
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 
-[Vim Calendar?](https://github.com/itchyny/calendar.vim)
-
 more convenient remaps for termdebug
 
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
