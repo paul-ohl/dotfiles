@@ -43,6 +43,7 @@ packer.startup(function(use)
 	use 'lewis6991/impatient.nvim' -- faster startup time
 	use 'folke/which-key.nvim' -- keybindings are *fancier*
 	use 'vimwiki/vimwiki' -- Wiki inside vim
+	use 'glepnir/dashboard-nvim' -- a welcoming dashboard
 
 	-- Colorschemes
 	use "gruvbox-community/gruvbox" -- Gruvbox
@@ -107,4 +108,5 @@ require("pohl.plugins.lualine")
 require("pohl.plugins.nvim_tree")
 require("pohl.plugins.telescope")
 require("pohl.plugins.which-key")
+require("pohl.plugins.dashboard")
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/pohl/plugins/vimwiki.vim')

@@ -6,12 +6,7 @@ end
 
 local actions = require "telescope.actions"
 
--- Mappings!
-local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-keymap("n", '<Leader>sf', "<Cmd>lua require('telescope.builtin').find_files()<CR>", opts)
-keymap("n", '<Leader>sg', "<Cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
-keymap("n", 'gR', "<Cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
+-- keymap("n", 'gR', "<Cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
 
 telescope.setup {
 	defaults = {

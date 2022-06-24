@@ -51,6 +51,12 @@ lsp_setup.setup({
 		},
 		clangd = require('nvim-lsp-setup.clangd_extensions').setup({}),
 		volar = {
+			init_options = {
+				documentFeatures = {
+					documentColor = false,
+					documentFormatting = false,
+				},
+			},
 			filetypes = { 'typescript', 'javascript', 'javascriptreact',
 				'typescriptreact', 'vue', 'json' }
 		},

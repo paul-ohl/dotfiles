@@ -18,6 +18,14 @@ wk.register({
 		v = { '<C-w>v', 'Split Vertically' },
 		[';'] = { ':cnext<CR>', 'Next quickfix item' },
 		[','] = { ':cprevious<CR>', 'Previous quickfix item' },
+		s = {
+			name = "Search",
+			d = { ':$tabnew<CR>:lcd ' ..
+				vim.fn.stdpath('config') .. '<CR>:LualineRenameTab im config<CR>:Telescope find_files<CR>',
+				'edit im config' },
+			f = { '<Cmd>lua require(\'telescope.builtin\').find_files()<CR>', 'Find files' },
+			g = { '<Cmd>lua require(\'telescope.builtin\').live_grep()<CR>', 'Grep files' },
+		},
 		b = {
 			name = "Buffer",
 			y = { ':lua require(\'modules.buffer-editing\').copyBuffer()<CR>', 'Copy buffer' },
@@ -40,15 +48,12 @@ wk.register({
 		},
 		t = {
 			name = "Tabs & Terminals",
-			n = { ':tabnew<CR>', 'Open a new tab' },
+			n = { ':tabnew<CR>:Dashboard', 'Open a new tab' },
 			q = { ':tabclose<CR>', 'Close tab' },
 			e = { '<C-w>T', 'Edit in a new tab' },
 			["<"] = { ':tabmove -<CR>', 'Move tab to the left' },
 			[">"] = { ':tabmove +<CR>', 'Move tab to the right' },
 			["0"] = { ':tabmove 0<CR>', 'Move tab to the beginning' },
-			v = { ':$tabnew<CR>:lcd ' ..
-				vim.fn.stdpath('config') .. '<CR>:LualineRenameTab im config<CR>:Telescope find_files<CR>',
-				'Open a tab with im config' },
 			t = { ':tabnew +terminal<CR>:wincmd v<CR>:terminal<CR>:LualineRenameTab  terms<CR>:wincmd h<CR>',
 				'Open a tab with terminals' },
 			h = { ':wincmd v <CR> :wincmd h <CR>:terminal<CR>', 'Open a terminal on the left' },

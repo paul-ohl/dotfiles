@@ -1,4 +1,4 @@
 alias t='task'
 alias ta='task add'
 alias in='task add +in'
-alias sc='~/.config/task/switch-context.sh'
+alias cs='~/.config/task/context-switch.sh'
