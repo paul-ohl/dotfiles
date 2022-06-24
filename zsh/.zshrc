@@ -98,7 +98,7 @@ LC_TIME="fr_FR.UTF-8"
 LC_ALL="en_US.UTF-8"
 
 # Task Warrior configuration for zsh
-# source ~/.config/task/zsh-task
+source ~/.config/task/zsh-task
 
 # Junest
 # export PATH="~/.local/share/junest/bin:$PATH:~/.junest/usr/bin_wrappers"
