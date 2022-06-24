@@ -12,6 +12,13 @@
 #   variable=$HOME/task
 #   variable=$VALUE
 
+# config to use with taskserver
+taskd.server=paulohl.fr:53589
+taskd.credentials=Public/pohl/6a3b364d-ac87-4dc8-bb9c-1fe553d8da67
+taskd.certificate=~/.local/share/task/pohl.cert.pem
+taskd.key=~/.local/share/task/pohl.key.pem
+taskd.ca=~/.local/share/task/ca.cert.pem
+
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
