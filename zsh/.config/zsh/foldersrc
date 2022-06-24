@@ -7,7 +7,7 @@ dot			~/dotfiles/
 sc			~/dotfiles/custom_scripts/.local/scripts/
 conf		~/dotfiles/neovim/.config/nvim/
 one			~/OneDrive/
-kbd			~/OneDrive/documents/elec/qmk_firmware/keyboards/lily58/keymaps/lily58l
+kbd			~/qmk_firmware/keyboards/lily58/keymaps/pohl/
 zik			~/OneDrive/music/
 pro			~/OneDrive/documents/_pro/
 devel		~/OneDrive/documents/codage/

@@ -27,7 +27,7 @@ let g:vimwiki_use_calendar = 1
 
 " For local mappings, see ./ftplugin/vimwiki.vim
 " Global mappings
-nnoremap <Leader>oo :vsplit ~/OneDrive/org/refile.wiki<CR>
+nnoremap <Leader>oo :vsplit ~/OneDrive/org/refile.md<CR>
 nmap <Leader>oi <Plug>VimwikiIndex
 nmap <Leader>OI <Plug>VimwikiTabIndex
 nmap <Leader>oI <Plug>VimwikiTabIndex

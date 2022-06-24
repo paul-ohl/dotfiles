@@ -10,3 +10,5 @@ nnoremap <buffer> <Leader>, :lprevious<CR>
 
 imap <buffer> <C-l> <Plug>VimwikiIncreaseLvlSingleItem
 imap <buffer> <C-h> <Plug>VimwikiDecreaseLvlSingleItem
+
+syntax on
