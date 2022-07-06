@@ -14,38 +14,12 @@ The `setup.sh` script is tailored to my config, use at your own risk.
 
 ## Todo for my dotfiles
 
-### stow Setup
-
-Ansible setup
-- packages from brew (macOS and 42 computers) or pacman (arch)
-- binaries from git repositories, npm and pip
-- plugins for vim
-- nerd fonts!
-
-Manage favorite folders as well, should be able to customize it per machine
-
-I will have to make a front end for vim, I'm sure it's going to be tons of fun.
-
-notify when not used for over a week
-
-### Xmonad
-
-Keepassxc as a scratchpad
-
-Software shortcuts: w for qutebrowser, p for keepass
-
-window gaps ffs
-
-### Kitty
-
-write cool [Bindings](https://sw.kovidgoyal.net/kitty/actions/).
-
 ### Nvim
+
+Telescope picker for todo.txt
 
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
-
-more convenient remaps for termdebug
 
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
 

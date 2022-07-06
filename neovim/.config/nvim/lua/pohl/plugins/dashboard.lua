@@ -27,13 +27,11 @@ db.custom_header = {
 }
 
 db.custom_center = {
-	{ desc = '=== Software ===', action = '' },
 	{ icon = '   ', desc = 'Search files', action = 'Telescope find_files' },
 	{ icon = '     ', desc = 'git status', action = 'Git' },
-	{ desc = '===== Life =====', action = '' },
 	{ icon = '  ', desc = 'Wiki dashboard', action = 'VimwikiIndex' },
 	{ icon = '  ', desc = 'Today\'s diary', action = 'VimwikiMakeDiaryNote' },
-	{ icon = '理   ', desc = 'Task Warrior', action = 'VimwikiMakeDiaryNote' },
+	{ icon = '理   ', desc = 'Todos', action = 'VimwikiMakeDiaryNote' },
 }
 
 -- db.custom_footer  -- type can be nil,table or function(must be return table in function)

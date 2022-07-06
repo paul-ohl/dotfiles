@@ -20,9 +20,10 @@ wk.register({
 		[','] = { ':cprevious<CR>', 'Previous quickfix item' },
 		s = {
 			name = "Search",
-			d = { ':$tabnew<CR>:lcd ' ..
+			v = { ':$tabnew<CR>:lcd ' ..
 				vim.fn.stdpath('config') .. '<CR>:LualineRenameTab im config<CR>:Telescope find_files<CR>',
-				'edit im config' },
+				'Search im config' },
+			d = { '<Cmd>lua require "telescope".extensions.file_browser.file_browser<CR>', 'Browse Dotfiles' },
 			f = { '<Cmd>lua require(\'telescope.builtin\').find_files()<CR>', 'Find files' },
 			g = { '<Cmd>lua require(\'telescope.builtin\').live_grep()<CR>', 'Grep files' },
 		},
@@ -45,6 +46,11 @@ wk.register({
 				K = { '<cmd>wincmd K<CR><cmd>WhichKey <LT>leader>be<CR>', 'Move up' },
 				L = { '<cmd>wincmd L<CR><cmd>WhichKey <LT>leader>be<CR>', 'Move right' },
 			},
+		},
+		p = {
+			name = "Plugins",
+			s = { '<Cmd>PackerSync<CR>', 'Synchronise packages' },
+			i = { '<Cmd>PackerStatus<CR>', 'Packages status' },
 		},
 		t = {
 			name = "Tabs & Terminals",
@@ -123,5 +129,3 @@ keymap("i", "<C-l>", "<Esc>>>a", opts)
 -- Various
 keymap("n", '<C-j>', 'j^zz', opts)
 keymap("n", '<C-k>', 'k^zz', opts)
-keymap("n", '<Cr>', 'inope', opts)
-keymap("n", '-', 'inope', opts)
