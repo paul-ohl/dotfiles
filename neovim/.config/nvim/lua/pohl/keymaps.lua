@@ -18,6 +18,15 @@ wk.register({
 		v = { '<C-w>v', 'Split Vertically' },
 		[';'] = { ':cnext<CR>', 'Next quickfix item' },
 		[','] = { ':cprevious<CR>', 'Previous quickfix item' },
+		s = {
+			name = "Search",
+			v = { ':$tabnew<CR>:lcd ' ..
+				vim.fn.stdpath('config') .. '<CR>:LualineRenameTab im config<CR>:Telescope find_files<CR>',
+				'Search im config' },
+			d = { '<Cmd>lua require "telescope".extensions.file_browser.file_browser<CR>', 'Browse Dotfiles' },
+			f = { '<Cmd>lua require(\'telescope.builtin\').find_files()<CR>', 'Find files' },
+			g = { '<Cmd>lua require(\'telescope.builtin\').live_grep()<CR>', 'Grep files' },
+		},
 		b = {
 			name = "Buffer",
 			y = { ':lua require(\'modules.buffer-editing\').copyBuffer()<CR>', 'Copy buffer' },
@@ -38,17 +47,19 @@ wk.register({
 				L = { '<cmd>wincmd L<CR><cmd>WhichKey <LT>leader>be<CR>', 'Move right' },
 			},
 		},
+		p = {
+			name = "Plugins",
+			s = { '<Cmd>PackerSync<CR>', 'Synchronise packages' },
+			i = { '<Cmd>PackerStatus<CR>', 'Packages status' },
+		},
 		t = {
 			name = "Tabs & Terminals",
-			n = { ':tabnew<CR>', 'Open a new tab' },
+			n = { ':tabnew<CR>:Dashboard', 'Open a new tab' },
 			q = { ':tabclose<CR>', 'Close tab' },
 			e = { '<C-w>T', 'Edit in a new tab' },
 			["<"] = { ':tabmove -<CR>', 'Move tab to the left' },
 			[">"] = { ':tabmove +<CR>', 'Move tab to the right' },
 			["0"] = { ':tabmove 0<CR>', 'Move tab to the beginning' },
-			v = { ':$tabnew<CR>:lcd ' ..
-				vim.fn.stdpath('config') .. '<CR>:LualineRenameTab im config<CR>:Telescope find_files<CR>',
-				'Open a tab with im config' },
 			t = { ':tabnew +terminal<CR>:wincmd v<CR>:terminal<CR>:LualineRenameTab  terms<CR>:wincmd h<CR>',
 				'Open a tab with terminals' },
 			h = { ':wincmd v <CR> :wincmd h <CR>:terminal<CR>', 'Open a terminal on the left' },
@@ -118,5 +129,3 @@ keymap("i", "<C-l>", "<Esc>>>a", opts)
 -- Various
 keymap("n", '<C-j>', 'j^zz', opts)
 keymap("n", '<C-k>', 'k^zz', opts)
-keymap("n", '<Cr>', 'inope', opts)
-keymap("n", '-', 'inope', opts)

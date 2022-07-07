@@ -1,5 +1,5 @@
 # Path stuff...
-export PATH="$HOME/.brew/bin:$PATH:$HOME/.local/scripts/"
+export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts/"
 
 # OS specific actions
 OS=`getos`
@@ -59,6 +59,7 @@ alias l='ls -l'
 alias ll='ls -l'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias wiki='nvim -c ":VimwikiIndex"'
+alias flashkbd='$HOME/Documents/dev/qmk-fast-flasher/qmk_fast_flasher.sh'
 
 # Makefile aliases
 # alias make='make -j -Otarget'
@@ -99,6 +100,7 @@ LC_ALL="en_US.UTF-8"
 
 # Task Warrior configuration for zsh
 # source ~/.config/task/zsh-task
+alias t=todo.sh
 
 # Junest
 # export PATH="~/.local/share/junest/bin:$PATH:~/.junest/usr/bin_wrappers"

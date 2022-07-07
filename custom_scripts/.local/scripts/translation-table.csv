@@ -1,0 +1,4 @@
+arch,ubuntu,debian,brew
+base-devel,build-essential git,build-essential git,x
+node,nodejs,nodejs,node
+openssh,openssh-client,openssh-client,openssh
