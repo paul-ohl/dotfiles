@@ -2,6 +2,7 @@
 require("pohl.options")
 require("pohl.colorscheme")
 require("pohl.autocommands")
+require("pohl.globals")
 vim.g.mapleader = " " -- set leader key
 
 -- better escape with jk without lag
