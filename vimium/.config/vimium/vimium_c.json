@@ -1,21 +1,35 @@
 {
 	"name": "Vimium C",
-	"@time": "15/04/2022, 11:01:44",
-	"time": 1650034904384,
+	"@time": "29/07/2022, 18:26:52",
+	"time": 1659112012845,
 	"environment": {
-		"extension": "1.98.0",
+		"extension": "1.98.3",
 		"platform": "mac",
-		"chrome": "100"
+		"chromium": "103"
 	},
 	"allBrowserUrls": true,
 	"autoDarkMode": 1,
-	"exclusionRules": [],
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://training.play-with-docker.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://cloud.linode.com/linodes/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://stadia.google.com/"
+		}
+	],
 	"grabBackFocus": true,
 	"ignoreCapsLock": 2,
 	"ignoreKeyboardLayout": 1,
 	"keyMappings": [
 		"#!no-check",
 		"map <c-p> togglePinTab",
+		"unmap <a-p>",
 		"map ; passNextKey",
 		""
 	],
@@ -43,6 +57,8 @@
 		"v.p: vimium://parse\\ $S re= Redo Search",
 		"gh|github: https://github.com/search?q=$s \\",
 		"  blank=https://github.com/ GitHub Repo",
+		"alt: https://alternativeto.net/browse/search/?q=$s \\",
+		"  blank=https://alternativeto.net",
 		""
 	],
 	"searchUrl": "https://duckduckgo.com/?q=$s DuckDuckGo",
