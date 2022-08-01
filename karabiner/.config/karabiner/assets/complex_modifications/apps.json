@@ -7,6 +7,70 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "right_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Spotify.app'"
+            }
+          ]
+        },{
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Spotify.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "right_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Brave Browser.app'"
+            }
+          ]
+        },{
+          "type": "basic",
+          "from": {
             "key_code": "w",
             "modifiers": {
               "mandatory": [
@@ -29,7 +93,28 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "return_or_enter",
+            "key_code": "i",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "right_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/System/Applications/Mail.app'"
+            }
+          ]
+        },{
+          "type": "basic",
+          "from": {
+            "key_code": "i",
             "modifiers": {
               "mandatory": [
                 "left_command",
@@ -44,7 +129,180 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/kitty"
+              "shell_command": "open '/System/Applications/Mail.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "right_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/System/Applications/Calendar.app'"
+            }
+          ]
+        },{
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/System/Applications/Calendar.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "right_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/KeePassXC.app'"
+            }
+          ]
+        },{
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/KeePassXC.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "right_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Discord.app'"
+            }
+          ]
+        },{
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Discord.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "right_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Ableton Live 11 Suite.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Ableton Live 11 Suite.app'"
             }
           ]
         },
@@ -56,7 +314,6 @@
               "mandatory": [
                 "left_command",
                 "left_control",
-                "left_shift",
                 "left_option"
               ],
               "optional": [
@@ -66,7 +323,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/kitty"
+              "shell_command": "open /Applications/kitty.app"
             }
           ]
         }

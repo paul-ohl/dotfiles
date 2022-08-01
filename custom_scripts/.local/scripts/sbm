@@ -1,0 +1,19 @@
+#!/bin/sh
+# Date: 2022/07/31
+# Description: Simple Bluetooth Manager for Macos
+
+if [ "$(blueutil --power)" = "0" ]; then
+	turn_bt_on=$(printf "Turn Bluetooth on\nDo nothing" | choose -i)
+	if [ "$turn_bt_on" = "0" ]; then
+		blueutil --power 1
+	else
+		exit 0
+	fi
+fi
+
+paired_devices=$(blueutil --paired)
+echo "$paired_devices" | sed 's/ (.*)//' | sed 's/, /\t/g'
+
+echo "$paired_devices" | choose
+disconnected="🔴"
+connected="🟢"

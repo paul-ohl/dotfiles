@@ -100,7 +100,8 @@ LC_ALL="en_US.UTF-8"
 
 # Task Warrior configuration for zsh
 # source ~/.config/task/zsh-task
-alias t=todo.sh
+alias t=todo-helper
+alias tp="todo-helper -p"
 
 # Junest
 # export PATH="~/.local/share/junest/bin:$PATH:~/.junest/usr/bin_wrappers"
