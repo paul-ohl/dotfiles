@@ -1,0 +1,14 @@
+#!/bin/sh
+# Date: 2022/07/26
+# Description: A simple script to help with todo.sh
+
+if [ "$#" = 0 ]; then
+	todo.sh ls | grep "+next"
+elif [ "$1" = "-p" ]; then
+	SELECTED_CAT=$(todo.sh listproj | grep -v "+next" | fzf)
+	todo.sh ls | grep "$SELECTED_CAT"
+elif [ "$1" = "-a" ]; then
+	todo.sh ls
+else
+	todo.sh "$@"
+fi
