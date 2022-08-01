@@ -5,8 +5,8 @@ export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts/"
 OS=`getos`
 if [ "$OS" = "LINUX" ]; then # Linux specific
 	# setxkbmap -option caps:escape > /dev/null
-	setxkbmap -option 'caps:ctrl_modifier'
-	xcape -e 'Caps_Lock=Escape' -t 100
+	# setxkbmap -option 'caps:ctrl_modifier'
+	# xcape -e 'Caps_Lock=Escape' -t 100
 
 	# cool aliases
 	alias ls='ls --color'
