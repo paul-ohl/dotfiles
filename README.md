@@ -23,6 +23,13 @@ pickers easily in Telescope
 
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
 
+Setup equivalent of hydra for vim.
+
+### Linux general
+
+display a warning to turn off speakers before computer shutdown.
+`zenity --warning --text="Turn off the speakers"`
+
 ### Custom Scripts
 
 notif: will select the right utility depending on the OS to put up a notification

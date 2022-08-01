@@ -5,6 +5,19 @@ if not status_ok then
 	return
 end
 
+local function open_folder(folder_name, open_in_new_tab)
+	-- Open a new tab
+	if open_in_new_tab then
+		vim.cmd('$tabnew')
+	end
+	local tlscp_file_browser = require("telescope").extensions.file_browser
+	tlscp_file_browser.file_browser({
+		path = folder_name,
+		hidden = true,
+		grouped = true,
+	})
+end
+
 wk.register({
 	["<Leader>"] = {
 		w = { ':write<CR>', 'Write' },
@@ -23,9 +36,11 @@ wk.register({
 			v = { ':$tabnew<CR>:lcd ' ..
 				vim.fn.stdpath('config') .. '<CR>:LualineRenameTab im config<CR>:Telescope find_files<CR>',
 				'Search im config' },
-			d = { '<Cmd>lua require "telescope".extensions.file_browser.file_browser<CR>', 'Browse Dotfiles' },
-			f = { '<Cmd>lua require(\'telescope.builtin\').find_files()<CR>', 'Find files' },
-			g = { '<Cmd>lua require(\'telescope.builtin\').live_grep()<CR>', 'Grep files' },
+			d = { function() open_folder('$HOME/dotfiles/', true) end, 'Browse Dotfiles' },
+			b = { function() open_folder(nil) end, 'Browse current folder' },
+			f = { function() require('telescope.builtin').find_files() end, 'Find files' },
+			h = { function() require('telescope.builtin').help_tags() end, 'Search help' },
+			g = { function() require('telescope.builtin').live_grep() end, 'Grep files' },
 		},
 		b = {
 			name = "Buffer",
