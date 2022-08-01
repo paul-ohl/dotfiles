@@ -90,7 +90,9 @@ packer.startup(function(use)
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 	use "AckslD/nvim-neoclip.lua"
+	-- use "/home/pohl/Documents/dev/telescope-file-browser.nvim/"
 	use "nvim-telescope/telescope-file-browser.nvim"
+	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	-- use 'nvim-telescope/telescope-media-files.nvim' -- preview images
 
 	-- Automatically set up your configuration after cloning packer.nvim

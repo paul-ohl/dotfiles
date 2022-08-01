@@ -15,7 +15,9 @@ imap <buffer> <C-h> <Plug>VimwikiDecreaseLvlSingleItem
 syntax on
 
 " Indents word-wrapped lines as much as the 'parent' line
-set breakindent
+setlocal textwidth=80
+setlocal breakindent
 " Ensures word-wrap does not split words
-set formatoptions=l
-set lbr
+
+setlocal formatoptions=t
+setlocal lbr
