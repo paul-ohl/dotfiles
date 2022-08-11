@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Date: 2022/07/31
 # Description: Simple Bluetooth Manager for Macos
 
@@ -12,7 +12,16 @@ if [ "$(blueutil --power)" = "0" ]; then
 fi
 
 paired_devices=$(blueutil --paired)
-echo "$paired_devices" | sed 's/ (.*)//' | sed 's/, /\t/g'
+paired_devices=$(echo "$paired_devices" | sed 's/ (.*)//' | sed 's/, /\t/g')
+
+echo "$paired_devices" | \
+	awk -F \t '
+		{ print $0 }
+		{ if ($2 == "connected") { print "connected" } else print "no" }
+	'
+		# { if ($3 != "connected") print "HI" }
+
+exit 0
 
 echo "$paired_devices" | choose
 disconnected="🔴"
