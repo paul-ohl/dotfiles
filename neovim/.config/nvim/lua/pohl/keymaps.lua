@@ -69,7 +69,7 @@ wk.register({
 		},
 		t = {
 			name = "Tabs & Terminals",
-			n = { ':tabnew<CR>:Dashboard', 'Open a new tab' },
+			n = { ':tabnew<CR>', 'Open a new tab' },
 			q = { ':tabclose<CR>', 'Close tab' },
 			e = { '<C-w>T', 'Edit in a new tab' },
 			["<"] = { ':tabmove -<CR>', 'Move tab to the left' },
