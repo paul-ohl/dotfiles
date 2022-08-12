@@ -66,6 +66,7 @@ wk.register({
 			name = "Plugins",
 			s = { '<Cmd>PackerSync<CR>', 'Synchronise packages' },
 			i = { '<Cmd>PackerStatus<CR>', 'Packages status' },
+			l = { '<Cmd>LspInstallInfo<CR>', 'Lsp Install Info' },
 		},
 		t = {
 			name = "Tabs & Terminals",
