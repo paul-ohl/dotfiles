@@ -33,6 +33,7 @@ db.custom_center = {
 	{ icon = '  ', desc = 'Today\'s diary', action = 'VimwikiMakeDiaryNote' },
 	{ icon = '理   ', desc = 'Todos', action = 'VimwikiMakeDiaryNote' },
 }
+db.hide_tabline = false
 
 -- db.custom_footer  -- type can be nil,table or function(must be return table in function)
 -- db.preview_file_Path    -- string type
@@ -40,7 +41,6 @@ db.custom_center = {
 -- db.preview_file_width   -- string type
 -- db.preview_command      -- string type
 -- db.hide_statusline      -- boolean default is true.it will hide statusline in dashboard buffer and auto open in other buffer
--- db.hide_tabline         -- boolean default is true.it will hide tabline in dashboard buffer and auto open in other buffer
 -- db.session_directory    -- string type the directory to store the session file
 --
 -- -- example of db.custom_center for new lua coder,the value of nil mean if you

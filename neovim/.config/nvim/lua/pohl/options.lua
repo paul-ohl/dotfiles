@@ -36,11 +36,15 @@ local options = {
 	signcolumn = "yes", -- always show the sign column
 }
 
-for k, v in pairs(options) do
-	vim.opt[k] = v
+function set_vim_option (key, value)
+	vim.opt[key] = value
 end
 
-vim.opt.shortmess:append "c"
+for k, v in pairs(options) do
+	pcall(set_vim_option, k, v)
+end
+
+vim.opt.shortmess:append "cf"
 
 -- Set Terminal colors if necessary
 if vim.fn.has('termguicolors') == 1 then
