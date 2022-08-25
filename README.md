@@ -22,6 +22,7 @@ browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 
 if it ever gets useful: [Notifications](https://github.com/rcarriga/nvim-notify)
+replace error prints (from options) with notifs
 
 Setup equivalent of hydra for vim.
 

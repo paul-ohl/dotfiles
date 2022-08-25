@@ -40,8 +40,20 @@ function set_vim_option (key, value)
 	vim.opt[key] = value
 end
 
+local failed_options = {}
 for k, v in pairs(options) do
-	pcall(set_vim_option, k, v)
+	if not pcall(set_vim_option, k, v) then
+		table.insert(failed_options, k)
+	end
+end
+if #failed_options == 1 then
+	print('option ' .. failed_options[1] .. ' failed to be set.')
+elseif #failed_options > 1 then
+	local output = "options failed: "
+	for _, option_name in pairs(failed_options) do
+		output = output .. option_name .. ", "
+	end
+	print(output)
 end
 
 vim.opt.shortmess:append "cf"
