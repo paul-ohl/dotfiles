@@ -31,6 +31,7 @@ elif [ "$OS" = "OSX" ]; then # Macos specific
 	fi
 
 	# cool aliases
+	alias tpf='ifconfig | grep -A 2 utun | grep -B 1 "inet 10."'
 	alias parle='say -v Thomas'
 fi
 
@@ -54,11 +55,12 @@ alias so='source $HOME/.zshrc'
 alias vi='/usr/bin/vim'
 alias vim='nvim'
 alias norm='norminette . | grep -v OK'
-alias la='ls -la'
+alias la='ls -lA'
 alias l='ls -l'
 alias ll='ls -l'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias wiki='nvim -c ":VimwikiIndex"'
+alias w='nvim -c ":VimwikiIndex"'
 alias flashkbd='$HOME/Documents/dev/qmk-fast-flasher/qmk_fast_flasher.sh'
 
 # Makefile aliases
