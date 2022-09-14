@@ -2,4 +2,4 @@
 # Date: 2022/03/19
 # Description: reads your location from your ip
 
-curl -s "https://freegeoip.app/json/" | jq '.ip,.country_name,.region_name'
+curl -s "https://ipapi.co/json/" | jq '.ip,.country_name,.region,.city'
