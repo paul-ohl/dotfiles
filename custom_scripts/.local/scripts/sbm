@@ -2,6 +2,34 @@
 # Date: 2022/07/31
 # Description: Simple Bluetooth Manager for Macos
 
+select_paired_device()
+{
+	paired_devices=$(blueutil --paired | sort)
+	paired_devices=$(echo "$paired_devices" | sed 's/ (.*)//' | sed 's/, /\t/g')
+	chosen_device=$(echo "$paired_devices" | \
+		awk -F \t '{ if ($2 == "connected") { print "🟢 " $5 } else print "🔴 " $5 }' | \
+		sed 's/name: //' | tr -d '"' | choose -i)
+	if [ "$chosen_device" = "-1" ]; then
+		echo -1
+		exit 0
+	fi
+	address_list=($(echo "$paired_devices" | awk '{ print $2 }'))
+
+	echo "${address_list[$chosen_device]}"
+}
+
+connect_device ()
+{
+	chosen_device=$(select_paired_device)
+	if [ "$chosen_device" = "-1" ]; then
+		exit 0
+	fi
+	blueutil --connect $chosen_device
+	if ! [ "$?" = "0" ]; then
+		terminal-notifier -title "Simple Bluetooth Manager" -message "Could not connect device $chosen_device"
+	fi
+}
+
 if [ "$(blueutil --power)" = "0" ]; then
 	turn_bt_on=$(printf "Turn Bluetooth on\nDo nothing" | choose -i)
 	if [ "$turn_bt_on" = "0" ]; then
@@ -11,18 +39,14 @@ if [ "$(blueutil --power)" = "0" ]; then
 	fi
 fi
 
-paired_devices=$(blueutil --paired)
-paired_devices=$(echo "$paired_devices" | sed 's/ (.*)//' | sed 's/, /\t/g')
-
-echo "$paired_devices" | \
-	awk -F \t '
-		{ print $0 }
-		{ if ($2 == "connected") { print "connected" } else print "no" }
-	'
-		# { if ($3 != "connected") print "HI" }
-
-exit 0
-
-echo "$paired_devices" | choose
-disconnected="🔴"
-connected="🟢"
+if [ "$1" = "-a" ]; then
+	chosen_option=$(printf "turn off bluetooth\npair new device\ndelete device\nconnect device" | choose -i)
+	case "$chosen_option" in
+		-1) exit 0;;
+		0) blueutil --power 0;;
+		3) connect_device ;;
+		*) echo unimplemented ;;
+	esac
+else
+	connect_device
+fi
