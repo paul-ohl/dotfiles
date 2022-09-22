@@ -67,7 +67,27 @@ packer.startup(function(use)
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 	-- COC
-	use {'neoclide/coc.nvim', branch = 'release'}
+	use { 'neoclide/coc.nvim', branch = 'release' }
+
+	-- Funny Bullshit
+	use {
+		'seandewar/killersheep.nvim',
+		config = function()
+			require("killersheep").setup {
+				gore = true,
+				keymaps = {
+					move_left = "h",
+					move_right = "l",
+					shoot = "<Space>",
+				},
+			}
+		end,
+		command = ':KillKillKill'
+	}
+	use {
+		'ThePrimeagen/vim-be-good',
+		command = ':VimBeGood'
+	}
 
 	--[[ Neovim completion
 	-- LSP
