@@ -105,10 +105,10 @@ wk.register({
 		}
 	},
 	["]"] = {
-		[']'] = { '<Cmd>lua vim.lsp.buf.definition()<CR>mt12jzz`t', 'Go definition' },
-		['t'] = { '<Cmd>lua vim.lsp.buf.definition()<CR>mt:tabedit %<CR>`t12jzz`tgT<C-t>zzgt', 'Go definition in new tab' },
-		['v'] = { ':vsplit<CR><Cmd>lua vim.lsp.buf.definition()<CR>mt12jzz`t<CR>', 'Go definition in vertical split' },
-		['s'] = { ':split<CR><Cmd>lua vim.lsp.buf.definition()<CR>mt12jzz`t<CR>', 'Go definition in horizontal split' },
+		[']'] = { '<C-]>mt12jzz`t', 'Go definition' },
+		['t'] = { '<C-]>mt:tabedit %<CR>`t12jzz`tgT<C-t>zzgt', 'Go definition in new tab' },
+		['v'] = { ':vsplit<CR><C-]>mt12jzz`t<CR>', 'Go definition in vertical split' },
+		['s'] = { ':split<CR><C-]>mt12jzz`t<CR>', 'Go definition in horizontal split' },
 	},
 	["["] = {
 		['['] = { '<C-t>zz', 'go back in tag stack' }

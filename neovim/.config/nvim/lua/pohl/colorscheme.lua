@@ -1,18 +1,4 @@
-local colorscheme = "kanagawa"
-
-local status_ok, colorscheme_plugin = pcall(require, colorscheme)
-if not status_ok then
-	vim.notify("colorscheme " .. colorscheme .. " not found!")
-	return
-end
-
-if colorscheme == "kanagawa" then
-	colorscheme_plugin.setup({
-		transparent = true,
-		dimInactive = false,
-	})
-
-end
+local colorscheme = "gruvbox"
 
 vim.cmd("colorscheme " .. colorscheme)
 

@@ -30,6 +30,9 @@ elif [ "$OS" = "OSX" ]; then # Macos specific
 		compinit
 	fi
 
+	# disable key-repeat.
+	defaults write NSGlobalDomain InitialKeyRepeat -int 30000
+
 	# cool aliases
 	alias tpf='ifconfig | grep -A 2 utun | grep -B 1 "inet 10."'
 	alias parle='say -v Thomas'

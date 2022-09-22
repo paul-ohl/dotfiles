@@ -18,6 +18,8 @@ The `setup.sh` script is tailored to my config, use at your own risk.
 
 Telescope picker for todo.txt
 
+[Hydra](https://github.com/anuvyklack/hydra.nvim)
+
 browse custom directories easily, improve on OpenDirectoryInTab -> create custom
 pickers easily in Telescope
 

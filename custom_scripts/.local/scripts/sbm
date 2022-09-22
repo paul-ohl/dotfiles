@@ -8,7 +8,7 @@ select_paired_device()
 	paired_devices=$(echo "$paired_devices" | sed 's/ (.*)//' | sed 's/, /\t/g')
 	chosen_device=$(echo "$paired_devices" | \
 		awk -F \t '{ if ($2 == "connected") { print "🟢 " $5 } else print "🔴 " $5 }' | \
-		sed 's/name: //' | tr -d '"' | choose -i)
+		sed 's/name: //' | tr -d '"' | choose -f Alice -i)
 	if [ "$chosen_device" = "-1" ]; then
 		echo -1
 		exit 0
@@ -31,7 +31,7 @@ connect_device ()
 }
 
 if [ "$(blueutil --power)" = "0" ]; then
-	turn_bt_on=$(printf "Turn Bluetooth on\nDo nothing" | choose -i)
+	turn_bt_on=$(printf "Turn Bluetooth on\nDo nothing" | choose -f Alice -i)
 	if [ "$turn_bt_on" = "0" ]; then
 		blueutil --power 1
 	else
@@ -40,7 +40,7 @@ if [ "$(blueutil --power)" = "0" ]; then
 fi
 
 if [ "$1" = "-a" ]; then
-	chosen_option=$(printf "turn off bluetooth\npair new device\ndelete device\nconnect device" | choose -i)
+	chosen_option=$(printf "turn off bluetooth\npair new device\ndelete device\nconnect device" | choose -f Alice -i)
 	case "$chosen_option" in
 		-1) exit 0;;
 		0) blueutil --power 0;;
