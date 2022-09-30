@@ -66,7 +66,7 @@ wk.register({
 			name = "Plugins",
 			s = { '<Cmd>PackerSync<CR>', 'Synchronise packages' },
 			i = { '<Cmd>PackerStatus<CR>', 'Packages status' },
-			l = { '<Cmd>LspInstallInfo<CR>', 'Lsp Install Info' },
+			m = { '<Cmd>Mason<CR>', 'Open Mason page' },
 		},
 		t = {
 			name = "Tabs & Terminals",
@@ -85,13 +85,6 @@ wk.register({
 		},
 		d = {
 			name = 'Debug',
-			d = { ':make | packadd termdebug | Termdebug<CR><C-w>L<C-w>h<C-w>H<C-w>l<C-w>lifile <Tab><Tab>', 'Start debugger' },
-			n = { ':Over<CR>', 'Next' },
-			s = { ':Step<CR>', 'Step' },
-			c = { ':Continue<CR>', 'Continue' },
-			b = { ':Break<CR>', 'Break' },
-			u = { ':Clear<CR>', 'Clear' },
-			r = { ':Run<CR>', 'Run' },
 		},
 		["<Leader>"] = {
 			name = "Extended actions",
@@ -105,10 +98,10 @@ wk.register({
 		}
 	},
 	["]"] = {
-		[']'] = { '<C-]>mt12jzz`t', 'Go definition' },
-		['t'] = { '<C-]>mt:tabedit %<CR>`t12jzz`tgT<C-t>zzgt', 'Go definition in new tab' },
-		['v'] = { ':vsplit<CR><C-]>mt12jzz`t<CR>', 'Go definition in vertical split' },
-		['s'] = { ':split<CR><C-]>mt12jzz`t<CR>', 'Go definition in horizontal split' },
+		[']'] = { '', 'Go definition' },
+		['t'] = { '', 'Go definition in new tab' },
+		['v'] = { '', 'Go definition in vertical split' },
+		['s'] = { '', 'Go definition in horizontal split' },
 	},
 	["["] = {
 		['['] = { '<C-t>zz', 'go back in tag stack' }

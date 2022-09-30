@@ -1,5 +1,7 @@
 # Path stuff...
 export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts/"
+# Rust
+source "$HOME/.cargo/env"
 
 # OS specific actions
 OS=`getos`

@@ -36,7 +36,7 @@ local options = {
 	signcolumn = "yes", -- always show the sign column
 }
 
-function set_vim_option (key, value)
+local function set_vim_option (key, value)
 	vim.opt[key] = value
 end
 
