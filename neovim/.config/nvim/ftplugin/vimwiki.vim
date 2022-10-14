@@ -12,6 +12,10 @@ nnoremap <buffer> # Go<CR>## <C-R>=strftime("%Hh%M")<CR><CR><CR>
 imap <buffer> <C-l> <Plug>VimwikiIncreaseLvlSingleItem
 imap <buffer> <C-h> <Plug>VimwikiDecreaseLvlSingleItem
 
+" Insert mode mappings
+inoremap <C-h> <Esc><<a
+inoremap <C-l> <Esc>>>a
+
 syntax on
 
 " Indents word-wrapped lines as much as the 'parent' line

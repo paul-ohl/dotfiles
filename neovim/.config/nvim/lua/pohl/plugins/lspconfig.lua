@@ -6,11 +6,11 @@ require("mason-lspconfig").setup({
 
 -- Now, lspconfig configuration
 -- Global Mappings.
-local opts = { noremap=true, silent=true }
+local options = { noremap=true, silent=true }
 -- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '<space>dk', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', '<space>dj', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>dl', "<Cmd>Telescope diagnostics<CR>", opts)
+vim.keymap.set('n', '<space>dk', vim.diagnostic.goto_prev, options)
+vim.keymap.set('n', '<space>dj', vim.diagnostic.goto_next, options)
+vim.keymap.set('n', '<space>dl', "<Cmd>Telescope diagnostics<CR>", options)
 
 -- on\_attach binds the funtion only in lsp-enabled buffer
 local on_attach = function(_, bufnr)
@@ -38,7 +38,7 @@ local lsp_flags = {
 }
 
 -- Individual server configs start here
--- to add a new config, [check out the list](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua)
+-- to add a new config, [check out the list](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 -- or `:help lspconfig-all`
 
 -- A default configuration with no customisation
@@ -113,4 +113,24 @@ require('lspconfig')['rust_analyzer'].setup{
 require('lspconfig')['tsserver'].setup{
 	on_attach = on_attach,
 	flags = lsp_flags,
+}
+-- html
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require('lspconfig')['html'].setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+	settings = {
+		init_options = {
+			configurationSection = { "html", "css", "javascript" },
+			embeddedLanguages = {
+				css = true,
+				javascript = true
+			},
+			provideFormatter = true
+		}
+	}
 }

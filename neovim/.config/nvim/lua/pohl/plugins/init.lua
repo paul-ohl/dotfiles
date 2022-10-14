@@ -36,14 +36,18 @@ packer.startup(function(use)
 	use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
 	use 'numToStr/Comment.nvim' -- Easily comment stuff
 	use 'nvim-lualine/lualine.nvim' -- replacement for lightline
+	use {
+		'alvarosevilla95/luatab.nvim', -- Tab line
+		requires='kyazdani42/nvim-web-devicons',
+		config = function () require('luatab').setup{} end,
+	}
 	use 'tpope/vim-fugitive' -- Git client straight inside Vim
 	use 'psliwka/vim-smoothie' -- Smooth scrolling
 	use 'lewis6991/impatient.nvim' -- faster startup time
 	use 'folke/which-key.nvim' -- keybindings are *fancier*
 	use 'vimwiki/vimwiki' -- Wiki inside vim
 	use 'glepnir/dashboard-nvim' -- a welcoming dashboard
-	use 'tpope/vim-surround' -- Make it easier to handle quotes
-	use 'tpope/vim-repeat' -- Make it easier to handle .
+	use 'stevearc/dressing.nvim' -- beautiful ui
 
 	-- Colorschemes
 	use 'gruvbox-community/gruvbox' -- Gruvbox
@@ -62,25 +66,46 @@ packer.startup(function(use)
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 	-- use "AckslD/nvim-neoclip.lua"
-	use "nvim-telescope/telescope-file-browser.nvim"
+	use 'nvim-telescope/telescope-file-browser.nvim'
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 	-- nvim-lspconfig
+	use 'neovim/nvim-lspconfig'
+	use 'williamboman/mason.nvim' -- Auto installation of LSPs
+	use 'williamboman/mason-lspconfig.nvim' -- for better integration with lspconfig
+
+	-- Snipets
+	use({ "L3MON4D3/LuaSnip" })
+
+	-- Completion
 	use {
-		'neovim/nvim-lspconfig',
+		'hrsh7th/nvim-cmp',
 		requires = {
-			{ "williamboman/mason.nvim" },
-			{ "williamboman/mason-lspconfig.nvim" },
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-path' },
+			{ 'hrsh7th/cmp-cmdline' },
 		}
 	}
+	use { 'nathangrigg/vim-beancount' }
+
+	-- TreeSitter
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+	}
+	use({
+		"kylechui/nvim-surround",
+		config = function()
+			require("nvim-surround").setup({})
+		end
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()
 	end
 end)
-
--- require('telescope-file-browser').setup()
 
 require('pohl.plugins.which-key')
 require('pohl.plugins.nvim_tree')
@@ -89,4 +114,6 @@ require('pohl.plugins.telescope')
 require('pohl.plugins.dashboard')
 require('pohl.plugins.fugitive')
 require('pohl.plugins.lspconfig')
+require('pohl.plugins.cmp')
+require('pohl.plugins.snipets')
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/pohl/plugins/vimwiki.vim')

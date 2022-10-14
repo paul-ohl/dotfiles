@@ -34,7 +34,7 @@ wk.register({
 		s = {
 			name = "Search",
 			v = { ':$tabnew<CR>:lcd ' ..
-				vim.fn.stdpath('config') .. '<CR>:LualineRenameTab im config<CR>:Telescope find_files<CR>',
+				vim.fn.stdpath('config') .. '<CR>:Telescope find_files<CR>',
 				'Search im config' },
 			d = { function() open_folder('$HOME/dotfiles/', true) end, 'Browse Dotfiles' },
 			b = { function() open_folder(nil) end, 'Browse current folder' },
@@ -62,6 +62,10 @@ wk.register({
 				L = { '<cmd>wincmd L<CR><cmd>WhichKey <LT>leader>be<CR>', 'Move right' },
 			},
 		},
+		e = {
+			name = "Edit",
+			r = { '<Cmd>edit ~/dotfiles/README.md<Cr>', 'Edit dotfiles\' README' },
+		},
 		p = {
 			name = "Plugins",
 			s = { '<Cmd>PackerSync<CR>', 'Synchronise packages' },
@@ -76,7 +80,7 @@ wk.register({
 			["<"] = { ':tabmove -<CR>', 'Move tab to the left' },
 			[">"] = { ':tabmove +<CR>', 'Move tab to the right' },
 			["0"] = { ':tabmove 0<CR>', 'Move tab to the beginning' },
-			t = { ':tabnew +terminal<CR>:wincmd v<CR>:terminal<CR>:LualineRenameTab  terms<CR>:wincmd h<CR>',
+			t = { ':tabnew +terminal<CR>:wincmd v<CR>:terminal<CR>:wincmd h<CR>',
 				'Open a tab with terminals' },
 			h = { ':wincmd v <CR> :wincmd h <CR>:terminal<CR>', 'Open a terminal on the left' },
 			j = { ':wincmd s <CR>:terminal<CR>', 'Open a terminal on the bottom' },
@@ -130,10 +134,6 @@ keymap("v", '$', 'g_', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
-
--- Insert mode mappings
-keymap("i", "<C-h>", "<Esc><<a", opts)
-keymap("i", "<C-l>", "<Esc>>>a", opts)
 
 -- Various
 keymap("n", '<C-j>', 'j^zz', opts)

@@ -20,6 +20,8 @@ The `setup.sh` script is tailored to my config, use at your own risk.
 
 Use ccls instead of clangd? Would have to manage it myself instead of with mason
 
+Setup [LuaSnips](https://www.youtube.com/watch?v=Dn800rlPIho) better.
+
 ### Linux general
 
 display a warning to turn off speakers before computer shutdown.

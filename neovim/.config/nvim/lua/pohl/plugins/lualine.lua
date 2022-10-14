@@ -46,13 +46,6 @@ lualine.setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {
-	  lualine_a = {{'tabs', mode=2}},
-	  lualine_b = {},
-	  lualine_c = {},
-	  lualine_x = {'filename'},
-	  lualine_y = {'branch'},
-	  lualine_z = {'os.date("%R | %a %d %b")'},
-  },
+  tabline = { },
   extensions = {}
 }

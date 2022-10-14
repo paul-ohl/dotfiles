@@ -4,4 +4,5 @@ if exists("did_load_filetypes")
 endif
 augroup filetypedetect
     au! BufRead,BufNewFile *.conf       setfiletype sh
+    au! BufRead,BufNewFile *.bean       setfiletype beancount
 augroup END
