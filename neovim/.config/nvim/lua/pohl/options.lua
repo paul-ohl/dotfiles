@@ -34,6 +34,7 @@ local options = {
 	hidden = true, -- allow unwritten buffers to be hidden
 	colorcolumn = '80', -- add a column at 80 characters
 	signcolumn = "yes", -- always show the sign column
+	foldlevel = 99, -- never close any folds, it annoys me
 }
 
 local function set_vim_option (key, value)
