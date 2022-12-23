@@ -112,10 +112,21 @@ wk.register({
 	}
 })
 
-
 -- The rest are remaps that weren't worth putting in which-key
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
+
+-- Colemak
+keymap("n", 'n', 'j', opts)
+keymap("n", 'N', 'J', opts)
+keymap("n", 'e', 'k', opts)
+keymap("n", 'E', 'K', opts)
+keymap("n", 'i', 'l', opts)
+keymap("n", 'I', 'L', opts)
+keymap("n", 'k', 'n', opts)
+keymap("n", 'K', 'N', opts)
+keymap("n", 'l', 'i', opts)
+keymap("n", 'L', 'I', opts)
 
 -- Tabs
 keymap("n", '<Tab>', 'gt', opts)
