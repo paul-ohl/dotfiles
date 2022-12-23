@@ -34,7 +34,12 @@ packer.init {
 packer.startup(function(use)
 	use 'wbthomason/packer.nvim' -- Have packer manage itself
 	use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
-	use 'numToStr/Comment.nvim' -- Easily comment stuff
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	} -- Comments
 	use 'nvim-lualine/lualine.nvim' -- replacement for lightline
 	use {
 		'alvarosevilla95/luatab.nvim', -- Tab line
@@ -87,6 +92,14 @@ packer.startup(function(use)
 		}
 	}
 	use { 'nathangrigg/vim-beancount' }
+	use { -- Completion for Rust's crates
+		'saecki/crates.nvim',
+		event = { "BufRead Cargo.toml" },
+		requires = { { 'nvim-lua/plenary.nvim' } },
+		config = function()
+			require('crates').setup()
+		end,
+	}
 
 	-- TreeSitter
 	use {

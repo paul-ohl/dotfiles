@@ -36,7 +36,6 @@ elif [ "$OS" = "OSX" ]; then # Macos specific
 	defaults write NSGlobalDomain InitialKeyRepeat -int 30000
 
 	# cool aliases
-	alias tpf='ifconfig | grep -A 2 utun | grep -B 1 "inet 10."'
 	alias parle='say -v Thomas'
 fi
 
@@ -60,7 +59,6 @@ PS1="%1~ > "
 alias so='source $HOME/.zshrc'
 alias vi='/usr/bin/vim'
 alias vim='nvim'
-alias norm='norminette . | grep -v OK'
 alias la='ls -lA'
 alias l='ls -l'
 alias ll='ls -l'
@@ -105,12 +103,3 @@ LC_MONETARY="fr_FR.UTF-8"
 LC_NUMERIC="fr_FR.UTF-8"
 LC_TIME="fr_FR.UTF-8"
 LC_ALL="en_US.UTF-8"
-
-# Task Warrior configuration for zsh
-# source ~/.config/task/zsh-task
-alias t=todo-helper
-alias tp="todo-helper -p"
-
-# Junest
-# export PATH="~/.local/share/junest/bin:$PATH:~/.junest/usr/bin_wrappers"
-# alias j="$HOME/.local/share/junest/bin/junest zsh"
