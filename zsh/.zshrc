@@ -32,10 +32,8 @@ elif [ "$OS" = "OSX" ]; then # Macos specific
 		compinit
 	fi
 
-	# disable key-repeat.
-	defaults write NSGlobalDomain InitialKeyRepeat -int 30000
-
 	# cool aliases
+	alias dfh='df -h | grep disk1s5'
 	alias parle='say -v Thomas'
 fi
 

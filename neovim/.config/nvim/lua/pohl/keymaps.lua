@@ -134,6 +134,7 @@ keymap("v", '$', 'g_', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
+keymap("v", "[[", '<C-t>zz', opts)
 
 -- Various
 keymap("n", '<C-j>', 'j^zz', opts)
