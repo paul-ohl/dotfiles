@@ -51,7 +51,6 @@ packer.startup(function(use)
 	use 'lewis6991/impatient.nvim' -- faster startup time
 	use 'folke/which-key.nvim' -- keybindings are *fancier*
 	use 'vimwiki/vimwiki' -- Wiki inside vim
-	use 'glepnir/dashboard-nvim' -- a welcoming dashboard
 	use 'stevearc/dressing.nvim' -- beautiful ui
 
 	-- Colorschemes
@@ -124,7 +123,6 @@ require('pohl.plugins.which-key')
 require('pohl.plugins.nvim_tree')
 require('pohl.plugins.lualine')
 require('pohl.plugins.telescope')
-require('pohl.plugins.dashboard')
 require('pohl.plugins.fugitive')
 require('pohl.plugins.lspconfig')
 require('pohl.plugins.cmp')
