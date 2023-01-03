@@ -19,6 +19,16 @@ local function pasteBuffer()
 	end
 end
 
+local au = require('modules.autocommand')
+
+au.group('BufferEditing', {
+	{ -- Save last closed window
+		'WinLeave',
+		'*',
+		'let g:lastWinName = @%',
+	},
+})
+
 local function undoCloseBuffer()
   vim.api.nvim_exec('vsplit ' .. vim.api.nvim_get_var('lastWinName'), false)
 end

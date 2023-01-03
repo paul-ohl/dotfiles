@@ -1,12 +1,11 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-	print("Cannot load telescope")
-	return
-end
+local telescope = require('telescope')
+local builtin = require('telescope.builtin')
+
+vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>sg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 
 local actions = require "telescope.actions"
-
--- keymap("n", 'gR', "<Cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
 
 telescope.setup {
 	defaults = {
@@ -131,6 +130,4 @@ telescope.setup {
 	}
 }
 
--- require('neoclip').setup()
-require("telescope").load_extension("file_browser")
-require("telescope").load_extension("fzf")
+telescope.load_extension("file_browser")

@@ -1,25 +1,23 @@
 local options = {
 	backup = false, -- creates a backup file
-	cmdheight = 2, -- more space in the neovim command line for displaying messages
 	completeopt = { "menuone", "noselect" }, -- mostly just for cmp
 	fileencoding = "utf-8", -- the encoding written to a file
 	hlsearch = false, -- Don't leave the search results highlighted
 	incsearch = true, -- display the best result while you're typing a search
 	errorbells = false, -- no error bells
 	ignorecase = true, -- ignore case in search patterns
-	mouse = "n", -- allow the mouse to be used in neovim
-	pumheight = 10, -- pop up menu height
+	mouse = "a", -- allow the mouse to be used in neovim
+	-- pumheight = 10, -- pop up menu height
 	showmode = false, -- we don't need to see things like -- INSERT -- anymore
 	smartcase = true, -- smart case
 	smartindent = true, -- make indenting smarter again
 	splitbelow = true, -- force all horizontal splits to go below current window
 	splitright = true, -- force all vertical splits to go to the right of current window
 	swapfile = false, -- creates a swapfile
-	timeoutlen = 400, -- time to wait for a mapped sequence to complete (in milliseconds)
 	undofile = true, -- enable persistent undo
 	-- save undos in ~/.local/share/nvim/undodir/
 	undodir = vim.fn.stdpath('data') .. '/undodir',
-	updatetime = 300, -- faster completion (4000ms default)
+	updatetime = 50, -- faster completion (4000ms default)
 	writebackup = false, -- if a file is being edited by another program, it is not allowed to be edited
 	expandtab = false, -- convert tabs to spaces
 	tabstop = 4, -- tabs are 4 space wide
@@ -33,7 +31,7 @@ local options = {
 	confirm = true, -- ask for confirmation before quitting an unwritten buffer
 	hidden = true, -- allow unwritten buffers to be hidden
 	colorcolumn = '80', -- add a column at 80 characters
-	signcolumn = "yes", -- always show the sign column
+	signcolumn = "no", -- always show the sign column
 	foldlevel = 99, -- never close any folds, it annoys me
 }
 

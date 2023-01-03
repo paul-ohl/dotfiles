@@ -1,13 +1,4 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then
-	print("Cannot load lualine module")
-	return
-end
-
--- Mappings!
-local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-keymap("n", '<Leader>tr', "<Cmd>LualineRenameTab<CR>", opts)
+local lualine = require("lualine")
 
 lualine.setup {
   options = {
@@ -49,3 +40,4 @@ lualine.setup {
   tabline = { },
   extensions = {}
 }
+
