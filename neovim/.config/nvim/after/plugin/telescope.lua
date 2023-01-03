@@ -1,9 +1,4 @@
 local telescope = require('telescope')
-local builtin = require('telescope.builtin')
-
-vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>sg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 
 local actions = require "telescope.actions"
 
@@ -16,11 +11,8 @@ telescope.setup {
 
 		mappings = {
 			i = {
-				["<C-n>"] = actions.cycle_history_next,
-				["<C-p>"] = actions.cycle_history_prev,
-
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
+				["<C-n>"] = actions.move_selection_next,
+				["<C-e>"] = actions.move_selection_previous,
 				["<Up>"] = actions.move_selection_previous,
 				["<Down>"] = actions.move_selection_next,
 
@@ -40,8 +32,6 @@ telescope.setup {
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-				["<C-l>"] = actions.complete_tag,
 				["<C-/>"] = actions.which_key,
 			},
 
@@ -58,11 +48,8 @@ telescope.setup {
 				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
-				["j"] = actions.move_selection_next,
-				["k"] = actions.move_selection_previous,
-				["H"] = actions.move_to_top,
-				["M"] = actions.move_to_middle,
-				["L"] = actions.move_to_bottom,
+				["n"] = actions.move_selection_next,
+				["e"] = actions.move_selection_previous,
 
 				["<Down>"] = actions.move_selection_next,
 				["<Up>"] = actions.move_selection_previous,
@@ -103,9 +90,8 @@ telescope.setup {
 					["<C-x>"] = fb_actions.remove,
 					["<C-o>"] = fb_actions.open,
 					["<C-h>"] = fb_actions.goto_parent_dir,
-					["<C-e>"] = fb_actions.goto_home_dir,
 					["<C-w>"] = fb_actions.goto_cwd,
-					["<C-l>"] = fb_actions.change_cwd,
+					["<C-i>"] = fb_actions.change_cwd,
 					["<C-b>"] = fb_actions.toggle_browser,
 					["<C-.>"] = fb_actions.toggle_hidden,
 					["<C-s>"] = fb_actions.toggle_all,
@@ -118,9 +104,9 @@ telescope.setup {
 					["d"] = fb_actions.remove,
 					["o"] = fb_actions.open,
 					["h"] = fb_actions.goto_parent_dir,
-					["e"] = fb_actions.goto_home_dir,
+					["~"] = fb_actions.goto_home_dir,
 					["w"] = fb_actions.goto_cwd,
-					["l"] = fb_actions.change_cwd,
+					["i"] = fb_actions.change_cwd,
 					["b"] = fb_actions.toggle_browser,
 					["."] = fb_actions.toggle_hidden,
 					["s"] = fb_actions.toggle_all,

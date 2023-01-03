@@ -108,5 +108,3 @@ packer.startup(function(use)
 		requires = { { 'jayp0521/mason-nvim-dap.nvim' } }
 	}
 end)
-
-vim.keymap.set("n", "<Leader>ps", vim.cmd.PackerSync)
