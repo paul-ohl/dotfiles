@@ -6,6 +6,7 @@ lsp.ensure_installed({
 	'eslint',
 	'sumneko_lua',
 	'rust_analyzer',
+	'pyright',
 })
 lsp.nvim_workspace()
 
@@ -30,7 +31,7 @@ lsp.setup_nvim_cmp({
 	}
 })
 
-cmp.setup.buffer({ sources = { { name = "crates" } } })
+-- cmp.setup.buffer({ sources = { { name = "crates" } } })
 
 lsp.on_attach(function(_, buffnr)
 	local opts = { buffer = buffnr, remap = false }

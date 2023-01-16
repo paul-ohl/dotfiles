@@ -17,7 +17,7 @@ vim.keymap.set("", "K", "Nzzzv", opts)
 local function open_folder(folder_path, open_in_new_tab)
 	-- Open a new tab
 	if open_in_new_tab then
-		vim.cmd('$tabnew')
+		vim.cmd("$tabnew")
 	end
 	local tlscp_file_browser = require("telescope").extensions.file_browser
 	tlscp_file_browser.file_browser({
@@ -48,9 +48,9 @@ vim.keymap.set("n", "<Leader>bx", function() buf_edit.cutBuffer() end, opts)
 vim.keymap.set("n", "<Leader>bp", function() buf_edit.pasteBuffer() end, opts)
 vim.keymap.set("n", "<Leader>bu", function() buf_edit.undoCloseBuffer() end, opts)
 vim.keymap.set("n", "<Leader>br", function() buf_edit.undoCloseBuffer() end, opts)
-vim.keymap.set("n", "<Leader>tc", ':tabnew<CR>', opts)
+vim.keymap.set("n", "<Leader>ta", ':tabnew<CR>', opts)
 vim.keymap.set("n", "<Leader>tq", ':tabclose<CR>', opts)
-vim.keymap.set("n", "<Leader>tm", '<C-w>T', opts)
+vim.keymap.set("n", "<Leader>tc", '<C-w>T', opts)
 vim.keymap.set("n", "<Leader>t<", ':tabmove -<CR>', opts)
 vim.keymap.set("n", "<Leader>t>", ':tabmove +<CR>', opts)
 vim.keymap.set("n", "<Leader>t0", ':tabmove 0<CR>', opts)
