@@ -62,6 +62,7 @@ PS1="%1~ > "
 alias so='source $HOME/.zshrc'
 alias vi='/usr/bin/vim'
 alias vim='nvim'
+alias v='nvim'
 alias la='ls -lA'
 alias l='ls -l'
 alias ll='ls -l'
