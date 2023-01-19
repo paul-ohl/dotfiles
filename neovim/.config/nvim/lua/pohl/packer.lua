@@ -40,6 +40,7 @@ packer.startup(function(use)
 	use 'nvim-lua/popup.nvim'
 	use 'mbbill/undotree'
 	use 'tpope/vim-fugitive'
+	use 'eandrju/cellular-automaton.nvim'
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
