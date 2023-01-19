@@ -49,6 +49,11 @@ zmodload zsh/complist
 
 # Set vi mode
 set -o vi
+bindkey -M vicmd n vi-down-line-or-history
+bindkey -M vicmd e vi-up-line-or-history
+bindkey -M vicmd i vi-forward-char
+bindkey -M vicmd I vi-forward-word-end
+bindkey -M vicmd l vi-insert
 
 # Change prompt
 PS1="%1~ > "
