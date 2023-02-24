@@ -67,8 +67,6 @@ alias la='ls -lA'
 alias l='ls -l'
 alias ll='ls -l'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
-alias wiki='nvim -c ":VimwikiIndex"'
-alias w='nvim -c ":VimwikiIndex"'
 alias flashkbd='$HOME/Documents/dev/qmk-fast-flasher/qmk_fast_flasher.sh'
 
 # Makefile aliases
