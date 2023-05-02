@@ -60,6 +60,7 @@ alias la='exa -lA'
 alias l='exa -l'
 alias ll='exa -l'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
+alias flashkbd='$HOME/Documents/dev/qmk-fast-flasher/qmk_fast_flasher.sh'
 
 # Makefile aliases
 # alias make='make -j -Otarget'
