@@ -49,27 +49,17 @@ zmodload zsh/complist
 
 # Set vi mode
 set -o vi
-bindkey -M vicmd n vi-down-line-or-history
-bindkey -M vicmd e vi-up-line-or-history
-bindkey -M vicmd i vi-forward-char
-bindkey -M vicmd I vi-forward-word-end
-bindkey -M vicmd l vi-insert
-
-# Change prompt
-PS1="%1~ > "
 
 # Cool aliases
 alias so='source $HOME/.zshrc'
 alias vi='/usr/bin/vim'
 alias vim='nvim'
 alias v='nvim'
-alias la='ls -lA'
-alias l='ls -l'
-alias ll='ls -l'
+alias ls='exa'
+alias la='exa -lA'
+alias l='exa -l'
+alias ll='exa -l'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
-alias wiki='nvim -c ":VimwikiIndex"'
-alias w='nvim -c ":VimwikiIndex"'
-alias flashkbd='$HOME/Documents/dev/qmk-fast-flasher/qmk_fast_flasher.sh'
 
 # Makefile aliases
 # alias make='make -j -Otarget'
@@ -97,6 +87,9 @@ export EDITOR=nvim
 export MAIL="paul.lv.ohl@gmail.com"
 export CFGNVIM="$HOME/.config/nvim/init.vim"
 export LESSHISTFILE='-' # Less doesn't save history
+if command -v sccache &> /dev/null; then
+	export RUSTC_WRAPPER='sccache'
+fi
 
 # Setting locales, I know I shouldn't do it there
 LANG="en_US.UTF-8"
@@ -107,3 +100,6 @@ LC_MONETARY="fr_FR.UTF-8"
 LC_NUMERIC="fr_FR.UTF-8"
 LC_TIME="fr_FR.UTF-8"
 LC_ALL="en_US.UTF-8"
+
+# Change prompt
+PS1="%1~ > "
