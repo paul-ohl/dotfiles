@@ -11,8 +11,8 @@ telescope.setup {
 
 		mappings = {
 			i = {
-				["<C-n>"] = actions.move_selection_next,
-				["<C-e>"] = actions.move_selection_previous,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
 				["<Up>"] = actions.move_selection_previous,
 				["<Down>"] = actions.move_selection_next,
 
@@ -48,8 +48,8 @@ telescope.setup {
 				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
-				["n"] = actions.move_selection_next,
-				["e"] = actions.move_selection_previous,
+				["j"] = actions.move_selection_next,
+				["k"] = actions.move_selection_previous,
 
 				["<Down>"] = actions.move_selection_next,
 				["<Up>"] = actions.move_selection_previous,
@@ -90,7 +90,7 @@ telescope.setup {
 					["<C-x>"] = fb_actions.remove,
 					["<C-o>"] = fb_actions.open,
 					["<C-h>"] = fb_actions.goto_parent_dir,
-					["<C-w>"] = fb_actions.goto_cwd,
+					["<C-l>"] = fb_actions.goto_cwd,
 					["<C-i>"] = fb_actions.change_cwd,
 					["<C-b>"] = fb_actions.toggle_browser,
 					["<C-.>"] = fb_actions.toggle_hidden,

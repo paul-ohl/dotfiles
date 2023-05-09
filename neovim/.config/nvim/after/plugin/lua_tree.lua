@@ -43,14 +43,14 @@ nvim_tree.setup {
 		mappings = {
 			custom_only = true,
 			list = {
-				{ key = { '<CR>', 'i', '<2-LeftMouse>' }, cb = tree_cb('edit') },
+				{ key = { '<CR>', 'l', '<2-LeftMouse>' }, cb = tree_cb('edit') },
 				{ key = { '<2-RightMouse>', ']' }, cb = tree_cb('cd') },
 				{ key = 'v', cb = tree_cb('vsplit') },
 				{ key = 's', cb = tree_cb('split') },
 				{ key = 't', cb = tree_cb('tabnew') },
 				{ key = 'h', cb = tree_cb('parent_node') },
-				{ key = 'E', cb = tree_cb('first_sibling') },
-				{ key = 'N', cb = tree_cb('last_sibling') },
+				{ key = 'K', cb = tree_cb('first_sibling') },
+				{ key = 'J', cb = tree_cb('last_sibling') },
 				{ key = 'I', cb = tree_cb('toggle_ignored') },
 				{ key = '.', cb = tree_cb('toggle_dotfiles') },
 				{ key = 'R', cb = tree_cb('refresh') },
