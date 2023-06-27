@@ -86,7 +86,6 @@ source ~/.local/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # General env
 export EDITOR=nvim
 export MAIL="paul.lv.ohl@gmail.com"
-export CFGNVIM="$HOME/.config/nvim/init.vim"
 export LESSHISTFILE='-' # Less doesn't save history
 if command -v sccache &> /dev/null; then
 	export RUSTC_WRAPPER='sccache'
