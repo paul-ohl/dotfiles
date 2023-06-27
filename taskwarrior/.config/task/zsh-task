@@ -1,4 +1,0 @@
-alias t='task'
-alias ta='task add'
-alias in='task add +in'
-alias cs='~/.config/task/context-switch.sh'

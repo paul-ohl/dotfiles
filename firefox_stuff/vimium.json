@@ -1,19 +1,15 @@
 {
 	"name": "Vimium C",
-	"@time": "29/07/2022, 18:26:52",
-	"time": 1659112012845,
+	"@time": "6/27/2023, 5:50:35 PM",
+	"time": 1687881035045,
 	"environment": {
-		"extension": "1.98.3",
-		"platform": "mac",
-		"chromium": "103"
+		"extension": "1.99.992",
+		"platform": "linux",
+		"firefox": 114
 	},
 	"allBrowserUrls": true,
 	"autoDarkMode": 1,
 	"exclusionRules": [
-		{
-			"passKeys": "",
-			"pattern": ":https://training.play-with-docker.com/"
-		},
 		{
 			"passKeys": "",
 			"pattern": ":https://cloud.linode.com/linodes/"
@@ -24,24 +20,22 @@
 		}
 	],
 	"grabBackFocus": true,
-	"ignoreCapsLock": 2,
-	"ignoreKeyboardLayout": 1,
+	"keyLayout": 284,
 	"keyMappings": [
 		"#!no-check",
-		"map <c-p> togglePinTab",
-		"unmap <a-p>",
 		"map ; passNextKey",
+		"map J nextTab",
+		"map K previousTab",
 		""
 	],
 	"linkHintCharacters": "asdfjklnowcei",
 	"searchEngines": [
-		"br|brave: https://search.brave.com/search?q=%s Brave",
 		"ya|yd: https://yandex.com/search/?text=%s Yandex",
 		"",
 		"m|gmaps|gm: https://www.google.com/maps?q=%s \\",
 		"  blank=https://www.google.com/maps Google Maps",
 		"w|wiki: https://www.wikipedia.org/w/index.php?search=%s Wikipedia",
-		"y|v:https://vid.puffyan.us/search?q=%s Invidious",
+		"y:https://www.youtube.com/results?search_query=%s",
 		"",
 		"am|am.fr|amazon: https://www.amazon.fr/s?k=%s \\",
 		"  blank=https://www.amazon.fr/ Amazon",
@@ -52,9 +46,6 @@
 		"am.uk|am.co.uk: https://www.amazon.co.uk/s?k=%s \\",
 		"  blank=https://www.amazon.co.uk/ Amazon",
 		"",
-		"\\:i: vimium://sed/s/^//,lower\\ $S re= Lower case",
-		"v.m|math: vimium://math\\ $S re= Calculate",
-		"v.p: vimium://parse\\ $S re= Redo Search",
 		"gh|github: https://github.com/search?q=$s \\",
 		"  blank=https://github.com/ GitHub Repo",
 		"alt: https://alternativeto.net/browse/search/?q=$s \\",
@@ -62,5 +53,7 @@
 		""
 	],
 	"searchUrl": "https://duckduckgo.com/?q=$s DuckDuckGo",
-	"vimSync": true
+	"vimSync": true,
+	"ignoreKeyboardLayout": 1,
+	"ignoreCapsLock": 2
 }

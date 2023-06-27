@@ -83,12 +83,16 @@ alias gcl='git clone'
 alias gp='git push'
 
 # zsh syntax highlighting
-source ~/.local/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
+if ! [ -e "$zshsh_directory/zsh-syntax-highlighting.zsh" ]; then
+	mkdir -p "$zshsh_directory"
+	git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/zsh-users/zsh-syntax-highlighting.git "$zshsh_directory"
+fi
+source "$zshsh_directory"/zsh-syntax-highlighting.zsh
 
 # General env
 export EDITOR=nvim
 export MAIL="paul.lv.ohl@gmail.com"
-export CFGNVIM="$HOME/.config/nvim/init.vim"
 export LESSHISTFILE='-' # Less doesn't save history
 if command -v sccache &> /dev/null; then
 	export RUSTC_WRAPPER='sccache'
