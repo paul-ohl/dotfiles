@@ -61,6 +61,8 @@ alias l='exa -l'
 alias ll='exa -l'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias flashkbd='$HOME/Documents/dev/qmk-fast-flasher/qmk_fast_flasher.sh'
+alias weather='curl wttr.in'
+alias t="todoist list --filter '(overdue | today)'"
 
 # Makefile aliases
 # alias make='make -j -Otarget'
