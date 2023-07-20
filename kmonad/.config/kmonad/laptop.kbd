@@ -32,8 +32,8 @@
 
 
 (defalias
-  sspace (tap-hold 300 spc (around lctl (around lalt lmet)))
-  ces (tap-hold 300 esc lctl)
+  sspace (tap-hold 200 spc (around lctl (around lalt lmet)))
+  ces (tap-hold 200 esc lctl)
 )
 
 (deflayer main
