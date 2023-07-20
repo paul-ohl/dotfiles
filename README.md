@@ -24,8 +24,7 @@ Setup [LuaSnips](https://www.youtube.com/watch?v=Dn800rlPIho) better.
 
 ### Linux general
 
-display a warning to turn off speakers before computer shutdown.
-`zenity --warning --text="Turn off the speakers"`
+Color theme? ffffff,2b2914,60cd62,1d071c,0ae60d
 
 ### Custom Scripts
 
