@@ -19,7 +19,7 @@ lualine.setup {
 			path = 1,
 			file_status = true,
 			symbols = {
-				modified = ' ',
+				modified = ' 󰏫',
 				readonly = ' ',
 				unnamed = '[No Name]',
 			}
