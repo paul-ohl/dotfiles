@@ -96,3 +96,7 @@ vim.keymap.set("v", "[[", '<C-t>zz', opts)
 -- Various
 vim.keymap.set("n", '<CR>', 'j^zz', opts)
 vim.keymap.set("n", '-', 'k^zz', opts)
+
+
+
+vim.keymap.set('n', '<Leader>f', ':NvimTreeToggle<CR>', opts)

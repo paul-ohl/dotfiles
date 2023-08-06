@@ -67,7 +67,7 @@ packer.startup(function(use)
 		'gruvbox-community/gruvbox',
 		as = 'gruvbox',
 	}
-	use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
+	-- use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
 	use {
 		'numToStr/Comment.nvim',
 		config = function()
