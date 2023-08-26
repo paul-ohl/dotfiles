@@ -63,10 +63,9 @@ require("lazy").setup({
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
-				ensure_installed = { "bash", "c", "cpp", "go", "html", "javascript", "lua", "query", "rust", "vim",
-					"vimdoc", "yaml" },
+				ensure_installed = { "bash", "c", "cpp", "gitcommit", "go", "html", "javascript", "lua", "query", "rust",
+					"vim", "vimdoc", "yaml" },
 				auto_install = true,
-				sync_install = false,
 				highlight = {
 					enable = true, additional_vim_regex_highlighting = false
 				},
@@ -87,15 +86,15 @@ require("lazy").setup({
 		branch = 'v2.x',
 		dependencies = {
 			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
+			{ 'neovim/nvim-lspconfig' },
+			{ 'williamboman/mason.nvim' },
+			{ 'williamboman/mason-lspconfig.nvim' },
 
 			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-nvim-lsp'},
+			{ 'hrsh7th/nvim-cmp' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
 			-- { 'hrsh7th/cmp-path' },
-			{'L3MON4D3/LuaSnip'},
+			{ 'L3MON4D3/LuaSnip' },
 			-- { 'rafamadriz/friendly-snippets' },
 		}
 	},
