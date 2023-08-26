@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-vim.g.mapleader = " "
+-- Leader key is set in pohl/init.lua because of lazy.nvim
 
 local function open_folder(folder_path, open_in_new_tab)
 	-- Open a new tab
@@ -26,6 +26,7 @@ vim.keymap.set("n", "<Leader>j", '<C-w>j', opts)
 vim.keymap.set("n", "<Leader>k", '<C-w>k', opts)
 vim.keymap.set("n", "<Leader>l", '<C-w>l', opts)
 vim.keymap.set("n", "<Leader>v", '<C-w>v', opts)
+vim.keymap.set("n", "<Leader>ss", '<C-w>s', opts)
 vim.keymap.set("n", "<Leader>;", ':cnext<CR>zz', opts)
 vim.keymap.set("n", "<Leader>,", ':cprevious<CR>zz', opts)
 vim.keymap.set("n", "<C-;>", ':lnext<CR>zz', opts)
@@ -90,13 +91,8 @@ vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("v", "p", '"_dP', opts)
 vim.keymap.set("n", "Q", "<nop>")
-
 vim.keymap.set("v", "[[", '<C-t>zz', opts)
 
 -- Various
 vim.keymap.set("n", '<CR>', 'j^zz', opts)
 vim.keymap.set("n", '-', 'k^zz', opts)
-
-
-
-vim.keymap.set('n', '<Leader>f', ':NvimTreeToggle<CR>', opts)
