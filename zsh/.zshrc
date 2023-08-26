@@ -11,7 +11,6 @@ if [ "$OS" = "LINUX" ]; then # Linux specific
 	# xcape -e 'Caps_Lock=Escape' -t 100
 
 	# cool aliases
-	alias ls='ls --color'
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
 	alias open='xdg-open'
@@ -43,8 +42,8 @@ export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
 #Autocompletion
-#zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
+zstyle ':completion:*' menu select
+#zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
 zmodload zsh/complist
 
 # Set vi mode
@@ -55,20 +54,24 @@ alias so='source $HOME/.zshrc'
 alias vi='/usr/bin/vim'
 alias vim='nvim'
 alias v='nvim'
-alias ls='exa'
-alias la='exa -la'
-alias l='exa -l'
-alias ll='exa -l'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias flashkbd='$HOME/Documents/dev/qmk-fast-flasher/qmk_fast_flasher.sh'
 alias weather='curl wttr.in'
-alias t="todoist list --filter '(overdue | today)'"
 
-# Makefile aliases
-# alias make='make -j -Otarget'
-alias m='make run'
-alias mdb='make debug'
-alias mf='make fclean'
+# aliases depending on Rust tools
+if command -v exa &> /dev/null; then
+	alias ls='exa'
+	alias la='exa -la'
+	alias l='exa -l'
+	alias ll='exa -l'
+else
+	alias la='ls -lA'
+	alias l='ls -l'
+	alias ll='ls -l'
+fi
+if command -v bat &> /dev/null; then
+	alias cat='bat'
+fi
 
 # quick folders
 eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
