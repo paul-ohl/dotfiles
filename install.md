@@ -27,7 +27,7 @@ After reboot:
 
 Installation stuff:
 ```bash
-sudo dnf install -y clang awesome kitty neovim vim stow nodejs stack zsh openssl fd-find ripgrep
+sudo dnf install -y clang awesome kitty neovim vim stow nodejs stack zsh openssl fd-find ripgrep syncthing
 # and in another terminal:
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install du-dust bat exa pomors bacon sccache
@@ -40,6 +40,8 @@ Stow your stuff
 Various stuff:
 ```bash
 sudo usermod -s /usr/bin/zsh pohl
+sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:mkittler/Fedora_38/home:mkittler.repo
+sudo dnf install syncthingtray
 ```
 
 Kmonad:
