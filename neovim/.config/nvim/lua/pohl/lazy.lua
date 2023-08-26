@@ -76,6 +76,7 @@ require("lazy").setup({
 	},
 	{
 		'numToStr/Comment.nvim',
+		lazy = false,
 		config = function()
 			require('Comment').setup()
 		end
@@ -102,6 +103,7 @@ require("lazy").setup({
 	{
 		'saecki/crates.nvim',
 		dependencies = { 'nvim-lua/plenary.nvim' },
+		ft = 'toml',
 		config = function()
 			require('crates').setup()
 		end,
