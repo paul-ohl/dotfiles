@@ -4,8 +4,7 @@ lsp.preset('recommended')
 lsp.ensure_installed({
 	'tsserver',
 	'eslint',
-    'lua_ls',
-	'rust_analyzer',
+	'lua_ls',
 	'pyright',
 })
 lsp.nvim_workspace()
@@ -23,8 +22,8 @@ lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
 	sources = {
 		{ name = 'path' },
-		{ name = 'buffer' },
 		{ name = 'nvim_lsp' },
+		{ name = 'buffer' },
 		{ name = 'nvim_lua' },
 		{ name = 'luasnip' },
 		{ name = 'crates' },
@@ -42,6 +41,7 @@ lsp.on_attach(function(_, buffnr)
 	vim.keymap.set("n", "<Leader>dk", function() vim.diagnostic.goto_prev() end, opts)
 	vim.keymap.set("n", "<Leader>ca", function() vim.lsp.buf.code_action() end, opts)
 	vim.keymap.set("n", "<Leader>r", function() vim.lsp.buf.rename() end, opts)
+	vim.keymap.set("n", "<Leader>df", ":LspZeroFormat<CR>", opts)
 end)
 
 lsp.setup()
