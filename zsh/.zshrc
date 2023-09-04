@@ -113,3 +113,10 @@ LC_ALL="en_US.UTF-8"
 
 # Change prompt
 PS1="%1~ > "
+
+# Load device-specific config
+if [ -e "$HOME/.device-specific.sh" ]; then
+	source "$HOME/.device-specific.sh"
+else
+	touch "$HOME/.device-specific.sh" 
+fi
