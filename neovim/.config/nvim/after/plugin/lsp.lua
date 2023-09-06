@@ -2,10 +2,9 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-	'tsserver',
-	'eslint',
 	'lua_ls',
-	'pyright',
+	'rust_analyzer',
+	'shellcheck',
 })
 lsp.nvim_workspace()
 
@@ -46,7 +45,7 @@ end)
 lsp.format_on_save({
 	servers = {
 		['lua_ls'] = { 'lua' },
-		['rust-analyzer'] = { 'rust' },
+		['rust_analyzer'] = { 'rust' },
 	}
 })
 
