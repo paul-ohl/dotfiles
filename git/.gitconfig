@@ -7,3 +7,5 @@ email = paul.lv.ohl@gmail.com
 	defaultBranch = master
 [pull]
 	rebase = false
+[core]
+	excludesfile = /home/pohl/.gitignore_global

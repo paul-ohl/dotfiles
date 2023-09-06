@@ -43,5 +43,12 @@ lsp.on_attach(function(_, buffnr)
 	vim.keymap.set("n", "<Leader>r", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("n", "<Leader>df", ":LspZeroFormat<CR>", opts)
 end)
+lsp.format_on_save({
+	servers = {
+		['lua_ls'] = { 'lua' },
+		['rust-analyzer'] = { 'rust' },
+	}
+})
+
 
 lsp.setup()
