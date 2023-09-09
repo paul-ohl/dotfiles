@@ -2,10 +2,8 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-	'tsserver',
-	'eslint',
 	'lua_ls',
-	'pyright',
+	'rust_analyzer',
 })
 lsp.nvim_workspace()
 
@@ -43,5 +41,12 @@ lsp.on_attach(function(_, buffnr)
 	vim.keymap.set("n", "<Leader>r", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("n", "<Leader>df", ":LspZeroFormat<CR>", opts)
 end)
+lsp.format_on_save({
+	servers = {
+		['lua_ls'] = { 'lua' },
+		['rust_analyzer'] = { 'rust' },
+	}
+})
+
 
 lsp.setup()
