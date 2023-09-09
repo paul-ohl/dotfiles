@@ -66,3 +66,12 @@ sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+
+Hyprland:
+
+1. install deps: `sudo dnf install ninja-build cmake meson gcc-c++ libxcb-devel libX11-devel pixman-devel wayland-protocols-devel cairo-devel pango-devel wayland-devel libdrm-devel libxkbcommon-devel mesa-libEGL-devel libinput-devel rust-libudev-devel wlroots-devel xdg-desktop-portal-wlr xorg-x11-server-Xwayland-devel hwdata-devel libdisplay-info-devel`
+2. clone: `git clone --recursive https://github.com/hyprwm/Hyprland.git`
+3. checkout latest tag: `git checkout --recursive tags/v0.29.1` (the --recursive may not be necessary)
+4. in the project root: `meson _build`
+5. in the project root: `sudo ninja -C _build install`
+
