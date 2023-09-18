@@ -4,6 +4,7 @@ lsp.preset('recommended')
 lsp.ensure_installed({
 	'lua_ls',
 	'rust_analyzer',
+	'intelephense',
 })
 lsp.nvim_workspace()
 
