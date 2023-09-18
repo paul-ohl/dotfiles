@@ -17,6 +17,8 @@ end
 
 local buf_edit = require('modules.buffer-editing')
 
+vim.keymap.set("n", "<Leader>gs", ":Git<CR>", opts)
+
 vim.keymap.set("n", "<Leader>w", ':write<CR>', opts)
 vim.keymap.set("n", "<Leader>R", ':set invrelativenumber<CR>', opts)
 vim.keymap.set("n", "<Leader>q", ':quit<CR>', opts)
