@@ -1,41 +1,41 @@
 local options = {
-	backup = false, -- creates a backup file
-	completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-	fileencoding = "utf-8", -- the encoding written to a file
-	hlsearch = false, -- Don't leave the search results highlighted
-	incsearch = true, -- display the best result while you're typing a search
-	errorbells = false, -- no error bells
-	ignorecase = true, -- ignore case in search patterns
-	mouse = "a", -- allow the mouse to be used in neovim
-	-- pumheight = 10, -- pop up menu height
-	showmode = false, -- we don't need to see things like -- INSERT -- anymore
-	smartcase = true, -- smart case
-	smartindent = true, -- make indenting smarter again
-	splitbelow = true, -- force all horizontal splits to go below current window
-	splitright = true, -- force all vertical splits to go to the right of current window
-	swapfile = false, -- creates a swapfile
-	undofile = true, -- enable persistent undo
-	-- save undos in ~/.local/share/nvim/undodir/
-	undodir = vim.fn.stdpath('data') .. '/undodir',
-	updatetime = 50, -- faster completion (4000ms default)
-	writebackup = false, -- if a file is being edited by another program, it is not allowed to be edited
-	expandtab = false, -- convert tabs to spaces
-	tabstop = 4, -- tabs are 4 space wide
-	shiftwidth = 0, -- uses the value of tabstop
-	cursorline = false, -- highlight the current line
-	number = true, -- set numbered lines
-	relativenumber = true, -- set relative numbered lines
-	wrap = true, -- break lines
-	linebreak = true, -- break lines without cutting words
-	scrolloff = 8, -- scroll automatically when you reach the bottom of the buffer
-	confirm = true, -- ask for confirmation before quitting an unwritten buffer
-	hidden = true, -- allow unwritten buffers to be hidden
-	colorcolumn = '80', -- add a column at 80 characters
-	signcolumn = "no", -- always show the sign column
-	foldlevel = 99, -- never close any folds, it annoys me
+	backup = false,                              -- creates a backup file
+	completeopt = { "menuone", "noselect" },     -- mostly just for cmp
+	fileencoding = "utf-8",                      -- the encoding written to a file
+	hlsearch = false,                            -- Don't leave the search results highlighted
+	incsearch = true,                            -- display the best result while you're typing a search
+	errorbells = false,                          -- no error bells
+	ignorecase = true,                           -- ignore case in search patterns
+	mouse = "a",                                 -- allow the mouse to be used in neovim
+	-- pumheight = 10,                              -- pop up menu height
+	showmode = false,                            -- we don't need to see things like -- INSERT -- anymore
+	smartcase = true,                            -- smart case
+	smartindent = true,                          -- make indenting smarter again
+	splitbelow = true,                           -- force all horizontal splits to go below current window
+	splitright = true,                           -- force all vertical splits to go to the right of current window
+	swapfile = false,                            -- creates a swapfile
+	undofile = true,                             -- enable persistent undo
+	undodir = vim.fn.stdpath('data') .. '/undodir', -- save undos in ~/.local/share/nvim/undodir/
+	updatetime = 50,                             -- faster completion (4000ms default)
+	writebackup = false,                         -- if a file is being edited by another program, it is not allowed to be edited
+	expandtab = false,                           -- convert tabs to spaces
+	tabstop = 4,                                 -- tabs are 4 space wide
+	shiftwidth = 0,                              -- uses the value of tabstop
+	cursorline = false,                          -- highlight the current line
+	number = true,                               -- set numbered lines
+	relativenumber = true,                       -- set relative numbered lines
+	wrap = true,                                 -- break lines
+	linebreak = true,                            -- break lines without cutting words
+	scrolloff = 8,                               -- scroll automatically when you reach the bottom of the buffer
+	confirm = true,                              -- ask for confirmation before quitting an unwritten buffer
+	hidden = true,                               -- allow unwritten buffers to be hidden
+	colorcolumn = '80',                          -- add a column at 80 characters
+	signcolumn = "no",                           -- always show the sign column
+	foldlevel = 99,                              -- never close any folds, it annoys me
+	-- smoothscroll = true, -- scrolling with wrapped lines is more comfy
 }
 
-local function set_vim_option (key, value)
+local function set_vim_option(key, value)
 	vim.opt[key] = value
 end
 

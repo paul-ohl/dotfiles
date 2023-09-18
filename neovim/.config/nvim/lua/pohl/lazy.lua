@@ -12,13 +12,22 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local opts = { noremap = true, silent = true }
+
 require("lazy").setup({
 	'psliwka/vim-smoothie',
 	'stevearc/dressing.nvim',
 	'nvim-lualine/lualine.nvim', -- Used only for the bottom status bar
 	'nvim-lua/popup.nvim',
-	'tpope/vim-fugitive',
 
+	{
+		'tpope/vim-fugitive',
+		config = function()
+			vim.keymap.set("n", "<Leader>gs", ':Git<CR>', opts)
+			vim.keymap.set("n", "<Leader>gb", ':Git branch<CR>', opts)
+			vim.keymap.set("n", "<Leader>gp", ':Git push<CR>', opts)
+		end
+	},
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.2',
@@ -36,9 +45,7 @@ require("lazy").setup({
 		version = "*",
 		event = "VeryLazy",
 		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
+			require("nvim-surround").setup({})
 		end
 	},
 	{
