@@ -4,6 +4,7 @@ lsp.preset('recommended')
 lsp.ensure_installed({
 	'lua_ls',
 	'rust_analyzer',
+	'intelephense',
 })
 lsp.nvim_workspace()
 
@@ -34,6 +35,8 @@ lsp.on_attach(function(_, buffnr)
 	local opts = { buffer = buffnr, remap = false }
 
 	vim.keymap.set("n", "]]", function() vim.lsp.buf.definition() end, opts)
+	vim.keymap.set("n", "[[", '<C-t>zz', opts)
+	vim.keymap.set("v", "[[", '<C-t>zz', opts)
 	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 	vim.keymap.set("n", "<Leader>dj", function() vim.diagnostic.goto_next() end, opts)
 	vim.keymap.set("n", "<Leader>dk", function() vim.diagnostic.goto_prev() end, opts)
@@ -45,6 +48,8 @@ lsp.format_on_save({
 	servers = {
 		['lua_ls'] = { 'lua' },
 		['rust_analyzer'] = { 'rust' },
+		['intelephense'] = { 'php' },
+		['eslint'] = { 'js' },
 	}
 })
 
