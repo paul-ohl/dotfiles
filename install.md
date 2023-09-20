@@ -76,7 +76,7 @@ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 I also needed [v1.32 of wayland-protocols](https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/w/wayland-protocols-devel-1.32-2.fc39.noarch.rpm). Download and `sudo dnf localinstall file`
 2. clone: `git clone --recursive https://github.com/hyprwm/Hyprland.git`
 3. checkout latest tag: `git checkout --recursive tags/v0.29.1` (the --recursive may not be necessary)
-4. in the project root: `meson _build`
+4. in the project root: `meson setup _build`
 5. in the project root: `sudo ninja -C _build install`
 
 ### Extra programs
