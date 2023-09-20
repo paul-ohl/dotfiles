@@ -39,7 +39,7 @@ fi
 #colors enabling
 autoload -U colors && colors
 export CLICOLOR=1
-export LSCOLORS=Exfxcxdxbxegedabagacad
+export LS_COLORS=$LS_COLORS:'di=1;32:'
 
 #Autocompletion
 zstyle ':completion:*' menu select
@@ -60,10 +60,11 @@ alias weather='curl wttr.in'
 
 # aliases depending on Rust tools
 if command -v exa &> /dev/null; then
-	alias ls='exa'
-	alias la='exa -la'
-	alias l='exa -l'
-	alias ll='exa -l'
+	alias ls='exa -F --icons'
+	alias la='exa -Fla --icons'
+	alias l='exa -lF --icons'
+	alias ll='exa -Fl --icons'
+	alias tree='exa -FT --icons'
 else
 	alias la='ls -lA'
 	alias l='ls -l'

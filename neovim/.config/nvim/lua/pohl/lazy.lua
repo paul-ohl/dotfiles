@@ -24,7 +24,6 @@ require("lazy").setup({
 		'tpope/vim-fugitive',
 		config = function()
 			vim.keymap.set("n", "<Leader>gs", ':Git<CR>', opts)
-			vim.keymap.set("n", "<Leader>gb", ':Git branch<CR>', opts)
 			vim.keymap.set("n", "<Leader>gp", ':Git push<CR>', opts)
 		end
 	},
@@ -39,6 +38,19 @@ require("lazy").setup({
 		dependencies = {
 			'kyazdani42/nvim-web-devicons' -- DevIcons
 		}
+	},
+	{
+		'ThePrimeagen/harpoon',
+		dependencies = { 'nvim-lua/plenary.nvim' },
+		config = function()
+			vim.keymap.set("n", "<Leader>sm", function() require("harpoon.ui").toggle_quick_menu() end, opts)
+			vim.keymap.set("n", "<Leader>m", function() require("harpoon.mark").add_file() end, opts)
+			vim.keymap.set({ "n", "t" }, "<C-a>", function() require("harpoon.ui").nav_file(1) end, opts)
+			vim.keymap.set({ "n", "t" }, "<C-s>", function() require("harpoon.ui").nav_file(2) end, opts)
+			vim.keymap.set({ "n", "t" }, "<C-d>", function() require("harpoon.ui").nav_file(3) end, opts)
+			vim.keymap.set({ "n", "t" }, "<C-f>", function() require("harpoon.ui").nav_file(4) end, opts)
+			vim.keymap.set("n", "<C-t>", ":lua require('harpoon.term').gotoTerminal(1)<CR>i", opts)
+		end
 	},
 	{
 		"kylechui/nvim-surround",
