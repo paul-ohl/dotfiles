@@ -38,6 +38,7 @@
   ac #(lalt compose ')
   gr #(lalt compose `)
   cir #(lalt compose ^)
+  cc #(lalt compose , c)
   aalt (around lalt (layer-toggle accents))
   ;; aalt lalt
 )
@@ -54,6 +55,6 @@
   @gr   _    _    _    _    _    _    _    _    _    _    _    _    _
   _     _    _    @ac  _    _    _    _    @cir _    _    _    _    _
   _     _    _    _    _    _    _    _    _    _    _    _    _
-  _    @gr   _    _    _    _    _    _    _    _    _    _    _
+  _    @gr   _    _    @cc  _    _    _    _    _    _    _    _
   _    _     _    _              _              _    _    _
 )
