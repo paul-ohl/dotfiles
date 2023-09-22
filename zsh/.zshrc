@@ -98,9 +98,6 @@ source "$zshsh_directory"/zsh-syntax-highlighting.zsh
 export EDITOR=nvim
 export MAIL="paul.lv.ohl@gmail.com"
 export LESSHISTFILE='-' # Less doesn't save history
-if command -v sccache &> /dev/null; then
-	export RUSTC_WRAPPER='sccache'
-fi
 
 # Setting locales, I know I shouldn't do it there
 LANG="en_US.UTF-8"

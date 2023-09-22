@@ -24,20 +24,26 @@ require("lazy").setup({
 		'tpope/vim-fugitive',
 		config = function()
 			vim.keymap.set("n", "<Leader>gs", ':Git<CR>', opts)
-			vim.keymap.set("n", "<Leader>gp", ':Git push<CR>', opts)
-		end
+			vim.keymap.set("n", "<Leader>gp", ':Git push ', opts)
+		end,
+		cmd = 'Git',
 	},
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.2',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		dependencies = { 'nvim-lua/plenary.nvim' },
+		cmd = 'Telescope',
 	},
-	'nvim-telescope/telescope-file-browser.nvim',
+	{
+		'nvim-telescope/telescope-file-browser.nvim',
+		cmd = 'Telescope file_browser',
+	},
 	{
 		'kyazdani42/nvim-tree.lua', -- File tree
 		dependencies = {
 			'kyazdani42/nvim-web-devicons' -- DevIcons
-		}
+		},
+		cmd = 'NvimTreeToggle',
 	},
 	{
 		'ThePrimeagen/harpoon',
@@ -71,9 +77,11 @@ require("lazy").setup({
 	},
 	{
 		"folke/tokyonight.nvim",
+		lazy = true,
 	},
 	{
 		'gruvbox-community/gruvbox',
+		lazy = true,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -94,7 +102,8 @@ require("lazy").setup({
 	},
 	{
 		'numToStr/Comment.nvim',
-		lazy = false,
+		lazy = true,
+		keys = 'gcc',
 		config = function()
 			require('Comment').setup()
 		end
@@ -115,7 +124,7 @@ require("lazy").setup({
 			-- { 'hrsh7th/cmp-path' },
 			{ 'L3MON4D3/LuaSnip' },
 			-- { 'rafamadriz/friendly-snippets' },
-		}
+		},
 	},
 	-- Completion for Rust's crates
 	{
@@ -125,5 +134,10 @@ require("lazy").setup({
 		config = function()
 			require('crates').setup()
 		end,
-	}
+	},
+	-- Helper plugin for ansible
+	{
+		'pearofducks/ansible-vim',
+		ft = 'yaml',
+	},
 })
