@@ -83,8 +83,11 @@ eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
+alias gck='git checkout'
+alias gb='git branch'
 alias gcl='git clone'
 alias gp='git push'
+alias gl='git pull'
 
 # zsh syntax highlighting
 zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
