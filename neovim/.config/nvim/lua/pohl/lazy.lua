@@ -20,6 +20,13 @@ require("lazy").setup({
 	'nvim-lualine/lualine.nvim', -- Used only for the bottom status bar
 	'nvim-lua/popup.nvim',
 
+	-- 'github/copilot.vim',
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		opts = {} -- this is equalent to setup({}) function
+	},
+
 	{
 		'tpope/vim-fugitive',
 		config = function()
@@ -102,8 +109,6 @@ require("lazy").setup({
 	},
 	{
 		'numToStr/Comment.nvim',
-		lazy = true,
-		keys = 'gcc',
 		config = function()
 			require('Comment').setup()
 		end
@@ -122,8 +127,12 @@ require("lazy").setup({
 			{ 'hrsh7th/nvim-cmp' },
 			{ 'hrsh7th/cmp-nvim-lsp' },
 			-- { 'hrsh7th/cmp-path' },
-			{ 'L3MON4D3/LuaSnip' },
-			-- { 'rafamadriz/friendly-snippets' },
+			{
+				'L3MON4D3/LuaSnip',
+				version = "v2.*",
+				build = "make install_jsregexp"
+			},
+			{ 'rafamadriz/friendly-snippets' },
 		},
 	},
 	-- Completion for Rust's crates
