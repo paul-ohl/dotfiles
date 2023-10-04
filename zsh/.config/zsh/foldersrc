@@ -8,7 +8,7 @@ sc			~/dotfiles/custom_scripts/.local/scripts/
 conf		~/dotfiles/neovim/.config/nvim/
 one			~/OneDrive/
 kbd			~/qmk_firmware/keyboards/lily58/keymaps/pohl/
-zik			~/OneDrive/music/
+zik			~/Music/yt/
 pro			~/OneDrive/documents/_pro/
 devel		~/OneDrive/documents/codage/
 tendresse	~/OneDrive/documents/servers/tendresse/

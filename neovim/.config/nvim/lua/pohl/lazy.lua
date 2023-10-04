@@ -22,9 +22,10 @@ require("lazy").setup({
 
 	{
 		'tpope/vim-fugitive',
-		config = function()
+		init = function()
 			vim.keymap.set("n", "<Leader>gs", ':Git<CR>', opts)
-			vim.keymap.set("n", "<Leader>gp", ':Git push ', opts)
+			vim.keymap.set("n", "<Leader>gp", ':Git push ', { noremap = true })
+			vim.keymap.set("n", "<Leader>gl", ':Git pull<CR>', opts)
 		end,
 		cmd = 'Git',
 	},
@@ -48,7 +49,7 @@ require("lazy").setup({
 	{
 		'ThePrimeagen/harpoon',
 		dependencies = { 'nvim-lua/plenary.nvim' },
-		config = function()
+		init = function()
 			vim.keymap.set("n", "<Leader>sm", function() require("harpoon.ui").toggle_quick_menu() end, opts)
 			vim.keymap.set("n", "<Leader>m", function() require("harpoon.mark").add_file() end, opts)
 			vim.keymap.set({ "n", "t" }, "<C-a>", function() require("harpoon.ui").nav_file(1) end, opts)
@@ -62,7 +63,7 @@ require("lazy").setup({
 		"kylechui/nvim-surround",
 		version = "*",
 		event = "VeryLazy",
-		config = function()
+		init = function()
 			require("nvim-surround").setup({})
 		end
 	},
@@ -70,7 +71,7 @@ require("lazy").setup({
 		'rose-pine/neovim',
 		lazy = false,
 		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
+		init = function()
 			-- load the colorscheme here
 			vim.cmd([[colorscheme rose-pine]])
 		end,
@@ -86,7 +87,7 @@ require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		config = function()
+		init = function()
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
@@ -104,7 +105,7 @@ require("lazy").setup({
 		'numToStr/Comment.nvim',
 		lazy = true,
 		keys = 'gcc',
-		config = function()
+		init = function()
 			require('Comment').setup()
 		end
 	},
@@ -119,25 +120,32 @@ require("lazy").setup({
 			{ 'williamboman/mason-lspconfig.nvim' },
 
 			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' },
-			{ 'hrsh7th/cmp-nvim-lsp' },
-			-- { 'hrsh7th/cmp-path' },
-			{ 'L3MON4D3/LuaSnip' },
+			{
+				'hrsh7th/nvim-cmp',
+				dependencies = {
+					{ 'hrsh7th/cmp-nvim-lsp' },
+					{ 'hrsh7th/cmp-path' },
+					{ 'hrsh7th/cmp-buffer' },
+					{ 'hrsh7th/cmp-nvim-lua' },
+					{
+						'saecki/crates.nvim',
+						dependencies = { 'nvim-lua/plenary.nvim' },
+						lazy = true,
+						ft = 'toml',
+						init = function()
+							require('crates').setup()
+						end,
+					},
+					{ 'L3MON4D3/LuaSnip' },
+				},
+			},
 			-- { 'rafamadriz/friendly-snippets' },
 		},
-	},
-	-- Completion for Rust's crates
-	{
-		'saecki/crates.nvim',
-		dependencies = { 'nvim-lua/plenary.nvim' },
-		ft = 'toml',
-		config = function()
-			require('crates').setup()
-		end,
 	},
 	-- Helper plugin for ansible
 	{
 		'pearofducks/ansible-vim',
+		lazy = true,
 		ft = 'yaml',
 	},
 })

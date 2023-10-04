@@ -121,3 +121,5 @@ if [ -e "$HOME/.device-specific.sh" ]; then
 else
 	touch "$HOME/.device-specific.sh" 
 fi
+
+bindkey '^R' history-incremental-search-backward
