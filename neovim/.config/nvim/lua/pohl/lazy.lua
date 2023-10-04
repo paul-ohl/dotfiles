@@ -20,6 +20,13 @@ require("lazy").setup({
 	'nvim-lualine/lualine.nvim', -- Used only for the bottom status bar
 	'nvim-lua/popup.nvim',
 
+	-- 'github/copilot.vim',
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		opts = {} -- this is equalent to setup({}) function
+	},
+
 	{
 		'tpope/vim-fugitive',
 		init = function()
@@ -103,9 +110,7 @@ require("lazy").setup({
 	},
 	{
 		'numToStr/Comment.nvim',
-		lazy = true,
-		keys = 'gcc',
-		init = function()
+		config = function()
 			require('Comment').setup()
 		end
 	},
@@ -136,7 +141,12 @@ require("lazy").setup({
 							require('crates').setup()
 						end,
 					},
-					{ 'L3MON4D3/LuaSnip' },
+					{
+						'L3MON4D3/LuaSnip',
+						version = "v2.*",
+						build = "make install_jsregexp"
+					},
+					{ 'rafamadriz/friendly-snippets' },
 				},
 			},
 			-- { 'rafamadriz/friendly-snippets' },

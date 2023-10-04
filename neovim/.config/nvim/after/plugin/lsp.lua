@@ -32,8 +32,9 @@ lsp.setup_nvim_cmp({
 -- cmp.setup.buffer({ sources = { { name = "crates" } } })
 
 lsp.on_attach(function(_, buffnr)
-	local opts = { buffer = buffnr, remap = false }
+	lsp.buffer_autoformat()
 
+	local opts = { buffer = buffnr, remap = false }
 	vim.keymap.set("n", "]]", function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set("n", "[[", '<C-t>zz', opts)
 	vim.keymap.set("v", "[[", '<C-t>zz', opts)
@@ -48,8 +49,6 @@ lsp.format_on_save({
 	servers = {
 		['lua_ls'] = { 'lua' },
 		['rust_analyzer'] = { 'rust' },
-		['intelephense'] = { 'php' },
-		['eslint'] = { 'js' },
 	}
 })
 
