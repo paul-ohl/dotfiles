@@ -14,6 +14,6 @@ else
 	commit_message="$args"
 fi
 
-git add .
+git add -A
 git commit -m "$commit_message"
 git push
