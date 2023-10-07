@@ -15,9 +15,9 @@ local wk = require('which-key')
 wk.register({
 	g = {
 		name = "Git",
-		s = { "<cmd>Git<CR>", "Status" },
-		p = { "<cmd>Git push", "Push", silent = false },
-		l = { "<cmd>Git pull", "Pull" },
+		s = { ":Git<CR>", "Status" },
+		p = { ":Git push ", "Push", silent = false },
+		l = { ":Git pull", "Pull" },
 		b = { function() require('telescope.builtin').git_branches() end, "Branches" },
 	},
 	s = {
