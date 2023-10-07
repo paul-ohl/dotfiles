@@ -134,10 +134,9 @@ require("lazy").setup({
 					{ 'hrsh7th/cmp-nvim-lua' },
 					{
 						'saecki/crates.nvim',
+						event = { "BufRead Cargo.toml" },
 						dependencies = { 'nvim-lua/plenary.nvim' },
-						lazy = true,
-						ft = 'toml',
-						init = function()
+						config = function()
 							require('crates').setup()
 						end,
 					},
@@ -149,7 +148,6 @@ require("lazy").setup({
 					{ 'rafamadriz/friendly-snippets' },
 				},
 			},
-			-- { 'rafamadriz/friendly-snippets' },
 		},
 	},
 	-- Helper plugin for ansible
