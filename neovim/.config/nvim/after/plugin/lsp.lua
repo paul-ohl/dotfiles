@@ -49,14 +49,18 @@ lsp.on_attach(function(_, buffnr)
 
 	local opts = { buffer = buffnr, remap = false }
 	vim.keymap.set("n", "]]", function() vim.lsp.buf.definition() end, opts)
-	vim.keymap.set("n", "[[", '<C-t>zz', opts)
-	vim.keymap.set("v", "[[", '<C-t>zz', opts)
+	vim.keymap.set({ "v", "n" }, "[[", '<C-t>zz', opts)
 	vim.keymap.set('n', 'K', show_documentation, opts)
-	vim.keymap.set("n", "<Leader>dj", function() vim.diagnostic.goto_next() end, opts)
-	vim.keymap.set("n", "<Leader>dk", function() vim.diagnostic.goto_prev() end, opts)
-	vim.keymap.set("n", "<Leader>ca", function() vim.lsp.buf.code_action() end, opts)
-	vim.keymap.set("n", "<Leader>r", function() vim.lsp.buf.rename() end, opts)
-	vim.keymap.set("n", "<Leader>df", ":LspZeroFormat<CR>", opts)
+	require('which-key').register({
+		d = {
+			name = "Lsp",
+			a = { function() vim.lsp.buf.code_action() end, "Code Action" },
+			j = { function() vim.diagnostic.goto_next() end, "Next" },
+			k = { function() vim.diagnostic.goto_prev() end, "Previous" },
+			f = { ":LspZeroFormat<CR>", "Format document" },
+		},
+		r = { function() vim.lsp.buf.rename() end, "Rename" },
+	}, { buffer = buffnr, prefix = "<Leader>" })
 end)
 
 lsp.format_on_save({

@@ -12,7 +12,6 @@ end
 local buf_edit = require('modules.buffer-editing')
 
 local wk = require('which-key')
-
 wk.register({
 	g = {
 		name = "Git",
@@ -140,3 +139,5 @@ vim.keymap.set({ "n", "t" }, "<C-s>", function() require("harpoon.ui").nav_file(
 vim.keymap.set({ "n", "t" }, "<C-d>", function() require("harpoon.ui").nav_file(3) end, opts)
 vim.keymap.set({ "n", "t" }, "<C-f>", function() require("harpoon.ui").nav_file(4) end, opts)
 vim.keymap.set("n", "<C-t>", ":lua require('harpoon.term').gotoTerminal(1)<CR>i", opts)
+
+-- Lsp remaps are in the lsp config file
