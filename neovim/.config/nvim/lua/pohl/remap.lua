@@ -2,17 +2,11 @@
 
 local opts = { noremap = true, silent = true }
 
-local function open_folder(folder_path, open_in_new_tab)
-	-- Open a new tab
-	if open_in_new_tab then
-		vim.cmd('$tabnew')
-	end
-	local tlscp_file_browser = require("telescope").extensions.file_browser
-	tlscp_file_browser.file_browser({
-		path = folder_path,
-		hidden = true,
-		grouped = true,
-	})
+local function open_folder_tab(folder_path, telescope_opt)
+	telescope_opt = telescope_opt or {}
+	vim.cmd('$tabnew')
+	vim.cmd('lcd ' .. folder_path)
+	require('telescope.builtin').find_files(telescope_opt)
 end
 
 local buf_edit = require('modules.buffer-editing')
@@ -29,8 +23,10 @@ wk.register({
 	},
 	s = {
 		name = "Search",
-		v = { ':$tabnew<CR>:lcd ' .. vim.fn.stdpath('config') .. '<CR>:Telescope find_files<CR>', "Vim dir" },
+		v = { function() open_folder_tab(vim.fn.stdpath('config')) end, "Vim dir" },
+		d = { function() open_folder_tab("$HOME/dotfiles/", { hidden = true }) end, "Vim dir" },
 		f = { function() require('telescope.builtin').find_files() end, "Files" },
+		F = { function() require('telescope.builtin').find_files({ hidden = true }) end, "Files" },
 		h = { function() require('telescope.builtin').help_tags() end, "Help" },
 		g = { function() require('telescope.builtin').live_grep() end, "Grep" },
 		b = { "<cmd>Telescope file_browser<CR>", "Grep" },
