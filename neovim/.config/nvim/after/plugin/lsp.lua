@@ -5,6 +5,7 @@ lsp.ensure_installed({
 	'lua_ls',
 	'rust_analyzer',
 	'intelephense',
+	'taplo',
 })
 lsp.nvim_workspace()
 
