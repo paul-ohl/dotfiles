@@ -4,9 +4,6 @@ if not status_ok then
 	return
 end
 
--- Global keymap:
-vim.keymap.set('n', '<Leader>f', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-
 local function nvim_tree_on_attach(bufnr)
 	local api = require('nvim-tree.api')
 
