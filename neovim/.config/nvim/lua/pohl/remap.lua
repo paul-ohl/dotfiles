@@ -1,6 +1,6 @@
-local opts = { noremap = true, silent = true }
-
 -- Leader key is set in pohl/init.lua because of lazy.nvim
+
+local opts = { noremap = true, silent = true }
 
 local function open_folder(folder_path, open_in_new_tab)
 	-- Open a new tab
@@ -17,88 +17,130 @@ end
 
 local buf_edit = require('modules.buffer-editing')
 
-vim.keymap.set("n", "<Leader>gs", ":Git<CR>", opts)
+local wk = require('which-key')
 
-vim.keymap.set("n", "<Leader>w", ':write<CR>', opts)
-vim.keymap.set("n", "<Leader>R", ':set invrelativenumber<CR>', opts)
-vim.keymap.set("n", "<Leader>q", ':quit<CR>', opts)
-vim.keymap.set("n", "<Leader><Tab>", '<C-^>', opts)
-vim.keymap.set("n", "<Leader>h", '<C-w>h', opts)
-vim.keymap.set("n", "<Leader>j", '<C-w>j', opts)
-vim.keymap.set("n", "<Leader>k", '<C-w>k', opts)
-vim.keymap.set("n", "<Leader>l", '<C-w>l', opts)
-vim.keymap.set("n", "<Leader>v", '<C-w>v', opts)
-vim.keymap.set("n", "<Leader>ss", '<C-w>s', opts)
-vim.keymap.set("n", "<Leader>;", ':cnext<CR>zz', opts)
-vim.keymap.set("n", "<Leader>,", ':cprevious<CR>zz', opts)
-vim.keymap.set("n", "<C-;>", ':lnext<CR>zz', opts)
-vim.keymap.set("n", "<C-,>", ':lprevious<CR>zz', opts)
-vim.keymap.set("n", "<Leader>sv", ':$tabnew<CR>:lcd ' .. vim.fn.stdpath('config') .. '<CR>:Telescope find_files<CR>',
-	opts)
-vim.keymap.set("n", "<Leader>sd", function() open_folder(nil) end, opts)
-vim.keymap.set("n", "<Leader>sf", function() require('telescope.builtin').find_files() end, opts)
-vim.keymap.set("n", "<Leader>sh", function() require('telescope.builtin').help_tags() end, opts)
-vim.keymap.set("n", "<Leader>sg", function() require('telescope.builtin').live_grep() end, opts)
-vim.keymap.set("n", "<Leader>gb", function() require('telescope.builtin').git_branches() end, opts)
-vim.keymap.set("n", "<Leader>sb", ':Telescope file_browser<CR>', opts)
-vim.keymap.set("n", "<Leader>by", function() buf_edit.copyBuffer() end, opts)
-vim.keymap.set("n", "<Leader>bc", function() buf_edit.copyBuffer() end, opts)
-vim.keymap.set("n", "<Leader>bx", function() buf_edit.cutBuffer() end, opts)
-vim.keymap.set("n", "<Leader>bp", function() buf_edit.pasteBuffer() end, opts)
-vim.keymap.set("n", "<Leader>bu", function() buf_edit.undoCloseBuffer() end, opts)
-vim.keymap.set("n", "<Leader>br", function() buf_edit.undoCloseBuffer() end, opts)
-vim.keymap.set("n", "<Leader>ps", ":Lazy sync<CR>", opts)
-vim.keymap.set("n", "<Leader>pi", ":Lazy<CR>", opts)
-vim.keymap.set("n", "<Leader>pm", vim.cmd.Mason, opts)
-vim.keymap.set("n", "<Leader>tn", ':tabnew<CR>', opts)
-vim.keymap.set("n", "<Leader>tq", ':tabclose<CR>', opts)
-vim.keymap.set("n", "<Leader>te", '<C-w>T', opts)
-vim.keymap.set("n", "<Leader>t<", ':tabmove -<CR>', opts)
-vim.keymap.set("n", "<Leader>t>", ':tabmove +<CR>', opts)
-vim.keymap.set("n", "<Leader>t0", ':tabmove 0<CR>', opts)
-vim.keymap.set("n", "<Leader>tt", ':tabnew +terminal<CR>', opts)
-vim.keymap.set("n", "<Leader>th", ':wincmd v <CR> :wincmd h <CR>:terminal<CR>', opts)
-vim.keymap.set("n", "<Leader>tj", ':wincmd s <CR>:terminal<CR>', opts)
-vim.keymap.set("n", "<Leader>tk", ':wincmd s <CR> :wincmd k <CR>:terminal<CR>', opts)
-vim.keymap.set("n", "<Leader>tl", ':wincmd v <CR>:terminal<CR>', opts)
-vim.keymap.set("n", "<Leader><Leader>w", ':wa<CR>', opts)
-vim.keymap.set("n", "<Leader><Leader>q", ':qa<CR>', opts)
-vim.keymap.set("n", "<Leader><Leader>=", ':wincmd =<CR>', opts)
-vim.keymap.set("n", "<Leader><Leader>h", ':wincmd H<CR>', opts)
-vim.keymap.set("n", "<Leader><Leader>j", ':wincmd J<CR>', opts)
-vim.keymap.set("n", "<Leader><Leader>k", ':wincmd K<CR>', opts)
-vim.keymap.set("n", "<Leader><Leader>l", ':wincmd L<CR>', opts)
+wk.register({
+	g = {
+		name = "Git",
+		s = { "<cmd>Git<CR>", "Status" },
+		p = { "<cmd>Git push", "Push", silent = false },
+		l = { "<cmd>Git pull", "Pull" },
+		b = { function() require('telescope.builtin').git_branches() end, "Branches" },
+	},
+	s = {
+		name = "Search",
+		v = { ':$tabnew<CR>:lcd ' .. vim.fn.stdpath('config') .. '<CR>:Telescope find_files<CR>', "Vim dir" },
+		f = { function() require('telescope.builtin').find_files() end, "Files" },
+		h = { function() require('telescope.builtin').help_tags() end, "Help" },
+		g = { function() require('telescope.builtin').live_grep() end, "Grep" },
+		b = { "<cmd>Telescope file_browser<CR>", "Grep" },
+		m = { function() require("harpoon.ui").toggle_quick_menu() end, "Harpoon Marks" },
+	},
+	b = {
+		name = "BuffEdit",
+		y = { function() buf_edit.copyBuffer() end, "Copy" },
+		c = { function() buf_edit.copyBuffer() end, "Copy" },
+		x = { function() buf_edit.cutBuffer() end, "Cut" },
+		p = { function() buf_edit.pasteBuffer() end, "Paste" },
+		u = { function() buf_edit.undoCloseBuffer() end, "UndoClose" },
+		r = { function() buf_edit.undoCloseBuffer() end, "UndoClose" },
+	},
+	p = {
+		name = "Packages",
+		s = { "<cmd>Lazy sync<CR>", "Sync" },
+		i = { "<cmd>Lazy<CR>", "Info" },
+		m = { vim.cmd.Mason, "Mason" },
+	},
+	m = { function() require("harpoon.mark").add_file() end, "Mark file" },
+	R = { ":set invrelativenumber<CR>", "Relative" },
+	f = { "<cmd>NvimTreeToggle<CR>", "Open Tree" },
+}, { prefix = "<Leader>" })
+
+-- Basic stuff that does not need documentation
+wk.register({
+	w = { ":write<CR>", "which_key_ignore" },
+	q = { ":quit<CR>", "which_key_ignore" },
+	["<Tab>"] = { '<C-^>', "which_key_ignore" },
+	h = { "<C-w>h", "which_key_ignore" },
+	j = { "<C-w>j", "which_key_ignore" },
+	k = { "<C-w>k", "which_key_ignore" },
+	l = { "<C-w>l", "which_key_ignore" },
+	v = { "<C-w>v", "which_key_ignore" },
+	["ss"] = { "<C-w>s", "which_key_ignore" },
+	[";"] = { ":cnext<CR>zz", "which_key_ignore" },
+	[","] = { ":cprevious<CR>zz", "which_key_ignore" },
+	t = {
+		name = "which_key_ignore",
+		n = { ':tabnew<CR>', "which_key_ignore" },
+		q = { ':tabclose<CR>', "which_key_ignore" },
+		e = { '<C-w>T', "which_key_ignore" },
+		["<"] = { ':tabmove -<CR>', "which_key_ignore" },
+		[">"] = { ':tabmove +<CR>', "which_key_ignore" },
+		["0"] = { ':tabmove 0<CR>', "which_key_ignore" },
+		t = { ':tabnew +terminal<CR>', "which_key_ignore" },
+		h = { ':wincmd v <CR> :wincmd h <CR>:terminal<CR>', "which_key_ignore" },
+		j = { ':wincmd s <CR>:terminal<CR>', "which_key_ignore" },
+		k = { ':wincmd s <CR> :wincmd k <CR>:terminal<CR>', "which_key_ignore" },
+		l = { ':wincmd v <CR>:terminal<CR>', "which_key_ignore" },
+	},
+	["<Leader>"] = {
+		name = "which_key_ignore",
+		w = { ":wa<CR>", "which_key_ignore" },
+		q = { ":qa<CR>", "which_key_ignore" },
+		["="] = { ":wincmd =<CR>", "which_key_ignore" },
+		h = { ":wincmd H<CR>", "which_key_ignore" },
+		j = { ":wincmd J<CR>", "which_key_ignore" },
+		k = { ":wincmd K<CR>", "which_key_ignore" },
+		l = { ":wincmd L<CR>", "which_key_ignore" },
+	}
+}, { prefix = "<Leader>" })
+
+
+-- Simpler remaps that don't benefit from using which-key
 vim.keymap.set("n", "]]", '<C-]>zz', opts)
 vim.keymap.set("n", "]t", '<C-w>v<C-]><C-w>Tzz', opts)
 vim.keymap.set("n", "]v", '<C-w>v<C-]>zz', opts)
 vim.keymap.set("n", "]s", '<C-w>s<C-]>zz', opts)
 vim.keymap.set("n", "[[", '<C-t>zz', opts)
-
--- Tabs
-vim.keymap.set("n", '<Tab>', 'gt', opts)
-vim.keymap.set("n", '<S-Tab>', 'gT', opts)
-
--- Useful editing stuff
-vim.keymap.set("n", 'Y', 'y$', opts)
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("n", 'n', 'nzzzv', opts)
-vim.keymap.set("n", 'N', 'Nzzzv', opts)
-vim.keymap.set("x", '<Leader>p', '"_dP')
-vim.keymap.set("n", '<Leader>y', '"*y')
-vim.keymap.set("x", '<Leader>y', '"*y')
-vim.keymap.set("n", '<Leader>Y', '"*Y')
-vim.keymap.set("n", '<Leader>d', '"_d')
-vim.keymap.set("x", '<Leader>d', '"_d')
-vim.keymap.set("v", '$', 'g_', opts)
-vim.keymap.set("v", "<", "<gv", opts)
-vim.keymap.set("v", ">", ">gv", opts)
-vim.keymap.set("v", "p", '"_dP', opts)
-vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("v", "[[", '<C-t>zz', opts)
+
 vim.keymap.set("n", "<C-j>", ':call smoothie#do("<C-D>")<CR>', opts)
 vim.keymap.set("n", "<C-k>", ':call smoothie#upwards()<CR>', opts)
 
--- Various
+vim.keymap.set("n", '<Tab>', 'gt', opts)
+vim.keymap.set("n", '<S-Tab>', 'gT', opts)
 vim.keymap.set("n", '<CR>', 'j^zz', opts)
 vim.keymap.set("n", '-', 'k^zz', opts)
+vim.keymap.set("n", 'Y', 'y$', { silent = true })
+vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", 'n', 'nzzzv', opts)
+vim.keymap.set("n", 'N', 'Nzzzv', opts)
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", '$', 'g_', opts)
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
+vim.keymap.set("v", "p", '"_dp', opts)
+
+vim.keymap.set("x", '<Leader>p', '"_dP')
+vim.keymap.set("n", '<Leader>d', '"_d')
+vim.keymap.set("x", '<Leader>d', '"_d')
+
+-- OS dependent stuff
+if vim.fn.has('unix') then
+	vim.keymap.set("n", '<Leader>y', '"+y')
+	vim.keymap.set("x", '<Leader>y', '"+y')
+	vim.keymap.set("n", '<Leader>Y', '"+y$')
+elseif vim.fn.has('macunix') then
+	vim.keymap.set("n", '<Leader>y', '"*y')
+	vim.keymap.set("x", '<Leader>y', '"*y')
+	vim.keymap.set("n", '<Leader>Y', '"*y$')
+end
+
+-- Harpoon remaps
+vim.keymap.set({ "n", "t" }, "<C-a>", function() require("harpoon.ui").nav_file(1) end, opts)
+vim.keymap.set({ "n", "t" }, "<C-s>", function() require("harpoon.ui").nav_file(2) end, opts)
+vim.keymap.set({ "n", "t" }, "<C-d>", function() require("harpoon.ui").nav_file(3) end, opts)
+vim.keymap.set({ "n", "t" }, "<C-f>", function() require("harpoon.ui").nav_file(4) end, opts)
+vim.keymap.set("n", "<C-t>", ":lua require('harpoon.term').gotoTerminal(1)<CR>i", opts)
