@@ -30,7 +30,19 @@ lsp.setup_nvim_cmp({
 	}
 })
 
--- cmp.setup.buffer({ sources = { { name = "crates" } } })
+-- Documentation super mapping
+local function show_documentation()
+	local filetype = vim.bo.filetype
+	if vim.tbl_contains({ 'vim', 'help' }, filetype) then
+		vim.cmd('h ' .. vim.fn.expand('<cword>'))
+	elseif vim.tbl_contains({ 'man' }, filetype) then
+		vim.cmd('Man ' .. vim.fn.expand('<cword>'))
+	elseif vim.fn.expand('%:t') == 'Cargo.toml' and require('crates').popup_available() then
+		require('crates').show_popup()
+	else
+		vim.lsp.buf.hover()
+	end
+end
 
 lsp.on_attach(function(_, buffnr)
 	lsp.buffer_autoformat()
@@ -39,19 +51,19 @@ lsp.on_attach(function(_, buffnr)
 	vim.keymap.set("n", "]]", function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set("n", "[[", '<C-t>zz', opts)
 	vim.keymap.set("v", "[[", '<C-t>zz', opts)
-	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+	vim.keymap.set('n', 'K', show_documentation, opts)
 	vim.keymap.set("n", "<Leader>dj", function() vim.diagnostic.goto_next() end, opts)
 	vim.keymap.set("n", "<Leader>dk", function() vim.diagnostic.goto_prev() end, opts)
 	vim.keymap.set("n", "<Leader>ca", function() vim.lsp.buf.code_action() end, opts)
 	vim.keymap.set("n", "<Leader>r", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("n", "<Leader>df", ":LspZeroFormat<CR>", opts)
 end)
+
 lsp.format_on_save({
 	servers = {
 		['lua_ls'] = { 'lua' },
 		['rust_analyzer'] = { 'rust' },
 	}
 })
-
 
 lsp.setup()
