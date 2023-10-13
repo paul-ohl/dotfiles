@@ -17,7 +17,8 @@ wk.register({
 		name = "Git",
 		s = { ":Git<CR>", "Status" },
 		p = { ":Git push ", "Push", silent = false },
-		l = { ":Git pull", "Pull" },
+		g = { ":Git ", "Any command", silent = false },
+		l = { ":Git pull<CR>", "Pull" },
 		b = { function() require('telescope.builtin').git_branches() end, "Branches" },
 	},
 	s = {

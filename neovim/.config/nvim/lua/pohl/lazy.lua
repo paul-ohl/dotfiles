@@ -17,7 +17,10 @@ require("lazy").setup({
 	'stevearc/dressing.nvim',
 	'nvim-lualine/lualine.nvim', -- Used only for the bottom status bar
 	'nvim-lua/popup.nvim',
+	{ 'tpope/vim-fugitive',   cmd = 'Git', },
+	{ 'ThePrimeagen/harpoon', dependencies = { 'nvim-lua/plenary.nvim' } },
 
+	-- {{{ Which-key
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -89,45 +92,24 @@ require("lazy").setup({
 			},
 		}
 	},
-	{
-		'windwp/nvim-autopairs',
-		event = "InsertEnter",
-		opts = {}
-	},
+	-- }}}
 
-	{
-		'tpope/vim-fugitive',
-		cmd = 'Git',
-	},
+	-- {{{ Telescope
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.2',
-		dependencies = { 'nvim-lua/plenary.nvim' },
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			{
+				'nvim-telescope/telescope-file-browser.nvim',
+				cmd = 'Telescope file_browser',
+			},
+		},
 		cmd = 'Telescope',
 	},
-	{
-		'nvim-telescope/telescope-file-browser.nvim',
-		cmd = 'Telescope file_browser',
-	},
-	{
-		'kyazdani42/nvim-tree.lua', -- File tree
-		dependencies = {
-			'kyazdani42/nvim-web-devicons' -- DevIcons
-		},
-		cmd = 'NvimTreeToggle',
-	},
-	{
-		'ThePrimeagen/harpoon',
-		dependencies = { 'nvim-lua/plenary.nvim' },
-	},
-	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "VeryLazy",
-		init = function()
-			require("nvim-surround").setup({})
-		end
-	},
+	-- }}}
+
+	-- {{{ Color schemes
 	{
 		'rose-pine/neovim',
 		lazy = false,
@@ -145,6 +127,9 @@ require("lazy").setup({
 		'gruvbox-community/gruvbox',
 		lazy = true,
 	},
+	-- }}}
+
+	-- {{{ Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -162,13 +147,9 @@ require("lazy").setup({
 			})
 		end
 	},
-	{
-		'numToStr/Comment.nvim',
-		config = function()
-			require('Comment').setup()
-		end
-	},
+	-- }}}
 
+	-- {{{ LSP
 	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
@@ -209,5 +190,34 @@ require("lazy").setup({
 		'pearofducks/ansible-vim',
 		lazy = true,
 		ft = 'yaml',
+	},
+	-- }}}
+
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		opts = {}
+	},
+	{
+		'kyazdani42/nvim-tree.lua', -- File tree
+		dependencies = {
+			'kyazdani42/nvim-web-devicons' -- DevIcons
+		},
+		cmd = 'NvimTreeToggle',
+	},
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+		init = function()
+			require("nvim-surround").setup({})
+		end
+	},
+
+	{
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
 	},
 })

@@ -31,7 +31,7 @@ local options = {
 	hidden = true,                               -- allow unwritten buffers to be hidden
 	colorcolumn = '80',                          -- add a column at 80 characters
 	signcolumn = "no",                           -- always show the sign column
-	foldlevel = 99,                              -- never close any folds, it annoys me
+	foldmethod = "marker",                       -- Fold are only the {{{ }}} things
 	-- smoothscroll = true, -- scrolling with wrapped lines is more comfy
 }
 

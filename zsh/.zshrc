@@ -55,8 +55,16 @@ alias vi='/usr/bin/vim'
 alias vim='nvim'
 alias v='nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
-alias flashkbd='$HOME/Documents/dev/qmk-fast-flasher/qmk_fast_flasher.sh'
 alias weather='curl wttr.in'
+mkcd() {
+	mkdir $1 && cd $1
+}
+
+# systemd aliases
+alias ssg='sudo systemctl start'
+alias sss='sudo systemctl status'
+alias ssr='sudo systemctl restart'
+alias sst='sudo systemctl stop'
 
 # aliases depending on Rust tools
 if command -v exa &> /dev/null; then
