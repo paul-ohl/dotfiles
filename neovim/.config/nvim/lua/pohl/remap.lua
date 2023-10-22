@@ -117,11 +117,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", '$', 'g_', opts)
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
-vim.keymap.set("v", "p", '"_dp', opts)
 
 vim.keymap.set("x", '<Leader>p', '"_dP')
-vim.keymap.set("n", '<Leader>d', '"_d')
-vim.keymap.set("x", '<Leader>d', '"_d')
 
 -- OS dependent stuff
 if vim.fn.has('unix') then

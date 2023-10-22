@@ -32,29 +32,45 @@
 
 
 (defalias
-  sspace (tap-hold 200 spc (around lctl (around lalt lmet)))
-  ces (tap-hold 200 esc lctl)
+  sspace (tap-hold-next-release 200 spc (around lctl (around lalt lmet)))
+  ces esc
   cqu (tap-hold 200 ' lctl)
-  ac #(lalt compose ')
-  gr #(lalt compose `)
-  cir #(lalt compose ^)
-  cc #(lalt compose , c)
-  aalt (around lalt (layer-toggle accents))
-  ;; aalt lalt
+)
+
+;; Accents
+(defalias
+  aalt (layer-toggle accents)
+  ac #(compose ')
+  gr #(compose `)
+  cir #(compose ^)
+  cc #(compose , c)
+)
+
+;; home-row mods
+(defalias
+    meta (tap-hold-next-release 250 a lmet)
+    alts (tap-hold-next-release 250 s lalt)
+    ctld (tap-hold-next-release 250 d lctl)
+    sftf (tap-hold-next-release 250 f lsft)
+
+    sftj (tap-hold-next-release 250 j rsft)
+    ctlk (tap-hold-next-release 250 k rctl)
+    altl (tap-hold-next-release 250 l lalt)
+    met; (tap-hold-next-release 250 ; rmet)
 )
 
 (deflayer main
-  grv   1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab   q    w    e    r    t    y    u    i    o    p    [    ]    ret
-  @ces  a    s    d    f    g    h    j    k    l    ;    @cqu \
-  lsft grv   z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl comp  lmet @aalt        @sspace          ralt rmet rctl
+  grv   1     2     3     4     5    6    7     8     9     0     -    =    bspc
+  tab   q     w     e     r     t    y    u     i     o     p     [    ]    ret
+  @ces  @meta @alts @ctld @sftf g    h    @sftj @ctlk @altl @met; '    \
+  XX    grv   z     x     c     v    b    n     m     ,     .     /    XX
+  XX    XX    XX    @aalt          @sspace            XX    XX    XX
 )
 
 (deflayer accents
-  @gr   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _     _    _    @ac  _    _    _    _    @cir _    _    _    _    _
-  _     _    _    _    _    _    _    _    _    _    _    _    _
-  _    @gr   _    _    @cc  _    _    _    _    _    _    _    _
-  _    _     _    _              _              _    _    _
+  @gr   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX    XX   XX   @ac  XX   XX   XX   XX   @cir XX   XX   XX   XX   XX
+  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   @gr   XX   XX   @cc  XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX    XX   XX             XX             XX   XX   XX
 )
