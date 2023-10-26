@@ -96,6 +96,8 @@ alias gb='git branch'
 alias gcl='git clone'
 alias gp='git push'
 alias gl='git pull'
+alias glog='git log --oneline --decorate --graph'
+alias gloga='git log --oneline --decorate --graph --all'
 
 # zsh syntax highlighting
 zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
