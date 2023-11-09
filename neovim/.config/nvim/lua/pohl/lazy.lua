@@ -112,13 +112,6 @@ require("lazy").setup({
 	-- {{{ Color schemes
 	{
 		'shaunsingh/nord.nvim',
-		lazy = false,
-		priority = 1000, -- make sure to load this before all the other start plugins
-		init = function()
-			-- load the colorscheme here
-			vim.cmd([[colorscheme nord]])
-			require('nord').set()
-		end,
 		config = function()
 			vim.g.nord_borders = true
 			vim.g.nord_disable_background = true
@@ -126,15 +119,18 @@ require("lazy").setup({
 	},
 	{
 		'rose-pine/neovim',
-		lazy = true,
 	},
 	{
 		"folke/tokyonight.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000, -- make sure to load this before all the other start plugins
+		init = function()
+			-- load the colorscheme here
+			vim.cmd([[colorscheme tokyonight-moon]])
+		end,
 	},
 	{
 		'gruvbox-community/gruvbox',
-		lazy = true,
 	},
 	-- }}}
 

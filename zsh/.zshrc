@@ -98,6 +98,9 @@ alias gp='git push'
 alias gl='git pull'
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
+alias gr='git rebase'
+alias gri='git rebase --interactive'
+alias g-='git switch -'
 
 # zsh syntax highlighting
 zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
