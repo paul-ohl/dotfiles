@@ -29,7 +29,6 @@ local options = {
 	scrolloff = 8,                               -- scroll automatically when you reach the bottom of the buffer
 	confirm = true,                              -- ask for confirmation before quitting an unwritten buffer
 	hidden = true,                               -- allow unwritten buffers to be hidden
-	colorcolumn = '80',                          -- add a column at 80 characters
 	signcolumn = "no",                           -- always show the sign column
 	foldmethod = "marker",                       -- Fold are only the {{{ }}} things
 	-- smoothscroll = true, -- scrolling with wrapped lines is more comfy

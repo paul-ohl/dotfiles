@@ -8,5 +8,5 @@ conf		~/dotfiles/neovim/.config/nvim/
 zik			~/Music/yt/
 dev 		~/Documents/dev/
 org			~/Documents/Main/
-mds 		~/Documents/dev/my_digital_school/
+mds 		/opt/mds/
 pro 		/opt/dev/
