@@ -56,9 +56,6 @@ alias vim='nvim'
 alias v='nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias weather='curl wttr.in'
-mkcd() {
-	mkdir $1 && cd $1
-}
 
 # systemd aliases
 alias ssg='sudo systemctl start'
@@ -101,6 +98,16 @@ alias gloga='git log --oneline --decorate --graph --all'
 alias gr='git rebase'
 alias gri='git rebase --interactive'
 alias g-='git switch -'
+
+# mkcd action
+mkcd() {
+	if [ "$#" -gt 1 ]; then
+		mkdir "$@"
+	else
+		mkdir "$@" && cd "$@"
+	fi
+}
+alias mkdir='mkcd'
 
 # zsh syntax highlighting
 zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
