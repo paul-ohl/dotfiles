@@ -25,15 +25,24 @@ vim.keymap.del("n", "<leader><tab>[")
 -- Set custom keymaps
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", opts)
 vim.keymap.set("v", "K", ":m '>-2<cr>gv=gv", opts)
-vim.keymap.set("n", "<leader><tab>", "<C-^>", opts)
 vim.keymap.set("n", "<leader>ul", function()
   Util.toggle("relativenumber")
 end, opts)
 vim.keymap.set("n", "<leader>uL", function()
   Util.toggle.number()
 end, opts)
-vim.keymap.set("n", "<leader>ws", "<C-W>s", opts)
-vim.keymap.set("n", "<leader>wv", "<C-W>v", opts)
+vim.keymap.set("n", "<cr>", "j^zz", opts)
+vim.keymap.set("n", "-", "k^zz", opts)
+vim.keymap.set("n", "[[", "<c-t>", opts)
+
+-- Window management
+vim.keymap.set("n", "<leader><tab>", "<c-^>", opts)
+vim.keymap.set("n", "<leader>ws", "<c-w>s", opts)
+vim.keymap.set("n", "<leader>wv", "<c-w>v", opts)
+vim.keymap.set("n", "<c-s-h>", "<c-w>H", opts)
+vim.keymap.set("n", "<c-s-j>", "<c-w>J", opts)
+vim.keymap.set("n", "<c-s-k>", "<c-w>K", opts)
+vim.keymap.set("n", "<c-s-l>", "<c-w>L", opts)
 
 -- Tab management
 vim.keymap.set("n", "<tab>", "gt", opts)
