@@ -64,7 +64,7 @@
   tab   q     w     e     r     t    y    u     i     o     p     [    ]    ret
   @ces  @meta @alts @ctld @sftf g    h    @sftj @ctlk @altl @met; '    \
   XX    grv   z     x     c     v    b    n     m     ,     .     /    XX
-  XX    XX    XX    @aalt          @sspace            XX    XX    XX
+  XX    XX    XX    @aalt          @sspace            caps  XX    XX
 )
 
 (deflayer accents
