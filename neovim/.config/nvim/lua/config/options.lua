@@ -35,3 +35,18 @@ elseif #failed_options > 1 then
   end
   print(output)
 end
+
+-- This part of the file is for abbreviations
+local function abbrev(input, output)
+  if type(input) == "table" then
+    for _, v in ipairs(input) do
+      abbrev(v, output)
+    end
+    return
+  end
+  vim.cmd("iabbrev " .. input .. " " .. output)
+end
+
+abbrev("whiel", "while")
+abbrev({ "retrun", "reutnr", "reutrn", "reutn" }, "return")
+abbrev({ "slef", "sefl", "sfel", "sfle" }, "self")

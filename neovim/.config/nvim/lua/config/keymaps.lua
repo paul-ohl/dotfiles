@@ -35,6 +35,11 @@ vim.keymap.set("n", "<cr>", "j^zz", opts)
 vim.keymap.set("n", "-", "k^zz", opts)
 vim.keymap.set("n", "[[", "<c-t>", opts)
 
+-- Plugin keymaps
+vim.keymap.set("n", "<C-n>", function()
+  require("notify").dismiss({ pending = false, silent = true })
+end, opts)
+
 -- Window management
 vim.keymap.set("n", "<leader><tab>", "<c-^>", opts)
 vim.keymap.set("n", "<leader>ws", "<c-w>s", opts)

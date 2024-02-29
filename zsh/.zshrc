@@ -56,6 +56,7 @@ alias vim='nvim'
 alias v='nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias weather='curl wttr.in'
+alias lg='lazygit'
 
 # systemd aliases
 alias ssg='sudo systemctl start'
@@ -79,10 +80,31 @@ if command -v bat &> /dev/null; then
 	alias cat='bat'
 fi
 
+# Zellij autostart
+ZELLIJ_AUTO_EXIT=true
+if [[ -z "$ZELLIJ" && "$TERM" == "alacritty" ]]; then
+	if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+		zellij attach -c
+	else
+		zellij
+	fi
+	if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+		exit
+	fi
+fi
+
 # quick folders
-eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
-		| awk '{print $1 "=\"cd " $2 " && ls\" "}' \
-		| tr "\"\n" "' ")"
+if command -v zellij &> /dev/null; then
+  eval "alias $( \
+          grep -v "^#" $HOME/.config/zsh/foldersrc | \
+          awk '{print $1 "=\"cd_rename_zellij " $2 " && ls && zellij action rename-tab " $1 " \" "}' | \
+          tr "\"\n" "' " \
+        )"
+else
+  eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
+      | awk '{print $1 "=\"cd " $2 " && ls\" "}' \
+      | tr "\"\n" "' ")"
+fi
 
 # git aliases
 alias gs='git status'
@@ -99,15 +121,24 @@ alias gr='git rebase'
 alias gri='git rebase --interactive'
 alias g-='git switch -'
 
-# mkcd action
-mkcd() {
-	if [ "$#" -gt 1 ]; then
-		mkdir "$@"
-	else
-		mkdir "$@" && cd "$@"
-	fi
-}
-alias mkdir='mkcd'
+# # mkcd action
+# mkcd() {
+#   echo "Once only"
+# 	if [ "$#" -gt 1 ]; then
+# 		mkdir "$@"
+# 	else
+# 		# mkdir "$@" && cd_rename_zellij "$@"
+# 		mkdir "$@" && cd "$@"
+# 	fi
+# }
+# if alias mkdir &>/dev/null; then
+#   unalias mkdir
+# fi
+# alias mkdir='mkcd'
+
+# cd action
+source "$HOME/.local/scripts/cd_rename_zellij.sh"
+alias cd='cd_rename_zellij'
 
 # zsh syntax highlighting
 zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
@@ -136,10 +167,9 @@ LC_ALL="en_US.UTF-8"
 PS1="%1~ > "
 
 # Load device-specific config
-if [ -e "$HOME/.device-specific.sh" ]; then
-	source "$HOME/.device-specific.sh"
-else
+if ! [ -e "$HOME/.device-specific.sh" ]; then
 	touch "$HOME/.device-specific.sh" 
 fi
+source "$HOME/.device-specific.sh"
 
 bindkey '^R' history-incremental-search-backward

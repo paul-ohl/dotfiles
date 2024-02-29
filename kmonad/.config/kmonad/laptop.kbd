@@ -34,7 +34,7 @@
 (defalias
   sspace (tap-hold-next-release 200 spc (around lctl (around lalt lmet)))
   ces esc
-  cqu (tap-hold 200 ' lctl)
+  acap (tap-hold-next-release 200 caps (layer-toggle accents))
 )
 
 ;; Accents
@@ -64,13 +64,13 @@
   tab   q     w     e     r     t    y    u     i     o     p     [    ]    ret
   @ces  @meta @alts @ctld @sftf g    h    @sftj @ctlk @altl @met; '    \
   XX    grv   z     x     c     v    b    n     m     ,     .     /    XX
-  XX    XX    XX    @aalt          @sspace            caps  XX    XX
+  XX    XX    XX    @aalt          @sspace            @acap XX    XX
 )
 
 (deflayer accents
   @gr   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
   XX    XX   XX   @ac  XX   XX   XX   XX   @cir XX   XX   XX   XX   XX
-  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX    XX   XX   XX   XX   XX   left down up   right XX  XX   XX
   XX   @gr   XX   XX   @cc  XX   XX   XX   XX   XX   XX   XX   XX
   XX   XX    XX   XX             XX             XX   XX   XX
 )

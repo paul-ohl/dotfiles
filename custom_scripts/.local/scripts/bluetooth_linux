@@ -1,0 +1,85 @@
+#!/bin/bash
+# Date: 2022/07/31
+# Description: Simple Bluetooth Manager for Linux
+# man bluethoothctl
+
+SELECTOR="wofi --prompt Bluetooth --dmenu --normal-window --hide-scroll --insensitive --gtk-dark"
+
+containsElement() {
+	local e match="$1"
+	shift
+	for e; do [[ "$e" == "$match" ]] && return 0; done
+	return 1
+}
+
+select_paired_device() {
+	# Get paired devices
+	paired_devices=$(bluetoothctl devices | sed 's/Device //')
+	# linked_devices=$(bluetoothctl devices Connected | sed 's/Device //')
+	linked_devices=("Casque SONY")
+
+	# Create a map of device names to addresses
+	declare -A device_map
+	while read -r line; do
+		address=$(echo "$line" | awk '{print $1}')
+		name=$(echo "$line" | cut -d ' ' -f 2-)
+		if containsElement "$name" "${linked_devices[@]}"; then
+			device_map["🟢 $name"]="$address"
+		else
+			device_map["🔴 $name"]="$address"
+		fi
+		# device_map[$name]=$address
+	done < <(echo "$paired_devices")
+
+	# Select a device with dmenu/wofi
+	chosen_device=$(
+		for name in "${!device_map[@]}"; do
+			echo "$name"
+		done | $SELECTOR
+	)
+
+	if [ "$chosen_device" = "" ]; then
+		echo ""
+		exit 0
+	fi
+
+	echo "${device_map[$chosen_device]}" "${chosen_device:2}"
+
+	# echo "${address_list[$chosen_device]}"
+}
+
+connect_device() {
+	chosen_device=$(select_paired_device)
+	chosen_device=($chosen_device)
+	echo "${chosen_device[1]}"
+	if [ "$chosen_device" = "" ]; then
+		exit 0
+	fi
+	# bluetoothctl connect "$chosen_device"
+	# if ! [ "$?" = "0" ]; then
+	# notify-send --app-name="Simple Bluetooth Manager" \
+	# 	--action="Retry" \
+	# 	--action="Connect to other device" \
+	# 	"Connection failed" \
+	# 	"Connection to $chosen_device failed."
+	# fi
+}
+
+# if [ "$(blueutil --power)" = "0" ]; then
+# 	turn_bt_on=$(printf "Turn Bluetooth on\nDo nothing" | choose -f Alice -i)
+# 	if [ "$turn_bt_on" = "0" ]; then
+# 		blueutil --power 1
+# 	else
+# 		exit 0
+# 	fi
+# fi
+
+# chosen_option=$(printf "connect device\npair new device\ndelete device\nturn off bluetooth" | $SELECTOR)
+chosen_option="connect device"
+case "$chosen_option" in
+"") exit 0 ;;
+"turn off bluetooth") bluetoothctl power off ;;
+"pair new device") echo "Pairing new device..." ;;
+"delete device") echo "Deleting device..." ;;
+"connect device") connect_device ;;
+esac
