@@ -171,5 +171,6 @@ if ! [ -e "$HOME/.device-specific.sh" ]; then
 	touch "$HOME/.device-specific.sh" 
 fi
 source "$HOME/.device-specific.sh"
+source "$HOME/.config/zsh/exercism_completion"
 
 bindkey '^R' history-incremental-search-backward

@@ -63,8 +63,8 @@
   grv   1     2     3     4     5    6    7     8     9     0     -    =    bspc
   tab   q     w     e     r     t    y    u     i     o     p     [    ]    ret
   @ces  @meta @alts @ctld @sftf g    h    @sftj @ctlk @altl @met; '    \
-  XX    grv   z     x     c     v    b    n     m     ,     .     /    XX
-  XX    XX    XX    @aalt          @sspace            @acap XX    XX
+  lsft  grv   z     x     c     v    b    n     m     ,     .     /    rsft
+  lctl  XX    lmet  @aalt          @sspace            @acap rctl  rctl
 )
 
 (deflayer accents
