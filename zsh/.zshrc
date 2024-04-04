@@ -55,7 +55,6 @@ alias vim='nvim'
 alias v='NVIM_APPNAME="nvim-kickstart" nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias weather='curl wttr.in'
-alias lg='lazygit'
 
 # systemd aliases
 alias ssg='sudo systemctl start'
@@ -106,15 +105,15 @@ else
 fi
 
 # git aliases
+alias lg='lazygit'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gck='git checkout'
 alias gb='git branch'
 alias gcl='git clone'
-alias gP='git push'
-alias GP='git push'
-alias gp='git pull'
+alias gp='git push'
+alias gl='git pull'
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
 alias gr='git rebase'
