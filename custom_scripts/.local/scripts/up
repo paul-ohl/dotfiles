@@ -1,0 +1,27 @@
+#!/bin/sh
+# Date: 2024/03/25
+# Description: Updater! It updates all the things!
+
+# Check argument
+reboot=false
+arg="$1"
+if [ "$arg" = "-y" ]; then
+	reboot=true
+fi
+
+update_hosts_file() {
+	echo "hosts file"
+	hosts_version_file="$HOME/.local/local_config/hosts_version"
+	latest_version=$(curl -s "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts")
+	local_version=$(cat "$hosts_version_file" 2>/dev/null)
+	if [ "$local_version" = "$latest_version" ]; then
+		echo "Up to date!"
+		return 0
+	fi
+	sudo cp /etc/hosts /etc/hosts_backup || return 1
+	curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts" | sudo tee /etc/hosts >/dev/null || return 1
+	printf "0.0.0.0	www.youtube.com\n0.0.0.0 9gag.com\n" | sudo tee -a /etc/hosts >/dev/null || return 1
+	echo "$latest_version" >"$hosts_version_file"
+	return 0
+}
+

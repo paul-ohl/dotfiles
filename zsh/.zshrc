@@ -10,7 +10,6 @@ if [ "$OS" = "LINUX" ]; then # Linux specific
 	# setxkbmap -option 'caps:ctrl_modifier'
 	# xcape -e 'Caps_Lock=Escape' -t 100
 
-	# cool aliases
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
 	alias open='xdg-open'
@@ -31,7 +30,6 @@ elif [ "$OS" = "OSX" ]; then # Macos specific
 		compinit
 	fi
 
-	# cool aliases
 	alias dfh='df -h | grep disk1s5'
 	alias parle='say -v Thomas'
 fi
@@ -53,7 +51,8 @@ set -o vi
 alias so='source $HOME/.zshrc'
 alias vi='/usr/bin/vim'
 alias vim='nvim'
-alias v='nvim'
+# alias v='nvim'
+alias v='NVIM_APPNAME="nvim-kickstart" nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias weather='curl wttr.in'
 alias lg='lazygit'
@@ -113,32 +112,17 @@ alias gc='git commit'
 alias gck='git checkout'
 alias gb='git branch'
 alias gcl='git clone'
-alias gp='git push'
-alias gl='git pull'
+alias gP='git push'
+alias GP='git push'
+alias gp='git pull'
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
 alias gr='git rebase'
 alias gri='git rebase --interactive'
 alias g-='git switch -'
 
-# # mkcd action
-# mkcd() {
-#   echo "Once only"
-# 	if [ "$#" -gt 1 ]; then
-# 		mkdir "$@"
-# 	else
-# 		# mkdir "$@" && cd_rename_zellij "$@"
-# 		mkdir "$@" && cd "$@"
-# 	fi
-# }
-# if alias mkdir &>/dev/null; then
-#   unalias mkdir
-# fi
-# alias mkdir='mkcd'
-
 # cd action
 source "$HOME/.local/scripts/cd_rename_zellij.sh"
-alias cd='cd_rename_zellij'
 
 # zsh syntax highlighting
 zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
