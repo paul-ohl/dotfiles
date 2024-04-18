@@ -5,9 +5,15 @@ vim.opt.hlsearch = true
 vim.keymap.set('c', '<CR>', '<CR><cmd>nohl<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohl<CR>')
 
+-- Quickfix keymaps
+vim.keymap.set('n', '<Leader>;', '<Cmd>cn<CR>zz', { desc = 'Go to next quickfix item' })
+vim.keymap.set('n', '<Leader>,', '<Cmd>cp<CR>zz', { desc = 'Go to prev quickfix item' })
+
 -- Diagnostic keymaps
-vim.keymap.set('n', '<C-;>', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', '<C-,>', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', ']d', require('custom.goto_error_then_hint').goto_error_then_hint, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '[d', function()
+  require('custom.goto_error_then_hint').goto_error_then_hint(true)
+end, { desc = 'Go to prev [D]iagnostic message' })
 vim.keymap.set('n', '<C-e>', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<C-q>', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -26,6 +32,18 @@ vim.keymap.set('n', '<Leader>k', '<C-w><C-k>', { desc = 'Move focus to the upper
 vim.keymap.set('n', '<Leader>v', '<C-w>v', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<Leader>s', '<C-w>s', { desc = 'Split window' })
 vim.keymap.set('n', '<Leader><Tab>', '<C-^>', { desc = 'Switch to last file' })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('n', 'J', 'mzJ`z')
+vim.keymap.set('n', '<C-j>', '<cmd>call smoothie#do("<C-D>") <CR>')
+vim.keymap.set('n', '<C-k>', '<cmd>call smoothie#do("<C-U>") <CR>')
+vim.keymap.set('v', '<C-j>', '<cmd>call smoothie#do("<C-D>") <CR>')
+vim.keymap.set('v', '<C-k>', '<cmd>call smoothie#do("<C-U>") <CR>')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', 'zz', 'zz') -- To disable vim smoothie on `zz`
+vim.keymap.set('n', ']]', '<C-]>')
+vim.keymap.set('v', '$', 'g_')
 
 -- Tabs
 vim.keymap.set('n', '<Tab>', 'gt', { desc = 'Go to next Tab' })

@@ -1,21 +1,20 @@
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'psliwka/vim-smoothie', -- Smooth scrolling
+  'psliwka/vim-smoothie',
 
-  -- Adds surround vim motions
-  { 'kylechui/nvim-surround', opts = {} },
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
+  { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
 
   require 'plugins.telescope',
   require 'plugins.lsp',
   require 'plugins.colorschemes',
-
+  require 'plugins.copilot',
   require 'plugins.todo-comments',
   require 'plugins.mini',
   require 'plugins.treesitter',
   require 'plugins.nvim-tree',
+  require 'plugins.lazygit',
 
   {
     'windwp/nvim-autopairs',
@@ -32,10 +31,7 @@ require('lazy').setup({
   },
 
   -- I don't know if I want those...
-  -- require 'plugins/gitsigns',
-  -- require 'plugins/which-key',
   -- require 'plugins.debug',
-  -- require 'plugins.indent_line',
   -- require 'plugins.lint',
 }, {
   ui = {
