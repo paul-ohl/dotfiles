@@ -32,14 +32,14 @@
 
 
 (defalias
-  sspace (tap-hold-next-release 200 spc (around lctl (around lalt lmet)))
+  sspace (tap-hold-next-release 200 spc lmet)
   ces esc
-  acap (tap-hold-next-release 200 caps (layer-toggle accents))
 )
 
 ;; Accents
 (defalias
   aalt (layer-toggle accents)
+  acap (tap-hold-next-release 200 caps (layer-toggle accents))
   ac #(compose ')
   gr #(compose `)
   cir #(compose ^)
@@ -57,6 +57,11 @@
     ctlk (tap-hold-next-release 250 k rctl)
     altl (tap-hold-next-release 250 l lalt)
     met; (tap-hold-next-release 250 ; rmet)
+
+    sl (tap-hold-next-release 250 left  rsft)
+    cd (tap-hold-next-release 250 down  rctl)
+    au (tap-hold-next-release 250 up    lalt)
+    mr (tap-hold-next-release 250 right rmet)
 )
 
 (deflayer main
@@ -68,9 +73,9 @@
 )
 
 (deflayer accents
-  @gr   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  XX    XX   XX   @ac  XX   XX   XX   XX   @cir XX   XX   XX   XX   XX
-  XX    XX   XX   XX   XX   XX   left down up   right XX  XX   XX
+  @gr  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX    XX   @ac  XX   XX   XX   XX   @cir XX   XX   XX   XX   XX
+  XX   lmet  lalt lctl lsft XX   @sl  @cd  @au  @mr  XX   XX   XX
   XX   @gr   XX   XX   @cc  XX   XX   XX   XX   XX   XX   XX   XX
   XX   XX    XX   XX             XX             XX   XX   XX
 )

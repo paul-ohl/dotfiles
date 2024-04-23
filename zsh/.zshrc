@@ -21,6 +21,9 @@ if [ "$OS" = "LINUX" ]; then # Linux specific
 		alias firefox='devour firefox'
 		alias xdg-open='devour xdg-open'
 	fi
+	alias di='sudo dnf install'
+	alias ds='sudo dnf search'
+	alias du='sudo dnf update -y'
 
 elif [ "$OS" = "OSX" ]; then # Macos specific
 	# autocompletion
@@ -157,3 +160,9 @@ source "$HOME/.device-specific.sh"
 source "$HOME/.config/zsh/exercism_completion"
 
 bindkey '^R' history-incremental-search-backward
+eval $(thefuck --alias)
+eval $(thefuck --alias 'fk')
+eval $(thefuck --alias 'ff')
+eval $(thefuck --alias 'fff')
+eval $(thefuck --alias 'ffff')
+eval $(thefuck --alias 'fffff')
