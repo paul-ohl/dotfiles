@@ -1,6 +1,6 @@
 (defcfg
   ;; For Linux
-  input  (device-file "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:10:1.0-event-kbd")
+  input  (device-file "/home/pohl/.config/kmonad/kbd-input")
   output (uinput-sink "My KMonad output"
     "/usr/bin/sleep 1 && setxkbmap -option compose:menu")
   cmp-seq menu    ;; Set the compose key to 'Menu'
@@ -21,7 +21,7 @@
   allow-cmd false
 )
 
-
+;; Source definition
 (defsrc
   grv   1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab   q    w    e    r    t    y    u    i    o    p    [    ]    ret
@@ -30,7 +30,7 @@
   lctl comp  lmet lalt            spc           ralt rmet rctl
 )
 
-
+;; mod remaps
 (defalias
   sspace (tap-hold-next-release 200 spc (around lctrl (around lalt lmet)))
   ces esc
