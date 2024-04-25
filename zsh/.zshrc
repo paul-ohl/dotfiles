@@ -160,9 +160,3 @@ source "$HOME/.device-specific.sh"
 source "$HOME/.config/zsh/exercism_completion"
 
 bindkey '^R' history-incremental-search-backward
-eval $(thefuck --alias)
-eval $(thefuck --alias 'fk')
-eval $(thefuck --alias 'ff')
-eval $(thefuck --alias 'fff')
-eval $(thefuck --alias 'ffff')
-eval $(thefuck --alias 'fffff')
