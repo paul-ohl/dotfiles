@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "6/27/2023, 5:50:35 PM",
-	"time": 1687881035045,
+	"@time": "24/04/2024, 16:08:44",
+	"time": 1713967724054,
 	"environment": {
-		"extension": "1.99.992",
+		"extension": "1.99.997",
 		"platform": "linux",
-		"firefox": 114
+		"firefox": 125
 	},
 	"allBrowserUrls": true,
 	"autoDarkMode": 1,
@@ -17,6 +17,50 @@
 		{
 			"passKeys": "",
 			"pattern": ":https://stadia.google.com/"
+		},
+		{
+			"passKeys": "< > N P c ",
+			"pattern": ":https://www.youtube.com/"
+		},
+		{
+			"passKeys": "j k m ",
+			"pattern": ":https://calendar.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://jklm.fun/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://skribbl.io/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://www\\.curvytron\\.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://cloud.linode.com/linodes/35449194/lish/weblish"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://monkeytype.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://localhost:8080/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://gartic.io/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://eu-west-3.console.aws.amazon.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://www.notion.so/"
 		}
 	],
 	"grabBackFocus": true,
@@ -26,14 +70,16 @@
 		"map ; passNextKey",
 		"map J nextTab",
 		"map K previousTab",
+		"map ' Marks.activate",
+		"unmap <a-f>",
 		""
 	],
 	"linkHintCharacters": "asdfjklnowcei",
 	"searchEngines": [
 		"ya|yd: https://yandex.com/search/?text=%s Yandex",
 		"",
-		"m|gmaps|gm: https://www.google.com/maps?q=%s \\",
-		"  blank=https://www.google.com/maps Google Maps",
+		"m|gmaps|gm: https://www.google.com/maps?q=%s?authuser=1 \\",
+		"  blank=https://www.google.com/maps?authuser=1 Google Maps",
 		"w|wiki: https://www.wikipedia.org/w/index.php?search=%s Wikipedia",
 		"y:https://www.youtube.com/results?search_query=%s",
 		"",
@@ -46,7 +92,7 @@
 		"am.uk|am.co.uk: https://www.amazon.co.uk/s?k=%s \\",
 		"  blank=https://www.amazon.co.uk/ Amazon",
 		"",
-		"gh|github: https://github.com/search?q=$s \\",
+		"gh: https://github.com/search?q=$s \\",
 		"  blank=https://github.com/ GitHub Repo",
 		"alt: https://alternativeto.net/browse/search/?q=$s \\",
 		"  blank=https://alternativeto.net",
