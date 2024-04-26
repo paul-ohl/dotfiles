@@ -3,39 +3,20 @@ export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts/"
 # Rust
 source "$HOME/.cargo/env"
 
-# OS specific actions
-OS=`getos`
-if [ "$OS" = "LINUX" ]; then # Linux specific
-	# setxkbmap -option caps:escape > /dev/null
-	# setxkbmap -option 'caps:ctrl_modifier'
-	# xcape -e 'Caps_Lock=Escape' -t 100
-
-	alias pbcopy='xclip -selection clipboard'
-	alias pbpaste='xclip -selection clipboard -o'
-	alias open='xdg-open'
-	# alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
-	# Swallowing aliases
-	if [ -e "$HOME/.local/bin/devour" ]; then
-		alias sxiv='devour sxiv'
-		alias zathura='devour zathura'
-		alias firefox='devour firefox'
-		alias xdg-open='devour xdg-open'
-	fi
-	alias di='sudo dnf install'
-	alias ds='sudo dnf search'
-	alias du='sudo dnf update -y'
-
-elif [ "$OS" = "OSX" ]; then # Macos specific
-	# autocompletion
-	if type brew &>/dev/null; then
-		FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-		autoload -Uz compinit
-		compinit
-	fi
-
-	alias dfh='df -h | grep disk1s5'
-	alias parle='say -v Thomas'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+alias open='xdg-open'
+alias bat='/bin/cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
+# Swallowing aliases
+if [ -e "$HOME/.local/bin/devour" ]; then
+    alias sxiv='devour sxiv'
+    alias zathura='devour zathura'
+    alias firefox='devour firefox'
+    alias xdg-open='devour xdg-open'
 fi
+alias di='sudo dnf install'
+alias ds='sudo dnf search'
+alias du='sudo dnf update -y'
 
 #colors enabling
 autoload -U colors && colors
@@ -44,7 +25,6 @@ export LS_COLORS=$LS_COLORS:'di=1;32:'
 
 #Autocompletion
 zstyle ':completion:*' menu select
-#zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
 zmodload zsh/complist
 
 # Set vi mode
@@ -52,60 +32,50 @@ set -o vi
 
 # Cool aliases
 alias so='source $HOME/.zshrc'
-alias vi='/usr/bin/vim'
-alias vim='nvim'
-# alias v='nvim'
-alias v='NVIM_APPNAME="nvim-kickstart" nvim'
+alias v='nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias weather='curl wttr.in'
 
 # systemd aliases
-alias ssg='sudo systemctl start'
 alias sss='sudo systemctl status'
 alias ssr='sudo systemctl restart'
 alias sst='sudo systemctl stop'
 
 # aliases depending on Rust tools
 if command -v exa &> /dev/null; then
-	alias ls='exa -F --icons'
-	alias la='exa -Fla --icons'
-	alias l='exa -lF --icons'
-	alias ll='exa -Fl --icons'
-	alias tree='exa -FT --icons'
+    alias ls='exa -F --icons'
+    alias la='exa -Fla --icons'
+    alias l='exa -lF --icons'
+    alias ll='exa -Fl --icons'
+    alias tree='exa -FT --icons'
 else
-	alias la='ls -lA'
-	alias l='ls -l'
-	alias ll='ls -l'
+    alias la='ls -lA'
+    alias l='ls -l'
+    alias ll='ls -l'
 fi
 if command -v bat &> /dev/null; then
-	alias cat='bat'
+    alias cat='bat'
 fi
 
 # Zellij autostart
-ZELLIJ_AUTO_EXIT=true
-if [[ -z "$ZELLIJ" && "$TERM" == "alacritty" ]]; then
-	if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-		zellij attach -c
-	else
-		zellij
-	fi
-	if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-		exit
-	fi
+if command -v zellij &> /dev/null; then
+    ZELLIJ_AUTO_EXIT=true
+    if [[ -z "$ZELLIJ" && "$TERM" == "alacritty" ]]; then
+        if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+            zellij attach -c
+        else
+            zellij
+        fi
+        if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+            exit
+        fi
+    fi
 fi
 
 # quick folders
-if command -v zellij &> /dev/null; then
-  eval "alias $( \
-          grep -v "^#" $HOME/.config/zsh/foldersrc | \
-          awk '{print $1 "=\"cd_rename_zellij " $2 " && ls && zellij action rename-tab " $1 " \" "}' | \
-          tr "\"\n" "' " \
-        )"
-else
-  eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
-      | awk '{print $1 "=\"cd " $2 " && ls\" "}' \
-      | tr "\"\n" "' ")"
-fi
+eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
+    | awk '{print $1 "=\"cd " $2 " && ls\" "}' \
+    | tr "\"\n" "' ")"
 
 # git aliases
 alias lg='lazygit'
@@ -123,14 +93,11 @@ alias gr='git rebase'
 alias gri='git rebase --interactive'
 alias g-='git switch -'
 
-# cd action
-source "$HOME/.local/scripts/cd_rename_zellij.sh"
-
 # zsh syntax highlighting
 zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
 if ! [ -e "$zshsh_directory/zsh-syntax-highlighting.zsh" ]; then
-	mkdir -p "$zshsh_directory"
-	git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/zsh-users/zsh-syntax-highlighting.git "$zshsh_directory"
+    mkdir -p "$zshsh_directory"
+    git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/zsh-users/zsh-syntax-highlighting.git "$zshsh_directory"
 fi
 source "$zshsh_directory"/zsh-syntax-highlighting.zsh
 
@@ -154,9 +121,11 @@ PS1="%1~ > "
 
 # Load device-specific config
 if ! [ -e "$HOME/.device-specific.sh" ]; then
-	touch "$HOME/.device-specific.sh" 
+    touch "$HOME/.device-specific.sh" 
 fi
 source "$HOME/.device-specific.sh"
-source "$HOME/.config/zsh/exercism_completion"
 
 bindkey '^R' history-incremental-search-backward
+
+# Vim infos
+# vim: ts=2 sts=2 sw=2 et
