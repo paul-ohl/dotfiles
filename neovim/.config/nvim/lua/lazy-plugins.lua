@@ -32,9 +32,7 @@ require('lazy').setup({
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
-    config = function()
-      require('crates').setup()
-    end,
+    opts = {},
   },
 
   -- I don't know if I want those...
