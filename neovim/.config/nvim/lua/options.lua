@@ -4,6 +4,9 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Tab stuff
+vim.opt.tabstop = 4
+
 -- Enable mouse mode
 vim.opt.mouse = 'a'
 
