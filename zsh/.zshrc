@@ -6,7 +6,6 @@ source "$HOME/.cargo/env"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias open='xdg-open'
-alias bat='/bin/cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
 # Swallowing aliases
 if [ -e "$HOME/.local/bin/devour" ]; then
     alias sxiv='devour sxiv'
