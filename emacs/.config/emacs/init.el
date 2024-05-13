@@ -4,4 +4,4 @@
   user-emacs-directory))
 
 (custom-set-variables
- '(custom-enabled-themes '(misterioso)))
+ '(custom-enabled-themes '(tsdh-dark)))
