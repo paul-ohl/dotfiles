@@ -15,6 +15,7 @@ require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.nvim-tree',
   require 'plugins.lazygit',
+  require 'plugins.markdown-preview',
 
   {
     'windwp/nvim-autopairs',

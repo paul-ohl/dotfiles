@@ -12,7 +12,7 @@ require 'keymaps'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 -- This is install and forget.
-require 'lazy-bootstrap'
+require 'bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
