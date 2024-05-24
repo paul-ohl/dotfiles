@@ -1,0 +1,38 @@
+#!/bin/sh
+# Date: 2024/05/22
+# Description: A git clone utility
+
+emails=("paul.lv.ohl@gmail.com" "paul.ohl@bedrockstreaming.com")
+userName="Paul Ohl"
+
+# Check if the user has provided a URL
+if [ -z "$1" ]; then
+    echo "Please provide a URL"
+    exit 1
+fi
+
+# Exit if the user provides more than 2 arguments
+if [ $# -gt 2 ]; then
+    echo "Too many arguments"
+    exit 1
+fi
+
+# Clone the repository
+git clone --recursive $@
+
+# Check if the clone was successful
+if ! [ $? -eq 0 ]; then
+    exit 1
+fi
+
+directoryName=$([ $# -eq 2 ] && echo "$2" || basename "$1" .git)
+cd "$directoryName" || exit 1
+
+selectedEmail=$(echo "${emails[@]}" | tr ' ' '\n' | fzf --algo=v1 --border --border-label="╢ Which address to use? ╟" --color=label:italic:black)
+if [ -z "$selectedEmail" ]; then
+    echo "No email selected"
+    exit 1
+fi
+
+git config user.email "$selectedEmail"
+git config user.name "$userName"

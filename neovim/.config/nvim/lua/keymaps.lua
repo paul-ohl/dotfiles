@@ -4,7 +4,8 @@
 vim.opt.hlsearch = true
 vim.keymap.set('c', '<CR>', '<CR><cmd>nohl<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohl<CR>')
-vim.keymap.set('n', '[[', '<C-t>', { silent = true })
+vim.keymap.set('n', '<C-h>', '<C-t>', { silent = true })
+vim.keymap.set('n', '<C-l>', '<C-]>')
 
 -- Quickfix keymaps
 vim.keymap.set('n', '<Leader>;', '<Cmd>cn<CR>zz', { desc = 'Go to next quickfix item' })
@@ -45,7 +46,6 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', 'zz', 'zz') -- To disable vim smoothie on `zz`
 vim.keymap.set('n', 'zt', 'zt') -- To disable vim smoothie on `zt`
 vim.keymap.set('n', 'zb', 'zb') -- To disable vim smoothie on `zb`
-vim.keymap.set('n', ']]', '<C-]>')
 vim.keymap.set('v', '$', 'g_')
 vim.keymap.set('n', '<CR>', 'j^zz')
 vim.keymap.set('n', '-', 'k^zz')

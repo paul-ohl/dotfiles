@@ -1,5 +1,5 @@
 # Path stuff...
-export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts/"
+export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts"
 # Rust
 source "$HOME/.cargo/env"
 
@@ -77,13 +77,13 @@ eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
     | tr "\"\n" "' ")"
 
 # git aliases
+alias gcl='. gcl'
 alias lg='lazygit'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gck='git checkout'
 alias gb='git branch'
-alias gcl='git clone'
 alias gp='git push'
 alias gl='git pull'
 alias glog='git log --oneline --decorate --graph'
