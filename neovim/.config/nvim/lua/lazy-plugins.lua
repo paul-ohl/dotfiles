@@ -1,11 +1,5 @@
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'psliwka/vim-smoothie',
-
-  { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
-  { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
-
   require 'plugins.telescope',
   require 'plugins.lsp',
   require 'plugins.colorschemes',
@@ -16,20 +10,13 @@ require('lazy').setup({
   require 'plugins.nvim-tree',
   require 'plugins.lazygit',
   require 'plugins.markdown-preview',
+  require 'plugins.auto_pair',
 
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    opts = {
-      disable_filetype = { 'TelescopePrompt', 'spectre_panel', 'markdown' },
-      map_c_w = true,
-    },
-    config = function()
-      local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
-      local cmp = require 'cmp'
-      cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
-    end,
-  },
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'psliwka/vim-smoothie',
+  { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
+  { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
+
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
