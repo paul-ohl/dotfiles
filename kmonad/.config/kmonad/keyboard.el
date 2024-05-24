@@ -1,6 +1,6 @@
 (defcfg
   ;; For Linux
-  input  (device-file "/home/pohl/.config/kmonad/kbd-input")
+  input  (device-file "/dev/input/by-path/pci-0000:00:14.0-usb-0:10:1.0-event-kbd")
   output (uinput-sink "My KMonad output"
     "/usr/bin/sleep 1 && setxkbmap -option compose:menu")
   cmp-seq menu    ;; Set the compose key to 'Menu'
