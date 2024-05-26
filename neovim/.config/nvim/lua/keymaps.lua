@@ -1,5 +1,8 @@
 -- [[ Basic Keymaps ]]
 
+-- Disable space
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { desc = 'Disable Space' })
+
 -- Set highlight on search
 vim.opt.hlsearch = true
 vim.keymap.set('c', '<CR>', '<CR><cmd>nohl<CR>')

@@ -1,0 +1,11 @@
+#!/bin/sh
+# Date: 2024/05/24
+# Description: Ripgrep and edit.
+# Dependencies: ripgrep, an editor.
+
+# Usage: rge [options] PATTERN [FILES...]
+# This script is going to search hidden files by default.
+
+EDITOR="nvim -p"
+
+rg --hidden --files-with-matches "$@" | xargs $EDITOR
