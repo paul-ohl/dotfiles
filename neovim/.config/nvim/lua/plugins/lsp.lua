@@ -23,7 +23,7 @@ return {
           end
 
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-          map(']]', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('<C-l>', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
