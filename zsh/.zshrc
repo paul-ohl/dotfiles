@@ -32,6 +32,7 @@ set -o vi
 # Cool aliases
 alias so='source $HOME/.zshrc'
 alias v='nvim'
+alias e='nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias weather='curl wttr.in'
 
