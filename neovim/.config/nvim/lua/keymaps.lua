@@ -37,7 +37,6 @@ vim.keymap.set('n', '<Leader>n', '<C-w><C-j>', { desc = 'Move focus to the lower
 vim.keymap.set('n', '<Leader>e', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 vim.keymap.set('n', '<Leader>v', '<C-w>v', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<Leader>s', '<C-w>s', { desc = 'Split window' })
-vim.keymap.set('n', '<Leader><Tab>', '<C-^>', { desc = 'Switch to last file' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', 'J', 'mzJ`z')

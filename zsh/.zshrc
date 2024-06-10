@@ -60,7 +60,8 @@ fi
 # Zellij autostart
 if command -v zellij &> /dev/null; then
     ZELLIJ_AUTO_EXIT=true
-    if [[ -z "$ZELLIJ" && "$TERM" == "alacritty" ]]; then
+    if [[ -z "$ZELLIJ" && "$TERM" == "xterm-kitty" ]]; then
+        export TERM=xterm-256color
         if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
             zellij attach -c
         else
