@@ -12,6 +12,7 @@ require('lazy').setup({
   require 'plugins.markdown-preview',
   require 'plugins.auto_pair',
 
+  'rhysd/conflict-marker.vim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'psliwka/vim-smoothie',
   { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
