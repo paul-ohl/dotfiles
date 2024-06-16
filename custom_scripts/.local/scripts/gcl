@@ -1,0 +1,25 @@
+#!/bin/sh
+# Date: 2024/05/22
+# Description: A git clone utility. Use with an alias for best results
+# alias gcl='. gcl'
+
+# Check if the user has provided a URL
+if [ -z "$1" ]; then
+    echo "Please provide a URL"
+else
+    # Exit if the user provides more than 2 arguments
+    if [ $# -gt 2 ]; then
+        echo "Too many arguments"
+    else
+
+        # Clone the repository
+        if ! git clone --recursive $@; then
+            echo "Failed to clone the repository"
+        else
+            directoryName=$([ $# -eq 2 ] && echo "$2" || basename "$1" .git)
+            cd "$directoryName" || return
+
+            gconf
+        fi
+    fi
+fi

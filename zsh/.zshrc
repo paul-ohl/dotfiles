@@ -1,5 +1,5 @@
 # Path stuff...
-export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts/"
+export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts"
 # Rust
 source "$HOME/.cargo/env"
 
@@ -32,6 +32,7 @@ set -o vi
 # Cool aliases
 alias so='source $HOME/.zshrc'
 alias v='nvim'
+alias e='nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias weather='curl wttr.in'
 
@@ -59,7 +60,8 @@ fi
 # Zellij autostart
 if command -v zellij &> /dev/null; then
     ZELLIJ_AUTO_EXIT=true
-    if [[ -z "$ZELLIJ" && "$TERM" == "alacritty" ]]; then
+    if [[ -z "$ZELLIJ" && "$TERM" == "xterm-kitty" ]]; then
+        export TERM=xterm-256color
         if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
             zellij attach -c
         else
@@ -77,13 +79,13 @@ eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
     | tr "\"\n" "' ")"
 
 # git aliases
+alias gcl='. gcl'
 alias lg='lazygit'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gck='git checkout'
 alias gb='git branch'
-alias gcl='git clone'
 alias gp='git push'
 alias gl='git pull'
 alias glog='git log --oneline --decorate --graph'

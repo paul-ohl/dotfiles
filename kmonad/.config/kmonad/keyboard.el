@@ -1,6 +1,6 @@
 (defcfg
   ;; For Linux
-  input  (device-file "/dev/input/by-path/pci-0000:00:14.0-usb-0:10:1.0-event-kbd")
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
   output (uinput-sink "My KMonad output"
     "/usr/bin/sleep 1 && setxkbmap -option compose:menu")
   cmp-seq menu    ;; Set the compose key to 'Menu'
@@ -49,33 +49,34 @@
 ;; home-row mods
 (defalias
     meta (tap-hold-next-release 250 a lmet)
-    alts (tap-hold-next-release 250 s lalt)
-    ctld (tap-hold-next-release 250 d lctl)
-    sftf (tap-hold-next-release 250 f lsft)
+    altr (tap-hold-next-release 250 r lalt)
+    ctls (tap-hold-next-release 250 s lctl)
+    sftt (tap-hold-next-release 250 t lsft)
 
-    sftj (tap-hold-next-release 250 j rsft)
-    ctlk (tap-hold-next-release 250 k rctl)
-    altl (tap-hold-next-release 250 l lalt)
-    met; (tap-hold-next-release 250 ; rmet)
+    sftn (tap-hold-next-release 250 n rsft)
+    ctle (tap-hold-next-release 250 e rctl)
+    alti (tap-hold-next-release 250 i lalt)
+    meto (tap-hold-next-release 250 o rmet)
 
-    sl (tap-hold-next-release 250 left  rsft)
-    cd (tap-hold-next-release 250 down  rctl)
-    au (tap-hold-next-release 250 up    lalt)
-    mr (tap-hold-next-release 250 right rmet)
+    sd (tap-hold-next-release 250 down  rsft)
+    cu (tap-hold-next-release 250 up    rctl)
+    ar (tap-hold-next-release 250 right ralt)
 )
 
 (deflayer main
   grv   1     2     3     4     5    6    7     8     9     0     -    =    bspc
-  tab   q     w     e     r     t    y    u     i     o     p     [    ]    ret
-  @ces  @meta @alts @ctld @sftf g    h    @sftj @ctlk @altl @met; '    \
-  lsft  grv   z     x     c     v    b    n     m     ,     .     /    rsft
+  tab   q     w     f     p     b    j    l     u     y     ;     [    ]    ret
+  @ces  @meta @altr @ctls @sftt g    m    @sftn @ctle @alti @meto '    \
+  lsft  grv   z     x     c     d    v    k     h     ,     .     /    rsft
   lctl  XX    lmet  @aalt          @sspace            @acap rctl  rctl
 )
 
 (deflayer accents
   @gr  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
   XX   XX    XX   @ac  XX   XX   XX   XX   @cir XX   XX   XX   XX   XX
-  XX   lmet  lalt lctl lsft XX   @sl  @cd  @au  @mr  XX   XX   XX
-  XX   @gr   XX   XX   @cc  XX   XX   XX   XX   XX   XX   XX   XX
+  XX   lmet  lalt lctl lsft XX   XX   @sd  @cu  @ar  rmet XX   XX
+  XX   @gr   XX   XX   @cc  XX   XX   XX   left XX   XX   XX   XX
   XX   XX    XX   XX             XX             XX   XX   XX
 )
+
+;; vim: set ft=lisp

@@ -1,0 +1,14 @@
+#!/bin/sh
+# Date: 2024/05/27
+# Description: Configure git user
+
+emails=("paul.lv.ohl@gmail.com" "paul.ohl@bedrockstreaming.com")
+userName="Paul Ohl"
+
+selectedEmail=$(echo "${emails[@]}" | tr ' ' '\n' | fzf --algo=v1 --border --border-label="╢ Which address to use? ╟" --color=label:italic:black)
+if [ -z "$selectedEmail" ]; then
+    echo "No email selected"
+else
+    git config user.email "$selectedEmail"
+    git config user.name "$userName"
+fi

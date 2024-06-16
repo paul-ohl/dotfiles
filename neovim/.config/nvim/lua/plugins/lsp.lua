@@ -23,7 +23,7 @@ return {
           end
 
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-          map(']]', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('<C-i>', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -174,8 +174,8 @@ return {
         completion = { completeopt = 'menu,menuone,noinsert' },
 
         mapping = cmp.mapping.preset.insert {
-          ['<C-j>'] = cmp.mapping.select_next_item(),
-          ['<C-k>'] = cmp.mapping.select_prev_item(),
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-e>'] = cmp.mapping.select_prev_item(),
 
           -- Scroll the documentation window [b]ack / [f]orward
           ['<C-d>'] = cmp.mapping.scroll_docs(-4),
@@ -188,7 +188,7 @@ return {
 
           ['<C-Space>'] = cmp.mapping.complete {},
 
-          ['<C-l>'] = cmp.mapping(function()
+          ['<C-i>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
             end
