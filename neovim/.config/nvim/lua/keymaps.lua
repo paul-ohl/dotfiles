@@ -7,8 +7,9 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { desc = 'Disable Space' })
 vim.opt.hlsearch = true
 vim.keymap.set('c', '<CR>', '<CR><cmd>nohl<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohl<CR>')
-vim.keymap.set('n', '<C-h>', '<C-t>', { silent = true })
-vim.keymap.set('n', '<C-i>', '<C-]>')
+vim.keymap.set('n', '<C-h>', '<C-t>')
+vim.keymap.set('n', '<F12>', '<C-]>') -- The hackiest, shittiest solution to a problem that should not exist
+vim.keymap.set('n', '<Tab>', ':tabNext<CR>', { desc = 'Go to next Tab', silent = true })
 
 -- Quickfix keymaps
 vim.keymap.set('n', '<Leader>;', '<Cmd>cn<CR>zz', { desc = 'Go to next quickfix item' })
@@ -56,15 +57,15 @@ vim.keymap.set('n', '<Leader>Y', '"+y$')
 vim.keymap.set('n', '<Leader>d', '"+d')
 
 -- Tabs
-vim.keymap.set('n', '<Tab>', 'gt', { desc = 'Go to next Tab' })
+vim.keymap.set('n', '<Tab>', ':tabNext<CR>', { desc = 'Go to next Tab', silent = true })
 vim.keymap.set('n', '<S-Tab>', 'gT', { desc = 'Go to previous Tab' })
 vim.keymap.set('n', '<Leader><Tab>', '<C-^>', { desc = 'Switch to last file' })
-vim.keymap.set('n', '<leader>tn', ':tabnew<CR>')
-vim.keymap.set('n', '<leader>tq', ':tabclose<CR>')
-vim.keymap.set('n', '<leader>te', '<C-w>T')
-vim.keymap.set('n', '<leader>t<', ':tabmove -<CR>')
-vim.keymap.set('n', '<leader>t>', ':tabmove +<CR>')
-vim.keymap.set('n', '<leader>t0', ':tabmove 0<CR>')
+vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { silent = true })
+vim.keymap.set('n', '<leader>tq', ':tabclose<CR>', { silent = true })
+vim.keymap.set('n', '<leader>te', '<C-w>T', { silent = true })
+vim.keymap.set('n', '<leader>t<', ':tabmove -<CR>', { silent = true })
+vim.keymap.set('n', '<leader>t>', ':tabmove +<CR>', { silent = true })
+vim.keymap.set('n', '<leader>t0', ':tabmove 0<CR>', { silent = true })
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -75,7 +76,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Plugin-specific keymaps
-vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
+vim.keymap.set('n', '<Leader>f', ':NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 
 -- vim: ts=2 sts=2 sw=2 et

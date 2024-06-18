@@ -3,8 +3,8 @@ export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts"
 # Rust
 source "$HOME/.cargo/env"
 
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
+alias pbcopy='wl-copy'
+alias pbpaste='wl-paste'
 alias open='xdg-open'
 # Swallowing aliases
 if [ -e "$HOME/.local/bin/devour" ]; then
@@ -57,21 +57,8 @@ if command -v bat &> /dev/null; then
     alias cat='bat'
 fi
 
-# Zellij autostart
-if command -v zellij &> /dev/null; then
-    ZELLIJ_AUTO_EXIT=true
-    if [[ -z "$ZELLIJ" && "$TERM" == "xterm-kitty" ]]; then
-        export TERM=xterm-256color
-        if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-            zellij attach -c
-        else
-            zellij
-        fi
-        if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-            exit
-        fi
-    fi
-fi
+# for kitty
+alias ssh='TERM=xterm-256color ssh'
 
 # quick folders
 eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
@@ -93,6 +80,15 @@ alias gloga='git log --oneline --decorate --graph --all'
 alias gr='git rebase'
 alias gri='git rebase --interactive'
 alias g-='git switch -'
+
+function yy() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
 
 # zsh syntax highlighting
 zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"

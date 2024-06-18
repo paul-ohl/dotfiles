@@ -19,10 +19,10 @@ if ! [ -f "$path_to_iso" ]; then
 fi
 
 # list blocks and ask user for usb stick
-diskutil list
+lsblk
 echo "$RED/!\\ Danger zone! /!\\ $RESET"
 echo "Select the disk you want to burn your iso to"
-echo "add a 'r' character before the name of the disk (/dev/disk2 -> /dev/rdisk2)"
+echo "(ex: /dev/sda)"
 read -r disk_to_burn_to
 
 # Check input
@@ -53,4 +53,4 @@ else
 fi
 
 # Start burning process
-sudo dd "if=$path_to_iso" of="$disk_to_burn_to" bs=1m
+sudo dd "if=$path_to_iso" of="$disk_to_burn_to" bs=4M status=progress

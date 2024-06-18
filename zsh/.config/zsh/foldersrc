@@ -5,8 +5,8 @@ dl			~/Downloads/
 dot			~/dotfiles/
 sc			~/dotfiles/custom_scripts/.local/scripts/
 conf		~/dotfiles/neovim/.config/nvim/
-zik			~/Music/yt/
+zik			~/Music/
 dev 		~/Documents/dev/
-org			~/Documents/Main/
+obs			~/Documents/Main/
 mds 		/opt/mds/
 pro 		/opt/dev/

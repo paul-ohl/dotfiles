@@ -31,7 +31,7 @@ return {
             accept_line = false,
             next = '<C-a>',
             prev = '<C-A>',
-            dismiss = '<C-e>',
+            dismiss = '<C-BS>',
           },
         },
         filetypes = {
