@@ -8,10 +8,10 @@ alias pbpaste='wl-paste'
 alias open='xdg-open'
 # Swallowing aliases
 if [ -e "$HOME/.local/bin/devour" ]; then
-    alias sxiv='devour sxiv'
-    alias zathura='devour zathura'
-    alias firefox='devour firefox'
-    alias xdg-open='devour xdg-open'
+  alias sxiv='devour sxiv'
+  alias zathura='devour zathura'
+  alias firefox='devour firefox'
+  alias xdg-open='devour xdg-open'
 fi
 alias di='sudo dnf install'
 alias ds='sudo dnf search'
@@ -43,27 +43,27 @@ alias sst='sudo systemctl stop'
 
 # aliases depending on Rust tools
 if command -v exa &> /dev/null; then
-    alias ls='exa -F --icons'
-    alias la='exa -Fla --icons'
-    alias l='exa -lF --icons'
-    alias ll='exa -Fl --icons'
-    alias tree='exa -FT --icons'
+  alias ls='exa -F --icons'
+  alias la='exa -Fla --icons'
+  alias l='exa -lF --icons'
+  alias ll='exa -Fl --icons'
+  alias tree='exa -FT --icons'
 else
-    alias la='ls -lA'
-    alias l='ls -l'
-    alias ll='ls -l'
+  alias la='ls -lA'
+  alias l='ls -l'
+  alias ll='ls -l'
 fi
 if command -v bat &> /dev/null; then
-    alias cat='bat'
+  alias cat='bat'
 fi
 
 # for kitty
 alias ssh='TERM=xterm-256color ssh'
 
 # quick folders
-eval "alias $(grep -v "^#" $HOME/.config/zsh/foldersrc \
-    | awk '{print $1 "=\"cd " $2 " && ls\" "}' \
-    | tr "\"\n" "' ")"
+eval "alias $(grep -v "^#" "$HOME/.config/zsh/foldersrc" \
+  | awk '{print $1 "=\"cd " $2 " && ls\" "}' \
+  | tr "\"\n" "' ")"
 
 # git aliases
 alias gcl='. gcl'
@@ -93,10 +93,24 @@ function yy() {
 # zsh syntax highlighting
 zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
 if ! [ -e "$zshsh_directory/zsh-syntax-highlighting.zsh" ]; then
-    mkdir -p "$zshsh_directory"
-    git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/zsh-users/zsh-syntax-highlighting.git "$zshsh_directory"
+  mkdir -p "$zshsh_directory"
+  git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/zsh-users/zsh-syntax-highlighting.git "$zshsh_directory"
 fi
 source "$zshsh_directory"/zsh-syntax-highlighting.zsh
+
+# Zellij auto-start
+if [[ -z "$ZELLIJ" ]] && [[ "$TERM" == "xterm-kitty" ]]; then
+  export ZELLIJ_AUTO_ATTACH="true" ZELLIJ_AUTO_EXIT="true"
+  if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+    zellij attach -c
+  else
+    zellij
+  fi
+
+  if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+    exit
+  fi
+fi
 
 # General env
 export EDITOR=nvim
@@ -118,7 +132,7 @@ PS1="%1~ > "
 
 # Load device-specific config
 if ! [ -e "$HOME/.device-specific.sh" ]; then
-    touch "$HOME/.device-specific.sh" 
+  touch "$HOME/.device-specific.sh" 
 fi
 source "$HOME/.device-specific.sh"
 
