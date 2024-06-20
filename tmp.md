@@ -20,8 +20,6 @@
     - Implement a RFC => code
     - Functional alerting => infrastructure
 - Conclusion de mon expérience en entreprise
-
-Pas encore fait:
 - Présentation de My Digital Project
     - Les objectifs de réalisation
     - Le calendrier de développement
@@ -355,3 +353,54 @@ développeur Back-end et de travailler avec une infrastructure énorme.
 Enfin, plus personnellement, ce fut une opportunité inespérée de travailler
 professionellement avec le langage Rust.
 
+## Présentation de My Digital Project
+
+My Digital Project représente un projet fil rouge crucial pour mon école, axé sur la création de Remae, une plateforme de vente de vêtements en ligne écoresponsable, comparable à Vinted mais avec un fort accent sur la durabilité. Notre objectif est de fournir une alternative élégante et respectueuse de l'environnement à la mode rapide, en intégrant des pratiques de production éthiques et en encourageant une consommation consciente.
+
+### Les objectifs de réalisation
+
+Les objectifs principaux de My Digital Project incluent la conception et le lancement réussis de Remae, en offrant une expérience d'achat en ligne attrayante et écologiquement responsable. Nous visons à créer une plateforme technologiquement avancée qui répond aux besoins des utilisateurs tout en reflétant nos valeurs éthiques.
+
+### Le calendrier de développement
+
+Le calendrier de développement de Remae est soigneusement planifié pour respecter les jalons académiques et les exigences de qualité. Chaque phase du projet est structurée pour assurer une progression efficace et cohérente tout en respectant les délais impartis.
+
+### Les inévitables problèmes de réalisation
+
+Nous sommes conscients que des défis imprévus peuvent survenir tout au long du projet. Cela peut inclure des ajustements nécessaires dans les spécifications techniques, des changements de priorités ou des obstacles techniques. Notre approche méthodique nous permet de gérer ces défis de manière proactive et de maintenir le projet sur la bonne voie.
+
+## Les étapes notables de la réalisation de Remae
+
+### Conceptions techniques
+
+#### Expression du besoin
+
+Le besoin croissant d'une plateforme de mode en ligne respectueuse de l'environnement a motivé le développement de Remae.
+
+#### Architecture Générale
+
+L'architecture de Remae est conçue pour offrir une expérience utilisateur intuitive et sécurisée, tout en intégrant des fonctionnalités avancées de personnalisation basées sur les préférences écologiques des utilisateurs.
+
+#### Architecture de la BDD
+
+La structure de base de données de Remae est optimisée pour gérer efficacement un grand volume de données produits tout en garantissant des performances optimales et une intégrité des données rigoureuse.
+
+#### Architecture de la CI
+
+Nous avons implémenté une intégration continue (CI) robuste pour automatiser les tests et les déploiements, assurant ainsi une qualité logicielle constante et une livraison efficace des nouvelles fonctionnalités.
+
+### Réalisation de l'API utilisateurs
+
+Nous avons développé une API utilisateur sécurisée et performante qui facilite la navigation, l'achat et la vente de vêtements tout en soutenant nos engagements en matière de durabilité.
+
+### Création du Front-end de l'application
+
+Le front-end de Remae offre une interface esthétique et conviviale, mettant en valeur nos produits tout en offrant une expérience de navigation fluide et engageante.
+
+### Hébergement de l'application
+
+Nous avons choisi un hébergement cloud fiable et évolutif pour assurer la disponibilité continue de Remae, optimiser les performances et garantir la sécurité des données utilisateur.
+
+## Conclusion de mon expérience avec My Digital Project
+
+Participer à My Digital Project et à la création de Remae a été une expérience formatrice qui m'a permis de développer mes compétences en développement logiciel, en gestion de projet et en conception d'interfaces utilisateur. Je suis fier de contribuer à un projet qui combine technologie et responsabilité environnementale, ouvrant ainsi la voie à une consommation plus consciente dans l'industrie de la mode.
