@@ -188,7 +188,7 @@ return {
           ['<Tab>'] = cmp.mapping.confirm { select = true },
 
           ['<C-Space>'] = cmp.mapping.complete {},
-          ['<C-BS>'] = cmp.mapping.close(),
+          ['<C-a>'] = cmp.mapping.close(),
 
           -- ['<C-i>'] = cmp.mapping(function()
           --   if luasnip.expand_or_locally_jumpable() then

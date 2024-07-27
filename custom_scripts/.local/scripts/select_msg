@@ -1,7 +1,7 @@
 #!/bin/sh
 # Date: 2024/06/18
 
-apps="Slack Telegram Teams Mail"
+apps="Slack Telegram Teams Discord"
 
 selected_app=$(echo "$apps" | tr ' ' '\n' | wofi --dmenu --insensitive --width 400 --lines 5 --prompt "Select an app")
 
@@ -14,6 +14,9 @@ case $selected_app in
     ;;
   "Teams")
     flatpak run com.github.IsmaelMartinez.teams_for_linux
+    ;;
+  "Discord")
+    flatpak run com.discordapp.Discord
     ;;
   *)
     ;;

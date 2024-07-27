@@ -136,7 +136,9 @@ if ! [ -e "$HOME/.device-specific.sh" ]; then
 fi
 source "$HOME/.device-specific.sh"
 
+# Keybindings
 bindkey '^R' history-incremental-search-backward
+bindkey '^H' backward-kill-word
 
 # Vim infos
 # vim: ts=2 sts=2 sw=2 et

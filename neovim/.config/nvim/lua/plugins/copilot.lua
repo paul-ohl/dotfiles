@@ -14,7 +14,7 @@ return {
             accept = 'l',
             refresh = 'r',
             close = 'q',
-            open = '<C-a>',
+            open = '<C-q>',
           },
           layout = {
             position = 'right', -- bottom | top | left | right
@@ -29,9 +29,9 @@ return {
             accept = '<Tab>',
             accept_word = false,
             accept_line = false,
-            next = '<C-a>',
-            prev = '<C-A>',
-            dismiss = '<C-BS>',
+            next = '<C-;>',
+            prev = '<C-,>',
+            dismiss = '<C-a>',
           },
         },
         filetypes = {
