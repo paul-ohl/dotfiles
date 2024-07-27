@@ -17,6 +17,7 @@ require('lazy').setup({
   'psliwka/vim-smoothie',
   { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
   { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
+  { 'projekt0n/github-nvim-theme' },
 
   {
     'saecki/crates.nvim',

@@ -47,18 +47,17 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
--- Show which line your cursor is on
--- vim.opt.cursorline = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 4
 
 -- Disable netrw at the very start of your init.lua
--- There is nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- Optionally enable 24-bit colour
 vim.opt.termguicolors = true
+
+-- Disable highlighting of search results
+vim.opt.hlsearch = false
 
 -- vim: ts=2 sts=2 sw=2 et

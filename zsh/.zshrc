@@ -99,18 +99,18 @@ fi
 source "$zshsh_directory"/zsh-syntax-highlighting.zsh
 
 # Zellij auto-start
-# if [[ -z "$ZELLIJ" ]] && [[ "$TERM" == "xterm-kitty" ]]; then
-#   export ZELLIJ_AUTO_ATTACH="true" ZELLIJ_AUTO_EXIT="true"
-#   if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-#     zellij attach -c
-#   else
-#     zellij
-#   fi
-#
-#   if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-#     exit
-#   fi
-# fi
+if [[ -z "$ZELLIJ" ]] && [[ "$TERM" == "xterm-kitty" ]]; then
+  export ZELLIJ_AUTO_ATTACH="true" ZELLIJ_AUTO_EXIT="true"
+  if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+    zellij attach -c
+  else
+    zellij
+  fi
+
+  if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+    exit
+  fi
+fi
 
 # General env
 export EDITOR=nvim
@@ -136,7 +136,9 @@ if ! [ -e "$HOME/.device-specific.sh" ]; then
 fi
 source "$HOME/.device-specific.sh"
 
+# Keybindings
 bindkey '^R' history-incremental-search-backward
+bindkey '^H' backward-kill-word
 
 # Vim infos
 # vim: ts=2 sts=2 sw=2 et

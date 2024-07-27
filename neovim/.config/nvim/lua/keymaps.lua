@@ -3,14 +3,6 @@
 -- Disable space
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { desc = 'Disable Space' })
 
--- Set highlight on search
-vim.opt.hlsearch = true
-vim.keymap.set('c', '<CR>', '<CR><cmd>nohl<CR>')
-vim.keymap.set('n', '<Esc>', '<cmd>nohl<CR>')
-vim.keymap.set('n', '<C-h>', '<C-t>')
-vim.keymap.set('n', '<F12>', '<C-]>') -- The hackiest, shittiest solution to a problem that should not exist
-vim.keymap.set('n', '<Tab>', ':tabNext<CR>', { desc = 'Go to next Tab', silent = true })
-
 -- Quickfix keymaps
 vim.keymap.set('n', '<Leader>;', '<Cmd>cn<CR>zz', { desc = 'Go to next quickfix item' })
 vim.keymap.set('n', '<Leader>,', '<Cmd>cp<CR>zz', { desc = 'Go to prev quickfix item' })
@@ -23,6 +15,7 @@ end, { desc = 'Go to prev [D]iagnostic message' })
 vim.keymap.set('n', '[]', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '][', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<C-q>', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<C-h>', '<C-t>', { desc = 'Go back in tag stack' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
@@ -51,13 +44,14 @@ vim.keymap.set('n', 'zb', 'zb') -- To disable vim smoothie on `zb`
 vim.keymap.set('v', '$', 'g_')
 vim.keymap.set('n', '<CR>', 'j^zz')
 vim.keymap.set('n', '-', 'k^zz')
+vim.keymap.set('i', '<C-h>', '<C-w>')
 
 vim.keymap.set('n', '<Leader>y', '"+y')
 vim.keymap.set('n', '<Leader>Y', '"+y$')
 vim.keymap.set('n', '<Leader>d', '"+d')
 
 -- Tabs
-vim.keymap.set('n', '<Tab>', ':tabNext<CR>', { desc = 'Go to next Tab', silent = true })
+vim.keymap.set('n', '<Tab>', 'gt', { desc = 'Go to next Tab', silent = true })
 vim.keymap.set('n', '<S-Tab>', 'gT', { desc = 'Go to previous Tab' })
 vim.keymap.set('n', '<Leader><Tab>', '<C-^>', { desc = 'Switch to last file' })
 vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { silent = true })

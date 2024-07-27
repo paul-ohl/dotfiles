@@ -37,8 +37,8 @@
 
 ;; Accents
 (defalias
-  laa (tap-hold-next-release 350 bspc (layer-toggle accents) :timeout-button bspc)
-  ras (tap-hold-next-release 350 ret (layer-toggle symbols) :timeout-button ret)
+  laa (tap-hold-next-release 250 bspc (layer-toggle accents))
+  ras (tap-hold-next-release 250 ret (layer-toggle symbols))
   ac #(compose ')
   gr #(compose `)
   cir #(compose ^)
