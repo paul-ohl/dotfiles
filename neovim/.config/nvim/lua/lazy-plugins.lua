@@ -11,6 +11,7 @@ require('lazy').setup({
   require 'plugins.lazygit',
   require 'plugins.markdown-preview',
   require 'plugins.auto_pair',
+  require 'plugins.harpoon',
 
   'rhysd/conflict-marker.vim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
