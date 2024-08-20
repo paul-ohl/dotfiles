@@ -4,8 +4,8 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { desc = 'Disable Space' })
 
 -- Quickfix keymaps
-vim.keymap.set('n', '<Leader>;', '<Cmd>cn<CR>zz', { desc = 'Go to next quickfix item' })
-vim.keymap.set('n', '<Leader>,', '<Cmd>cp<CR>zz', { desc = 'Go to prev quickfix item' })
+vim.keymap.set('n', '<Leader>,', '<Cmd>cn<CR>zz', { desc = 'Go to next quickfix item' })
+vim.keymap.set('n', '<Leader>.', '<Cmd>cp<CR>zz', { desc = 'Go to prev quickfix item' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', ']d', require('custom.goto_error_then_hint').goto_error_then_hint, { desc = 'Go to next [D]iagnostic message' })
@@ -27,15 +27,19 @@ vim.keymap.set('n', '<Leader>q', ':quit<CR>', { desc = 'Quit file' })
 vim.keymap.set('n', '<Leader><Leader>q', ':qa<CR>', { desc = 'Quit all' })
 vim.keymap.set('n', '<Leader>h', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<Leader>i', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<Leader>n', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<Leader>e', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<Leader>r', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<Leader>t', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<Leader><Leader>h', '<C-w>H', { desc = 'Move window to the left' })
+vim.keymap.set('n', '<Leader><Leader>i', '<C-w>L', { desc = 'Move window to the right' })
+vim.keymap.set('n', '<Leader><Leader>r', '<C-w>J', { desc = 'Move window to the bottom' })
+vim.keymap.set('n', '<Leader><Leader>t', '<C-w>K', { desc = 'Move window to the top' })
 vim.keymap.set('n', '<Leader>v', '<C-w>v', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<Leader>s', '<C-w>s', { desc = 'Split window' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', 'J', 'mzJ`z')
-vim.keymap.set({ 'n', 'v' }, '<C-n>', '<cmd>call smoothie#do("<C-D>") <CR>')
-vim.keymap.set({ 'n', 'v' }, '<C-e>', '<cmd>call smoothie#do("<C-U>") <CR>')
+vim.keymap.set({ 'n', 'v' }, '<C-r>', '<cmd>call smoothie#do("<C-D>") <CR>')
+vim.keymap.set({ 'n', 'v' }, '<C-t>', '<cmd>call smoothie#do("<C-U>") <CR>')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', 'zz', 'zz') -- To disable vim smoothie on `zz`
@@ -43,7 +47,9 @@ vim.keymap.set('n', 'zt', 'zt') -- To disable vim smoothie on `zt`
 vim.keymap.set('n', 'zb', 'zb') -- To disable vim smoothie on `zb`
 vim.keymap.set('v', '$', 'g_')
 vim.keymap.set('n', '<CR>', 'j^zz')
+vim.keymap.set('n', '+', 'j^zz')
 vim.keymap.set('n', '-', 'k^zz')
+vim.keymap.set('n', 'U', '<C-r>')
 vim.keymap.set('i', '<C-h>', '<C-w>')
 
 vim.keymap.set('n', '<Leader>y', '"+y')
@@ -54,12 +60,12 @@ vim.keymap.set('n', '<Leader>d', '"+d')
 vim.keymap.set('n', '<Tab>', 'gt', { desc = 'Go to next Tab', silent = true })
 vim.keymap.set('n', '<S-Tab>', 'gT', { desc = 'Go to previous Tab' })
 vim.keymap.set('n', '<Leader><Tab>', '<C-^>', { desc = 'Switch to last file' })
-vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { silent = true })
-vim.keymap.set('n', '<leader>tq', ':tabclose<CR>', { silent = true })
-vim.keymap.set('n', '<leader>te', '<C-w>T', { silent = true })
-vim.keymap.set('n', '<leader>t<', ':tabmove -<CR>', { silent = true })
-vim.keymap.set('n', '<leader>t>', ':tabmove +<CR>', { silent = true })
-vim.keymap.set('n', '<leader>t0', ':tabmove 0<CR>', { silent = true })
+vim.keymap.set('n', '<leader>nn', ':tabnew<CR>', { silent = true })
+vim.keymap.set('n', '<leader>nq', ':tabclose<CR>', { silent = true })
+vim.keymap.set('n', '<leader>ne', '<C-w>T', { silent = true })
+vim.keymap.set('n', '<leader>n<', ':tabmove -<CR>', { silent = true })
+vim.keymap.set('n', '<leader>n>', ':tabmove +<CR>', { silent = true })
+vim.keymap.set('n', '<leader>n0', ':tabmove 0<CR>', { silent = true })
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {

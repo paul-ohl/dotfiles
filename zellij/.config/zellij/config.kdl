@@ -117,8 +117,8 @@ keybinds clear-defaults=true {
     bind "Alt Up" { MoveFocus "Up"; }
     bind "Alt n" { FocusNextPane; }
     bind "Alt e" { FocusPreviousPane; }
-    bind "Alt ." {  GoToNextTab; }
-    bind "Alt ," {  GoToPreviousTab; }
+    bind "Alt ," {  GoToNextTab; }
+    bind "Alt ." {  GoToPreviousTab; }
     bind "Alt f" { ToggleFloatingPanes; }
     bind "Alt =" "Alt +" { Resize "Increase"; }
     bind "Alt -" { Resize "Decrease"; }

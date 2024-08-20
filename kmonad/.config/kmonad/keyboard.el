@@ -29,20 +29,23 @@
   lctl comp  lmet lalt            spc           ralt rmet rctl
 )
 
-;; mod remaps
+;; Main aliases
 (defalias
-  sspace (tap-hold-next-release 200 spc (around lctrl (around lalt lmet)))
+  sspace (tap-hold-next-release 200 spc (layer-toggle nav))
+  ras (tap-hold-next-release 250 ret (layer-toggle symbols))
   ces esc
 )
 
 ;; Accents
 (defalias
   laa (tap-hold-next-release 250 bspc (layer-toggle accents))
-  ras (tap-hold-next-release 250 ret (layer-toggle symbols))
-  ac #(compose ')
-  gr #(compose `)
+
+  gra #(compose `)
+  uml #(compose ")
   cir #(compose ^)
-  cc #(compose , c)
+  aig #(compose ')
+  ccm #(compose , c)
+  ccM #(compose , C)
 )
 
 ;; home-row mods
@@ -72,32 +75,57 @@
     ar (tap-hold-next-release 250 right ralt)
 )
 
+;; Nav aliases
+(defalias
+  h1 M-A-C-1
+  h2 M-A-C-2
+  h3 M-A-C-3
+  h4 M-A-C-4
+  h5 M-A-C-5
+  h6 M-A-C-6
+  h7 M-A-C-7
+  h8 M-A-C-8
+  h9 M-A-C-9
+  h0 M-A-C-0
+  htab M-A-C-tab
+
+  m1 (tap-hold-next-release 250 1 lmet)
+  a2 (tap-hold-next-release 250 2 lalt)
+  c3 (tap-hold-next-release 250 3 lctl)
+  s4 (tap-hold-next-release 250 4 lsft)
+
+  s7 (tap-hold-next-release 250 7 rsft)
+  c8 (tap-hold-next-release 250 8 rctl)
+  a9 (tap-hold-next-release 250 9 lalt)
+  m0 (tap-hold-next-release 250 0 rmet)
+)
+
 (deflayer main
-  tab   q     w     f     p     b    j    l     u     y     ;     [    ]    ret
-  @ces  @meta @altr @ctls @sftt g    m    @sftn @ctle @alti @meto '    \
-  lsft  grv   z     x     c     d    v    k     h     ,     .     /    rsft
-  lctl  XX    lmet  @laa           @sspace            @ras rctl  rctl
+  tab       q     w     f     p     b    j    l     u     y     ;     [    ]    ret
+  @ces      @meta @altr @ctls @sftt g    m    @sftn @ctle @alti @meto '    \
+  lsft grv  z     x     c     d    v    k     h     ,     .     /    rsft
+  lctl  XX  lmet  @laa           @sspace            @ras rctl  rctl
+)
+
+(deflayer nav
+  @htab     @h1   @h2   @h3   @h4   @h5  @h6  @h7   @h8   @h9   @h0   [    ]    ret
+  @ces      @m1   @a2   @c3   @s4   5    6    @s7   @c8   @a9   @m0   '    \
+  lsft grv  [     ]     tab   -     =    |    +     '     "     \    rsft
+  lctl  XX  lmet  esc            @sspace            esc   rctl  rctl
 )
 
 (deflayer symbols
-  tab   1     2     3     4     5    6    7     8     9     0     [    ]    ret
-  @ces  @m!   @a@   @c#   @s$   %    ^    @s&   @c*   @aop  @mcp  '    \
-  lsft  [     ]     {     }     '    "    \     =     -     +     \    rsft
-  lctl  XX    lmet  @laa           @sspace            @ras  rctl  rctl
+  tab       1     2     3     4     5    6    7     8     9     0     [    ]    ret
+  @ces      @m!   @a@   @c#   @s$   %    ^    @s&   @c*   @aop  @mcp  '    \
+  lsft XX   XX    XX    XX    XX    XX   XX   XX    XX    XX    XX   rsft
+  lctl  XX  lmet  @laa           @sspace            @ras  rctl  rctl
 )
 
-;; (deflayer nav
-;;   M-S-tab   q     w     f     p     b    j    l     u     y     ;     [    ]    ret
-;;   @ces  @meta @altr @ctls @sftt g    m    @sftn @ctle @alti @meto '    \
-;;   lsft  grv   z     x     c     d    v    k     h     ,     .     /    rsft
-;;   lctl  XX    lmet  @laa           @sspace            @ras  rctl  rctl
-;; )
-
 (deflayer accents
-  XX   XX    XX   @ac  XX   XX   XX   XX   @cir XX   XX   XX   XX   XX
-  XX   lmet  lalt lctl lsft XX   XX   @sd  @cu  @ar  rmet XX   XX
-  XX   @gr   XX   XX   @cc  XX   XX   XX   left XX   XX   XX   XX
-  XX   XX    XX   XX             XX             XX   XX   XX
+  XX        @gra  @uml @cir @aig XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX        lmet  lalt lctl lsft XX   XX   @sd  @cu  @ar  rmet XX   XX
+  XX  XX    XX    XX   @ccm @ccM XX   XX   left XX   XX   XX   XX
+  XX   XX   XX    XX             XX             XX   XX   XX
 )
 
 ;; vim: set ft=lisp

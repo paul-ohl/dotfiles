@@ -1,0 +1,105 @@
+(defsrc
+  102d     1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab      q    w    e    r    t    y    u    i    o    p    [    ]    ret
+  caps     a    s    d    f    g    h    j    k    l    ;    '    \
+  lsft grv z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl     lmet lalt           spc            ralt rctl
+)
+
+(defvar
+  tap-timeout   100
+  hold-timeout  200
+  tt $tap-timeout
+  ht $hold-timeout
+)
+
+(defoverrides
+  (lsft -) (lsft /)
+  (rsft -) (lsft /)
+  (lsft .) (lsft ;)
+  (rsft .) (lsft ;)
+  (lsft ,) (;)
+  (rsft ,) (;)
+  (lsft /) (lsft -)
+  (rsft /) (lsft -)
+)
+
+;; Aliases for main layer
+(defalias
+  ;; Home row mods
+  amet (tap-hold $tt $ht a lmet)
+  salt (tap-hold $tt $ht s lalt)
+  ectl (tap-hold $tt $ht e lctl)
+  nsft (tap-hold $tt $ht n lsft)
+  rsft (tap-hold $tt $ht r rsft)
+  tctl (tap-hold $tt $ht t rctl)
+  ialt (tap-hold $tt $ht i ralt)
+  umet (tap-hold $tt $ht u rmet)
+
+  ;; Special layers
+  dead (one-shot-release 2000 (layer-while-held accents))
+  sspc (tap-hold $tt $ht spc (multi alt ctl met (layer-while-held space)))
+  aalt (tap-hold $tt $ht bspc (layer-while-held aaalt))
+)
+
+(deflayer main
+  grv      1     2     3     4     5     6     7     8     9     0     /    =    bspc
+  tab      q     c     o     p     w     j     m     d     @dead y     [    ]    ret
+  esc      @amet @salt @ectl @nsft f     l     @rsft @tctl @ialt @umet '    \
+  lsft grv z     x     -     v     b     .     h     g     ,     k     rsft
+  lctl     lmet  @aalt        @sspc            ret  rctl
+)
+
+(defalias
+  back (layer-switch main)
+
+  ;; Home row mods (but we only need shift)
+  alst (tap-hold $tt $ht 🔣ê (layer-while-held accents-upper))
+  arst (tap-hold $tt $ht S-0 (layer-while-held accents-upper))
+)
+
+(deflayer accents
+  XX       1     2     3     4     5     6     7     8     9     0     -    =    bspc
+  @back    🔣â   🔣ç   🔣œ   🔣ô   XX    XX    🔣µ   S-/   @back 🔣û   [    ]    ret
+  @back    🔣à   🔣é   🔣è   @alst XX    S-9   @arst 🔣î   🔣ï   🔣ù   '    \
+  lsft grv 🔣æ   🔣ß   -     XX    XX    .     XX    XX    XX    XX    rsft
+  lctl     lmet lalt           spc            ralt rctl
+)
+
+(deflayer accents-upper
+  XX       1     2     3     4     5     6     7     8     9     0     -    =    bspc
+  @back    🔣Â   🔣Ç   🔣Œ   🔣Ô   XX    XX    🔣µ   S-/   @back 🔣Û   [    ]    ret
+  @back    🔣À   🔣É   🔣È   🔣Ê   XX    S-9   S-0   🔣Î   🔣Ï   🔣Ù   '    \
+  lsft grv 🔣Æ   🔣ẞ   -     XX    XX    .     XX    XX    XX    XX    rsft
+  lctl     lmet lalt           spc            ralt rctl
+)
+
+(defalias
+  n1 (multi (release-key met) (release-key alt) (release-key ctl) (tap-hold $tt $ht 1 lmet))
+  n2 (multi (release-key met) (release-key alt) (release-key ctl) (tap-hold $tt $ht 2 lalt))
+  n3 (multi (release-key met) (release-key alt) (release-key ctl) (tap-hold $tt $ht 3 lctl))
+  n4 (multi (release-key met) (release-key alt) (release-key ctl) (tap-hold $tt $ht 4 lsft))
+  n5 (multi (release-key met) (release-key alt) (release-key ctl) 5)
+  n6 (multi (release-key met) (release-key alt) (release-key ctl) 6)
+  n7 (multi (release-key met) (release-key alt) (release-key ctl) (tap-hold $tt $ht 7 rsft))
+  n8 (multi (release-key met) (release-key alt) (release-key ctl) (tap-hold $tt $ht 8 rctl))
+  n9 (multi (release-key met) (release-key alt) (release-key ctl) (tap-hold $tt $ht 9 ralt))
+  n0 (multi (release-key met) (release-key alt) (release-key ctl) (tap-hold $tt $ht 0 rmet))
+)
+
+(deflayer space
+  XX       XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    /    =    bspc
+  tab      1     2     3     4     5     6     7     8     9     0     [    ]    ret
+  esc      @n1   @n2   @n3   @n4   @n5   @n6   @n7   @n8   @n9   @n0   '    \
+  lsft grv z     x     -     v     b     .     h     g     ,     k     rsft
+  lctl     lmet  bspc           spc            ret  rctl
+)
+
+(deflayer aaalt
+  XX       XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX   XX   bspc
+  tab      XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX   XX   ret
+  esc      met   alt   ctl   sft   XX    XX    down  up    rght  XX    XX   XX
+  lsft grv XX    XX    XX    XX    XX    XX    lft   XX    XX    XX    rsft
+  lctl     lmet  bspc           spc            ret  rctl
+)
+
