@@ -1,14 +1,14 @@
 (defsrc
-  102d     1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  grv      1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab      q    w    e    r    t    y    u    i    o    p    [    ]    ret
   caps     a    s    d    f    g    h    j    k    l    ;    '    \
-  lsft grv z    x    c    v    b    n    m    ,    .    /    rsft
+  lsft 102d z   x    c    v    b    n    m    ,    .    /    rsft
   lctl     lmet lalt           spc            ralt rctl
 )
 
 (defvar
-  tap-timeout   100
-  hold-timeout  200
+  tap-timeout   150
+  hold-timeout  250
   tt $tap-timeout
   ht $hold-timeout
 )
@@ -37,13 +37,13 @@
   umet (tap-hold $tt $ht u rmet)
 
   ;; Special layers
-  dead (one-shot-release 2000 (layer-while-held accents))
-  sspc (tap-hold $tt $ht spc (multi alt ctl met (layer-while-held space)))
+  dead (one-shot 2000 (layer-while-held accents))
+  sspc (tap-hold-release $tt $ht spc (multi alt ctl met (layer-while-held space)))
   aalt (tap-hold $tt $ht bspc (layer-while-held aaalt))
 )
 
 (deflayer main
-  grv      1     2     3     4     5     6     7     8     9     0     /    =    bspc
+  102d     1     2     3     4     5     6     7     8     9     0     /    =    bspc
   tab      q     c     o     p     w     j     m     d     @dead y     [    ]    ret
   esc      @amet @salt @ectl @nsft f     l     @rsft @tctl @ialt @umet '    \
   lsft grv z     x     -     v     b     .     h     g     ,     k     rsft
