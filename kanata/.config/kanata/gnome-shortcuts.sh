@@ -25,3 +25,9 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Con
 gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Super>f']"
 gsettings set org.gnome.desktop.wm.keybindings close "['<Shift><Super>q']"
 gsettings set org.gnome.desktop.wm.keybindings cycle-windows "['<Super>Space']"
+
+# Set settings
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+gsettings set org.gnome.desktop.interface enable-hot-corners "false"
+gsettings set org.gnome.desktop.interface show-battery-percentage true
