@@ -1,105 +1,66 @@
 {
 	"name": "Vimium C",
-	"@time": "24/04/2024, 16:08:44",
-	"time": 1713967724054,
+	"@time": "9/29/2024, 7:36:23 PM",
+	"time": 1727631383175,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
-		"firefox": 125
+		"firefox": 130
 	},
-	"allBrowserUrls": true,
-	"autoDarkMode": 1,
 	"exclusionRules": [
 		{
-			"passKeys": "",
-			"pattern": ":https://cloud.linode.com/linodes/"
-		},
-		{
-			"passKeys": "",
-			"pattern": ":https://stadia.google.com/"
-		},
-		{
-			"passKeys": "< > N P c ",
+			"passKeys": "0 < > N P f ",
 			"pattern": ":https://www.youtube.com/"
-		},
-		{
-			"passKeys": "j k m ",
-			"pattern": ":https://calendar.google.com/"
-		},
-		{
-			"passKeys": "",
-			"pattern": ":https://jklm.fun/"
-		},
-		{
-			"passKeys": "",
-			"pattern": ":https://skribbl.io/"
-		},
-		{
-			"passKeys": "",
-			"pattern": "^https?://www\\.curvytron\\.com/"
-		},
-		{
-			"passKeys": "",
-			"pattern": ":https://cloud.linode.com/linodes/35449194/lish/weblish"
 		},
 		{
 			"passKeys": "",
 			"pattern": ":https://monkeytype.com/"
-		},
-		{
-			"passKeys": "",
-			"pattern": "^https?://localhost:8080/"
-		},
-		{
-			"passKeys": "",
-			"pattern": ":https://gartic.io/"
-		},
-		{
-			"passKeys": "",
-			"pattern": ":https://eu-west-3.console.aws.amazon.com/"
-		},
-		{
-			"passKeys": "",
-			"pattern": ":https://www.notion.so/"
 		}
 	],
-	"grabBackFocus": true,
-	"keyLayout": 284,
+	"keyLayout": 18,
 	"keyMappings": [
 		"#!no-check",
+		"map s LinkHints.activate",
+		"map S LinkHints.activateOpenInNewTab",
 		"map ; passNextKey",
-		"map J nextTab",
-		"map K previousTab",
+		"map <down> scrollDown",
+		"map <up> scrollUp",
+		"map R nextTab",
+		"map T previousTab",
 		"map ' Marks.activate",
+		"map l Vomnibar.activateTabs",
+		"",
 		"unmap <a-f>",
+		"unmap f",
+		"unmap F",
 		""
 	],
-	"linkHintCharacters": "asdfjklnowcei",
+	"linkHintCharacters": "asenrtiudochv",
 	"searchEngines": [
-		"ya|yd: https://yandex.com/search/?text=%s Yandex",
+		"ya|yd|yandex: https://yandex.com/search/?text=%s Yandex",
 		"",
-		"m|gmaps|gm: https://www.google.com/maps?q=%s?authuser=1 \\",
-		"  blank=https://www.google.com/maps?authuser=1 Google Maps",
-		"w|wiki: https://www.wikipedia.org/w/index.php?search=%s Wikipedia",
-		"y:https://www.youtube.com/results?search_query=%s",
-		"",
-		"am|am.fr|amazon: https://www.amazon.fr/s?k=%s \\",
-		"  blank=https://www.amazon.fr/ Amazon",
-		"am.ca: https://www.amazon.ca/s?k=%s \\",
-		"  blank=https://www.amazon.ca/ Amazon",
-		"am.us|am.com: https://www.amazon.com/s?k=%s \\",
-		"  blank=https://www.amazon.com/ Amazon",
-		"am.uk|am.co.uk: https://www.amazon.co.uk/s?k=%s \\",
-		"  blank=https://www.amazon.co.uk/ Amazon",
-		"",
-		"gh: https://github.com/search?q=$s \\",
+		"m: https://www.google.com/maps?q=%s \\",
+		"  blank=https://www.google.com/maps Google Maps",
+		"gh|github: https://github.com/search?q=$s \\",
 		"  blank=https://github.com/ GitHub Repo",
-		"alt: https://alternativeto.net/browse/search/?q=$s \\",
-		"  blank=https://alternativeto.net",
+		"",
+		"w|wiki: https://www.wikipedia.org/w/index.php?search=%s Wikipedia",
+		"g.s|gs|gscholar: https://scholar.google.com/scholar?q=$s \\",
+		"  scholar.google.com re=/^(?:\\.[a-z]{2,4})?\\/scholar\\b.*?[#&?]q=([^#&]*)/i\\",
+		"  blank=https://scholar.google.com/ Google Scholar",
+		"",
+		"ali|aliexp: https://www.aliexpress.com/wholesale?SearchText=%s \\",
+		"  blank=https://www.aliexpress.com/ AliExpress",
+		"am|amazon|am.fr: https://www.amazon.fr/s?k=%s \\",
+		"  blank=https://www.amazon.fr/ Amazon France",
+		"am.com: https://www.amazon.com/s?k=%s \\",
+		"  blank=https://www.amazon.com/ Amazon America",
+		"am.ca: https://www.amazon.ca/s?k=%s \\",
+		"  blank=https://www.amazon.ca/ Amazon Canada",
+		"",
+		"v.m|math: vimium://math\\ $S re= Calculate",
 		""
 	],
-	"searchUrl": "https://duckduckgo.com/?q=$s DuckDuckGo",
 	"vimSync": true,
-	"ignoreKeyboardLayout": 1,
 	"ignoreCapsLock": 2
 }
