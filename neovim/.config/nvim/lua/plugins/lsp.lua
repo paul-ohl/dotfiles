@@ -82,8 +82,6 @@ return {
         -- pyright = {},
         rust_analyzer = {},
 
-        tsserver = {}, -- This may be more useful if more features are required: https://github.com/pmizio/typescript-tools.nvim
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
