@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Check argument
+image="$1"
+if [ "$image" = "" ]; then
+	echo "Usage: docker-run [image]"
+	echo "Run the given image in a container with the current directory mounted as /app"
+	exit 1
+fi
+
+docker run -it --rm -v $(pwd):/app -u $(id -u):$(id -g) -w /app "$image" /bin/sh

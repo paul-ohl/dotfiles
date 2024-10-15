@@ -1,3 +1,4 @@
+# I WANT: plugins: git, zsh-autosuggestions, docker, docker-compose
 # Path stuff...
 export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts"
 # Rust
@@ -35,6 +36,7 @@ alias v='nvim'
 alias e='nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias weather='curl wttr.in'
+alias dc='docker compose'
 
 # Cargo aliases
 alias c='cargo'
@@ -55,9 +57,9 @@ if command -v exa &> /dev/null; then
   alias ll='exa -Fl --icons'
   alias tree='exa -FT --icons'
 else
-  alias la='ls -lA'
-  alias l='ls -l'
-  alias ll='ls -l'
+  alias la='ls -lAh'
+  alias l='ls -lh'
+  alias ll='ls -lh'
 fi
 if command -v bat &> /dev/null; then
   alias cat='bat'
@@ -148,3 +150,11 @@ bindkey '^H' backward-kill-word
 
 # Vim infos
 # vim: ts=2 sts=2 sw=2 et
+
+# pnpm
+export PNPM_HOME="/home/pohl/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

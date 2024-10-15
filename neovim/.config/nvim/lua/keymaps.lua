@@ -67,6 +67,10 @@ vim.keymap.set('n', '<leader>n<', ':tabmove -<CR>', { silent = true })
 vim.keymap.set('n', '<leader>n>', ':tabmove +<CR>', { silent = true })
 vim.keymap.set('n', '<leader>n0', ':tabmove 0<CR>', { silent = true })
 
+-- Toggles with <leader>u
+vim.keymap.set('n', '<Leader>uw', ':tabdo windo set wrap!', { desc = 'Toggle wrapping' })
+vim.keymap.set('n', '<Leader>ur', ':tabdo windo set relativenumber!', { desc = 'Toggle relative numbers' })
+
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
