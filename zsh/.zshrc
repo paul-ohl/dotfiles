@@ -36,6 +36,12 @@ alias e='nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias weather='curl wttr.in'
 
+# Cargo aliases
+alias c='cargo'
+alias cwt='cargo watch -c -x "nextest run"'
+alias ct='cargo nextest run'
+alias cc='cargo clippy'
+
 # systemd aliases
 alias sss='sudo systemctl status'
 alias ssr='sudo systemctl restart'

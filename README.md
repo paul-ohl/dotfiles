@@ -8,7 +8,7 @@ Each software is in their own directory.
 Use [stow](https://www.gnu.org/software/stow/) to create the simlinks.
 
 ```bash
-stow git zsh kmonad neovim zellij hyprland alacritty custom_scripts
+stow alacritty custom_scripts git hyprland kanata kitty neovim rust zellij zsh
 ```
 
 ## Mononoki Nerd Font

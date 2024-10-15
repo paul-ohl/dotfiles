@@ -55,8 +55,6 @@ d = "job:doc-open"
 t = "job:test"
 r = "job:run"
 
-[jobs.features]
-command = ["cargo", "clippy", "--color", "always", "--features"]
-need_stdout = true
+[jobs.test]
+command = ["cargo", "nextest", "run"]
 allow_warnings = true
-
