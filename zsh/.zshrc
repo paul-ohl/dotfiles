@@ -13,7 +13,10 @@ autoload -U colors && colors
 export CLICOLOR=1
 export LS_COLORS=$LS_COLORS:'di=1;32:'
 
-zstyle ':completion:*' menu select
+# zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+alias ls='ls --color'
 
 # Set vi mode
 set -o vi
@@ -21,6 +24,7 @@ set -o vi
 # Keybindings
 bindkey '^R' history-incremental-search-backward
 bindkey '^H' backward-kill-word
+bindkey '^[[A' history-search-backward # May want to disable this one
 
 # Setting locales, I know I shouldn't do it there
 LANG="en_US.UTF-8"
@@ -34,6 +38,19 @@ LC_ALL="en_US.UTF-8"
 
 # Change prompt
 PS1="%1~ > "
+
+# Setup cross-session history
+HISTSIZE=5000
+HISTFILE=~/.local/share/zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
 
 ###
 ### Aliases
@@ -114,8 +131,37 @@ fi
 source "$HOME/.device-specific.sh"
 
 ###
+### Plugins
+###
+
+# Zinit bootstrapping
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [[ ! -d "$ZINIT_HOME" ]]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+source "${ZINIT_HOME}/zinit.zsh"
+
+zinit light zsh-users/zsh-syntax-highlighting
+
+zinit light zsh-users/zsh-completions
+
+# Snippets
+zinit snippet OMZP::sudo
+# zinit snippet OMZP::ssh
+# zinit snippet OMZP::rust
+
+# Load completions
+autoload -U compinit && compinit
+
+zinit cdreplay -q
+
+###
 ### Tools integrations
 ###
+
+# fzf
+eval "$(fzf --zsh)"
 
 # Yazi
 function yy() {
@@ -126,14 +172,6 @@ function yy() {
   fi
   rm -f -- "$tmp"
 }
-
-# zsh syntax highlighting
-zshsh_directory="$HOME/.local/git/zsh-syntax-highlighting"
-if ! [ -e "$zshsh_directory/zsh-syntax-highlighting.zsh" ]; then
-  mkdir -p "$zshsh_directory"
-  git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/zsh-users/zsh-syntax-highlighting.git "$zshsh_directory"
-fi
-source "$zshsh_directory"/zsh-syntax-highlighting.zsh
 
 # Cargo
 source "$HOME/.cargo/env"
