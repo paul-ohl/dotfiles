@@ -23,7 +23,7 @@ return {
           end
 
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-          map('<F12>', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition') -- Remapped to F12 because Ctrl+i has *issues*, it's a dirty hack
+          map(']]', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition') -- Remapped to F12 because Ctrl+i has *issues*, it's a dirty hack
 
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -103,7 +103,7 @@ return {
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua',     -- Used to format Lua code
+        'stylua', -- Used to format Lua code
         'shellcheck', -- Linter for Bash code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }

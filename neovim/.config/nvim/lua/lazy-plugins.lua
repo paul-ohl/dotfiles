@@ -12,13 +12,14 @@ require('lazy').setup({
   require 'plugins.markdown-preview',
   require 'plugins.auto_pair',
   require 'plugins.harpoon',
+  require 'plugins.vim-tmux-navigator',
 
   'rhysd/conflict-marker.vim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'psliwka/vim-smoothie',
+  'projekt0n/github-nvim-theme',
   { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
   { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
-  { 'projekt0n/github-nvim-theme' },
 
   {
     'saecki/crates.nvim',
