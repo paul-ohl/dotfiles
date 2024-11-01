@@ -19,11 +19,12 @@ return {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
           local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc, silent = true })
           end
 
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-          map(']]', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition') -- Remapped to F12 because Ctrl+i has *issues*, it's a dirty hack
+          map(']]', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('[[', '<C-t>', 'Go back in tag stack')
 
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')

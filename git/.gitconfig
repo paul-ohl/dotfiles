@@ -4,7 +4,7 @@ name = Paul OHL
 email = paul.lv.ohl@gmail.com
 	useConfigOnly = true
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [pull]
 	rebase = false
 [core]

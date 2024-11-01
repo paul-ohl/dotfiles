@@ -74,7 +74,7 @@ alias du='sudo dnf update -y'
 
 # Cargo aliases
 alias c='cargo'
-alias cwt='cargo watch -c -x "nextest run"'
+alias cwt='cargo watch -c -x "clippy --all-targets" -x "nextest run"'
 alias ct='cargo nextest run'
 alias cc='cargo clippy'
 
