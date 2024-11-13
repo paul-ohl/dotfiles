@@ -61,11 +61,13 @@ alias pbpaste='wl-paste'
 alias open='xdg-open'
 alias so='source $HOME/.zshrc'
 alias weather='curl wttr.in'
+alias p='pnpm'
 
 alias dc='docker compose'
 alias v='nvim'
 alias e='nvim'
 alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
+alias ports='sudo ss -tulnp'
 
 # DNF aliases
 alias di='sudo dnf install'

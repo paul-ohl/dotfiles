@@ -14,6 +14,8 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', 's', api.node.open.horizontal, opts 'Split')
   vim.keymap.set('n', 'v', api.node.open.vertical, opts 'Split Vertical')
   vim.keymap.set('n', 't', api.node.open.tab_drop, opts 'Open in Tab')
+  vim.keymap.set('n', '<C-R>', '<C-W>w', opts 'Move to the next window')
+  vim.keymap.set('n', '<C-T>', '<C-W>W', opts 'Move to the previous window')
 end
 
 return {

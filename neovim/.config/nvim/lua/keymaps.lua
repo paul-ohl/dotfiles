@@ -46,8 +46,8 @@ nmap({ 'n', 'v' }, ';', ',')
 
 -- Window navigation and editing
 nmap('n', '<Leader><Tab>', '<C-^>', { desc = 'Switch to last file' })
-nmap('n', '<C-R>', '<C-W>w', { desc = 'Move to the window on the bottom' })
-nmap('n', '<C-T>', '<C-W>W', { desc = 'Move to the window on the top' })
+nmap('n', '<C-R>', '<C-W>w', { desc = 'Move to the next window' })
+nmap('n', '<C-T>', '<C-W>W', { desc = 'Move to the previous window' })
 nmap('n', '<C-S-H>', '<C-w>H', { desc = 'Move window to the left' })
 nmap('n', '<C-S-I>', '<C-w>L', { desc = 'Move window to the right' })
 nmap('n', '<C-S-R>', '<C-w>J', { desc = 'Move window to the bottom' })
