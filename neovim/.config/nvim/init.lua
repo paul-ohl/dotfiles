@@ -19,4 +19,9 @@ require 'lazy-plugins'
 -- [[ Custom functions (See the README for details) ]]
 require 'custom'
 
+-- [[ Neovide config ]]
+if vim.g.neovide then
+  require 'neovide'
+end
+
 -- vim: ts=2 sts=2 sw=2 et
