@@ -155,6 +155,9 @@ zinit snippet OMZP::sudo
 
 # Load completions
 autoload -U compinit && compinit
+if [[ ":$FPATH:" != *":/home/pohl/.zsh/completions:"* ]]; then
+  export FPATH="/home/pohl/.zsh/completions:$FPATH";
+fi
 
 zinit cdreplay -q
 
@@ -185,5 +188,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+. "/home/pohl/.deno/env"
 
 # vim: ts=2 sts=2 sw=2 et
