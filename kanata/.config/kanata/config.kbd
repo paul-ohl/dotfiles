@@ -1,16 +1,14 @@
 (defsrc
-  grv   1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab   q    w    e    r    t    y    u    i    o    p    [    ]    ret
-  caps  a    s    d    f    g    h    j    k    l    ;    '    \
-  lsft  z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl  lmet lalt          spc             ralt rmet
+  tab  q    w    e    r    t    y    u    i    o    p
+  caps a    s    d    f    g    h    j    k    l    ;
+  lsft z    x    c    v    b    n    m    ,    .    /
+  lctl lmet lalt          spc             ralt rmet
 )
 
 (defvar
-  tap-timeout   150
-  hold-timeout  250
-  tt $tap-timeout
-  ht $hold-timeout
+  tap-timeout       200
+  hold-timeout      200
+  long-hold-timeout 300
 )
 
 (defoverrides
@@ -29,73 +27,72 @@
 ;; Aliases for main layer
 (defalias
   ;; Home row mods
-  amet (tap-hold $tt $ht a lmet)
-  salt (tap-hold $tt $ht s lalt)
-  ectl (tap-hold $tt $ht e lctl)
-  nsft (tap-hold $tt $ht n lsft)
-  rsft (tap-hold $tt $ht r rsft)
-  tctl (tap-hold $tt $ht t rctl)
-  ialt (tap-hold $tt $ht i ralt)
-  umet (tap-hold $tt $ht u rmet)
+  smet (tap-hold $tap-timeout $long-hold-timeout s lmet)
+  ealt (tap-hold $tap-timeout $long-hold-timeout e lalt)
+  nctl (tap-hold $tap-timeout $long-hold-timeout n lctl)
+  rctl (tap-hold $tap-timeout $long-hold-timeout r rctl)
+  talt (tap-hold $tap-timeout $long-hold-timeout t ralt)
+  imet (tap-hold $tap-timeout $long-hold-timeout i rmet)
 
   ;; Special layers
-  dead (one-shot 2000 (layer-while-held accents))
-  sspc (tap-hold-release $tt $ht spc (layer-while-held space))
-  aalt (tap-hold $tt $ht bspc (layer-while-held aaalt))
+  acc (one-shot 2000 (layer-while-held accents))
+  nav (tap-hold-release $tap-timeout $hold-timeout spc (layer-while-held space))
+  sbksp (tap-hold $tap-timeout $hold-timeout bspc sft)
+  sym  (tap-hold $tap-timeout $hold-timeout esc (layer-while-held symbols))
 )
 
 (deflayer main
-  grv   1     2     3     4     5     6     7     8     9     0     /    =    bspc
-  tab   q     c     o     p     w     j     m     d     @dead y     [    ]    ret
-  esc   @amet @salt @ectl @nsft f     l     @rsft @tctl @ialt @umet '    \
-  lsft  z     x     -     v     b     .     h     g     ,     k     rsft
-  lctl  @aalt @aalt        @sspc            ret   ret
+  XX q     c     o     p     w     j     m     d     @acc y
+  XX a     @smet @ealt @nctl f     l     @rctl @talt @imet u
+  XX z     x     -     v     b     .     h     g     ,     k
+  XX @sbksp @sbksp      @nav             @sym  @sym
 )
 
 (defalias
   back (layer-switch main)
-
-  ;; Home row mods (but we only need shift)
-  alst (tap-hold $tt $ht 🔣ê (layer-while-held accents-upper))
-  arst (tap-hold $tt $ht S-0 (layer-while-held accents-upper))
+  trem (one-shot 2000 (layer-while-held accents-trema))
+  upper (layer-while-held accents-upper)
 )
 
 (deflayer accents
-  XX    1     2     3     4     5     6     7     8     9     0     -    =    bspc
-  @back 🔣â   🔣ç   🔣œ   🔣ô   XX    XX    🔣µ   S-/   @back 🔣û   [    ]    ret
-  @back 🔣à   🔣é   🔣è   @alst XX    S-9   @arst 🔣î   🔣ï   🔣ù   '    \
-  lsft  🔣æ   🔣ß   -     XX    XX    .     XX    XX    XX    XX    rsft
-  lctl  lalt lalt           spc            ralt ralt
+  XX 🔣â   🔣ç   🔣œ   🔣ô   XX    XX    🔣µ   S-/   @trem 🔣û
+  XX 🔣à   🔣é   🔣è   🔣ê   XX    S-9   S-0   🔣î   🔣ï   🔣ù
+  XX 🔣æ   🔣ß   -     XX    XX    .     XX    XX    XX    XX
+  XX @upper @upper        spc            ralt  ralt
 )
 
 (deflayer accents-upper
-  XX    1     2     3     4     5     6     7     8     9     0     -    =    bspc
-  @back 🔣Â   🔣Ç   🔣Œ   🔣Ô   XX    XX    🔣µ   S-/   @back 🔣Û   [    ]    ret
-  @back 🔣À   🔣É   🔣È   🔣Ê   XX    S-9   S-0   🔣Î   🔣Ï   🔣Ù   '    \
-  lsft  🔣Æ   🔣ẞ   -     XX    XX    .     XX    XX    XX    XX    rsft
-  lctl  lalt lalt           spc            ralt ralt
+  XX 🔣Â   🔣Ç   🔣Œ   🔣Ô   XX    XX    🔣µ   S-/   @trem 🔣Û
+  XX 🔣À   🔣É   🔣È   🔣Ê   XX    S-9   S-0   🔣Î   🔣Ï   🔣Ù
+  XX 🔣Æ   🔣ẞ   -     XX    XX    .     XX    XX    XX    XX
+  XX lalt lalt           spc            ralt ralt
+)
+
+(deflayer accents-trema
+  XX XX    XX    🔣ö   XX    XX    XX    XX    XX    @back XX
+  XX 🔣ä   XX    🔣ë   XX    XX    XX    XX    XX    🔣ï   🔣ü
+  XX XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX lalt lalt           spc            ralt ralt
 )
 
 (defalias
-  m1 (tap-hold $tt $ht 1 lmet)
-  m2 (tap-hold $tt $ht 2 lalt)
-  m3 (tap-hold $tt $ht 3 lctl)
-  m4 (tap-hold $tt $ht 4 lsft)
-  m7 (tap-hold $tt $ht 7 rsft)
-  m8 (tap-hold $tt $ht 8 rctl)
-  m9 (tap-hold $tt $ht 9 ralt)
-  m0 (tap-hold $tt $ht 0 rmet)
+  rnum (tap-hold $tap-timeout $hold-timeout ret  (layer-while-held numbers))
+  bnum (tap-hold $tap-timeout $hold-timeout bspc (layer-while-held numbers))
+  snum (tap-hold $tap-timeout $hold-timeout spc  (layer-while-held numbers))
 
-  s1 M-A-C-1
-  s2 M-A-C-2
-  s3 M-A-C-3
-  s4 M-A-C-4
-  s5 M-A-C-5
-  s6 M-A-C-6
-  s7 M-A-C-7
-  s8 M-A-C-8
-  s9 M-A-C-9
-  s0 M-A-C-0
+  dsk1 M-A-C-1
+  dsk2 M-A-C-2
+  dsk3 M-A-C-3
+  dsk4 M-A-C-4
+  dsk5 M-A-C-5
+
+  mwu (mwheel-up   100 120)
+  mwd (mwheel-down 100 120)
+
+  undo C-z
+  cut  C-x
+  copy C-c
+  past C-v
 
   < ;
   > S-;
@@ -104,33 +101,24 @@
 )
 
 (deflayer space
-  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    /    =    bspc
-  tab   @s1   @s2   @s3   @s4   @s5   @s6   @s7   @s8   @s9   @s0   [    ]    ret
-  esc   @m1   @m2   @m3   @m4   5     6     @m7   @m8   @m9   @m0   '    \
-  lsft  /     \     S-/   @<    =     S-6   @>    '     [     ]     rsft
-  lctl  bspc  bspc           spc            ret  ret
+  XX tab   home  end   XX    XX    lrld  XX    @mwd  XX    XX
+  XX @dsk1 @dsk2 @dsk3 @dsk4 @dsk5 XX    down  up    rght  @mwu
+  XX @undo @cut  @copy @past S-tab XX    lft   XX    XX    XX
+  XX @bnum @bnum          XX             @rnum @rnum
 )
 
-(defalias
-  gmg (layer-switch gaming)
+(deflayer symbols
+  XX S-1   S-2   S-3   S-4   S-5   S-6   S-7   S-8   '     `
+  XX S-[   S-9   S-0   S-]   =     \     +     -     /     S-'
+  XX `     [     ]     S-`   S-3   S-\   S-6   @<    @>    '
+  XX @bnum @bnum          @snum          XX    XX
 )
 
-(deflayer aaalt
-  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX   XX   bspc
-  lrld  XX    @cw   XX    XX    XX    XX    XX    XX    XX    XX    XX   XX   ret
-  esc   met   alt   ctl   sft   XX    XX    down  up    rght  XX    XX   XX
-  lsft  XX    XX    XX    XX    XX    XX    lft   XX    XX    XX    @gmg
-  lctl  bspc  bspc           spc            ret  ret
+(deflayer numbers
+  XX S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0
+  XX 1    2    3    4    5    6    7    8    9    0
+  XX XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX XX   XX            XX              XX   XX
 )
 
-(defalias
-  bck (layer-switch main)
-)
-
-(deflayer gaming
-  grv   1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab   q    w    e    r    t    y    u    i    o    p    [    ]    ret
-  caps  a    s    d    f    g    h    j    k    l    ;    '    \
-  lsft  z    x    c    v    b    n    m    ,    .    /    @bck
-  lctl  lmet lalt          spc             ralt rmet
-)
+;; vim: set ft=lisp

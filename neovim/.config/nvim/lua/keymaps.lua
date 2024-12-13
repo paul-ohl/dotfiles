@@ -20,6 +20,7 @@ nmap('n', '<Leader>N', vim.diagnostic.goto_prev, { desc = 'Go to prev diagnostic
 nmap('n', '<Leader>p', vim.diagnostic.goto_prev, { desc = 'Go to prev diagnostic message' })
 nmap('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 nmap('n', '<C-q>', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+nmap('n', ']]', '<Nop>', { desc = 'Disable ]]' })
 nmap('n', '[[', '<C-t>', { desc = 'Go back in tag stack' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
