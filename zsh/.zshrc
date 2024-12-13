@@ -16,7 +16,6 @@ export LS_COLORS=$LS_COLORS:'di=1;32:'
 # zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-alias ls='ls --color'
 
 # Set vi mode
 set -o vi
@@ -24,7 +23,6 @@ set -o vi
 # Keybindings
 bindkey '^R' history-incremental-search-backward
 bindkey '^H' backward-kill-word
-bindkey '^[[A' history-search-backward # May want to disable this one
 
 # Setting locales, I know I shouldn't do it there
 LANG="en_US.UTF-8"
@@ -66,13 +64,8 @@ alias p='pnpm'
 alias dc='docker compose'
 alias v='nvim'
 alias e='nvim'
-alias getssh='cat ~/.ssh/id_rsa.pub | pbcopy && echo "public ssh key copied"'
 alias ports='sudo ss -tulnp'
-
-# DNF aliases
-alias di='sudo dnf install'
-alias ds='sudo dnf search'
-alias du='sudo dnf update -y'
+alias s='kitten ssh'
 
 # Cargo aliases
 alias c='cargo'
@@ -109,6 +102,7 @@ if command -v exa &> /dev/null; then
   alias ll='exa -Fl --icons'
   alias tree='exa -FT --icons'
 else
+  alias ls='ls --color'
   alias la='ls -lAh'
   alias l='ls -lh'
   alias ll='ls -lh'
@@ -163,7 +157,11 @@ zinit cdreplay -q
 ###
 
 # fzf
-eval "$(fzf --zsh)"
+if command -v fzf &> /dev/null; then
+  eval "$(fzf --zsh)"
+else
+  echo "fzf not found, skipping integration"
+fi
 
 # Yazi
 function yy() {
