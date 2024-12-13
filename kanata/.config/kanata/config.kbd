@@ -1,8 +1,8 @@
 (defsrc
-  q    w    e    r    t    y    u    i    o    p
-  a    s    d    f    g    h    j    k    l    ;
-  z    x    c    v    b    n    m    ,    .    /
-  lmet lalt          spc             ralt rmet
+  tab  q    w    e    r    t    y    u    i    o    p
+  caps a    s    d    f    g    h    j    k    l    ;
+  lsft z    x    c    v    b    n    m    ,    .    /
+  lctl lmet lalt          spc             ralt rmet
 )
 
 (defvar
@@ -42,10 +42,10 @@
 )
 
 (deflayer main
-  q     c     o     p     w     j     m     d     @acc y
-  a     @smet @ealt @nctl f     l     @rctl @talt @imet u
-  z     x     -     v     b     .     h     g     ,     k
-  @sbksp @sbksp      @nav             @sym  @sym
+  XX q     c     o     p     w     j     m     d     @acc y
+  XX a     @smet @ealt @nctl f     l     @rctl @talt @imet u
+  XX z     x     -     v     b     .     h     g     ,     k
+  XX @sbksp @sbksp      @nav             @sym  @sym
 )
 
 (defalias
@@ -55,24 +55,24 @@
 )
 
 (deflayer accents
-  🔣â   🔣ç   🔣œ   🔣ô   XX    XX    🔣µ   S-/   @trem 🔣û
-  🔣à   🔣é   🔣è   🔣ê   XX    S-9   S-0   🔣î   🔣ï   🔣ù
-  🔣æ   🔣ß   -     XX    XX    .     XX    XX    XX    XX
-  @upper @upper        spc            ralt  ralt
+  XX 🔣â   🔣ç   🔣œ   🔣ô   XX    XX    🔣µ   S-/   @trem 🔣û
+  XX 🔣à   🔣é   🔣è   🔣ê   XX    S-9   S-0   🔣î   🔣ï   🔣ù
+  XX 🔣æ   🔣ß   -     XX    XX    .     XX    XX    XX    XX
+  XX @upper @upper        spc            ralt  ralt
 )
 
 (deflayer accents-upper
-  🔣Â   🔣Ç   🔣Œ   🔣Ô   XX    XX    🔣µ   S-/   @trem 🔣Û
-  🔣À   🔣É   🔣È   🔣Ê   XX    S-9   S-0   🔣Î   🔣Ï   🔣Ù
-  🔣Æ   🔣ẞ   -     XX    XX    .     XX    XX    XX    XX
-  lalt lalt           spc            ralt ralt
+  XX 🔣Â   🔣Ç   🔣Œ   🔣Ô   XX    XX    🔣µ   S-/   @trem 🔣Û
+  XX 🔣À   🔣É   🔣È   🔣Ê   XX    S-9   S-0   🔣Î   🔣Ï   🔣Ù
+  XX 🔣Æ   🔣ẞ   -     XX    XX    .     XX    XX    XX    XX
+  XX lalt lalt           spc            ralt ralt
 )
 
 (deflayer accents-trema
-  XX    XX    🔣ö   XX    XX    XX    XX    XX    @back XX
-  🔣ä   XX    🔣ë   XX    XX    XX    XX    XX    🔣ï   🔣ü
-  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
-  lalt lalt           spc            ralt ralt
+  XX XX    XX    🔣ö   XX    XX    XX    XX    XX    @back XX
+  XX 🔣ä   XX    🔣ë   XX    XX    XX    XX    XX    🔣ï   🔣ü
+  XX XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX lalt lalt           spc            ralt ralt
 )
 
 (defalias
@@ -86,8 +86,8 @@
   dsk4 M-A-C-4
   dsk5 M-A-C-5
 
-  mwu (mwheel-up   200 120)
-  mwd (mwheel-down 200 120)
+  mwu (mwheel-up   100 120)
+  mwd (mwheel-down 100 120)
 
   undo C-z
   cut  C-x
@@ -101,24 +101,24 @@
 )
 
 (deflayer space
-  tab   home  end   XX    XX    lrld  XX    @mwd  XX    XX
-  @dsk1 @dsk2 @dsk3 @dsk4 @dsk5 XX    down  up    rght  @mwu
-  @undo @cut  @copy @past S-tab XX    lft   XX    XX    XX
-  @bnum @bnum          XX             @rnum @rnum
+  XX tab   home  end   XX    XX    lrld  XX    @mwd  XX    XX
+  XX @dsk1 @dsk2 @dsk3 @dsk4 @dsk5 XX    down  up    rght  @mwu
+  XX @undo @cut  @copy @past S-tab XX    lft   XX    XX    XX
+  XX @bnum @bnum          XX             @rnum @rnum
 )
 
 (deflayer symbols
-  S-1   S-2   S-3   S-4   S-5   S-6   S-7   S-8   '     `
-  S-[   S-9   S-0   S-]   =     \     +     -     /     S-'
-  `     [     ]     S-`   S-3   S-\   S-6   @<    @>    '
-  @bnum @bnum          @snum          XX    XX
+  XX S-1   S-2   S-3   S-4   S-5   S-6   S-7   S-8   '     `
+  XX S-[   S-9   S-0   S-]   =     \     +     -     /     S-'
+  XX `     [     ]     S-`   S-3   S-\   S-6   @<    @>    '
+  XX @bnum @bnum          @snum          XX    XX
 )
 
 (deflayer numbers
-  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0
-  1    2    3    4    5    6    7    8    9    0
-  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  XX   XX            XX              XX   XX
+  XX S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0
+  XX 1    2    3    4    5    6    7    8    9    0
+  XX XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX XX   XX            XX              XX   XX
 )
 
 ;; vim: set ft=lisp
