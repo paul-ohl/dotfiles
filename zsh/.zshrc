@@ -111,6 +111,9 @@ if command -v bat &> /dev/null; then
   alias cat='bat'
 fi
 
+# Yt-dlp aliases
+alias zik-dl='yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o "%(artist)s - %(title)s.%(ext)s"'
+
 ###
 ### Custom utils
 ###
@@ -187,6 +190,10 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-. "/home/pohl/.deno/env"
+# Deno
+# If the path exists, load the Deno environment
+if [ -e "$HOME/.deno/env" ]; then
+  . "/home/pohl/.deno/env"
+fi
 
 # vim: ts=2 sts=2 sw=2 et
