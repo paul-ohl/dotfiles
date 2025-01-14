@@ -24,8 +24,8 @@
   dd (tap-hold $tap_timeout $long_hold_timeout d lalt)
   ff (tap-hold $tap_timeout $long_hold_timeout f lctl)
   jj (tap-hold $tap_timeout $long_hold_timeout j lctl)
-  kk (tap-hold $tap_timeout $long_hold_timeout k ralt)
-  ll (tap-hold $tap_timeout $long_hold_timeout l rmet)
+  kk (tap-hold $tap_timeout $long_hold_timeout k lalt)
+  ll (tap-hold $tap_timeout $long_hold_timeout l lmet)
 )
 
 ;; vim: set ft=lisp
