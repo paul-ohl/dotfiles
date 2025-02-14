@@ -8,7 +8,7 @@
   q    w    e    r    t         u    i    o    p    [
   a    s    d    f    g         j    k    l    ;    '
   lsft z    x    c    v    b    m    ,    .    /    rsft
-            lmet          spc             rmet
+            lmet          spc             rmet ralt
 )
 
 ;; vim: set ft=lisp
