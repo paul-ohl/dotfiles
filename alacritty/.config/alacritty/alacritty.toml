@@ -1,63 +1,46 @@
+[general]
 live_config_reload = true
-
 import = ["~/.config/alacritty/theme.toml"]
 
-[bell]
-command = "None"
-duration = 0
-
-[cursor]
-unfocused_hollow = true
-vi_mode_style = "Beam"
-
-[cursor.style]
-shape = "Block"
-
-[env]
-TERM = "alacritty"
+[window]
+decorations = "None"
+opacity = 0.9
+startup_mode = "Maximized"
+title = "Alacritty"
+dynamic_title = false
 
 [font]
-builtin_box_drawing = true
-size = 16.0
+normal = { family = "Mononoki Nerd Font", style = "regular" }
+size = 15
 
-[font.normal]
-family = "Mononoki Nerd Font"
-
-[hints]
-alphabet = "asdfjklghcmie"
-
-[[keyboard.bindings]]
-chars = "\u001B[72;5u"
-key = "H"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[74;5u"
-key = "J"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[75;5u"
-key = "K"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[76;5u"
-key = "L"
-mods = "Control|Shift"
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+vi_mode_style = { shape = "Beam", blinking = "Off" }
 
 [mouse]
 hide_when_typing = true
 
-[shell]
-program = "/usr/bin/zsh"
+[hints]
+alphabet = "asenrtiucodhv"
 
-[window]
-decorations = "none"
-dynamic_title = false
-opacity = 0.7
-startup_mode = "Maximized"
-title = "Alacritty"
+[[hints.enabled]]
+command = "xdg-open" # On Linux/BSD
+# command = "open" # On macOS
+# command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "o", mods = "Alt" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://|obsidian://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"
+
+[keyboard]
+bindings = [
+  { key = "+", mods = "Alt", action = "IncreaseFontSize" },
+  { key = "-", mods = "Alt", action = "DecreaseFontSize" },
+  { key = "/", mods = "Alt", action = "ResetFontSize" },
+  { key = "n", mods = "Alt|Shift", action = "CreateNewWindow" },
+]
 
 [window.padding]
 x = 2
