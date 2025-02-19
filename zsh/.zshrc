@@ -94,6 +94,11 @@ alias gr='git rebase'
 alias gri='git rebase --interactive'
 alias g-='git switch -'
 
+# Nix aliases
+alias noe='nvim /etc/nixos/configuration.nix'
+alias nor='sudo nixos-rebuild switch'
+alias ns='nix-shell -p'
+
 # aliases depending on Rust tools
 if command -v exa &> /dev/null; then
   alias ls='exa -F --icons'

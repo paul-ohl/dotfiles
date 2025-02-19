@@ -11,7 +11,7 @@
   tab  home end  S-tab XX       XX   XX   @mwd @pad @pad
   @d1  @d2  @d3  @d4  @d5       XX   @dwn @up  @rgt @mwu
   @ndo @cut @cpy @pst XX    _   XX   lft  @srt XX   @fun
-            del             _             ret
+            del             _             ret  @num
 )
 
 ;; NumPad
@@ -20,7 +20,7 @@
   tab  home end  @stb pgup      @/   @7   @8   @9   XX
   @d1  @d2  @d3  @d4  @d5       @-   @4   @5   @6   @0
   XX   XX   XX   XX   XX    _   @,   @1   @2   @3   @.
-            @std           spc            @std
+            @std           spc            @std @num
 )
 
 ;; function keys
@@ -29,7 +29,7 @@
   f1   f2   f3   f4   XX        XX   XX   XX   XX   XX
   f5   f6   f7   f8   XX        XX   lctl lalt lmet _
   f9   f10  f11  f12  XX   XX   XX   XX   XX   XX   XX
-            _               _             _
+            _               _             _    @num
 )
 
 (defalias
@@ -37,6 +37,7 @@
   pad (layer-switch numpad)
 
   fun (layer-while-held funpad)
+  ;; num (layer-while-held numrow)
 
   stb S-tab
   srt S-ret

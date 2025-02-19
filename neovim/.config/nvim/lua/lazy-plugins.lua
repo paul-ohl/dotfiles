@@ -3,7 +3,6 @@ require('lazy').setup({
   require 'plugins.telescope',
   require 'plugins.lsp',
   require 'plugins.colorschemes',
-  require 'plugins.copilot',
   require 'plugins.todo-comments',
   require 'plugins.mini',
   require 'plugins.treesitter',
