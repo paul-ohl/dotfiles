@@ -41,7 +41,7 @@ nmap('n', 'zt', 'zt') -- To disable vim smoothie on `zt`
 nmap('n', 'zb', 'zb') -- To disable vim smoothie on `zb`
 nmap('v', '$', 'g_')
 nmap('n', 'U', '<C-r>')
-nmap('i', '<C-h>', '<C-w>') -- Delete the previous word with <C-backspace>
+nmap('i', '<C-h>', '<C-w>')  -- Delete the previous word with <C-backspace>
 nmap({ 'n', 'v' }, ',', ';') -- This is more comfortable on ergo-l
 nmap({ 'n', 'v' }, ';', ',')
 
@@ -74,8 +74,8 @@ nmap('n', '<S-Tab>', 'gT', { desc = 'Go to previous Tab' })
 nmap('n', '<leader>tn', ':tabnew<CR>', { silent = true })
 nmap('n', '<leader>tq', ':tabclose<CR>', { silent = true })
 nmap('n', '<leader>te', '<C-w>T', { silent = true })
-nmap('n', '<leader>t<', ':tabmove -<CR>', { silent = true })
-nmap('n', '<leader>t>', ':tabmove +<CR>', { silent = true })
+nmap('n', '<leader>t.', ':tabmove -<CR>', { silent = true })
+nmap('n', '<leader>t,', ':tabmove +<CR>', { silent = true })
 nmap('n', '<leader>t0', ':tabmove 0<CR>', { silent = true })
 
 -- Toggles with <leader>u
