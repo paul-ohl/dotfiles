@@ -7,6 +7,6 @@ sc			~/dotfiles/custom_scripts/.local/scripts/
 conf		~/dotfiles/neovim/.config/nvim/
 zik			~/Music/
 dev 		~/Documents/dev/
-obs			~/Documents/Main/
+obs			~/Documents/Obsidian/
 mds 		/opt/mds/
 pro 		/opt/dev/
