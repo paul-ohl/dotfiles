@@ -41,7 +41,7 @@ nmap('n', 'zt', 'zt') -- To disable vim smoothie on `zt`
 nmap('n', 'zb', 'zb') -- To disable vim smoothie on `zb`
 nmap('v', '$', 'g_')
 nmap('n', 'U', '<C-r>')
-nmap('i', '<C-h>', '<C-w>')  -- Delete the previous word with <C-backspace>
+nmap('i', '<C-h>', '<C-w>') -- Delete the previous word with <C-backspace>
 nmap({ 'n', 'v' }, ',', ';') -- This is more comfortable on ergo-l
 nmap({ 'n', 'v' }, ';', ',')
 
@@ -58,7 +58,7 @@ nmap('n', '<Leader>v', '<C-w>v', { desc = 'Split window vertically' })
 nmap('n', '<Leader>s', '<C-w>s', { desc = 'Split window' })
 nmap({ 'n', 'v' }, '<C-d>', '<cmd>call smoothie#do("<C-D>") <CR>')
 nmap({ 'n', 'v' }, '<C-u>', '<cmd>call smoothie#do("<C-U>") <CR>')
-nmap('n', '<CR>', 'j^zz')
+nmap('n', '<CR>', '<Noop>')
 nmap('n', '+', 'j^zz')
 nmap('n', '-', 'k^zz')
 
