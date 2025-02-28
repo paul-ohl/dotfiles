@@ -58,7 +58,7 @@ nmap('n', '<Leader>v', '<C-w>v', { desc = 'Split window vertically' })
 nmap('n', '<Leader>s', '<C-w>s', { desc = 'Split window' })
 nmap({ 'n', 'v' }, '<C-d>', '<cmd>call smoothie#do("<C-D>") <CR>')
 nmap({ 'n', 'v' }, '<C-u>', '<cmd>call smoothie#do("<C-U>") <CR>')
-nmap('n', '<CR>', '<Noop>')
+nmap('n', '<CR>', '<Nop>')
 nmap('n', '+', 'j^zz')
 nmap('n', '-', 'k^zz')
 
