@@ -59,11 +59,12 @@ alias pbpaste='wl-paste'
 alias open='xdg-open'
 alias so='source $HOME/.zshrc'
 alias weather='curl wttr.in'
-alias p='pnpm'
 
 alias dc='docker compose'
 alias v='nvim'
 alias e='nvim'
+alias p='pnpm'
+alias t='tmux'
 alias ports='sudo ss -tulnp'
 alias s='kitten ssh'
 
