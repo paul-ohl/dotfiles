@@ -101,12 +101,12 @@ alias nor='sudo nixos-rebuild switch'
 alias ns='nix-shell -p'
 
 # aliases depending on Rust tools
-if command -v exa &> /dev/null; then
-  alias ls='exa -F --icons'
-  alias la='exa -Fla --icons'
-  alias l='exa -lF --icons'
-  alias ll='exa -Fl --icons'
-  alias tree='exa -FT --icons'
+if command -v eza &> /dev/null; then
+  alias ls='eza --icons -F'
+  alias la='eza -la --icons -F'
+  alias l='eza -lF --icons'
+  alias ll='eza -lF --icons'
+  alias tree='eza -TF --icons'
 else
   alias ls='ls --color'
   alias la='ls -lAh'
