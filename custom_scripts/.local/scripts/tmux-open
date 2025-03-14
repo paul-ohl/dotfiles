@@ -1,0 +1,27 @@
+#!/bin/sh
+# Date: 2025/03/14
+# Description: A helper script to open tmux sessions
+
+if ! command -v fzf 1> /dev/null 2> /dev/null; then
+    echo "fzf is not installed. Please install it before running this script."
+    exit 1
+fi
+
+session_list=$(tmux list-sessions)
+
+if [ -n "$1" ]; then
+    # if there is an argument, create a new session with that name
+    tmux new-session -s "$1"
+elif [ -z "$session_list" ]; then
+    # if there are no sessions, create a new one
+    tmux new-session -s Main
+elif [ "$(echo "$session_list" | wc -l)" -eq 1 ]; then
+    # if there is only one session, attach to it
+    session_name=$(echo "$session_list" | awk '{print $1}')
+    tmux attach-session -t "$session_name"
+else
+    # if there are multiple sessions, show a list to choose from
+    selected_session=$(tmux list-sessions | fzf)
+    session_name=$(echo "$selected_session" | awk '{print $1}')
+    tmux attach-session -t "$session_name"
+fi
