@@ -19,7 +19,6 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'projekt0n/github-nvim-theme',
   { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
-  { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
 
   {
     'saecki/crates.nvim',
