@@ -1,0 +1,10 @@
+#!/bin/sh
+# Date: 2021/12/12
+# Description: clean all compatible subdirectories
+
+# Rust
+for folder in $(find . -iname "Cargo.lock" | sed -e 's!/[^/]*$!!' -e 's!^\./!!')
+do
+	echo "in $folder:"
+	(cd "$folder" && cargo clean)
+done

@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "9/29/2024, 7:36:23 PM",
-	"time": 1727631383175,
+	"@time": "3/13/2025, 11:06:08 AM",
+	"time": 1741860368046,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
-		"firefox": 130
+		"firefox": 136
 	},
 	"exclusionRules": [
 		{
@@ -22,7 +22,7 @@
 		"#!no-check",
 		"map s LinkHints.activate",
 		"map S LinkHints.activateOpenInNewTab",
-		"map ; passNextKey",
+		"map , passNextKey",
 		"map <down> scrollDown",
 		"map <up> scrollUp",
 		"map R nextTab",
@@ -31,6 +31,7 @@
 		"map l Vomnibar.activateTabs",
 		"",
 		"unmap <a-f>",
+		"unmap <a-p>",
 		"unmap f",
 		"unmap F",
 		""
@@ -43,6 +44,10 @@
 		"  blank=https://www.google.com/maps Google Maps",
 		"gh|github: https://github.com/search?q=$s \\",
 		"  blank=https://github.com/ GitHub Repo",
+		"y|yt: https://www.youtube.com/results?search_query=%s \\",
+		"  blank=https://www.youtube.com Youtube",
+		"r|rd|red=https://www.google.com/search?q=site:reddit.com+%s \\",
+		"  blank=https://https://www.reddit.com Reddit",
 		"",
 		"w|wiki: https://www.wikipedia.org/w/index.php?search=%s Wikipedia",
 		"g.s|gs|gscholar: https://scholar.google.com/scholar?q=$s \\",

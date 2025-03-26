@@ -1,9 +1,0 @@
-#!/bin/sh
-# Date: 2021/12/12
-# Description: Make fclean in all compatible subdirectories
-
-for folder in $(find . -iname "Makefile" | sed -e 's!/[^/]*$!!' -e 's!^\./!!')
-do
-	echo "in $folder:"
-	make -C "$folder" fclean
-done

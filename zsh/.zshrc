@@ -95,11 +95,6 @@ alias gr='git rebase'
 alias gri='git rebase --interactive'
 alias g-='git switch -'
 
-# Nix aliases
-alias noe='nvim /etc/nixos/configuration.nix'
-alias nor='sudo nixos-rebuild switch'
-alias ns='nix-shell -p'
-
 # aliases depending on Rust tools
 if command -v eza &> /dev/null; then
   alias ls='eza --icons -F'
@@ -119,6 +114,9 @@ fi
 
 # Yt-dlp aliases
 alias zik-dl='yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o "%(artist)s - %(title)s.%(ext)s"'
+
+# LazyDocker
+alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /yourpath/config:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
 
 ###
 ### Custom utils
