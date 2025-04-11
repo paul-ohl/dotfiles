@@ -9,9 +9,7 @@ require('lazy').setup({
   require 'plugins.nvim-tree',
   require 'plugins.lazygit',
   require 'plugins.markdown-preview',
-  require 'plugins.auto_pair',
   require 'plugins.harpoon',
-  require 'plugins.vim-tmux-navigator',
   require 'plugins.smoothie',
   require 'plugins.copilot',
 
