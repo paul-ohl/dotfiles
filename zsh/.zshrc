@@ -1,10 +1,8 @@
-# I WANT: plugins: git, zsh-autosuggestions, docker, docker-compose
-
 ###
 ### Settings
 ###
 
-export PATH="$HOME/.local/bin:$PATH:$HOME/.local/scripts"
+export PATH="$HOME/.local/bin:$PATH:$HOME/bin:$HOME/.local/scripts"
 export EDITOR=nvim
 export LESSHISTFILE='-' # Less doesn't save history
 
@@ -64,7 +62,7 @@ alias dc='docker compose'
 alias v='nvim'
 alias e='nvim'
 alias p='pnpm'
-alias t='tmux'
+alias t='tmux-open'
 alias ports='sudo ss -tulnp'
 alias s='kitten ssh'
 
@@ -113,7 +111,7 @@ if command -v bat &> /dev/null; then
 fi
 
 # Yt-dlp aliases
-alias zik-dl='yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o "%(artist)s - %(title)s.%(ext)s"'
+alias zik-dl='yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o "%(uploader)s - %(title)s.%(ext)s" --embed-thumbnail --add-metadata'
 
 # LazyDocker
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /yourpath/config:/.config/jesseduffield/lazydocker lazyteam/lazydocker'

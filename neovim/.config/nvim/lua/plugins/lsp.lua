@@ -204,6 +204,7 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
+          { name = 'render-markdown' },
           { name = 'crates' },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
