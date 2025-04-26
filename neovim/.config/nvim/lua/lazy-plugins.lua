@@ -8,9 +8,7 @@ require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.nvim-tree',
   require 'plugins.lazygit',
-  require 'plugins.auto_pair',
   require 'plugins.harpoon',
-  require 'plugins.vim-tmux-navigator',
   require 'plugins.smoothie',
   require 'plugins.copilot',
   require 'plugins.markdown',
@@ -19,7 +17,6 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'projekt0n/github-nvim-theme',
   { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
-  { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
 
   {
     'saecki/crates.nvim',

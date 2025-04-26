@@ -89,8 +89,8 @@ example (in the command line):
 
 #### `RELOAD`: reloads a module
 
-When you are developping a neovim module, it is incredibly annoying to have to
-quit and restart neovim everytime in order to empty the cache and allow the
+When you are developing a neovim module, it is incredibly annoying to have to
+quit and restart neovim every time in order to empty the cache and allow the
 plugin to be reloaded. This function does it for you.
 
 But you generally won't need to directly use this function because of the next one:

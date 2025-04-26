@@ -76,6 +76,7 @@ alias cc='cargo clippy'
 alias sss='sudo systemctl status'
 alias ssr='sudo systemctl restart'
 alias sst='sudo systemctl stop'
+alias k='systemctl --user restart kanata.service'
 
 # git aliases
 alias gcl='. gcl'
