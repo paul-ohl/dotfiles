@@ -62,6 +62,12 @@ nmap('n', '<CR>', '<Nop>')
 nmap('n', '+', 'j^zz')
 nmap('n', '-', 'k^zz')
 
+-- mark navigation
+nmap('n', 'µ', "'m", { desc = 'Go to mark m' })
+nmap('n', '_', "'d", { desc = 'Go to mark d' })
+nmap('n', ')', "'r", { desc = 'Go to mark r' })
+nmap('n', 'î', "'t", { desc = 'Go to mark t' })
+
 -- yanking and deleting
 nmap('n', '<Leader>y', '"+y')
 nmap('n', '<Leader>Y', '"+y$')
