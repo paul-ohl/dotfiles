@@ -2,10 +2,6 @@
 ### Settings
 ###
 
-export PATH="$HOME/.local/bin:$PATH:$HOME/bin:$HOME/.local/scripts"
-export EDITOR=nvim
-export LESSHISTFILE='-' # Less doesn't save history
-
 #colors enabling
 autoload -U colors && colors
 export CLICOLOR=1
@@ -22,15 +18,15 @@ set -o vi
 bindkey '^R' history-incremental-search-backward
 bindkey '^H' backward-kill-word
 
-# Setting locales, I know I shouldn't do it there
-LANG="en_US.UTF-8"
-LC_COLLATE="en_US.UTF-8"
-LC_CTYPE="en_US.UTF-8"
-LC_MESSAGES="en_US.UTF-8"
-LC_MONETARY="fr_FR.UTF-8"
-LC_NUMERIC="fr_FR.UTF-8"
-LC_TIME="fr_FR.UTF-8"
-LC_ALL="en_US.UTF-8"
+# # Setting locales, I know I shouldn't do it there
+# LANG="en_US.UTF-8"
+# LC_COLLATE="en_US.UTF-8"
+# LC_CTYPE="en_US.UTF-8"
+# LC_MESSAGES="en_US.UTF-8"
+# LC_MONETARY="fr_FR.UTF-8"
+# LC_NUMERIC="fr_FR.UTF-8"
+# LC_TIME="fr_FR.UTF-8"
+# LC_ALL="en_US.UTF-8"
 
 # Change prompt
 PS1="%1~ > "
@@ -55,7 +51,7 @@ setopt hist_find_no_dups
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
 alias open='xdg-open'
-alias so='source $HOME/.zshrc'
+alias so='source $XDG_CONFIG_HOME/zsh/.zshrc'
 alias weather='curl wttr.in'
 
 alias dc='docker compose'
@@ -111,7 +107,7 @@ if command -v bat &> /dev/null; then
   alias cat='bat'
 fi
 
-# Yt-dlp aliases
+# Yt-dlp alias
 alias zik-dl='yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o "%(uploader)s - %(title)s.%(ext)s" --embed-thumbnail --add-metadata'
 
 # LazyDocker
@@ -127,10 +123,10 @@ eval "alias $(grep -v "^#" "$HOME/.config/zsh/foldersrc" \
   | tr "\"\n" "' ")"
 
 # Load device-specific config
-if ! [ -e "$HOME/.device-specific.sh" ]; then
-  touch "$HOME/.device-specific.sh" 
+if ! [ -e "$XDG_CONFIG_HOME/zsh/.device-specific.sh" ]; then
+  touch "$XDG_CONFIG_HOME/zsh/.device-specific.sh" 
 fi
-source "$HOME/.device-specific.sh"
+source "$XDG_CONFIG_HOME/zsh/.device-specific.sh"
 
 ###
 ### Plugins
