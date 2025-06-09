@@ -135,8 +135,25 @@
   services.displayManager.autoLogin.user = "astro";
 
   # Install firefox.
-  programs.firefox.enable = true;
-  programs.zsh.enable = true;
+  programs = {
+    firefox.enable = true;
+    zsh.enable = true;
+    vim.enable = true;
+    git = {
+      enable = true;
+      config = {
+        init = {
+          defaultBranch = "main";
+        };
+      };
+    };
+    # tmux = {
+    #   enable = true;
+    #   clock24 = true;
+    #   baseIndex = 1;
+    #   newSession = true; # Automatically spawn a session if trying to attach and none are running.
+    # };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -144,6 +161,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    tmux
     alacritty
     alejandra
     bat
@@ -152,7 +170,6 @@
     dust
     eza
     fzf
-    git
     kitty
     neovim
     nerd-fonts.mononoki
@@ -160,12 +177,9 @@
     openssl
     ripgrep
     stow
-    tmux
     unzip
-    vim
     vlc
     wget
-    zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
