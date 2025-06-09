@@ -18,6 +18,12 @@
     };
   };
 
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/home/astro/Music/zik";
+    playlistDirectory = "/home/astro/Music/playlists";
+  };
+
   environment.systemPackages = with pkgs; [
     alacritty
     alejandra
