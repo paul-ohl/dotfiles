@@ -20,7 +20,7 @@
 
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/astro/Music/zik";
+    musicDirectory = "/home/astro/Music/zik/Kaleo/A_B";
     playlistDirectory = "/home/astro/Music/playlists";
     user = "astro";
     group = "audio";
