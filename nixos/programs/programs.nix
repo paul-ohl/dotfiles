@@ -20,7 +20,7 @@
 
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/astro/Music/zik/Kaleo/A_B";
+    musicDirectory = "/home/astro/Music/mp3s";
     playlistDirectory = "/home/astro/Music/playlists";
     user = "astro";
     group = "audio";
@@ -33,6 +33,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    sonata
+
     alacritty
     alejandra
     appimage-run
