@@ -12,6 +12,8 @@
     ./nvidia-setup.nix
   ];
 
+  hardware.bluetooth.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
