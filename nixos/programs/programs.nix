@@ -31,6 +31,7 @@
     alejandra
     appimage-run
     bat
+    btop
     clang
     curl
     discord
@@ -40,6 +41,7 @@
     gcc
     kitty
     libnotify
+    mpd
     neovim
     nerd-fonts.mononoki
     nodejs-slim
