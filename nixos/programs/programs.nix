@@ -22,8 +22,8 @@
     enable = true;
     musicDirectory = "/home/astro/Music/mp3s";
     # playlistDirectory = "/home/astro/Music/playlists";
-    # user = "astro";
-    # group = "audio";
+    user = "astro";
+    group = "astro audio pulse pulse-access";
     network.listenAddress = "any";
     extraConfig = ''
       audio_output {
