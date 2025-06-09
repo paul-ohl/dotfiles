@@ -155,6 +155,7 @@
     git
     kitty
     neovim
+    nerd-fonts.mononoki
     obsidian
     openssl
     ripgrep
