@@ -21,9 +21,10 @@
   services.mpd = {
     enable = true;
     musicDirectory = "/home/astro/Music/mp3s";
-    playlistDirectory = "/home/astro/Music/playlists";
-    user = "astro";
-    group = "audio";
+    # playlistDirectory = "/home/astro/Music/playlists";
+    # user = "astro";
+    # group = "audio";
+    network.listenAddress = "any";
     extraConfig = ''
       audio_output {
         type "pipewire"
