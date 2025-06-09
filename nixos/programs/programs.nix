@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./firefox.nix
+    ./desktop.nix
   ];
 
   programs = {
@@ -18,7 +19,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    tmux
     alacritty
     alejandra
     appimage-run
@@ -39,6 +39,7 @@
     openssl
     ripgrep
     stow
+    tmux
     unzip
     vlc
     wget
