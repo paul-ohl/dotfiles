@@ -1,204 +1,105 @@
 building Nix...
 building the system configuration...
 evaluation warning: The option `hardware.pulseaudio' defined in `/home/astro/dotfiles/nixos/configuration.nix' has been renamed to `services.pulseaudio'.
-these 27 derivations will be built:
-  /nix/store/ny3651rl2g1bjpdil5szl5v5jn6qlwar-nixos-generate-config.drv
-  /nix/store/9mk63f7qwg9px2sdgswkib88ll3nvqcw-system-path.drv
-  /nix/store/hi1l2swdgf1icm8xicqbb38i355xjjd3-X-Restart-Triggers-polkit.drv
-  /nix/store/5a3pxfj4d7g7v6lbfjv3375q1ih29xp0-unit-polkit.service.drv
-  /nix/store/5hm4l76qljx3nka6q8yzrv7f2q4fp502-unit-display-manager.service.drv
-  /nix/store/4b680nz4sl4i1shn9pk2pclbhypivzwz-dbus-1.drv
-  /nix/store/v0ndzmhzvafv3zvnwwn1qrb1ryxqz4da-X-Restart-Triggers-dbus.drv
-  /nix/store/mvan4f6f20vga8n8b154n9xf0k3dgrp7-unit-dbus.service.drv
-  /nix/store/z1261jfzhhmx9lnazy7hzgdm5yb3q6qq-nixos.conf.drv
-  /nix/store/gmwydch4j1r3vnd5h98zc1m7gxy4l128-X-Restart-Triggers-systemd-modules-load.drv
-  /nix/store/n4rwkdqhnn8ha2r216jrgm9azrkb7bqy-unit-systemd-modules-load.service.drv
-  /nix/store/pz4k3mjp70d27f561zvzcvmrvib0g6jy-unit-accounts-daemon.service.drv
-  /nix/store/15b8gv92k0ibyl87h7wavf9wirbhw4pd-system-units.drv
-  /nix/store/1w27wwzr5sr5yilpnb95mxa07la4ni2r-sddm.conf.drv
-  /nix/store/9bvvgfyzmlmnyz0ncl9hm64pr56fza90-exec.drv
-  /nix/store/3i90b3ypd3jyjkyv8hlj1q2lh6c0rk6c-fc-cache.drv
-  /nix/store/izzlbdqk0l46nrksjjr6gspchbxx5rbd-unit-dbus.service.drv
-  /nix/store/5bhyvwh65jdnf5nbgjd8pabvkf6904rj-user-units.drv
-  /nix/store/6kjkyh1lq9m0vcyv0nl4ahr48qzv1vdn-fc-00-nixos-cache.conf.drv
-  /nix/store/82xv4wwk7hpxll9pjfim211zg7yar7rj-set-environment.drv
-  /nix/store/j0f5qdmrnfjrpaiir5swzn4d0vza5f3h-fontconfig-conf.drv
-  /nix/store/h98w073j1f2jfdf8iadjl2ahqmzx6fd5-fontconfig-etc.drv
-  /nix/store/jzxgz6gs45s0qg4280r57jgwl3mzhz6p-etc-profile.drv
-  /nix/store/ndcji4hnv78z92dnqa5rxw427ahnzbpq-etc-ssh-ssh_config.drv
-  /nix/store/yv96936dpdg05imqhqj0hk5wkmybgc29-etc-zshenv.drv
-  /nix/store/fxj02mdlv9qq0py2nqfxpxnim3icfrcc-etc.drv
-  /nix/store/rj7kra80i3xnsr5rmmv6914prpkjqvpp-nixos-system-compassion-25.05.803579.70c74b02eac4.drv
-these 15 paths will be fetched (16.86 MiB download, 52.67 MiB unpacked):
-  /nix/store/ylmfqrcnln6sgkrgcl5wdcn664dra428-hardinfo2-2.2.10
-  /nix/store/x6vqvks941n6jz5svc20dv80mz3cf5j6-isoimagewriter-25.04.2
-  /nix/store/504nf3mwfzg5pww9d4zn8mbzncn9xrw9-kcalc-25.04.2
-  /nix/store/rnf8zqc75h06yw3z08kqf1ym3ha3w898-kcharselect-25.04.2
-  /nix/store/wrn066sscmfmjqwg27glkjhi8cgx17i6-kcolorchooser-25.04.2
-  /nix/store/378a61m8rnk4f9v5scifzd0g0ddg83g0-kdiff3-1.12.3
-  /nix/store/s7v028vnqd7rlkf8vw4i7dkg689masf2-kolourpaint-25.04.2
-  /nix/store/34l6gbxij38pb9p7q36p0r7phhiq981f-kpmcore-25.04.2
-  /nix/store/0y9pkaabn7hlpvicd8k33d0i6bh9fhb5-ksanecore-25.04.2
-  /nix/store/iwhqa1g34qbb0rbwglwqnx4r8rm8zyk9-ksystemlog-25.04.2
-  /nix/store/l16pamnm00c8cgb55rhfaw6sl1qviz5f-libksane-25.04.2
-  /nix/store/sq3k9krfm4k8mh3w0ail5y6p0yfdm59d-libmpc-1.3.1
-  /nix/store/kg6vnmw3a318q8n4vas371mx5mssyq68-partitionmanager-25.04.2
-  /nix/store/187qfl2bia0dz8qkmbxhq3d6fg5g5vsd-sddm-kcm-6.3.5
-  /nix/store/y89kpm6rk0kib5rg8mkwcvhq5h6v2jyi-wl-clipboard-2.2.1
-copying path '/nix/store/rnf8zqc75h06yw3z08kqf1ym3ha3w898-kcharselect-25.04.2' from 'https://cache.nixos.org'...
-copying path '/nix/store/ylmfqrcnln6sgkrgcl5wdcn664dra428-hardinfo2-2.2.10' from 'https://cache.nixos.org'...
-copying path '/nix/store/wrn066sscmfmjqwg27glkjhi8cgx17i6-kcolorchooser-25.04.2' from 'https://cache.nixos.org'...
-copying path '/nix/store/y89kpm6rk0kib5rg8mkwcvhq5h6v2jyi-wl-clipboard-2.2.1' from 'https://cache.nixos.org'...
-copying path '/nix/store/iwhqa1g34qbb0rbwglwqnx4r8rm8zyk9-ksystemlog-25.04.2' from 'https://cache.nixos.org'...
-copying path '/nix/store/378a61m8rnk4f9v5scifzd0g0ddg83g0-kdiff3-1.12.3' from 'https://cache.nixos.org'...
-copying path '/nix/store/x6vqvks941n6jz5svc20dv80mz3cf5j6-isoimagewriter-25.04.2' from 'https://cache.nixos.org'...
-copying path '/nix/store/187qfl2bia0dz8qkmbxhq3d6fg5g5vsd-sddm-kcm-6.3.5' from 'https://cache.nixos.org'...
-building '/nix/store/ndcji4hnv78z92dnqa5rxw427ahnzbpq-etc-ssh-ssh_config.drv'...
-building '/nix/store/ny3651rl2g1bjpdil5szl5v5jn6qlwar-nixos-generate-config.drv'...
-building '/nix/store/z1261jfzhhmx9lnazy7hzgdm5yb3q6qq-nixos.conf.drv'...
-building '/nix/store/1w27wwzr5sr5yilpnb95mxa07la4ni2r-sddm.conf.drv'...
-building '/nix/store/82xv4wwk7hpxll9pjfim211zg7yar7rj-set-environment.drv'...
-copying path '/nix/store/sq3k9krfm4k8mh3w0ail5y6p0yfdm59d-libmpc-1.3.1' from 'https://cache.nixos.org'...
-copying path '/nix/store/0y9pkaabn7hlpvicd8k33d0i6bh9fhb5-ksanecore-25.04.2' from 'https://cache.nixos.org'...
-copying path '/nix/store/34l6gbxij38pb9p7q36p0r7phhiq981f-kpmcore-25.04.2' from 'https://cache.nixos.org'...
-building '/nix/store/5hm4l76qljx3nka6q8yzrv7f2q4fp502-unit-display-manager.service.drv'...
-building '/nix/store/9bvvgfyzmlmnyz0ncl9hm64pr56fza90-exec.drv'...
-Running phase: patchPhase
-Running phase: updateAutotoolsGnuConfigScriptsPhase
-Running phase: configurePhase
-no configure script, doing nothing
-Running phase: buildPhase
-Running phase: checkPhase
-Running phase: installPhase
-no Makefile or custom installPhase, doing nothing
-Running phase: fixupPhase
-shrinking RPATHs of ELF executables and libraries in /nix/store/3wikk2w5zb68g0j90xqcqbn4dhq59910-nixos-generate-config
-checking for references to /build/ in /nix/store/3wikk2w5zb68g0j90xqcqbn4dhq59910-nixos-generate-config...
-gzipping man pages under /nix/store/3wikk2w5zb68g0j90xqcqbn4dhq59910-nixos-generate-config/share/man/
-patching script interpreter paths in /nix/store/3wikk2w5zb68g0j90xqcqbn4dhq59910-nixos-generate-config
-copying path '/nix/store/504nf3mwfzg5pww9d4zn8mbzncn9xrw9-kcalc-25.04.2' from 'https://cache.nixos.org'...
-building '/nix/store/gmwydch4j1r3vnd5h98zc1m7gxy4l128-X-Restart-Triggers-systemd-modules-load.drv'...
-building '/nix/store/jzxgz6gs45s0qg4280r57jgwl3mzhz6p-etc-profile.drv'...
-building '/nix/store/yv96936dpdg05imqhqj0hk5wkmybgc29-etc-zshenv.drv'...
-copying path '/nix/store/l16pamnm00c8cgb55rhfaw6sl1qviz5f-libksane-25.04.2' from 'https://cache.nixos.org'...
-copying path '/nix/store/kg6vnmw3a318q8n4vas371mx5mssyq68-partitionmanager-25.04.2' from 'https://cache.nixos.org'...
-building '/nix/store/3i90b3ypd3jyjkyv8hlj1q2lh6c0rk6c-fc-cache.drv'...
-building '/nix/store/n4rwkdqhnn8ha2r216jrgm9azrkb7bqy-unit-systemd-modules-load.service.drv'...
-copying path '/nix/store/s7v028vnqd7rlkf8vw4i7dkg689masf2-kolourpaint-25.04.2' from 'https://cache.nixos.org'...
-Font directories:
-        /nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37
-        /nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01
-        /nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003
-        /nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37
-        /nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503
-        /nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005
-        /nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5
-        /nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03
-        /nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047
-        /nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37/share
-        /nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01/share
-        /nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003/share
-        /nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37/share
-        /nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503/share
-        /nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005/share
-        /nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share
-        /nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03/share
-        /nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047/share
-        /nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37/share/fonts
-        /nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01/share/fonts
-        /nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003/share/fonts
-        /nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37/share/fonts
-        /nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503/share/fonts
-        /nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005/share/fonts
-        /nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/doc
-        /nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/fonts
-        /nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03/share/fonts
-        /nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047/share/fonts
-        /nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37/share/fonts/truetype
-        /nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01/share/fonts/noto
-        /nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003/share/fonts/truetype
-        /nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37/share/fonts/truetype
-        /nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503/share/fonts/truetype
-        /nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005/share/fonts/truetype
-        /nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/doc/liberation-fonts-2.1.5
-        /nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/fonts/truetype
-        /nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03/share/fonts/opentype
-        /nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047/share/fonts/noto
-/nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37/share: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37/share/fonts: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37/share/fonts/truetype: skipping, existing cache is valid: 1 fonts, 0 dirs
-/nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01/share: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01/share/fonts: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01/share/fonts/noto: skipping, existing cache is valid: 888 fonts, 0 dirs
-/nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003/share: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003/share/fonts: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003/share/fonts/truetype: skipping, existing cache is valid: 4 fonts, 0 dirs
-/nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37/share: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37/share/fonts: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37/share/fonts/truetype: skipping, existing cache is valid: 22 fonts, 0 dirs
-/nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503/share: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503/share/fonts: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503/share/fonts/truetype: skipping, existing cache is valid: 12 fonts, 0 dirs
-/nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005/share: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005/share/fonts: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005/share/fonts/truetype: skipping, existing cache is valid: 33 fonts, 0 dirs
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share: skipping, existing cache is valid: 0 fonts, 2 dirs
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/doc: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/doc/liberation-fonts-2.1.5: skipping, existing cache is valid: 0 fonts, 0 dirs
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/fonts: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/fonts/truetype: skipping, existing cache is valid: 12 fonts, 0 dirs
-/nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03/share: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03/share/fonts: skipping, existing cache is valid: 3 fonts, 1 dirs
-/nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03/share/fonts/opentype: skipping, existing cache is valid: 1 fonts, 0 dirs
-/nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047/share: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047/share/fonts: skipping, existing cache is valid: 0 fonts, 1 dirs
-/nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047/share/fonts/noto: skipping, existing cache is valid: 1 fonts, 0 dirs
-/nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37/share: skipping, looped directory detected
-/nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01/share: skipping, looped directory detected
-/nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003/share: skipping, looped directory detected
-/nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37/share: skipping, looped directory detected
-/nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503/share: skipping, looped directory detected
-/nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005/share: skipping, looped directory detected
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share: skipping, looped directory detected
-/nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03/share: skipping, looped directory detected
-/nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047/share: skipping, looped directory detected
-/nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37/share/fonts: skipping, looped directory detected
-/nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01/share/fonts: skipping, looped directory detected
-/nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003/share/fonts: skipping, looped directory detected
-/nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37/share/fonts: skipping, looped directory detected
-/nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503/share/fonts: skipping, looped directory detected
-/nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005/share/fonts: skipping, looped directory detected
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/doc: skipping, looped directory detected
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/fonts: skipping, looped directory detected
-/nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03/share/fonts: skipping, looped directory detected
-/nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047/share/fonts: skipping, looped directory detected
-/nix/store/zh5iazbs69x4irfdml5fzbh9nm05spgb-dejavu-fonts-minimal-2.37/share/fonts/truetype: skipping, looped directory detected
-/nix/store/r8pd5mfrmrh3i15xjp5jcqs1hsgm7n21-noto-fonts-2025.04.01/share/fonts/noto: skipping, looped directory detected
-/nix/store/8ajv1lva8bcdrcgqz50i6a72sq12i7sq-hack-font-3.003/share/fonts/truetype: skipping, looped directory detected
-/nix/store/46g6p6698lc50ypik6mgg0wf3q23gzqz-dejavu-fonts-2.37/share/fonts/truetype: skipping, looped directory detected
-/nix/store/1fn8sllmwqwpgl8ggg965d01ihjmsggc-freefont-ttf-20120503/share/fonts/truetype: skipping, looped directory detected
-/nix/store/vg2gjknwfxi53lh8z3cbhibc70kka2wv-gyre-fonts-2.005/share/fonts/truetype: skipping, looped directory detected
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/doc/liberation-fonts-2.1.5: skipping, looped directory detected
-/nix/store/vl44mgyhq46plr28vfj06zj9lk89jyaw-liberation-fonts-2.1.5/share/fonts/truetype: skipping, looped directory detected
-/nix/store/n4ycrf3jfdmzqmxd31nlcbdha5rz1fhi-unifont-16.0.03/share/fonts/opentype: skipping, looped directory detected
-/nix/store/j6my08rg747ngwqb5mnxhc06i5p2xz8v-noto-fonts-color-emoji-2.047/share/fonts/noto: skipping, looped directory detected
-/var/cache/fontconfig: not cleaning non-existent cache directory
-/nix/store/jfh5icwksnibvzs2hnlw5gfpgfjg1arb-fc-cache: cleaning cache directory
-/nix/store/64zabz1hxymxbcvp78hp9kacrygnf9l9-fontconfig-2.16.0-bin/bin/fc-cache: succeeded
-building '/nix/store/6kjkyh1lq9m0vcyv0nl4ahr48qzv1vdn-fc-00-nixos-cache.conf.drv'...
-building '/nix/store/j0f5qdmrnfjrpaiir5swzn4d0vza5f3h-fontconfig-conf.drv'...
-building '/nix/store/h98w073j1f2jfdf8iadjl2ahqmzx6fd5-fontconfig-etc.drv'...
-created 1 symlinks in user environment
-building '/nix/store/9mk63f7qwg9px2sdgswkib88ll3nvqcw-system-path.drv'...
+these 12 derivations will be built:
+  /nix/store/86vb0iq6zw0x9yrjvpszpz37yd7s8jcj-system-path.drv
+  /nix/store/k3wgwh1xnqagcwbvv80w75mv8igzrbq1-X-Restart-Triggers-polkit.drv
+  /nix/store/hjb15gqc1kiwy2gxz78kghf0qhxfncvm-unit-polkit.service.drv
+  /nix/store/i18nmk9zigglnmbidlvpvzlvgywq4myr-unit-accounts-daemon.service.drv
+  /nix/store/rbq5xxaxx356vdcnh7nxaajzkv2966gd-dbus-1.drv
+  /nix/store/nzjyj59npn55k2gpq64cq6swnh7l58bf-X-Restart-Triggers-dbus.drv
+  /nix/store/w1d6x6z6aaj2fs8n35av100p7fjkmn97-unit-dbus.service.drv
+  /nix/store/6305pf2crr4ph5hjj9v3jjyqh3gwakrm-system-units.drv
+  /nix/store/5smhv2s65bbmn2dwx51wq7kyfhqli1fp-unit-dbus.service.drv
+  /nix/store/p1yxzh90hbb54dmbg4rjb0blbhs5l17c-user-units.drv
+  /nix/store/2qgiwqa2d8i0va58dzrkvz02sgm690p6-etc.drv
+  /nix/store/nrb81a4vgmwmwsqcalyacsbkh5npd64w-nixos-system-compassion-25.05.803579.70c74b02eac4.drv
+these 42 paths will be fetched (23.71 MiB download, 138.44 MiB unpacked):
+  /nix/store/qsyxh2zqqkqzaaa0v5scpjz364ksmj3m-libargon2-20190702
+  /nix/store/6bq0higf64fvz50i4gz09wk21caxqi9q-python3-3.12.10-env
+  /nix/store/rchi0fk3l787ddlnl6dpq7y5djnqbp0g-python3.12-adblock-0.6.0
+  /nix/store/82vw2y5ww9ric65xhjmpnqmdp8vl9xb3-python3.12-argon2-cffi-23.1.0
+  /nix/store/i2xf69gnlq6x972qn4xas5qnsqb45knx-python3.12-argon2-cffi-bindings-21.2.0
+  /nix/store/xw253kbqk934155fnvvq9581wv40c3r0-python3.12-beautifulsoup4-4.12.3
+  /nix/store/w56z2iwqp4c3k0bx1rnh2kkmh8jysk48-python3.12-cffi-1.17.1
+  /nix/store/51br6lyxqdxk7kavlns759j3bsl2y0d7-python3.12-chardet-5.2.0
+  /nix/store/azbbrwb8glahagaqqsaa4akv20903lm3-python3.12-charset-normalizer-3.4.1
+  /nix/store/4s6v7s7nj29gbhwbm3kx0cx4lybd11ni-python3.12-colorama-0.4.6
+  /nix/store/4adp5djv7v5jf4sbsl1pcqyb75mfs0rz-python3.12-construct-2.10.70
+  /nix/store/g8vpsbwhg89a9lywkxy3bd2iypb8a308-python3.12-cssselect-1.3.0
+  /nix/store/xmvaxz2b0bjm3jk5hjmqpa1xcchdvb1m-python3.12-dbus-python-1.4.0-dev
+  /nix/store/s6x7g6258l9adjfb3cps7l4lcc1xwx60-python3.12-filelock-3.18.0
+  /nix/store/n0v27hx3n5sc51z833jbmkgi4sm086qg-python3.12-idna-3.10
+  /nix/store/kn0svpfjpbx8zl1rp0f0rzh2ray0c2xs-python3.12-jinja2-3.1.6
+  /nix/store/g41zzs5fh97rw2qn6ixbz314b23h902j-python3.12-lxml-5.3.1
+  /nix/store/ks4w8n2z7n4p3qq62m3ma6a9rhv8r8q7-python3.12-lxml-html-clean-0.4.2
+  /nix/store/6nsicakxgz51c7r2qpaccl0ghlg5g27c-python3.12-lz4-4.4.3
+  /nix/store/x7nyn4jv80amafdya2xgm1a07m0hinap-python3.12-markupsafe-3.0.2
+  /nix/store/mhscxvpf98amzkih54jyhqpw7xx6i5lc-python3.12-pycparser-2.22
+  /nix/store/kyxcsmk6m1j5czlsyq038xpnpfa55j6r-python3.12-pycryptodomex-3.21.0
+  /nix/store/163nw6jgnnnfhpy2f2qjnwc6lm26ny76-python3.12-pygments-2.19.1
+  /nix/store/57npkg9ypjxjc32a1r6pi6xd8sm5cw9n-python3.12-pykeepass-4.1.1.post1
+  /nix/store/snzykgcxlhvqp5c4mvrbnzc5ip0a6rvi-python3.12-pynacl-1.5.0
+  /nix/store/b958g2ak32lxisb7k18b1ac6bg44d5cc-python3.12-pyperclip-1.9.0
+  /nix/store/n0jirycz9v320fsf0124bsd9xsbjn5x5-python3.12-pyqt6-6.9.0
+  /nix/store/kki8k5lvqyjslbyf60591s95hglm4bnr-python3.12-pyqt6-6.9.0-dev
+  /nix/store/13vr1xvxw6mzh47d5bpd64l1nxs8fiik-python3.12-pyqt6-sip-13.8.0
+  /nix/store/qxd8vqh170xadx1yhmlv840y6mqfkr49-python3.12-pyqt6-webengine-6.8.0
+  /nix/store/8ganfwgkbcfz4l5rh23gh2i6ph4jcv17-python3.12-pyqt6-webengine-6.8.0-dev
+  /nix/store/31639aa7g91847pds9bs1mb3gadw8wgy-python3.12-pyyaml-6.0.2
+  /nix/store/3hf5g9ybliyc981cz6p648r2xaqn88ql-python3.12-readability-lxml-0.8.1
+  /nix/store/0lln9m37mw7cjdf02krfpiwd4clwdlwl-python3.12-requests-2.32.3
+  /nix/store/3c434vhszvr3ghyzmb9f1fix99963jcl-python3.12-requests-file-2.1.0
+  /nix/store/mzkzsbrp7vy4sx09ggqsa8i5v4gp50nc-python3.12-setuptools-78.1.0
+  /nix/store/3lv0xmcjb2s0d1pi878hbajh7p7sjd9j-python3.12-soupsieve-2.6
+  /nix/store/54wfx8avf2q9h0wbjn2h2l6lw94qx5hf-python3.12-stem-1.8.3-unstable-2024-02-13
+  /nix/store/ai3ivw9r5r46xsblxv1vdrq2yf53s4rs-python3.12-tldextract-5.3.0
+  /nix/store/pzlvn6b1z55lkrv2d6p8d8q3569c3aib-qutebrowser-3.5.0
+  /nix/store/kr42s0lmqyrsdzblclpwnrlvjifii3q6-rmpc-0.8.0
+  /nix/store/6bj2ksxc2g8ghxjzyvm31hhxdjy6f7g9-source
+copying path '/nix/store/6bj2ksxc2g8ghxjzyvm31hhxdjy6f7g9-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/kr42s0lmqyrsdzblclpwnrlvjifii3q6-rmpc-0.8.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/rchi0fk3l787ddlnl6dpq7y5djnqbp0g-python3.12-adblock-0.6.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/n0v27hx3n5sc51z833jbmkgi4sm086qg-python3.12-idna-3.10' from 'https://cache.nixos.org'...
+copying path '/nix/store/51br6lyxqdxk7kavlns759j3bsl2y0d7-python3.12-chardet-5.2.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/g41zzs5fh97rw2qn6ixbz314b23h902j-python3.12-lxml-5.3.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/4s6v7s7nj29gbhwbm3kx0cx4lybd11ni-python3.12-colorama-0.4.6' from 'https://cache.nixos.org'...
+copying path '/nix/store/x7nyn4jv80amafdya2xgm1a07m0hinap-python3.12-markupsafe-3.0.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/azbbrwb8glahagaqqsaa4akv20903lm3-python3.12-charset-normalizer-3.4.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/6nsicakxgz51c7r2qpaccl0ghlg5g27c-python3.12-lz4-4.4.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/b958g2ak32lxisb7k18b1ac6bg44d5cc-python3.12-pyperclip-1.9.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/kyxcsmk6m1j5czlsyq038xpnpfa55j6r-python3.12-pycryptodomex-3.21.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/s6x7g6258l9adjfb3cps7l4lcc1xwx60-python3.12-filelock-3.18.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/163nw6jgnnnfhpy2f2qjnwc6lm26ny76-python3.12-pygments-2.19.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/mhscxvpf98amzkih54jyhqpw7xx6i5lc-python3.12-pycparser-2.22' from 'https://cache.nixos.org'...
+copying path '/nix/store/g8vpsbwhg89a9lywkxy3bd2iypb8a308-python3.12-cssselect-1.3.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/qsyxh2zqqkqzaaa0v5scpjz364ksmj3m-libargon2-20190702' from 'https://cache.nixos.org'...
+copying path '/nix/store/xmvaxz2b0bjm3jk5hjmqpa1xcchdvb1m-python3.12-dbus-python-1.4.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/n0jirycz9v320fsf0124bsd9xsbjn5x5-python3.12-pyqt6-6.9.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/13vr1xvxw6mzh47d5bpd64l1nxs8fiik-python3.12-pyqt6-sip-13.8.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/kn0svpfjpbx8zl1rp0f0rzh2ray0c2xs-python3.12-jinja2-3.1.6' from 'https://cache.nixos.org'...
+copying path '/nix/store/qxd8vqh170xadx1yhmlv840y6mqfkr49-python3.12-pyqt6-webengine-6.8.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/31639aa7g91847pds9bs1mb3gadw8wgy-python3.12-pyyaml-6.0.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/4adp5djv7v5jf4sbsl1pcqyb75mfs0rz-python3.12-construct-2.10.70' from 'https://cache.nixos.org'...
+copying path '/nix/store/mzkzsbrp7vy4sx09ggqsa8i5v4gp50nc-python3.12-setuptools-78.1.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/3lv0xmcjb2s0d1pi878hbajh7p7sjd9j-python3.12-soupsieve-2.6' from 'https://cache.nixos.org'...
+copying path '/nix/store/54wfx8avf2q9h0wbjn2h2l6lw94qx5hf-python3.12-stem-1.8.3-unstable-2024-02-13' from 'https://cache.nixos.org'...
+copying path '/nix/store/0lln9m37mw7cjdf02krfpiwd4clwdlwl-python3.12-requests-2.32.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/w56z2iwqp4c3k0bx1rnh2kkmh8jysk48-python3.12-cffi-1.17.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/xw253kbqk934155fnvvq9581wv40c3r0-python3.12-beautifulsoup4-4.12.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/3c434vhszvr3ghyzmb9f1fix99963jcl-python3.12-requests-file-2.1.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/ai3ivw9r5r46xsblxv1vdrq2yf53s4rs-python3.12-tldextract-5.3.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/snzykgcxlhvqp5c4mvrbnzc5ip0a6rvi-python3.12-pynacl-1.5.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/i2xf69gnlq6x972qn4xas5qnsqb45knx-python3.12-argon2-cffi-bindings-21.2.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/82vw2y5ww9ric65xhjmpnqmdp8vl9xb3-python3.12-argon2-cffi-23.1.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/ks4w8n2z7n4p3qq62m3ma6a9rhv8r8q7-python3.12-lxml-html-clean-0.4.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/57npkg9ypjxjc32a1r6pi6xd8sm5cw9n-python3.12-pykeepass-4.1.1.post1' from 'https://cache.nixos.org'...
+copying path '/nix/store/3hf5g9ybliyc981cz6p648r2xaqn88ql-python3.12-readability-lxml-0.8.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/6bq0higf64fvz50i4gz09wk21caxqi9q-python3-3.12.10-env' from 'https://cache.nixos.org'...
+copying path '/nix/store/kki8k5lvqyjslbyf60591s95hglm4bnr-python3.12-pyqt6-6.9.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/8ganfwgkbcfz4l5rh23gh2i6ph4jcv17-python3.12-pyqt6-webengine-6.8.0-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/pzlvn6b1z55lkrv2d6p8d8q3569c3aib-qutebrowser-3.5.0' from 'https://cache.nixos.org'...
+building '/nix/store/86vb0iq6zw0x9yrjvpszpz37yd7s8jcj-system-path.drv'...
 warning: collision between `/nix/store/0fsnicvfpf55nkza12cjnad0w84d6ba7-gcc-wrapper-14.2.1.20250322/bin/strip' and `/nix/store/fmysfy9gl5d59yir4fksi29wz10maljg-clang-wrapper-19.1.7/bin/strip'
 warning: collision between `/nix/store/0fsnicvfpf55nkza12cjnad0w84d6ba7-gcc-wrapper-14.2.1.20250322/bin/ld.bfd' and `/nix/store/fmysfy9gl5d59yir4fksi29wz10maljg-clang-wrapper-19.1.7/bin/ld.bfd'
 warning: collision between `/nix/store/0fsnicvfpf55nkza12cjnad0w84d6ba7-gcc-wrapper-14.2.1.20250322/bin/ld' and `/nix/store/fmysfy9gl5d59yir4fksi29wz10maljg-clang-wrapper-19.1.7/bin/ld'
@@ -206,29 +107,25 @@ warning: collision between `/nix/store/0fsnicvfpf55nkza12cjnad0w84d6ba7-gcc-wrap
 warning: collision between `/nix/store/0fsnicvfpf55nkza12cjnad0w84d6ba7-gcc-wrapper-14.2.1.20250322/bin/c++' and `/nix/store/fmysfy9gl5d59yir4fksi29wz10maljg-clang-wrapper-19.1.7/bin/c++'
 warning: collision between `/nix/store/0fsnicvfpf55nkza12cjnad0w84d6ba7-gcc-wrapper-14.2.1.20250322/bin/cpp' and `/nix/store/fmysfy9gl5d59yir4fksi29wz10maljg-clang-wrapper-19.1.7/bin/cpp'
 warning: collision between `/nix/store/0fsnicvfpf55nkza12cjnad0w84d6ba7-gcc-wrapper-14.2.1.20250322/bin/ld.gold' and `/nix/store/fmysfy9gl5d59yir4fksi29wz10maljg-clang-wrapper-19.1.7/bin/ld.gold'
-created 48408 symlinks in user environment
-building '/nix/store/hi1l2swdgf1icm8xicqbb38i355xjjd3-X-Restart-Triggers-polkit.drv'...
-building '/nix/store/4b680nz4sl4i1shn9pk2pclbhypivzwz-dbus-1.drv'...
-building '/nix/store/pz4k3mjp70d27f561zvzcvmrvib0g6jy-unit-accounts-daemon.service.drv'...
-building '/nix/store/v0ndzmhzvafv3zvnwwn1qrb1ryxqz4da-X-Restart-Triggers-dbus.drv'...
-building '/nix/store/5a3pxfj4d7g7v6lbfjv3375q1ih29xp0-unit-polkit.service.drv'...
-building '/nix/store/izzlbdqk0l46nrksjjr6gspchbxx5rbd-unit-dbus.service.drv'...
-building '/nix/store/mvan4f6f20vga8n8b154n9xf0k3dgrp7-unit-dbus.service.drv'...
-building '/nix/store/5bhyvwh65jdnf5nbgjd8pabvkf6904rj-user-units.drv'...
-building '/nix/store/15b8gv92k0ibyl87h7wavf9wirbhw4pd-system-units.drv'...
-building '/nix/store/fxj02mdlv9qq0py2nqfxpxnim3icfrcc-etc.drv'...
-building '/nix/store/rj7kra80i3xnsr5rmmv6914prpkjqvpp-nixos-system-compassion-25.05.803579.70c74b02eac4.drv'...
-stopping the following units: accounts-daemon.service, systemd-modules-load.service
-NOT restarting the following changed units: display-manager.service
+created 48430 symlinks in user environment
+building '/nix/store/k3wgwh1xnqagcwbvv80w75mv8igzrbq1-X-Restart-Triggers-polkit.drv'...
+building '/nix/store/rbq5xxaxx356vdcnh7nxaajzkv2966gd-dbus-1.drv'...
+building '/nix/store/i18nmk9zigglnmbidlvpvzlvgywq4myr-unit-accounts-daemon.service.drv'...
+building '/nix/store/nzjyj59npn55k2gpq64cq6swnh7l58bf-X-Restart-Triggers-dbus.drv'...
+building '/nix/store/hjb15gqc1kiwy2gxz78kghf0qhxfncvm-unit-polkit.service.drv'...
+building '/nix/store/5smhv2s65bbmn2dwx51wq7kyfhqli1fp-unit-dbus.service.drv'...
+building '/nix/store/w1d6x6z6aaj2fs8n35av100p7fjkmn97-unit-dbus.service.drv'...
+building '/nix/store/p1yxzh90hbb54dmbg4rjb0blbhs5l17c-user-units.drv'...
+building '/nix/store/6305pf2crr4ph5hjj9v3jjyqh3gwakrm-system-units.drv'...
+building '/nix/store/2qgiwqa2d8i0va58dzrkvz02sgm690p6-etc.drv'...
+building '/nix/store/nrb81a4vgmwmwsqcalyacsbkh5npd64w-nixos-system-compassion-25.05.803579.70c74b02eac4.drv'...
+stopping the following units: accounts-daemon.service
 activating the configuration...
 setting up /etc...
-removing obsolete symlink ‘/etc/profiles/per-user/astro’...
-removing obsolete symlink ‘/etc/X11/xorg.conf.d/10-evdev.conf’...
-removing obsolete symlink ‘/etc/pam.d/xlock’...
 reloading user units for astro...
 restarting sysinit-reactivation.target
 reloading the following units: dbus.service
 restarting the following units: polkit.service
-starting the following units: accounts-daemon.service, systemd-modules-load.service
-the following new units were started: NetworkManager-dispatcher.service
-Done. The new configuration is /nix/store/875mbvdmjyaai6cp108qiqz645xphb5p-nixos-system-compassion-25.05.803579.70c74b02eac4
+starting the following units: accounts-daemon.service
+the following new units were started: NetworkManager-dispatcher.service, sysinit-reactivation.target, systemd-tmpfiles-resetup.service
+Done. The new configuration is /nix/store/lfmiwla6vm8l39sad5yxx8ncid0502k9-nixos-system-compassion-25.05.803579.70c74b02eac4

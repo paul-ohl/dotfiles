@@ -37,7 +37,9 @@
     nodejs-slim
     obsidian
     openssl
+    qutebrowser
     ripgrep
+    rmpc
     stow
     tmux
     unzip
