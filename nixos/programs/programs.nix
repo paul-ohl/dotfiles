@@ -22,6 +22,8 @@
     enable = true;
     musicDirectory = "/home/astro/Music/zik";
     playlistDirectory = "/home/astro/Music/playlists";
+    user = "astro";
+    group = "audio";
   };
 
   environment.systemPackages = with pkgs; [
