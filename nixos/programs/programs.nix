@@ -21,6 +21,7 @@
     tmux
     alacritty
     alejandra
+    appimage-run
     bat
     clang
     curl
