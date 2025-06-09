@@ -24,6 +24,12 @@
     playlistDirectory = "/home/astro/Music/playlists";
     user = "astro";
     group = "audio";
+    extraConfig = ''
+      audio_output {
+        type "pipewire"
+        name "My PipeWire Output"
+      }
+    '';
   };
 
   environment.systemPackages = with pkgs; [
