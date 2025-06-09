@@ -147,7 +147,7 @@
       */
       # Check about:policies#documentation for options.
       policies = {
-        OfferToSaveLogins = true;
+        OfferToSaveLogins = false;
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
         EnableTrackingProtection = {
@@ -174,16 +174,32 @@
         # Valid strings for installation_mode are "allowed", "blocked",
         # "force_installed" and "normal_installed".
         ExtensionSettings = {
-          "*".installation_mode = "normal_installed"; # blocks all addons except the ones specified below
+          "*".installation_mode = "normal_installed";
+          "*".private_browsing = true;
+
           # uBlock Origin:
           "uBlock0@raymondhill.net" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-            installation_mode = "force_installed";
           };
-          # 1Password:
-          "{d634138d-c276-4fc8-924b-40a0ea21d284}" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/1password-x-password-manager/latest.xpi";
-            installation_mode = "force_installed";
+          # Bitwarden:
+          "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+          };
+          # Vimium:
+          "vimium-c@gdh1995.cn" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
+          };
+          # I still don't care about cookies:
+          "idcac-pub@guus.ninja" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
+          };
+          # Dark reader
+          "addon@darkreader.org" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+          };
+          # Sidebery
+          "{3c078156-979c-498b-8990-85f7987dd929}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/sidebery/latest.xpi";
           };
         };
 
