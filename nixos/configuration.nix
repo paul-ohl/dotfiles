@@ -259,15 +259,18 @@
     alacritty
     alejandra
     bat
+    clang
     curl
     discord
     dust
     eza
     fzf
+    gcc
     kitty
     libnotify
     neovim
     nerd-fonts.mononoki
+    nodejs-slim
     obsidian
     openssl
     ripgrep
