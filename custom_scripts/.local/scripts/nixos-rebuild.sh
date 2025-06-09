@@ -13,11 +13,11 @@
 # A rebuild script that commits on a successful build
 set -e
 
-# Edit your config
-$EDITOR configuration.nix
-
 # cd to your config dir
 pushd ~/dotfiles/nixos/
+
+# Edit your config
+$EDITOR configuration.nix
 
 # Early return if no changes were detected
 if git diff --quiet '*.nix'; then
@@ -36,7 +36,7 @@ git diff -U0 '*.nix'
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+sudo nixos-rebuild switch -I nixos-config=/home/astro/dotfiles/nixos/configuration.nix &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
