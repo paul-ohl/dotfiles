@@ -47,7 +47,6 @@
     gcc
     kitty
     libnotify
-    mpd
     neovim
     nerd-fonts.mononoki
     nodejs-slim
@@ -61,5 +60,6 @@
     unzip
     vlc
     wget
+    yazi
   ];
 }
