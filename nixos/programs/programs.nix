@@ -8,6 +8,40 @@
     ./desktop.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    alacritty
+    alejandra
+    appimage-run
+    bat
+    bitwarden
+    bitwarden-cli
+    btop
+    clang
+    curl
+    discord
+    dust
+    eza
+    fzf
+    gcc
+    kitty
+    lazygit
+    libnotify
+    neovim
+    nerd-fonts.mononoki
+    nodejs-slim
+    obsidian
+    openssl
+    qutebrowser
+    ripgrep
+    rmpc
+    stow
+    tmux
+    unzip
+    vlc
+    wget
+    yazi
+  ];
+
   programs = {
     zsh.enable = true;
     vim.enable = true;
@@ -36,37 +70,4 @@
       };
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    alacritty
-    alejandra
-    appimage-run
-    bat
-    bitwarden
-    bitwarden-cli
-    btop
-    clang
-    curl
-    discord
-    dust
-    eza
-    fzf
-    gcc
-    kitty
-    libnotify
-    neovim
-    nerd-fonts.mononoki
-    nodejs-slim
-    obsidian
-    openssl
-    qutebrowser
-    ripgrep
-    rmpc
-    stow
-    tmux
-    unzip
-    vlc
-    wget
-    yazi
-  ];
 }
