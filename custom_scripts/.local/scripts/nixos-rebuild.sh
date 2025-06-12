@@ -31,8 +31,7 @@ alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 # Shows your changes
-# git diff -U0 '*.nix'
-git difftool -yx 'nvim -dR' -- .
+git diff '*.nix'
 
 read -p "Continue with the changes?" -n1 answer
 echo ""
