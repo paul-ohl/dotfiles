@@ -18,6 +18,7 @@
     btop
     clang
     curl
+    delta
     discord
     dust
     eza
