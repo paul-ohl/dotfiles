@@ -38,8 +38,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    sonata
-
     alacritty
     alejandra
     appimage-run
