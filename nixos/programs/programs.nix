@@ -35,6 +35,7 @@
     obsidian
     ollama-cuda
     openssl
+    postman
     qutebrowser
     ripgrep
     rmpc
