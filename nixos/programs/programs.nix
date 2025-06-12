@@ -20,17 +20,21 @@
 
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/astro/Music/mp3s";
-    # playlistDirectory = "/home/astro/Music/playlists";
+    musicDirectory = "/home/astro/Music";
     user = "astro";
-    group = "astro audio pulse pulse-access";
-    network.listenAddress = "any";
     extraConfig = ''
       audio_output {
         type "pipewire"
-        name "My PipeWire Output"
+        name "Pipewire Output"
       }
     '';
+  };
+  systemd = {
+    services = {
+      mpd.environment = {
+        XDG_RUNTIME_DIR = "/run/user/1000";
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
