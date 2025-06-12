@@ -42,6 +42,8 @@
     alejandra
     appimage-run
     bat
+    bitwarden
+    bitwarden-cli
     btop
     clang
     curl
