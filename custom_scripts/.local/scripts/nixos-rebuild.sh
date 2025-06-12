@@ -20,7 +20,7 @@ pushd ~/dotfiles/nixos/
 $EDITOR configuration.nix
 
 # Early return if no changes were detected
-if git diff --quiet '*.nix'; then
+if git diff --quiet '.'; then
     echo "No changes detected, exiting."
     popd
     exit 0
@@ -31,8 +31,17 @@ alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 # Shows your changes
-git diff -U0 '*.nix'
+# git diff -U0 '*.nix'
+git difftool -yx 'nvim -dR' -- .
 
+read -p "Continue with the changes?" -n1 answer
+echo ""
+
+if [[ ! $answer =~ ^[Yy]$ ]]; then
+    echo "Aborting rebuild."
+    popd
+    exit 0
+fi
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
