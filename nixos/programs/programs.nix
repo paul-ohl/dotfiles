@@ -33,7 +33,7 @@
     nerd-fonts.mononoki
     nodejs-slim
     obsidian
-    # ollama-cuda
+    ollama-cuda
     openssl
     qutebrowser
     ripgrep
@@ -56,16 +56,23 @@
     };
   };
 
-  services.mpd = {
-    enable = true;
-    musicDirectory = "/home/astro/Music";
-    user = "astro";
-    extraConfig = ''
-      audio_output {
-        type "pipewire"
-        name "Pipewire Output"
-      }
-    '';
+  services = {
+    mpd = {
+      enable = true;
+      musicDirectory = "/home/astro/Music";
+      user = "astro";
+      extraConfig = ''
+        audio_output {
+          type "pipewire"
+          name "Pipewire Output"
+        }
+      '';
+    };
+    ollama = {
+      enable = true;
+      acceleration = "cuda";
+      loadModels = ["qwen3:14b" "wizardlm2:7b" "mistral:latest"];
+    };
   };
 
   systemd = {
