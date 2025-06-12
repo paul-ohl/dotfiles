@@ -63,6 +63,7 @@
       }
     '';
   };
+
   systemd = {
     services = {
       mpd.environment = {
@@ -70,4 +71,6 @@
       };
     };
   };
+
+  virtualisation.docker.enable = true;
 }
