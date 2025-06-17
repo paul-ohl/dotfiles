@@ -33,7 +33,7 @@
     nerd-fonts.mononoki
     nodejs-slim
     obsidian
-    ollama-cuda
+    # ollama-cuda
     openssl
     qutebrowser
     ripgrep
