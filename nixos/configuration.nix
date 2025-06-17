@@ -13,6 +13,12 @@
     ./user-setup.nix
   ];
 
+  # Create the directories I want present on the computer.
+  systemd.tmpfiles.rules = [
+    "d /opt/dev 0770 astro users -"
+    "d /opt/mds 0770 astro users -"
+  ];
+
   hardware.bluetooth.enable = true;
 
   # Bootloader.
