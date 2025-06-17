@@ -9,8 +9,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    webcamoid
-
     alacritty
     alejandra
     appimage-run
