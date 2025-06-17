@@ -27,6 +27,8 @@
     kitty
     lazygit
     libnotify
+    linuxKernel.packages.linux_6_6.broadcom_sta # Broadcom wireless driver
+    linuxKernel.packages.linux_6_6.facetimehd # FaceTime HD camera driver
     neovim
     nerd-fonts.mononoki
     nodejs-slim
