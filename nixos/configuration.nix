@@ -17,6 +17,7 @@
   systemd.tmpfiles.rules = [
     "d /opt/dev 0770 astro users -"
     "d /opt/mds 0770 astro users -"
+    "d /home/astro/Documents/dev 0770 astro users -"
   ];
 
   hardware.bluetooth.enable = true;
