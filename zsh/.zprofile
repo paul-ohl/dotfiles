@@ -7,7 +7,7 @@ export TERM="kitty"
 export TERMINAL="kitty"
 # export MUSPLAYER="termusic"
 # export BROWSER="qutebrowser"
-export BROWSER2="firefox"
+# export BROWSER2="firefox"
 # export DISPLAY=:0 # useful for some scripts
 
 # follow XDG base dir specification
@@ -16,7 +16,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # bootstrap .zshrc to ~/.config/zsh/.zshrc, any other zsh config files can also reside here
-# export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # history files
 export LESSHISTFILE="$XDG_CACHE_HOME/less_history"

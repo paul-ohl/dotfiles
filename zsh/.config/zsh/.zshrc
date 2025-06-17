@@ -51,22 +51,15 @@ setopt hist_find_no_dups
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
 alias open='xdg-open'
-alias so='source $XDG_CONFIG_HOME/zsh/.zshrc'
+alias so="source ${XDG_CONFIG_HOME}/zsh/.zshrc"
 alias weather='curl wttr.in'
 
 alias dc='docker compose'
 alias v='nvim'
 alias e='nvim'
 alias p='pnpm'
-alias t='tmux-open'
 alias ports='sudo ss -tulnp'
 alias s='kitten ssh'
-
-# Cargo aliases
-alias c='cargo'
-alias cwt='cargo watch -c -x "clippy --all-targets" -x "nextest run"'
-alias ct='cargo nextest run'
-alias cc='cargo clippy'
 
 # systemd aliases
 alias sss='sudo systemctl status'
@@ -92,11 +85,11 @@ alias g-='git switch -'
 
 # aliases depending on Rust tools
 if command -v eza &> /dev/null; then
-  alias ls='eza --icons -F'
-  alias la='eza -la --icons -F'
-  alias l='eza -lF --icons'
-  alias ll='eza -lF --icons'
-  alias tree='eza -TF --icons'
+  alias ls='eza --icons=always -F auto'
+  alias la='eza -lA --icons=always -F auto'
+  alias l='eza -l --icons=always -F auto'
+  alias ll='eza -l --icons=always -F auto'
+  alias tree='eza -T --icons=always -F auto'
 else
   alias ls='ls --color'
   alias la='ls -lAh'
