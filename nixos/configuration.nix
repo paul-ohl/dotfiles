@@ -11,6 +11,7 @@
     ./programs/programs.nix
     ./nvidia-setup.nix
     ./user-setup.nix
+    ./auto-update.nix
   ];
 
   # Create the directories I want present on the computer.
