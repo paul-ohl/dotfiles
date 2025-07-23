@@ -25,7 +25,7 @@ export PYTHON_HISTORY="$XDG_DATA_HOME/python/history"
 # add scripts to path
 export PATH="$PATH:$HOME/.local/scripts"
 # add local bin to path
-export PATH="$HOME/.local/bin:$PATH:$HOME/bin"
+# export PATH="$HOME/.local/bin:$PATH:$HOME/bin"
 
 # # moving other files and some other vars
 # export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
