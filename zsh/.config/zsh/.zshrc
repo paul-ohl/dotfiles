@@ -101,7 +101,7 @@ if command -v bat &> /dev/null; then
 fi
 
 # Yt-dlp alias
-alias zik-dl='yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o "%(uploader)s - %(title)s.%(ext)s" --embed-thumbnail --add-metadata'
+alias zik-dl='yt-dlp -f bestaudio --extract-audio --audio-format opus --audio-quality 0 -o "%(uploader)s - %(title)s.%(ext)s" --embed-thumbnail --add-metadata'
 
 # LazyDocker
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /yourpath/config:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
