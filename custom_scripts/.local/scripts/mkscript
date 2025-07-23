@@ -28,5 +28,5 @@ date=$(date +"%Y/%m/%d")
 # File creation
 touch "$name"
 chmod 755 "$name"
-printf '#!/bin/sh\n# Date: %s\n# Description: ' "$date" > "$name"
+printf '#!/bin/sh\n# Date: %s\n# Description: \n\necho "Hello, world!"' "$date" > "$name"
 nvim "$name"
