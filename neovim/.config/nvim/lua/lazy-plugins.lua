@@ -1,28 +1,23 @@
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
-  require 'plugins.telescope',
-  require 'plugins.lsp',
-  require 'plugins.colorschemes',
-  require 'plugins.todo-comments',
-  require 'plugins.mini',
-  require 'plugins.treesitter',
-  require 'plugins.nvim-tree',
-  require 'plugins.lazygit',
+  'NMAC427/guess-indent.nvim',
+  'psliwka/vim-smoothie',
+  { 'kylechui/nvim-surround', opts = {} },
+
   require 'plugins.harpoon',
-  require 'plugins.smoothie',
-  require 'plugins.copilot',
-  require 'plugins.markdown',
+  require 'plugins.lazygit',
+  require 'plugins.lsp',
+  require 'plugins.mini',
+  require 'plugins.nvim-tree',
+  require 'plugins.telescope',
+  require 'plugins.todo-comments',
+  require 'plugins.tokyonight',
+  require 'plugins.which-key',
 
-  'rhysd/conflict-marker.vim',
-  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
-  'projekt0n/github-nvim-theme',
-  { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
-
-  {
-    'saecki/crates.nvim',
-    event = { 'BufRead Cargo.toml' },
-    opts = {},
-  },
+  -- require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.lint',
+  -- require 'kickstart.plugins.neo-tree',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

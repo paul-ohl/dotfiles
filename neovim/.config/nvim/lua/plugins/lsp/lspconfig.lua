@@ -27,41 +27,14 @@ return {
         map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
         map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
         map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-        map(']', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+        map(']]', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+        map('[[', '<C-t>', 'Go back in tag stack')
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
         map('gt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
         map('<Leader>cs', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
         map('<Leader>cp', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
 
-        -- Highlight variable under cursor when not moving
         local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
-          local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            buffer = event.buf,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.document_highlight,
-          })
-
-          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-            buffer = event.buf,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.clear_references,
-          })
-
-          vim.api.nvim_create_autocmd('LspDetach', {
-            group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
-            callback = function(event2)
-              vim.lsp.buf.clear_references()
-              vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
-            end,
-          })
-        end
-
-        -- The following code creates a keymap to toggle inlay hints in your
-        -- code, if the language server you are using supports them
-        --
-        -- This may be unwanted, since they displace some of your code
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
           map('<leader>uh', function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
@@ -154,3 +127,5 @@ return {
     }
   end,
 }
+
+-- vim: ts=2 sts=2 sw=2 et
