@@ -23,7 +23,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME/less_history"
 export PYTHON_HISTORY="$XDG_DATA_HOME/python/history"
 
 # add scripts to path
-export PATH="$PATH:$HOME/.local/scripts"
+export PATH="$PATH:$HOME/.local/scripts:$HOME/.local/bin"
 # add local bin to path
 # export PATH="$HOME/.local/bin:$PATH:$HOME/bin"
 
