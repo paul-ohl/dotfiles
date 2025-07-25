@@ -14,7 +14,7 @@ require('lazy').setup({
   require 'plugins.markdown',
 
   'rhysd/conflict-marker.vim',
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   'projekt0n/github-nvim-theme',
   { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
 
@@ -23,10 +23,6 @@ require('lazy').setup({
     event = { 'BufRead Cargo.toml' },
     opts = {},
   },
-
-  -- I don't know if I want those...
-  -- require 'plugins.debug',
-  -- require 'plugins.lint',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
