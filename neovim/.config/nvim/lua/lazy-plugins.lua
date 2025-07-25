@@ -8,16 +8,18 @@ require('lazy').setup({
   require 'plugins.lazygit',
   require 'plugins.lsp',
   require 'plugins.mini',
+  require 'plugins.neorg',
   require 'plugins.nvim-tree',
   require 'plugins.telescope',
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',
   require 'plugins.which-key',
 
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.neo-tree',
+  -- require 'plugins.debug',
+  -- require 'plugins.indent_line',
+  -- require 'plugins.lint',
+  -- require 'plugins.neo-tree',
+  -- require 'plugins.org-mode',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
