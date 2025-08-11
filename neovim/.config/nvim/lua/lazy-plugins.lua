@@ -10,6 +10,7 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.neorg',
   require 'plugins.nvim-tree',
+  require 'plugins.oil',
   require 'plugins.telescope',
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',

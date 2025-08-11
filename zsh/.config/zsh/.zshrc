@@ -16,7 +16,7 @@ set -o vi
 
 # Keybindings
 bindkey '^R' history-incremental-search-backward
-bindkey '^H' backward-kill-word
+bindkey '^H' vi-backward-kill-word
 
 # # Setting locales, I know I shouldn't do it there
 # LANG="en_US.UTF-8"
