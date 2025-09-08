@@ -8,9 +8,9 @@ require('lazy').setup({
   require 'plugins.lazygit',
   require 'plugins.lsp',
   require 'plugins.mini',
-  require 'plugins.neorg',
   require 'plugins.nvim-tree',
   require 'plugins.oil',
+  require 'plugins.org-mode',
   require 'plugins.telescope',
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',
@@ -19,8 +19,7 @@ require('lazy').setup({
   -- require 'plugins.debug',
   -- require 'plugins.indent_line',
   -- require 'plugins.lint',
-  -- require 'plugins.neo-tree',
-  -- require 'plugins.org-mode',
+  -- require 'plugins.neorg',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

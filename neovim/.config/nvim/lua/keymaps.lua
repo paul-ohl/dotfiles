@@ -29,7 +29,6 @@ nmap('n', '<Leader><Leader>w', ':wa<CR>', { desc = 'Write all files' })
 nmap('n', '<Leader>q', ':quit<CR>', { desc = 'Quit file' })
 nmap('n', '<Leader><Leader>q', ':qa<CR>', { desc = 'Quit all' })
 nmap('n', 'U', '<C-r>')
-nmap('n', '<CR>', '<Nop>')
 nmap('i', '<C-h>', '<C-w>') -- Delete the previous word with <C-backspace>
 nmap('v', '<Leader>s', ':sort<CR>', { desc = 'Sort selected lines' })
 
@@ -50,8 +49,8 @@ nmap('n', '<Leader>v', '<C-w>v', { desc = 'Split window vertically' })
 nmap('n', '<Leader>S', '<C-w>s', { desc = 'Split window horizontally' })
 nmap({ 'n', 'v' }, '<C-d>', '<cmd>call smoothie#do("<C-D>") <CR>')
 nmap({ 'n', 'v' }, '<C-u>', '<cmd>call smoothie#do("<C-U>") <CR>')
-nmap({ 'n', 'v' }, ',', ';') -- This is more comfortable on ergo-l
-nmap({ 'n', 'v' }, ';', ',')
+nmap({ 'n', 'v', 'o' }, ',', ';') -- This is more comfortable on ergo-l
+nmap({ 'n', 'v', 'o' }, ';', ',')
 nmap('n', '+', 'j^zz')
 nmap('n', '-', 'k^zz')
 nmap('v', '<C-Down>', ":m '>+1<CR>gv=gv")

@@ -18,6 +18,6 @@ In Firefox:
 1. Go to "about:config"
 2. Enter toolkit.legacyUserProfileCustomizations.stylesheets and set it to `true`
 3. Go to "about:support"
-4. Use that page to access "Profile folder"
-5. In your file explorer: create a folder `chrome/`
+4. Use that page to access "Profile directory"
+5. In your file explorer: create a directory `chrome/`
 6. copy the `userChrome.css` file to that folder

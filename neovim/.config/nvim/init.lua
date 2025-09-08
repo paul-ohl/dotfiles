@@ -23,13 +23,13 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
--- [[ Configure and install plugins ]]
-require 'lazy-plugins'
-
 -- [[ Setup utility functions ]]
 require 'functions'
 
 -- [[ Setup my autocommands ]]
 require 'autocommands'
+
+-- [[ Configure and install plugins ]]
+require 'lazy-plugins'
 
 -- vim: ts=2 sts=2 sw=2 et

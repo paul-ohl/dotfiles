@@ -60,6 +60,7 @@ alias e='nvim'
 alias p='pnpm'
 alias ports='sudo ss -tulnp'
 alias s='kitten ssh'
+alias mmv='nvim +Oil'
 
 # systemd aliases
 alias sss='sudo systemctl status'
@@ -153,6 +154,9 @@ zinit cdreplay -q
 ###
 ### Tools integrations
 ###
+
+# Org mode
+alias org='nvim -c ":OrgIndex"'
 
 # fzf
 if command -v fzf &> /dev/null; then

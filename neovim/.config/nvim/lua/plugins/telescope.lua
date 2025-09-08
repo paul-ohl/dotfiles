@@ -17,11 +17,13 @@ return {
     },
     config = function()
       require('telescope').setup {
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          mappings = {
+            i = {
+              [''] = { '<c-s-w>', type = 'command' },
+            },
+          },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {

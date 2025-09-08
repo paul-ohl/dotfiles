@@ -30,7 +30,6 @@ return {
         opts = {},
       },
       'folke/lazydev.nvim',
-      'fang2hou/blink-copilot',
     },
 
     --- @module 'blink.cmp'
@@ -38,6 +37,9 @@ return {
     opts = {
       keymap = {
         preset = 'default',
+
+        ['<C-e>'] = { 'cancel' },
+        ['<C-a>'] = { 'select_and_accept' },
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -54,7 +56,10 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev', 'copilot' },
+        default = { 'lsp', 'path', 'snippets', 'lazydev' },
+        per_filetype = {
+          org = { 'orgmode' },
+        },
         providers = {
           lazydev = {
             module = 'lazydev.integrations.blink',
@@ -66,20 +71,14 @@ return {
           lsp = {
             score_offset = 50,
           },
-          copilot = {
-            name = 'copilot',
-            module = 'blink-copilot',
-            score_offset = 25,
-            async = true,
-            opts = {
-              max_completions = 2,
-              max_attempts = 3,
-              kind_name = 'Copilot',
-              kind_icon = '',
-            },
-          },
           snippets = {
             score_offset = 20,
+          },
+          orgmode = {
+            name = 'Orgmode',
+            module = 'orgmode.org.autocompletion.blink',
+            fallbacks = { 'buffer' },
+            score_offset = 100,
           },
         },
       },

@@ -9,33 +9,33 @@ return {
       end, { desc = 'Toggle AI autocompletion' })
 
       require('copilot').setup {
-        panel = { enabled = false },
-        suggestion = {
+        panel = {
           enabled = false,
-          auto_trigger = false,
+        },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
           debounce = 75,
           keymap = {
-            accept = '<c-y>',
+            accept = '<Tab>',
             accept_word = false,
             accept_line = false,
-            next = '<C-a>',
-            prev = '<C-u>',
+            next = '<C-n>',
+            prev = '<C-p>',
             dismiss = '<C-e>',
           },
         },
         filetypes = {
-          yaml = false,
-          markdown = false,
-          help = false,
+          TelescopePrompt = false,
+          cvs = false,
           gitcommit = false,
           gitrebase = false,
-          TelescopePrompt = false,
+          help = false,
           hgcommit = false,
           svn = false,
-          cvs = false,
           ['.'] = false,
         },
-        copilot_node_command = 'node', -- Node.js version must be > 18.x
+        copilot_node_command = 'node',
         server_opts_overrides = {},
       }
     end,
