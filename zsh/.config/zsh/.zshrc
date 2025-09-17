@@ -172,7 +172,7 @@ function yy() {
 }
 
 # Cargo
-# source "$HOME/.cargo/env"
+source "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/home/pohl/.local/share/pnpm"
