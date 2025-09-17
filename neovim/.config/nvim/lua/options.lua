@@ -1,4 +1,4 @@
--- [[ Setting options ]]
+-- [-- [[ Setting options ]]
 
 -- Make line numbers default
 vim.opt.number = true
@@ -59,5 +59,10 @@ vim.opt.termguicolors = true
 
 -- Disable highlighting of search results
 vim.opt.hlsearch = false
+
+-- Default tabsize
+vim.opt.shiftwidth = 2
+vim.opt.smarttab = true
+vim.opt.expandtab = true
 
 -- vim: ts=2 sts=2 sw=2 et

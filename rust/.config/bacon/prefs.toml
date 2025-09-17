@@ -54,7 +54,3 @@ T = "job:tarpaulin"
 d = "job:doc-open"
 t = "job:test"
 r = "job:run"
-
-[jobs.test]
-command = ["cargo", "nextest", "run"]
-allow_warnings = true

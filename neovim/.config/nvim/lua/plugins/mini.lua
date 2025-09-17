@@ -2,20 +2,18 @@ return {
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
+      --  Full list: https://github.com/echasnovski/mini.nvim
       -- Better Around/Inside textobjects
       require('mini.ai').setup { n_lines = 500 }
 
-      -- Simple and easy statusline.
-      local statusline = require 'mini.statusline'
-      -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+      -- align text
+      require('mini.align').setup {}
 
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
-
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      require('mini.splitjoin').setup {
+        mappings = {
+          toggle = 'gs',
+        },
+      }
     end,
   },
 }

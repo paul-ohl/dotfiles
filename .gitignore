@@ -3,3 +3,4 @@ folders.cfg.bckp
 neovim/.config/nvim/lazy-lock.json
 karabiner/.config/karabiner/automatic_backups/
 kanata.service
+nixos-switch.log

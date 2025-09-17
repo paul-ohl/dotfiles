@@ -16,7 +16,7 @@ set -o vi
 
 # Keybindings
 bindkey '^R' history-incremental-search-backward
-bindkey '^H' backward-kill-word
+bindkey '^H' vi-backward-kill-word
 
 # # Setting locales, I know I shouldn't do it there
 # LANG="en_US.UTF-8"
@@ -60,6 +60,7 @@ alias e='nvim'
 alias p='pnpm'
 alias ports='sudo ss -tulnp'
 alias s='kitten ssh'
+alias mmv='nvim +Oil'
 
 # systemd aliases
 alias sss='sudo systemctl status'
@@ -101,7 +102,7 @@ if command -v bat &> /dev/null; then
 fi
 
 # Yt-dlp alias
-alias zik-dl='yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o "%(uploader)s - %(title)s.%(ext)s" --embed-thumbnail --add-metadata'
+alias zik-dl='yt-dlp -f bestaudio --extract-audio --audio-format opus --audio-quality 0 -o "%(uploader)s - %(title)s.%(ext)s" --embed-thumbnail --add-metadata'
 
 # LazyDocker
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /yourpath/config:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
@@ -153,6 +154,9 @@ zinit cdreplay -q
 ###
 ### Tools integrations
 ###
+
+# Org mode
+alias org='nvim -c ":OrgIndex"'
 
 # fzf
 if command -v fzf &> /dev/null; then

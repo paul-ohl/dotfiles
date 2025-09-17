@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Date: 2025/08/28
+# Description: Generate text with ollama and copy to clipboard
+
+PROMPT="$*"
+
+# Check if PROMPT is set
+if [ -z "$PROMPT" ]; then
+  echo "Error: PROMPT not set."
+  echo "Usage: clip_ai Your prompt here"
+  exit 1
+fi
+
+# Generate text with ollama in a temporary file
+TMP_FILE=$(mktemp)
+ollama run qwen3:30b --hidethinking <<< "$PROMPT" > "$TMP_FILE"
+
+# Edit the file in nvim
+nvim "$TMP_FILE"
+
+# Read the output from the temporary file
+OUTPUT=$(cat "$TMP_FILE")
+rm "$TMP_FILE"
+
+# Copy the output to clipboard using wl-copy
+echo "$OUTPUT" | wl-copy
+echo "Copied to clipboard ✔"
+notify-send "clip_ai" "Copied to clipboard ✔"

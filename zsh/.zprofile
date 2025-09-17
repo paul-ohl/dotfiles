@@ -6,8 +6,7 @@ export EDITOR="nvim"
 export TERM="kitty"
 export TERMINAL="kitty"
 # export MUSPLAYER="termusic"
-# export BROWSER="qutebrowser"
-# export BROWSER2="firefox"
+export BROWSER="firefox"
 # export DISPLAY=:0 # useful for some scripts
 
 # follow XDG base dir specification
@@ -23,7 +22,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME/less_history"
 export PYTHON_HISTORY="$XDG_DATA_HOME/python/history"
 
 # add scripts to path
-export PATH="$PATH:$HOME/.local/scripts"
+export PATH="$PATH:$HOME/.local/scripts:$HOME/.local/bin"
 # add local bin to path
 # export PATH="$HOME/.local/bin:$PATH:$HOME/bin"
 

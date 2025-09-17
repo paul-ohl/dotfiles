@@ -1,32 +1,25 @@
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
-  require 'plugins.telescope',
-  require 'plugins.lsp',
-  require 'plugins.colorschemes',
-  require 'plugins.todo-comments',
-  require 'plugins.mini',
-  require 'plugins.treesitter',
-  require 'plugins.nvim-tree',
-  require 'plugins.lazygit',
+  'NMAC427/guess-indent.nvim',
+  'psliwka/vim-smoothie',
+  { 'kylechui/nvim-surround', opts = {} },
+
   require 'plugins.harpoon',
-  require 'plugins.smoothie',
-  require 'plugins.copilot',
-  require 'plugins.markdown',
+  require 'plugins.lazygit',
+  require 'plugins.lsp',
+  require 'plugins.mini',
+  require 'plugins.nvim-tree',
+  require 'plugins.oil',
+  require 'plugins.org-mode',
+  require 'plugins.telescope',
+  require 'plugins.todo-comments',
+  require 'plugins.tokyonight',
+  require 'plugins.which-key',
 
-  'rhysd/conflict-marker.vim',
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'projekt0n/github-nvim-theme',
-  { 'kylechui/nvim-surround', opts = {} }, -- Adds surround vim motions
-
-  {
-    'saecki/crates.nvim',
-    event = { 'BufRead Cargo.toml' },
-    opts = {},
-  },
-
-  -- I don't know if I want those...
   -- require 'plugins.debug',
+  -- require 'plugins.indent_line',
   -- require 'plugins.lint',
+  -- require 'plugins.neorg',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
