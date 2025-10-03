@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# A script that will install tpm (tmux package manager) and install the plugins
+
+# Check if fzf is installed
+if ! command -v fzf &> /dev/null; then
+    echo "Error: fzf is not installed. Please install fzf before running this script."
+    exit 1
+fi
+
+# Define TPM location
+TPM_DIR="$HOME/.local/share/tmux/tpm"
+TPM_SCRIPT="$TPM_DIR/tpm"
+
+# Check if TPM exists, if not clone it
+if [ ! -d "$TPM_DIR" ]; then
+    echo "TPM not found. Installing..."
+    git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to clone TPM repository"
+        exit 1
+    fi
+
+    # Make sure the tpm script is executable
+    chmod +x "$TPM_SCRIPT"
+
+    echo "TPM installed successfully"
+fi
+
+# Check if we're in a tmux session
+if [ -n "$TMUX" ]; then
+    echo "Running TPM install..."
+
+    # Source/run the TPM script
+    "$TPM_SCRIPT"
+
+    # Install/update plugins
+    "$TPM_DIR/bindings/install_plugins"
+else
+    echo "Not in a tmux session. Skipping TPM plugin installation."
+    echo "Start tmux and run this script again, or use 'prefix + I' to install plugins."
+fi
