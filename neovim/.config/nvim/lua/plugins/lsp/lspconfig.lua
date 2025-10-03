@@ -85,6 +85,7 @@ return {
       -- json_ls = {},
       rust_analyzer = {},
       ts_ls = {},
+      tailwindcss = {},
 
       lua_ls = {
         settings = {
