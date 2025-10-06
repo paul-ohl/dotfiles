@@ -16,6 +16,7 @@ require('lazy').setup({
   require 'plugins.tokyonight',
   require 'plugins.which-key',
 
+  -- require 'plugins.avante',
   -- require 'plugins.debug',
   -- require 'plugins.indent_line',
   -- require 'plugins.lint',
