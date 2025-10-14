@@ -145,8 +145,8 @@ zinit snippet OMZP::sudo
 
 # Load completions
 autoload -U compinit && compinit
-if [[ ":$FPATH:" != *":/home/pohl/.zsh/completions:"* ]]; then
-  export FPATH="/home/pohl/.zsh/completions:$FPATH";
+if [[ ":$FPATH:" != *":/home/astro/.zsh/completions:"* ]]; then
+  export FPATH="/home/astro/.zsh/completions:$FPATH";
 fi
 
 zinit cdreplay -q
@@ -179,7 +179,7 @@ function yy() {
 source "$HOME/.cargo/env"
 
 # pnpm
-export PNPM_HOME="/home/pohl/.local/share/pnpm"
+export PNPM_HOME="/home/astro/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -189,7 +189,7 @@ esac
 # Deno
 # If the path exists, load the Deno environment
 if [ -e "$HOME/.deno/env" ]; then
-  . "/home/pohl/.deno/env"
+  . "/home/astro/.deno/env"
 fi
 
 # vim: ts=2 sts=2 sw=2 et

@@ -3,4 +3,4 @@ linker = "/usr/bin/clang"
 rustflags = ["-C", "link-arg=--ld-path=/usr/bin/mold"]
 
 [build]
-rustc-wrapper = "/home/pohl/.cargo/bin/sccache"
+rustc-wrapper = "/home/astro/.cargo/bin/sccache"
