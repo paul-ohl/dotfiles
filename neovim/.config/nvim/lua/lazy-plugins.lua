@@ -3,6 +3,7 @@ require('lazy').setup({
   'NMAC427/guess-indent.nvim',
   'psliwka/vim-smoothie',
   { 'kylechui/nvim-surround', opts = {} },
+  { 'akinsho/git-conflict.nvim', version = '*', config = true },
 
   require 'plugins.harpoon',
   require 'plugins.lazygit',
