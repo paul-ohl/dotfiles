@@ -4,7 +4,7 @@ import = ["~/.config/alacritty/nord.toml"]
 
 [window]
 decorations = "None"
-opacity = 0.85
+opacity = 0.98
 startup_mode = "Maximized"
 title = "Alacritty"
 dynamic_title = false

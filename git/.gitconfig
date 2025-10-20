@@ -8,7 +8,7 @@ email = paul.lv.ohl@gmail.com
 [pull]
     rebase = false
 [core]
-    excludesfile = /home/pohl/.gitignore_global
+    excludesfile = /home/astro/.gitignore_global
     pager = delta
 
 [interactive]
