@@ -117,10 +117,10 @@ eval "alias $(grep -v "^#" "$HOME/.config/zsh/foldersrc" \
   | tr "\"\n" "' ")"
 
 # Load device-specific config
-if ! [ -e "$XDG_CONFIG_HOME/zsh/.device-specific.sh" ]; then
-  touch "$XDG_CONFIG_HOME/zsh/.device-specific.sh" 
+if ! [ -e "$XDG_CONFIG_HOME/zsh/device-specific.sh" ]; then
+  touch "$XDG_CONFIG_HOME/zsh/device-specific.sh" 
 fi
-source "$XDG_CONFIG_HOME/zsh/.device-specific.sh"
+source "$XDG_CONFIG_HOME/zsh/device-specific.sh"
 
 ###
 ### Plugins
@@ -134,19 +134,24 @@ if [[ ! -d "$ZINIT_HOME" ]]; then
 fi
 source "${ZINIT_HOME}/zinit.zsh"
 
+zinit ice wait lucid
 zinit light zsh-users/zsh-syntax-highlighting
 
+zinit ice wait lucid
 zinit light zsh-users/zsh-completions
 
 # Snippets
 zinit snippet OMZP::sudo
 # zinit snippet OMZP::ssh
-# zinit snippet OMZP::rust
+zinit snippet OMZP::rust
 
-# Load completions
-autoload -U compinit && compinit
-if [[ ":$FPATH:" != *":/home/astro/.zsh/completions:"* ]]; then
-  export FPATH="/home/astro/.zsh/completions:$FPATH";
+# Instead of loading immediately
+autoload -Uz compinit
+# Load once per day
+if [[ -n ${ZDOTDIR}/.zcompdump(#qNmh+24) ]]; then
+  compinit
+else
+  compinit -C
 fi
 
 zinit cdreplay -q
@@ -165,6 +170,13 @@ else
   echo "fzf not found, skipping integration"
 fi
 
+# Cargo - lazy load
+cargo() {
+  unfunction cargo
+  source "$HOME/.cargo/env"
+  cargo "$@"
+}
+
 # Yazi
 function yy() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -174,9 +186,6 @@ function yy() {
   fi
   rm -f -- "$tmp"
 }
-
-# Cargo
-source "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/home/astro/.local/share/pnpm"
