@@ -160,9 +160,6 @@ zinit cdreplay -q
 ### Tools integrations
 ###
 
-# Org mode
-alias org='nvim -c ":OrgIndex"'
-
 # fzf
 if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
@@ -200,5 +197,8 @@ esac
 if [ -e "$HOME/.deno/env" ]; then
   . "/home/astro/.deno/env"
 fi
+
+# ZK
+export ZK_NOTEBOOK_DIR="$HOME/Documents/org/"
 
 # vim: ts=2 sts=2 sw=2 et

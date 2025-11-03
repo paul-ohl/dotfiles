@@ -16,6 +16,7 @@ require('lazy').setup({
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',
   require 'plugins.which-key',
+  require 'plugins.zk',
 
   -- require 'plugins.avante',
   -- require 'plugins.debug',

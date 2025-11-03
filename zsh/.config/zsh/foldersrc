@@ -5,10 +5,10 @@ dl			~/Downloads/
 dot			~/dotfiles/
 sc			~/dotfiles/custom_scripts/.local/scripts/
 conf		~/dotfiles/neovim/.config/nvim/
-zik			~/Music/
+zik			~/Music/zik/
 dev 		~/Documents/dev/
-obs			~/Documents/Obsidian/
 mds 		/opt/mds/
 pro 		/opt/dev/
 astro		~/Documents/dev/astrocephale/
 hum			~/Documents/dev/hummingbird/
+org	    	~/Documents/org
