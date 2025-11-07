@@ -13,6 +13,7 @@ return {
         { '<leader>u', group = 'Toggles', icon = '' },
         { '<leader>g', group = '[G]it', icon = '' },
         { '<leader>gc', icon = '󱆄' },
+        { '<leader>gh', icon = '󰋚' },
         { '<leader>c', group = '[C]ode', icon = '󰅩' },
         { '<leader>co', icon = '' },
         { '<leader>ca', icon = '󱡄' },

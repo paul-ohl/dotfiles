@@ -13,6 +13,7 @@ require('lazy').setup({
   require 'plugins.oil',
   require 'plugins.org-mode',
   require 'plugins.telescope',
+  require 'plugins.telescope-git-file-history',
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',
   require 'plugins.which-key',
