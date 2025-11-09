@@ -1,3 +1,4 @@
+-- copilot.lua
 return {
   { -- Copilot completion
     'zbirenbaum/copilot.lua',
@@ -7,7 +8,6 @@ return {
       vim.keymap.set('n', '<Leader>ua', function()
         require('copilot.suggestion').toggle_auto_trigger()
       end, { desc = 'Toggle AI autocompletion' })
-
       require('copilot').setup {
         panel = {
           enabled = false,
@@ -17,11 +17,12 @@ return {
           auto_trigger = true,
           debounce = 75,
           keymap = {
+            -- Tab accepts Copilot when Blink menu is not visible
             accept = '<Tab>',
             accept_word = false,
             accept_line = false,
-            next = '<C-n>',
-            prev = '<C-p>',
+            next = false, -- Disabled: reserved for snippet navigation
+            prev = false, -- Disabled: reserved for snippet navigation
             dismiss = '<C-e>',
           },
         },

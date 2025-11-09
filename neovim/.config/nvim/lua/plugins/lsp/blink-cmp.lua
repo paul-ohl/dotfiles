@@ -1,9 +1,9 @@
+-- blink-cmp.lua
 return {
   { -- Autocompletion
     'saghen/blink.cmp',
     event = 'VimEnter',
     version = '1.*',
-
     dependencies = {
       -- Snippet Engine
       {
@@ -27,34 +27,59 @@ return {
             end,
           },
         },
+        config = function()
+          local ls = require 'luasnip'
+          -- <C-n> jumps to next placeholder in snippet
+          vim.keymap.set({ 'i', 's' }, '<C-n>', function()
+            if ls.jumpable(1) then
+              ls.jump(1)
+            end
+          end, { silent = true })
+          -- <C-p> jumps to previous placeholder in snippet
+          vim.keymap.set({ 'i', 's' }, '<C-p>', function()
+            if ls.jumpable(-1) then
+              ls.jump(-1)
+            end
+          end, { silent = true })
+        end,
         opts = {},
       },
       'folke/lazydev.nvim',
     },
-
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
     opts = {
       keymap = {
-        preset = 'default',
+        preset = 'enter', -- This makes <CR> insert newline without accepting completion
+        ['<C-space>'] = { 'show', 'hide' },
+        ['<C-e>'] = { 'hide', 'fallback' },
+        ['<C-y>'] = { 'select_and_accept' },
 
-        ['<C-e>'] = { 'cancel' },
-        ['<C-a>'] = { 'select_and_accept' },
+        -- Tab accepts Blink completion when menu is visible
+        ['<Tab>'] = {
+          function(cmp)
+            if cmp.is_visible() then
+              return cmp.accept()
+            end
+          end,
+          'fallback',
+        },
 
-        -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-        --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+        -- Snippet navigation only via <C-n>/<C-p>, no menu navigation bindings here
       },
-
       appearance = {
         nerd_font_variant = 'mono',
       },
-
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
         documentation = { auto_show = true, auto_show_delay_ms = 500 },
-      },
 
+        menu = {
+          -- Prevent snippets from being selected by default
+          auto_show = true,
+        },
+      },
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
         per_filetype = {
@@ -63,30 +88,11 @@ return {
         providers = {
           lazydev = {
             module = 'lazydev.integrations.blink',
-            score_offset = 100,
-          },
-          path = {
-            score_offset = 75,
-          },
-          lsp = {
-            score_offset = 50,
-          },
-          snippets = {
-            score_offset = 20,
-          },
-          orgmode = {
-            name = 'Orgmode',
-            module = 'orgmode.org.autocompletion.blink',
-            fallbacks = { 'buffer' },
-            score_offset = 100,
           },
         },
       },
-
       snippets = { preset = 'luasnip' },
-
       fuzzy = { implementation = 'prefer_rust_with_warning' },
-
       -- Shows a signature help window while you type arguments for a function
       signature = { enabled = true },
     },
@@ -107,5 +113,4 @@ return {
     end,
   },
 }
-
 -- vim: ts=2 sts=2 sw=2 et
