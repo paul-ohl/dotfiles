@@ -66,7 +66,7 @@ nmap('n', 'î', "'t", { desc = 'Go to mark t' })
 -- yanking and deleting
 nmap('n', '<Leader>y', '"+y', { desc = 'copy to clipboard' })
 nmap('n', '<Leader>Y', '"+y$', { desc = 'copy to clipboard until end of line' })
-nmap('n', '<Leader>d', '"+d', { desc = 'delete to clipboard' })
+nmap('n', '<Leader>d', '"_d', { desc = 'delete to void' })
 
 -- Tabs
 nmap('n', '<Tab>', 'gt', { desc = 'Go to next Tab' })

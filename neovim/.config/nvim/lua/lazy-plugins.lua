@@ -11,19 +11,18 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.nvim-tree',
   require 'plugins.oil',
-  require 'plugins.org-mode',
   require 'plugins.telescope',
   require 'plugins.telescope-git-file-history',
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',
   require 'plugins.which-key',
   require 'plugins.zk',
+  require 'plugins.typst',
 
   -- require 'plugins.avante',
   -- require 'plugins.debug',
   -- require 'plugins.indent_line',
   -- require 'plugins.lint',
-  -- require 'plugins.neorg',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

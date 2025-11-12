@@ -31,6 +31,10 @@ return {
         { '<leader>w', hidden = true },
         { '<leader>*', icon = '󰈞' },
         { '<leader><leader>', icon = '' },
+        { '<leader>o', group = '[O]rg/Zk', icon = '' },
+        { '<leader>oi', icon = '', desc = 'open index note' },
+        { '<leader>of', icon = '', desc = 'find notes' },
+        { '<leader>on', icon = '', desc = 'new note' },
       },
 
       plugins = {
