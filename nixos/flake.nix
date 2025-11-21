@@ -13,7 +13,8 @@
 
       # Helper function to create system configurations
       mkSystem = hostname: extraModules: nixpkgs.lib.nixosSystem {
-        inherit system;
+        inherit system username;
+
         specialArgs = {
           inherit inputs;
           pkgs-unstable = import nixpkgs-unstable {
@@ -22,8 +23,8 @@
           };
         };
         modules = [
-          /etc/nixos/hardware-configuration.nix
           ./hosts/${hostname}/configuration.nix
+          ./hosts/${hostname}/hardware-configuration.nix
           ./common.nix
         ] ++ extraModules;
       };
