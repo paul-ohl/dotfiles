@@ -14,6 +14,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "Astrocephale";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
@@ -51,23 +52,18 @@
 
   # Common packages
   environment.systemPackages = with pkgs; [
-    vim
-    pkgs-unstable.nvim
-    wget
     git
     htop
+    stow
+    vim
+    wget
+    zsh
+  ];
+  environment.systemPackages = with pkgs-unstable; [
+    nvim
   ];
 
-  # Enable sound
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
+  programs.firefox.enable = true;
 
   # This value determines the NixOS release
   system.stateVersion = "25.05";

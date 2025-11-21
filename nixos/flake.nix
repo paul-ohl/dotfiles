@@ -46,6 +46,7 @@
         knight = mkSystem "knight" [
           ./modules/tailscale.nix
           ./modules/docker.nix
+          ./modules/audio.nix
           # ./modules/gaming.nix
         ];
       };
