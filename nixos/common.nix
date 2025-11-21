@@ -2,7 +2,7 @@
 ## Common configuration shared across all hosts
 ##
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   nix.settings = {
@@ -21,13 +21,13 @@
   networking.networkmanager.enable = true;
 
   # Time zone and internationalization
-  time.timeZone = "Europe/Paris";  # Adjust to your timezone
+  time.timeZone = "Europe/Paris"; # Adjust to your timezone
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Common packages
   environment.systemPackages = with pkgs; [
     vim
-    nvim
+    pkgs-unstable.nvim
     wget
     git
     htop

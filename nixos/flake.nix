@@ -21,9 +21,9 @@
           };
         };
         modules = [
+          /etc/nixos/hardware-configuration.nix
           ./hosts/${hostname}/configuration.nix
-          ./hosts/${hostname}/hardware-configuration.nix
-          ./modules/common.nix
+          ./common.nix
         ] ++ extraModules;
       };
     in
