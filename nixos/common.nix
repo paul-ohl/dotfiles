@@ -53,6 +53,7 @@
 
   # Common packages
   environment.systemPackages = with pkgs; [
+    fzf
     git
     htop
     lazygit

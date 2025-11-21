@@ -11,7 +11,6 @@
 
   # Host-specific packages
   environment.systemPackages = with pkgs; [
-    hello
     # Add packages specific to this machine
   ] ++ [
     # Example of using unstable packages
