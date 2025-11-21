@@ -58,9 +58,9 @@
     vim
     wget
     zsh
-  ];
-  environment.systemPackages = with pkgs-unstable; [
-    nvim
+
+    # Unstable packages
+    pkgs-unstable.nvim
   ];
 
   programs.firefox.enable = true;
