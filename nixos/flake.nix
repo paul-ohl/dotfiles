@@ -42,6 +42,7 @@
         cornifer = mkSystem "cornifer" [
           ./modules/tailscale.nix
           ./modules/docker.nix
+          ./modules/ssh-daemon.nix
         ];
 
         knight = mkSystem "knight" [
