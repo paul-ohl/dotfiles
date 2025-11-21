@@ -13,10 +13,10 @@
 
       # Helper function to create system configurations
       mkSystem = hostname: extraModules: nixpkgs.lib.nixosSystem {
-        inherit system username;
+        inherit system;
 
         specialArgs = {
-          inherit inputs;
+          inherit inputs username;
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;

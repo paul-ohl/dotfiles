@@ -57,13 +57,13 @@
     stow
     vim
     wget
-    zsh
 
     # Unstable packages
-    pkgs-unstable.nvim
+    pkgs-unstable.neovim
   ];
 
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
 
   # This value determines the NixOS release
   system.stateVersion = "25.05";
