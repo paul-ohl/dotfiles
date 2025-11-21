@@ -2,7 +2,7 @@
 ## Common configuration shared across all hosts
 ##
 
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, username, ... }:
 
 {
   nix.settings = {
@@ -10,19 +10,44 @@
     auto-optimise-store = true;
   };
 
+  # Define your user account
+  users.users.${username} = {
+    isNormalUser = true;
+    description = "Astrocephale";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Bootloader (adjust as needed)
-  boot.loader.systemd-boot.enable = true;
+  # Bootloader.
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    useOSProber = false;
+  };
 
   # Networking
   networking.networkmanager.enable = true;
 
   # Time zone and internationalization
   time.timeZone = "Europe/Paris"; # Adjust to your timezone
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "fr_FR.UTF-8";
+      LC_IDENTIFICATION = "fr_FR.UTF-8";
+      LC_MEASUREMENT = "fr_FR.UTF-8";
+      LC_MONETARY = "fr_FR.UTF-8";
+      LC_NAME = "fr_FR.UTF-8";
+      LC_NUMERIC = "fr_FR.UTF-8";
+      LC_PAPER = "fr_FR.UTF-8";
+      LC_TELEPHONE = "fr_FR.UTF-8";
+      LC_TIME = "fr_FR.UTF-8";
+    };
+  };
 
   # Common packages
   environment.systemPackages = with pkgs; [

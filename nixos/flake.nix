@@ -9,6 +9,7 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
     let
       system = "x86_64-linux";
+      username = "astro";
 
       # Helper function to create system configurations
       mkSystem = hostname: extraModules: nixpkgs.lib.nixosSystem {
@@ -32,16 +33,20 @@
         hornet = mkSystem "hornet" [
           ./modules/tailscale.nix
           ./modules/nvidia.nix
-          ./modules/gaming.nix
+          # ./modules/gaming.nix
+          ./modules/audio.nix
+          ./modules/docker.nix
         ];
 
         cornifer = mkSystem "cornifer" [
           ./modules/tailscale.nix
+          ./modules/docker.nix
         ];
 
         knight = mkSystem "knight" [
           ./modules/tailscale.nix
-          ./modules/gaming.nix
+          ./modules/docker.nix
+          # ./modules/gaming.nix
         ];
       };
     };

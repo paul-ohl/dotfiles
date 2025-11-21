@@ -2,7 +2,7 @@
 
 {
   # Host-specific configuration for hornet
-  networking.hostName = "hornet";
+  networking.hostName = "knight";
 
   # Enable X11 and desktop environment
   services.xserver.enable = true;
