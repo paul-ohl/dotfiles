@@ -2,7 +2,7 @@
 ## Common configuration shared across all hosts
 ##
 
-{ config, pkgs, pkgs-unstable, username, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   nix.settings = {
@@ -11,7 +11,7 @@
   };
 
   # Define your user account
-  users.users.${username} = {
+  users.users.astro = {
     isNormalUser = true;
     description = "Astrocephale";
     shell = pkgs.zsh;
@@ -55,11 +55,12 @@
   environment.systemPackages = with pkgs; [
     git
     htop
+    lazygit
     stow
     vim
     wget
     zsh
-
+  ] ++ [
     # Unstable packages
     pkgs-unstable.nvim
   ];

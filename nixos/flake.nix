@@ -9,14 +9,13 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
     let
       system = "x86_64-linux";
-      username = "astro";
 
       # Helper function to create system configurations
       mkSystem = hostname: extraModules: nixpkgs.lib.nixosSystem {
         inherit system;
 
         specialArgs = {
-          inherit inputs username;
+          inherit inputs;
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;

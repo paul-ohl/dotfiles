@@ -1,9 +1,9 @@
-{ config, lib, pkgs, inputs, username, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   virtualisation.docker = {
     enable = true;
   };
 
-  users.users.${username}.extraGroups = [ "docker" ];
+  users.users.astro.extraGroups = [ "docker" ];
 }

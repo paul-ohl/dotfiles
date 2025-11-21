@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, username, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   services.openssh = {
@@ -7,7 +7,7 @@
     settings = {
       PasswordAuthentication = true;
       AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-      # AllowUsers = [ username ];
+      # AllowUsers = [ astro ];
       # UseDns = true;
       # X11Forwarding = false;
       PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
