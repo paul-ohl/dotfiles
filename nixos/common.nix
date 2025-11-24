@@ -53,19 +53,40 @@
 
   # Common packages
   environment.systemPackages = with pkgs; [
+    alejandra
+    fzf
+    gcc
     git
+    gnumake
     htop
-    lazygit
     stow
+    tmux
+    unzip
     vim
     wget
     zsh
   ] ++ [
     # Unstable packages
-    pkgs-unstable.nvim
+    pkgs-unstable.bat
+    pkgs-unstable.btop
+    pkgs-unstable.delta
+    pkgs-unstable.dust
+    pkgs-unstable.eza
+    pkgs-unstable.fd
+    pkgs-unstable.lazygit
+    pkgs-unstable.neovim
+    pkgs-unstable.nerd-fonts.mononoki
+    pkgs-unstable.ripgrep
   ];
 
-  programs.firefox.enable = true;
+  programs.zsh.enable = true;
+
+  # Create the directories I want present on the computer.
+  systemd.tmpfiles.rules = [
+    "d /opt/dev 0770 astro users -"
+    "d /opt/mds 0770 astro users -"
+    "d /home/astro/Documents/dev 0770 astro users -"
+  ];
 
   # This value determines the NixOS release
   system.stateVersion = "25.05";
