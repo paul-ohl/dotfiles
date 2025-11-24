@@ -31,24 +31,25 @@
     {
       nixosConfigurations = {
         hornet = mkSystem "hornet" [
-          ./modules/tailscale.nix
-          ./modules/nvidia.nix
-          # ./modules/gaming.nix
           ./modules/audio.nix
           ./modules/docker.nix
+          ./modules/firefox.nix
+          ./modules/nvidia.nix
+          ./modules/tailscale.nix
+          ./modules/tmux.nix
         ];
 
         cornifer = mkSystem "cornifer" [
-          ./modules/tailscale.nix
           ./modules/docker.nix
           ./modules/ssh-daemon.nix
+          ./modules/tailscale.nix
+          ./modules/tmux.nix
         ];
 
         knight = mkSystem "knight" [
-          ./modules/tailscale.nix
-          ./modules/docker.nix
           ./modules/audio.nix
-          # ./modules/gaming.nix
+          ./modules/docker.nix
+          ./modules/tailscale.nix
         ];
       };
     };

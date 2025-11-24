@@ -60,7 +60,6 @@
     gnumake
     htop
     stow
-    tmux
     unzip
     vim
     wget
