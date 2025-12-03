@@ -29,7 +29,11 @@ bindkey '^H' vi-backward-kill-word
 # LC_ALL="en_US.UTF-8"
 
 # Change prompt
-PS1="%1~ > "
+if [ -z "$SSH_TTY" ]; then
+  PS1='%1~ > '
+else
+  PS1="%{$(tput setaf 120)%}%m:%{$(tput sgr0)%} %1~ > "
+fi
 
 # Setup cross-session history
 HISTSIZE=5000
