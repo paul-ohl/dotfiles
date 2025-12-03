@@ -1,16 +1,15 @@
+{ config, lib, pkgs, inputs, ... }:
+
 {
-  config,
-  pkgs,
-  ...
-}: {
-  ############ Nvidia stuff #################
+  hardware.nvidia-container-toolkit.enable = true;
+
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     # Modesetting is required.

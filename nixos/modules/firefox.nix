@@ -1,8 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{ config
+, pkgs
+, ...
+}:
+let
   lock-false = {
     Value = false;
     Status = "locked";
@@ -11,14 +11,15 @@
     Value = true;
     Status = "locked";
   };
-in {
+in
+{
   programs = {
     firefox = {
       enable = true;
-      languagePacks = ["fr" "en-US" "en-GB"];
+      languagePacks = [ "en-US" "fr" ];
 
       /*
-      ---- POLICIES ----
+        ---- POLICIES ----
       */
       # Check about:policies#documentation for options.
       policies = {
@@ -43,7 +44,7 @@ in {
         SearchBar = "unified"; # alternative: "separate"
 
         /*
-        ---- EXTENSIONS ----
+          ---- EXTENSIONS ----
         */
         # Check about:support for extension/add-on ID strings.
         # Valid strings for installation_mode are "allowed", "blocked",
@@ -52,19 +53,14 @@ in {
           "*".installation_mode = "normal_installed";
           "*".private_browsing = true;
 
-          # uBlock Origin:
-          "uBlock0@raymondhill.net" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-            installation_mode = "normal_installed";
-          };
           # Bitwarden:
           "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
             installation_mode = "normal_installed";
           };
-          # Vimium:
-          "vimium-c@gdh1995.cn" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
+          # Dark reader:
+          "addon@darkreader.org" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
             installation_mode = "normal_installed";
           };
           # I still don't care about cookies:
@@ -72,20 +68,25 @@ in {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
             installation_mode = "normal_installed";
           };
-          # Dark reader
-          "addon@darkreader.org" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-            installation_mode = "normal_installed";
-          };
-          # Sidebery
+          # Sidebery:
           "{3c078156-979c-498b-8990-85f7987dd929}" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/sidebery/latest.xpi";
+            installation_mode = "normal_installed";
+          };
+          # Vimium:
+          "vimium-c@gdh1995.cn" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
+            installation_mode = "normal_installed";
+          };
+          # uBlock Origin:
+          "uBlock0@raymondhill.net" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
             installation_mode = "normal_installed";
           };
         };
 
         /*
-        ---- PREFERENCES ----
+          ---- PREFERENCES ----
         */
         # Check about:config for options.
         Preferences = {
