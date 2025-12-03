@@ -173,7 +173,7 @@ main() {
         elif command -v pacman &> /dev/null; then
             log "Installing git using pacman..."
             sudo pacman -Sy --noconfirm git
-          elif command -v brew &> /dev/null; then
+        elif command -v brew &> /dev/null; then
             log "Installing git using brew..."
             brew install git
         else
