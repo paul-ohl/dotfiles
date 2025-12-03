@@ -1,7 +1,7 @@
 { config, pkgs, pkgs-unstable, ... }:
 
 {
-  # Host-specific configuration for hornet
+  # Host-specific configuration for knight
   networking.hostName = "knight";
 
   # Enable X11 and desktop environment
