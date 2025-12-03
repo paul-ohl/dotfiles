@@ -15,6 +15,5 @@
   # If a plugin needs extra tmux conf lines, you can add them via programs.tmux.extraConfig
   programs.tmux.extraConfig = ''
     # example extra tmux config lines
-    set -g @resurrect-dir "$HOME/.tmux/resurrect"
   '';
 }
