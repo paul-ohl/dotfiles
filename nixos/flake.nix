@@ -35,6 +35,7 @@
           ./modules/docker.nix
           ./modules/firefox.nix
           ./modules/nvidia.nix
+          ./modules/syncthing.nix
           ./modules/tailscale.nix
           ./modules/tmux.nix
         ];
@@ -42,6 +43,7 @@
         cornifer = mkSystem "cornifer" [
           ./modules/docker.nix
           ./modules/ssh-daemon.nix
+          ./modules/syncthing.nix
           ./modules/tailscale.nix
           ./modules/tmux.nix
         ];
@@ -49,6 +51,7 @@
         knight = mkSystem "knight" [
           ./modules/audio.nix
           ./modules/docker.nix
+          ./modules/syncthing.nix
           ./modules/tailscale.nix
         ];
       };
