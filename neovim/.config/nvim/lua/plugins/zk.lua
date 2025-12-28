@@ -13,15 +13,10 @@ return {
       local title = vim.fn.input 'Title: '
       zk_cmds.get 'ZkNew' { title = title }
     end, glob_opts)
-
     -- TODO: Org capture-like functionality
     -- TODO: ZkNew with templates
-
     require('zk').setup {
-      -- Can be "telescope", "fzf", "fzf_lua", "minipick", "snacks_picker",
-      -- or select" (`vim.ui.select`).
       picker = 'telescope',
-
       lsp = {
         -- `config` is passed to `vim.lsp.start(config)`
         config = {
@@ -32,6 +27,10 @@ return {
             -- see `:h vim.lsp.*` for documentation on any of the below functions
             vim.o.textwidth = 80
             vim.o.shiftwidth = 2
+
+            -- Enable concealing to show note titles instead of hashes
+            vim.opt_local.conceallevel = 2
+            vim.opt_local.concealcursor = 'nc'
 
             -- TODO: ZkNew with templates and insert-link option
             -- TODO: In the Notes dialog, add the option to insert a link to the current note
@@ -49,7 +48,6 @@ return {
             vim.keymap.set('n', '<Leader>oi', '<cmd>ZkInsertLink<Cr>', opts)
           end,
         },
-
         -- automatically attach buffers in a zk notebook that match the given filetypes
         auto_attach = {
           enabled = true,
