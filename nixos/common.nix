@@ -70,6 +70,7 @@
     pkgs-unstable.btop
     pkgs-unstable.delta
     pkgs-unstable.dust
+    pkgs-unstable.dysk
     pkgs-unstable.eza
     pkgs-unstable.fd
     pkgs-unstable.lazygit

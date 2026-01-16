@@ -9,7 +9,21 @@
   services.displayManager.gdm.enable = true;
 
   networking.firewall = {
-    allowedTCPPorts = [ 80 443 8096 4533 4534 ];
+    # All these allowed ports are for services hosted with docker
+    allowedTCPPorts = [
+      80
+      443
+      3001
+      4533
+      4534
+      7676
+      8096
+      8191
+      8686
+      8989
+      9091
+      9117
+    ];
   };
 
   # Disable system suspend

@@ -10,6 +10,7 @@
 
     # Plugins with native/compiled components
     plugins = with pkgs.vimPlugins; [
+      telescope-fzf-native-nvim
       # Treesitter with all grammars pre-compiled
       nvim-treesitter.withAllGrammars
 
@@ -35,34 +36,21 @@
       nodejs_22 # for copilot.lua
 
       # Language servers (add the ones you use)
-      bash-language-server # Bash
-      clangd
-      css-lsp
-      docker-compose-language-service
-      html-lsp
-      json-lsp
       lua-language-server
-      marksman # Markdown
-      nixd # Nix
-      prisma-language-server
+      clang-tools       # provides clangd
+      docker-compose-language-service
+      nodePackages.dockerfile-language-server-nodejs
       rust-analyzer
+      nodePackages.typescript-language-server
       tailwindcss-language-server
-      typescript-language-server
-      yamlls
-      # gopls           # Go
-      # pyright         # Python
-      # zls             # Zig
+      biome
+      yaml-language-server
 
       # Formatters for conform.nvim (add the ones you use)
       alejandra # Nix formatter
       biome
       nixpkgs-fmt # Nix (or nixfmt)
       stylua # Lua
-      # black           # Python
-      # clang-tools     # C/C++ (includes clang-format)
-      # gofmt           # Go
-      # prettier        # JS/TS/CSS/HTML/JSON/etc
-      # rustfmt         # Rust (usually comes with rust-analyzer)
 
       typst
       typst-lsp
