@@ -1,4 +1,3 @@
--- blink-cmp.lua
 return {
   { -- Autocompletion
     'saghen/blink.cmp',
@@ -51,10 +50,11 @@ return {
     --- @type blink.cmp.Config
     opts = {
       keymap = {
-        preset = 'enter', -- This makes <CR> insert newline without accepting completion
+        preset = 'default',
         ['<C-space>'] = { 'show', 'hide' },
         ['<C-e>'] = { 'hide', 'fallback' },
         ['<C-y>'] = { 'select_and_accept' },
+        ['<CR>'] = { 'fallback' }, -- Always insert newline, never accept completion
 
         -- Tab accepts Blink completion when menu is visible
         ['<Tab>'] = {
@@ -89,6 +89,16 @@ return {
         providers = {
           lazydev = {
             module = 'lazydev.integrations.blink',
+            score_offset = 100,
+          },
+          path = {
+            score_offset = 75,
+          },
+          lsp = {
+            score_offset = 50,
+          },
+          snippets = {
+            score_offset = -100, -- Negative score means snippets appear last, never first
           },
         },
       },
