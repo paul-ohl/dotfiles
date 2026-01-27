@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "3/13/2025, 11:06:08 AM",
-	"time": 1741860368046,
+	"@time": "1/27/2026, 2:20:17 PM",
+	"time": 1769520017929,
 	"environment": {
-		"extension": "1.99.997",
+		"extension": "2.12.3",
 		"platform": "linux",
-		"firefox": 136
+		"firefox": 147
 	},
 	"exclusionRules": [
 		{
@@ -15,6 +15,10 @@
 		{
 			"passKeys": "",
 			"pattern": ":https://monkeytype.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":http://cloud.linode.com/linodes/63276406/lish/weblish"
 		}
 	],
 	"keyLayout": 18,
@@ -29,6 +33,8 @@
 		"map T previousTab",
 		"map ' Marks.activate",
 		"map l Vomnibar.activateTabs",
+		"map gh Vomnibar.activateHistory",
+		"map gH Vomnibar.activateHistoryInNewTab",
 		"",
 		"unmap <a-f>",
 		"unmap <a-p>",
