@@ -13,6 +13,7 @@ return {
       local title = vim.fn.input 'Title: '
       zk_cmds.get 'ZkNew' { title = title }
     end, glob_opts)
+
     -- TODO: Org capture-like functionality
     -- TODO: ZkNew with templates
     require('zk').setup {
@@ -28,11 +29,6 @@ return {
             vim.o.textwidth = 80
             vim.o.shiftwidth = 2
 
-            -- Enable concealing to show note titles instead of hashes
-            vim.opt_local.conceallevel = 2
-            vim.opt_local.concealcursor = 'nc'
-
-            -- TODO: ZkNew with templates and insert-link option
             -- TODO: In the Notes dialog, add the option to insert a link to the current note
             local zk = require 'zk'
             local opts = { noremap = true, silent = true, buffer = bufnr }
