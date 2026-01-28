@@ -8,6 +8,7 @@ require('lazy').setup({
   require 'plugins.harpoon',
   require 'plugins.lazygit',
   require 'plugins.lsp',
+  require 'plugins.markdown',
   require 'plugins.mini',
   require 'plugins.nvim-tree',
   require 'plugins.oil',
@@ -15,9 +16,9 @@ require('lazy').setup({
   require 'plugins.telescope-git-file-history',
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',
+  require 'plugins.typst',
   require 'plugins.which-key',
   require 'plugins.zk',
-  require 'plugins.typst',
 
   -- require 'plugins.avante',
   -- require 'plugins.debug',
