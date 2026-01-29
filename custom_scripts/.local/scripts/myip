@@ -1,0 +1,5 @@
+#!/bin/sh
+# Date: 2026/01/29
+# Description: prints out the device's IP address
+
+ip addr show | grep 'inet ' | grep -v 'host' | grep -v 'docker' | awk '{print $NF ":	" $2}' | cut -d'/' -f1

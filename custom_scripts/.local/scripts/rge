@@ -8,4 +8,4 @@
 
 EDITOR="nvim -p"
 
-rg --hidden --files-with-matches "$@" | xargs $EDITOR
+rg --ignore-case --hidden --files-with-matches "$@" | xargs $EDITOR
