@@ -12,6 +12,7 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.nvim-tree',
   require 'plugins.oil',
+  require 'plugins.opencode',
   require 'plugins.telescope',
   require 'plugins.telescope-git-file-history',
   require 'plugins.todo-comments',

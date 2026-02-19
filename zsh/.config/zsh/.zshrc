@@ -206,3 +206,6 @@ fi
 export ZK_NOTEBOOK_DIR="$HOME/Documents/org/"
 
 # vim: ts=2 sts=2 sw=2 et
+
+# opencode
+export PATH=/home/astro/.opencode/bin:$PATH
