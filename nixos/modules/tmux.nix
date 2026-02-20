@@ -8,8 +8,8 @@
     sensible
     tmux-sessionx
     yank
-    # continuum
-    # resurrect
+    continuum
+    resurrect
   ];
 
   # If a plugin needs extra tmux conf lines, you can add them via programs.tmux.extraConfig
