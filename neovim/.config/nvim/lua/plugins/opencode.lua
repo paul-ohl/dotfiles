@@ -18,7 +18,7 @@ return {
       require('opencode').select()
     end, { desc = 'Opencode: [X]ecute Action' })
 
-    vim.keymap.set({ 'n', 't' }, '<leader>ot', function()
+    vim.keymap.set('n', '<leader>ot', function()
       require('opencode').toggle()
     end, { desc = 'Opencode: [T]oggle' })
 
