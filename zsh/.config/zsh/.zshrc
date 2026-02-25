@@ -65,6 +65,7 @@ alias p='pnpm'
 alias ports='sudo ss -tulnp'
 alias s='kitten ssh'
 alias mmv='nvim +Oil'
+alias fdh='fd --hidden --exclude .git'
 
 # systemd aliases
 alias sss='sudo systemctl status'
