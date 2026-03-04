@@ -19,6 +19,7 @@ nmap('n', '<Leader>,', '<Cmd>cn<CR>zz', { desc = 'Go to next quickfix item' })
 nmap('n', '<Leader>.', '<Cmd>cp<CR>zz', { desc = 'Go to prev quickfix item' })
 nmap('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 nmap('n', '[[', '<C-t>', { desc = 'Go back in tag stack' })
+nmap('n', ']]', '<Nop>', { silent = true })
 
 -- Exit terminal mode
 nmap('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
