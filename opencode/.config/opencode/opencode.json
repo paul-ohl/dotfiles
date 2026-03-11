@@ -1,11 +1,14 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "@mohak34/opencode-notifier@latest"
-  ],
-  "permission": {
-    "external_directory": {
-      "~/.config/opencode/**": "allow"
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
     }
-  }
+  },
+  "plugin": [
+    "@mohak34/opencode-notifier@latest",
+    "opencode-vibeguard",
+    "@nick-vi/opencode-type-inject"
+  ]
 }

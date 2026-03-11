@@ -4,3 +4,12 @@ neovim/.config/nvim/lazy-lock.json
 karabiner/.config/karabiner/automatic_backups/
 kanata.service
 nixos-switch.log
+
+# OpenCode — runtime artifacts managed by OpenCode itself, not portable config
+opencode/.config/opencode/node_modules/
+opencode/.config/opencode/package.json
+opencode/.config/opencode/bun.lock
+
+# Python bytecode from skills
+**/__pycache__/
+**/*.pyc

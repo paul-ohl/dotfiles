@@ -15,15 +15,6 @@ directory corresponds to one tool and mirrors the structure expected under `$HOM
 - **Lint all scripts**: `shellcheck custom_scripts/.local/scripts/*`
 - No autofix available; all fixes are manual
 
-### Rust
-- **Format**: `cargo fmt`
-- **Lint**: `cargo clippy`
-- **Test all**: `cargo test`
-- **Single test**: `cargo test <test_name>` (substring match — no extra flags needed)
-- **Watch tests**: `bacon test` (continuous background runner, keybind `t`)
-- **Watch clippy**: `bacon` then press `c` (runs `clippy-all` job)
-- Build uses `clang` + `mold` linker and `sccache` (configured in `rust/.cargo/config.toml`)
-
 ### No top-level build system
 There is no `Makefile`, `justfile`, or `package.json` at the repo root.
 Formatting and linting are per-language as above.
@@ -38,6 +29,8 @@ stow alacritty custom_scripts git hyprland kanata kitty neovim rust zellij zsh
 ```
 Each argument is a top-level directory. Stow creates symlinks in `$HOME`.
 Never edit files via their `$HOME` symlink path — always edit in the dotfiles repo.
+
+Never run stow commands, but suggest them to the user.
 
 ---
 
@@ -176,6 +169,34 @@ die() { echo "[ERROR] $*" >&2; exit 1; }
 2. Return a valid lazy.nvim spec table
 3. Register it in `lazy-plugins.lua` via `require 'plugins.name'`
 4. Run `stylua .` from the repo root after any Lua edits
+
+### OpenCode Configuration (opencode/)
+
+The goal is **full portability**: cloning this repo on a new machine and running
+`stow opencode` should give the same OpenCode capabilities as any other machine.
+
+**What belongs in the repo** (`opencode/.config/opencode/`):
+- `opencode.json` — MCP servers, plugin declarations, and global settings
+- `commands/*.md` — slash commands
+- `skills/*/SKILL.md` — all skills and their supporting files
+- `vibeguard.config.json` — vibeguard redaction patterns (no secrets; `keywords` stays empty)
+
+**What must not be committed**:
+- `node_modules/`, `package.json`, `bun.lock` — OpenCode manages these at runtime; they are gitignored at the repo root
+- `__pycache__/`, `*.pyc` — Python bytecode from skill scripts; also gitignored
+- `.env` — machine-specific secrets; never commit
+
+**When adding a skill**:
+- Always place it under `opencode/.config/opencode/skills/<name>/SKILL.md`
+- Never use `~/.agents/skills/` — that directory is not tracked
+- Neither `npx skilo-cli` nor `npx skills` support a `--path` flag, so the install workflow is:
+  1. Install with the CLI (writes to `~/.agents/skills/`)
+  2. Copy the result into the repo: `cp -r ~/.config/opencode/skills/<name> ~/dotfiles/opencode/.config/opencode/skills/`
+  3. Alternatively, skip the CLI and write/copy the `SKILL.md` directly into the repo path
+
+**When adding a slash command**:
+- Place it under `opencode/.config/opencode/commands/<name>.md`
+- If the command has complex logic, extract it into a skill and load that skill from the command
 
 ### Secrets & Safety
 - **Never** commit secrets, API keys, tokens, or private SSH keys
