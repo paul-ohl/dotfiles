@@ -210,3 +210,12 @@ export ZK_NOTEBOOK_DIR="$HOME/Documents/org/"
 
 # opencode
 export PATH=/home/astro/.opencode/bin:$PATH
+unalias ocl 2>/dev/null
+ocl() {
+  local list=$(opencode session list)
+  local session=$(echo $list | fzf --header-lines=2 --height 40% --reverse)
+  if [[ -n "$session" ]]; then
+    local id=$(echo "$session" | awk '{print $1}')
+    opencode --session "$id"
+  fi
+}
