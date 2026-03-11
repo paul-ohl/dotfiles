@@ -1,7 +1,6 @@
 return {
   { -- Autocompletion
     'saghen/blink.cmp',
-    enable = vim.fn.executable 'nixos-version' == 1, -- Only use if not on NixOS
     event = 'VimEnter',
     version = '1.*',
     dependencies = {
