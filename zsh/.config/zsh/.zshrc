@@ -18,16 +18,6 @@ set -o vi
 bindkey '^R' history-incremental-search-backward
 bindkey '^H' vi-backward-kill-word
 
-# # Setting locales, I know I shouldn't do it there
-# LANG="en_US.UTF-8"
-# LC_COLLATE="en_US.UTF-8"
-# LC_CTYPE="en_US.UTF-8"
-# LC_MESSAGES="en_US.UTF-8"
-# LC_MONETARY="fr_FR.UTF-8"
-# LC_NUMERIC="fr_FR.UTF-8"
-# LC_TIME="fr_FR.UTF-8"
-# LC_ALL="en_US.UTF-8"
-
 # Change prompt
 if [ -z "$SSH_TTY" ]; then
   PS1='%1~ > '
@@ -72,6 +62,10 @@ alias sss='sudo systemctl status'
 alias ssr='sudo systemctl restart'
 alias sst='sudo systemctl stop'
 alias k='systemctl --user restart kanata.service'
+
+alias install='sudo pacman -S'
+alias update='sudo pacman -Syu'
+alias remove='sudo pacman -Rns'
 
 # git aliases
 alias gcl='. gcl'
@@ -123,7 +117,7 @@ eval "alias $(grep -v "^#" "$HOME/.config/zsh/foldersrc" \
 
 # Load device-specific config
 if ! [ -e "$XDG_CONFIG_HOME/zsh/device-specific.sh" ]; then
-  touch "$XDG_CONFIG_HOME/zsh/device-specific.sh" 
+  touch "$XDG_CONFIG_HOME/zsh/device-specific.sh"
 fi
 source "$XDG_CONFIG_HOME/zsh/device-specific.sh"
 
@@ -179,16 +173,6 @@ cargo() {
   cargo "$@"
 }
 
-# Yazi
-function yy() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}
-
 # pnpm
 export PNPM_HOME="/home/astro/.local/share/pnpm"
 case ":$PATH:" in
@@ -196,17 +180,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# Deno
-# If the path exists, load the Deno environment
-if [ -e "$HOME/.deno/env" ]; then
-  . "/home/astro/.deno/env"
-fi
-
-# ZK
-export ZK_NOTEBOOK_DIR="$HOME/Documents/org/"
-
-# vim: ts=2 sts=2 sw=2 et
 
 # opencode
 export PATH=/home/astro/.opencode/bin:$PATH
@@ -219,3 +192,5 @@ ocl() {
     opencode --session "$id"
   fi
 }
+
+# vim: ts=2 sts=2 sw=2 et
