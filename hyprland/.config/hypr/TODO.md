@@ -1,0 +1,4 @@
+- [ ] Workspace presence indicator
+- [ ] Default workspace for apps
+- [ ] Style notifications
+- [ ] Proton VPN config
