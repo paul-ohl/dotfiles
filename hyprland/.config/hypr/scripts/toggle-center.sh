@@ -21,13 +21,14 @@ LOGICAL_H=$(echo "$H $SCALE" | awk '{printf "%d", $1/$2}')
 
 WAYBAR_H=30
 MARGINS=10
-USABLE_H=$((LOGICAL_H - WAYBAR_H - (MARGINS * 3)))
-START_Y=$((WAYBAR_H + (MARGINS * 2)))
 
 HALF_W=$((LOGICAL_W / 2))
-CENTER_X=$((LOGICAL_W / 4))
+USABLE_H=$((LOGICAL_H - WAYBAR_H - (MARGINS * 2)))
+
+START_X=$((LOGICAL_W / 4))
+START_Y=$((WAYBAR_H + MARGINS))
 
 hyprctl dispatch togglefloating
-sleep 0.05  # let Hyprland register the float state before resizing
+sleep 0.02  # let Hyprland register the float state before resizing
 hyprctl dispatch resizeactive exact ${HALF_W} ${USABLE_H}
-hyprctl dispatch moveactive exact ${CENTER_X} ${START_Y}
+hyprctl dispatch moveactive exact ${START_X} ${START_Y}

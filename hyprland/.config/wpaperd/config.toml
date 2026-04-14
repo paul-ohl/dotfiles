@@ -1,0 +1,10 @@
+[default]
+duration = "10m"
+mode = "center"
+sorting = "random"
+transition-time = 500
+
+[default.transition.fade]
+
+[any]
+path = "/home/astro/Pictures/wp"

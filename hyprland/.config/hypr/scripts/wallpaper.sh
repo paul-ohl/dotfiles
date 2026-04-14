@@ -1,5 +1,5 @@
 #!/bin/sh
-# Cycles through random wallpapers using swww
+# Cycles through random wallpapers using awww
 
 DEFAULT_INTERVAL=300
 
@@ -9,9 +9,9 @@ if [ $# -lt 1 ] || [ ! -d "$1" ]; then
     exit 1
 fi
 
-TRANSITION_FPS="${SWWW_TRANSITION_FPS:-60}"
-TRANSITION_STEP="${SWWW_TRANSITION_STEP:-1}"
-TRANSITION_TYPE="${SWWW_TRANSITION_TYPE:-fade}"
+TRANSITION_FPS="${AWWW_TRANSITION_FPS:-60}"
+TRANSITION_STEP="${AWWW_TRANSITION_STEP:-1}"
+TRANSITION_TYPE="${AWWW_TRANSITION_TYPE:-fade}"
 
 while true; do
     find "$1" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) \
@@ -20,7 +20,7 @@ while true; do
     done \
     | sort | cut -d':' -f2- \
     | while read -r img; do
-        swww img "$img" \
+        awww img "$img" \
             --resize fit \
             --transition-type "$TRANSITION_TYPE" \
             --transition-fps "$TRANSITION_FPS" \

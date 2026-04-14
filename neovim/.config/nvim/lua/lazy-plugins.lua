@@ -27,6 +27,11 @@ require('lazy').setup({
   -- require 'plugins.indent_line',
   -- require 'plugins.lint',
 }, {
+  opts = {
+    rocks = {
+      enabled = false,
+    },
+  },
   ui = {
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
