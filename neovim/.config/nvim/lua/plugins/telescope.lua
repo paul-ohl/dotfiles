@@ -35,7 +35,6 @@ return {
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
-      pcall(require('telescope').load_extension, 'git_file_history')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -50,7 +49,6 @@ return {
       vim.keymap.set('n', '<leader>s.', builtin.resume, { desc = 'Resume last search' })
       vim.keymap.set('n', '<leader>sr', builtin.oldfiles, { desc = '[S]earch [R]ecent Files' })
       vim.keymap.set('n', 'l', builtin.buffers, { desc = '[S]earch [B]uffers' })
-      vim.keymap.set('n', '<leader>gh', require('telescope').extensions.git_file_history.git_file_history, { desc = '[G]it [h]istory' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

@@ -5,6 +5,7 @@ require('lazy').setup({
   { 'akinsho/git-conflict.nvim', version = '*', config = true },
 
   require 'plugins.harpoon',
+  require 'plugins.godot',
   require 'plugins.auto-session',
   require 'plugins.lazygit',
   require 'plugins.lsp',
@@ -12,7 +13,6 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.nvim-tree',
   require 'plugins.oil',
-  require 'plugins.opencode',
   require 'plugins.telescope',
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',

@@ -85,6 +85,7 @@ return {
       -- json_ls = {},
       rust_analyzer = {},
       ts_ls = {},
+      omnisharp = {},
       tailwindcss = {},
 
       lua_ls = {
