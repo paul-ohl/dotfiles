@@ -31,9 +31,12 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        -- Conform will run multiple formatters sequentially
+        -- Use a sub-list to run only the first available formatter
+        javascript = { { 'prettierd', 'biome' } },
+        typescript = { { 'prettierd', 'biome' } },
+        javascriptreact = { { 'prettierd', 'biome' } },
+        typescriptreact = { { 'prettierd', 'biome' } },
       },
     },
   },

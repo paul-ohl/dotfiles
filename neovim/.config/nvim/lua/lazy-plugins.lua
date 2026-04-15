@@ -1,6 +1,5 @@
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
-  'NMAC427/guess-indent.nvim',
   'psliwka/vim-smoothie',
   { 'kylechui/nvim-surround', opts = {} },
   { 'akinsho/git-conflict.nvim', version = '*', config = true },
@@ -15,17 +14,11 @@ require('lazy').setup({
   require 'plugins.oil',
   require 'plugins.opencode',
   require 'plugins.telescope',
-  require 'plugins.telescope-git-file-history',
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',
   require 'plugins.typst',
   require 'plugins.which-key',
   require 'plugins.zk',
-
-  -- require 'plugins.avante',
-  -- require 'plugins.debug',
-  -- require 'plugins.indent_line',
-  -- require 'plugins.lint',
 }, {
   opts = {
     rocks = {
