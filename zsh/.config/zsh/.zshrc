@@ -42,8 +42,6 @@ setopt hist_find_no_dups
 ### Aliases
 ###
 
-alias godot='godot-mono'
-
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
 alias open='xdg-open'
