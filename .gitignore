@@ -1,15 +1,14 @@
 .DS_Store
 folders.cfg.bckp
-neovim/.config/nvim/lazy-lock.json
-karabiner/.config/karabiner/automatic_backups/
+stow_me/.config/nvim/lazy-lock.json
 kanata.service
 nixos-switch.log
 
 # OpenCode — runtime artifacts managed by OpenCode itself, not portable config
-opencode/.config/opencode/node_modules/
-opencode/.config/opencode/package.json
-opencode/.config/opencode/bun.lock
-opencode/.config/opencode/opencode-notifier-state.json
+stow_me/.config/opencode/node_modules/
+stow_me/.config/opencode/package.json
+stow_me/.config/opencode/bun.lock
+stow_me/.config/opencode/opencode-notifier-state.json
 
 # Python bytecode from skills
 **/__pycache__/

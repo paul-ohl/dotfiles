@@ -4,12 +4,14 @@ Managed with GNU stow
 
 ## How to use
 
-Each software is in their own directory.
+The file tree in the `./stow_me/` directory corresponds to the file tree I want
+to reproduce inside my `~` directory. So you will find mainly the `.config`
+directory in there.
 
-Use [stow](https://www.gnu.org/software/stow/) to create the simlinks.
+Use [stow](https://www.gnu.org/software/stow/) to create the simlinks:
 
 ```bash
-stow alacritty custom_scripts git hyprland kanata kitty neovim rust zellij zsh
+stow ./stow_me/
 ```
 
 ## Mononoki Nerd Font
