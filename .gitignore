@@ -9,6 +9,7 @@ nixos-switch.log
 opencode/.config/opencode/node_modules/
 opencode/.config/opencode/package.json
 opencode/.config/opencode/bun.lock
+opencode/.config/opencode/opencode-notifier-state.json
 
 # Python bytecode from skills
 **/__pycache__/
