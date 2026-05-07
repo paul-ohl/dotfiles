@@ -48,7 +48,7 @@ information about extending and exploring Neovim.
 ## Usage
 
 My neovim config is tailored to my use, so of course almost nothing is standard
-(except maybe hjkl).
+(not even hjkl...).
 
 ### File structure:
 
@@ -100,20 +100,3 @@ But you generally won't need to directly use this function because of the next o
 `R` allows you to automatically empty the cache for that module, and that
 require it in one single function. This allows you to save a lot of time when
 developping a plugin.
-
-### [Go to Error or Hint](./lua/custom/goto_error_then_hint.lua)
-
-This plugin provides a function that is meant to be used in a
-[keymap](./lua/keymaps.lua). What it does is when you want to go to a
-diagnostic in the file, it will first select the error messages, and only when
-there are no errors left in the file, the warnings.
-
-### [Marp](./lua/custom/marp.lua)
-
-Dependency: [marp-cli](https://github.com/marp-team/marp-cli)
-
-This is under development at the moment, but what it does is launch a marp
-server and open the current file in a new firefox window.
-
-`StartMarp`: Starts the server and opens the window
-`StopMarp`: Stops the server

@@ -1,29 +1,30 @@
--- [[ Configure and install plugins ]]
 require('lazy').setup({
   'psliwka/vim-smoothie',
   { 'kylechui/nvim-surround', opts = {} },
-  { 'akinsho/git-conflict.nvim', version = '*', config = true },
+  { 'NMAC427/guess-indent.nvim', opts = {} },
 
-  require 'plugins.harpoon',
-  require 'plugins.godot',
-  require 'plugins.auto-session',
-  require 'plugins.lazygit',
-  require 'plugins.lsp',
-  require 'plugins.markdown',
-  require 'plugins.mini',
-  require 'plugins.nvim-tree',
-  require 'plugins.oil',
-  require 'plugins.telescope',
-  require 'plugins.todo-comments',
-  require 'plugins.tokyonight',
-  require 'plugins.typst',
-  require 'plugins.which-key',
-  require 'plugins.zk',
-}, {
-  opts = {
-    rocks = {
-      enabled = false,
-    },
+  require 'kickstart.plugins.gitsigns',
+  require 'kickstart.plugins.which-key',
+  require 'kickstart.plugins.telescope',
+  require 'kickstart.plugins.lspconfig',
+  require 'kickstart.plugins.conform',
+  require 'kickstart.plugins.blink-cmp',
+  require 'kickstart.plugins.tokyonight',
+  require 'kickstart.plugins.todo-comments',
+  require 'kickstart.plugins.mini',
+  require 'kickstart.plugins.treesitter',
+  require 'kickstart.plugins.neo-tree',
+
+  -- require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.lint',
+  -- require 'kickstart.plugins.autopairs',
+
+  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
+  { import = 'custom.plugins' },
+}, { ---@diagnostic disable-line: missing-fields
+  rocks = {
+    enabled = false,
   },
   ui = {
     icons = vim.g.have_nerd_font and {} or {
