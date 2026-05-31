@@ -114,6 +114,8 @@ return {
           if client and client:supports_method('textDocument/inlayHint', event.buf) then
             map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, '[T]oggle Inlay [H]ints')
           end
+
+          vim.keymap.set('n', '[[', '<C-t>', { buffer = event.buf, desc = 'Go back in tag stack' })
         end,
       })
 
