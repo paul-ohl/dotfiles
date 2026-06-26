@@ -1,4 +1,5 @@
 -- [[ Basic Keymaps ]]
+--  See `:help vim.keymap.set()`
 
 local function nmap(mode, lhs, rhs, opts)
   opts = opts or {}
@@ -7,22 +8,14 @@ local function nmap(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
--- Diagnostic keymaps
-nmap('n', '<leader>cl', vim.diagnostic.setloclist, { desc = 'Open [C]ode diagnostic [L]ist' })
-nmap('n', '<Leader>n', function()
-  vim.diagnostic.jump { count = 1 }
-end, { desc = 'Go to [N]ext diagnostic message' })
-nmap('n', '<Leader>p', function()
-  vim.diagnostic.jump { count = -1 }
-end, { desc = 'Go to [P]rev diagnostic message' })
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+nmap('n', '<Leader>n', function() vim.diagnostic.jump { count = 1 } end, { desc = 'Go to [N]ext diagnostic message' })
+nmap('n', '<Leader>p', function() vim.diagnostic.jump { count = -1 } end, { desc = 'Go to [P]rev diagnostic message' })
 nmap('n', '<Leader>,', '<Cmd>cn<CR>zz', { desc = 'Go to next quickfix item' })
 nmap('n', '<Leader>.', '<Cmd>cp<CR>zz', { desc = 'Go to prev quickfix item' })
 nmap('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 nmap('n', '[[', '<C-t>', { desc = 'Go back in tag stack' })
 nmap('n', ']]', '<Nop>', { silent = true })
-
--- Exit terminal mode
-nmap('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Editing keymaps
 nmap('n', '<Leader>w', ':write<CR>', { desc = 'Write to file' })
@@ -40,14 +33,13 @@ nmap('n', 'zb', 'zb') -- To disable vim smoothie on `zb`
 nmap('n', 'n', 'nzzzv')
 nmap('n', 'N', 'Nzzzv')
 nmap('n', '<Leader>-', '<C-^>', { desc = 'Switch to last file' })
-nmap('n', '<C-R>', '<C-W>w', { desc = 'Move to the next window' })
-nmap('n', '<C-T>', '<C-W>W', { desc = 'Move to the previous window' })
+nmap('n', '<C-r>', '<C-W>w', { desc = 'Move to the next window' })
+nmap('n', '<C-t>', '<C-W>W', { desc = 'Move to the previous window' })
 nmap('n', '<C-Left>', '<C-w>H', { desc = 'Move window to the left' })
 nmap('n', '<C-Right>', '<C-w>L', { desc = 'Move window to the right' })
 nmap('n', '<C-Down>', '<C-w>J', { desc = 'Move window to the bottom' })
 nmap('n', '<C-Up>', '<C-w>K', { desc = 'Move window to the top' })
 nmap('n', '<Leader>v', '<C-w>v', { desc = 'Split window vertically' })
-nmap('n', '<Leader>S', '<C-w>s', { desc = 'Split window horizontally' })
 nmap({ 'n', 'v' }, '<C-d>', '<cmd>call smoothie#do("<C-D>") <CR>')
 nmap({ 'n', 'v' }, '<C-u>', '<cmd>call smoothie#do("<C-U>") <CR>')
 nmap({ 'n', 'v', 'o' }, ',', ';') -- This is more comfortable on ergo-l
@@ -64,7 +56,7 @@ nmap('n', '_', "'d", { desc = 'Go to mark d' })
 nmap('n', ')', "'r", { desc = 'Go to mark r' })
 nmap('n', 'î', "'t", { desc = 'Go to mark t' })
 
--- yanking and deleting
+-- yanking and deleting to the system clipboard
 nmap('n', '<Leader>y', '"+y', { desc = 'copy to clipboard' })
 nmap('n', '<Leader>Y', '"+y$', { desc = 'copy to clipboard until end of line' })
 nmap('n', '<Leader>d', '"_d', { desc = 'delete to void' })
@@ -95,22 +87,32 @@ function ToggleVisualPastePreserve()
   end
 end
 
--- Toggles with <leader>u
-nmap('n', '<Leader>uw', ':tabdo windo set wrap!<CR>', { desc = 'Toggle wrapping' })
-nmap('n', '<Leader>ur', ':tabdo windo set relativenumber!<CR>', { desc = 'Toggle relative numbers' })
-nmap('n', '<Leader>uv', ToggleVisualPastePreserve, { desc = 'Toggle visual paste preserve' })
+-- Toggles with <leader>t
+nmap('n', '<Leader>tw', ':tabdo windo set wrap!<CR>', { desc = 'Toggle wrapping' })
+nmap('n', '<Leader>tr', ':tabdo windo set relativenumber!<CR>', { desc = 'Toggle relative numbers' })
+nmap('n', '<Leader>tv', ToggleVisualPastePreserve, { desc = 'Toggle visual paste preserve' })
 
--- Git commands
-nmap('n', '<Leader>gc', function()
-  CopyAnySSHPubKey()
-end, { desc = '[C]opy SSH Public Key to clipboard' })
+-- Diagnostic Config & Keymaps
+vim.diagnostic.config {
+  update_in_insert = false,
+  severity_sort = true,
+  float = { border = 'rounded', source = 'if_many' },
+  underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
-nmap('n', '<Leader>co', function()
-  local s = GetStringUnderCursor()
-  if s then
-    local gh_url = 'https://github.com/' .. s
-    OpenInBrowser(gh_url)
-  end
-end, { desc = 'Open quoted string under cursor' })
+  -- Can switch between these as you prefer
+  virtual_text = true, -- Text shows up at the end of the line
+  virtual_lines = false, -- Text shows up underneath the line, with virtual lines
+
+  -- Auto open the float when jumping to error
+  jump = { float = true },
+}
+
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function() vim.hl.on_yank() end,
+})
 
 -- vim: ts=2 sts=2 sw=2 et

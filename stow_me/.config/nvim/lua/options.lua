@@ -1,4 +1,4 @@
--- [-- [[ Setting options ]]
+-- [[ Setting options ]]
 
 -- Make line numbers default
 vim.opt.number = true
@@ -6,6 +6,9 @@ vim.opt.relativenumber = true
 
 -- Tab stuff
 vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.smarttab = true
+vim.opt.expandtab = true
 
 -- Enable mouse mode
 vim.opt.mouse = 'a'
@@ -34,7 +37,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 400
+vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -50,6 +53,8 @@ vim.opt.inccommand = 'split'
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 4
 
+vim.o.confirm = true
+
 -- Disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -59,10 +64,5 @@ vim.opt.termguicolors = true
 
 -- Disable highlighting of search results
 vim.opt.hlsearch = false
-
--- Default tabsize
-vim.opt.shiftwidth = 2
-vim.opt.smarttab = true
-vim.opt.expandtab = true
 
 -- vim: ts=2 sts=2 sw=2 et
