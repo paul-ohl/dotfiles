@@ -3,7 +3,7 @@ desk		~/Desktop/
 doc			~/Documents/
 dl			~/Downloads/
 dot			~/dotfiles/
-sc			~/dotfiles/custom_scripts/.local/scripts/
+sc			~/dotfiles/stow_me/.local/scripts/
 conf		~/dotfiles/stow_me/.config/nvim/
 zik			~/Music/
 dev 		~/Documents/dev/
