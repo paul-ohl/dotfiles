@@ -18,7 +18,7 @@ return {
       config = function()
         require('window-picker').setup {
           hint = 'floating-big-letter',
-          selection_chars = 'NRETSIAUPOCMD',
+          selection_chars = 'ASENCO',
           picker_config = {
             handle_mouse_click = true,
           },
