@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-name = Paul OHL
-email = paul.lv.ohl@gmail.com
+name = Astro OHL
+email = astro@bozos.fr
     useConfigOnly = true
 [init]
     defaultBranch = main
