@@ -74,6 +74,13 @@ return {
         extensions = {
           ['ui-select'] = { require('telescope.themes').get_dropdown() },
         },
+        defaults = {
+          file_ignore_patterns = {
+            'node_modules',
+            '%.git/',
+            'target/',
+          },
+        },
       }
 
       -- Enable Telescope extensions if they are installed
