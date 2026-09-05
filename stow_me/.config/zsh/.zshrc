@@ -42,6 +42,11 @@ setopt hist_find_no_dups
 ### Aliases
 ###
 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
 alias open='xdg-open'
